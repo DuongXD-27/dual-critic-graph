@@ -1,0 +1,1739 @@
+{
+  "qid": "5ac13e195542994ab5c67cc5",
+  "nodes": [
+    {
+      "id": "n0",
+      "name": "Red vs. Blue: Recreation",
+      "type": "MISC",
+      "is_title": true,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n1",
+      "name": "John Prosky",
+      "type": "PER",
+      "is_title": true,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n2",
+      "name": "Red vs. Blue",
+      "type": "MISC",
+      "is_title": true,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n3",
+      "name": "Damon Dark",
+      "type": "MISC",
+      "is_title": true,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n4",
+      "name": "Beverly, Kentucky",
+      "type": "LOC",
+      "is_title": true,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n5",
+      "name": "Armin Shimerman",
+      "type": "PER",
+      "is_title": true,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n6",
+      "name": "Red vs. Blue: Reconstruction",
+      "type": "MISC",
+      "is_title": true,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n7",
+      "name": "Red Bird (web series)",
+      "type": "MISC",
+      "is_title": true,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n8",
+      "name": "Red Bird River Petroglyphs",
+      "type": "LOC",
+      "is_title": true,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n9",
+      "name": "Felicia Day",
+      "type": "PER",
+      "is_title": true,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n10",
+      "name": "Rooster Teeth Productions",
+      "type": "ORG",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n11",
+      "name": "June 9, 2009",
+      "type": "TIME",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n12",
+      "name": "October 26, 2009",
+      "type": "TIME",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n13",
+      "name": "Caboose",
+      "type": "PER",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n14",
+      "name": "NYPD Blue",
+      "type": "MISC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n15",
+      "name": "ER",
+      "type": "MISC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n16",
+      "name": "Heroes",
+      "type": "MISC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n17",
+      "name": "Criminal Minds",
+      "type": "MISC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n18",
+      "name": "True Blood",
+      "type": "MISC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n19",
+      "name": "JAG",
+      "type": "MISC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n20",
+      "name": "My So-Called Life",
+      "type": "MISC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n21",
+      "name": "The Practice",
+      "type": "MISC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n22",
+      "name": "The X-Files",
+      "type": "MISC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n23",
+      "name": "The West Wing",
+      "type": "MISC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n24",
+      "name": "Charmed",
+      "type": "MISC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n25",
+      "name": "24",
+      "type": "MISC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n26",
+      "name": "House",
+      "type": "MISC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n27",
+      "name": "Grey's Anatomy",
+      "type": "MISC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n28",
+      "name": "Veronica Mars",
+      "type": "MISC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n29",
+      "name": "Fringe",
+      "type": "MISC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n30",
+      "name": "The Nutty Professor",
+      "type": "MISC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n31",
+      "name": "Bowfinger",
+      "type": "MISC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n32",
+      "name": "A.I. Artificial Intelligence",
+      "type": "MISC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n33",
+      "name": "L.A. Noire",
+      "type": "MISC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n34",
+      "name": "Robert Prosky",
+      "type": "PER",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n35",
+      "name": "Burnie Burns",
+      "type": "PER",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n36",
+      "name": "Rooster Teeth",
+      "type": "ORG",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n37",
+      "name": "Blood Gulch",
+      "type": "LOC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n38",
+      "name": "April 1, 2003",
+      "type": "TIME",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n39",
+      "name": "Australia",
+      "type": "LOC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n40",
+      "name": "Adrian Sherlock",
+      "type": "PER",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n41",
+      "name": "Community TV 31",
+      "type": "ORG",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n42",
+      "name": "Melbourne",
+      "type": "LOC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n43",
+      "name": "YouTube",
+      "type": "ORG",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n44",
+      "name": "Bruce Hughes",
+      "type": "PER",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n45",
+      "name": "Aiden Sherlock",
+      "type": "PER",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n46",
+      "name": "Jack Knoll",
+      "type": "PER",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n47",
+      "name": "Gary Sutton",
+      "type": "PER",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n48",
+      "name": "Robert Trott",
+      "type": "PER",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n49",
+      "name": "1999",
+      "type": "TIME",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n50",
+      "name": "57th World Science Fiction Convention",
+      "type": "MISC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n51",
+      "name": "Vincent Kosmos",
+      "type": "MISC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n52",
+      "name": "Chris Heaven",
+      "type": "PER",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n53",
+      "name": "Italy",
+      "type": "LOC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n54",
+      "name": "Bell County",
+      "type": "LOC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n55",
+      "name": "Kentucky",
+      "type": "LOC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n56",
+      "name": "United States",
+      "type": "LOC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n57",
+      "name": "November 5, 1949",
+      "type": "TIME",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n58",
+      "name": "Buffy the Vampire Slayer",
+      "type": "MISC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n59",
+      "name": "Seinfeld",
+      "type": "MISC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n60",
+      "name": "BioShock",
+      "type": "MISC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n61",
+      "name": "Principal Snyder",
+      "type": "PER",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n62",
+      "name": "Andrew Ryan",
+      "type": "PER",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n63",
+      "name": "Shannon McCormick",
+      "type": "PER",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n64",
+      "name": "October 30, 2008",
+      "type": "TIME",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n65",
+      "name": "Western",
+      "type": "MISC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n66",
+      "name": "Misti Boland",
+      "type": "PER",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n67",
+      "name": "Jeremy Osbern",
+      "type": "PER",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n68",
+      "name": "Alexandra Goodman",
+      "type": "PER",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n69",
+      "name": "Ian Stark",
+      "type": "PER",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n70",
+      "name": "Kitty Swink",
+      "type": "PER",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n71",
+      "name": "Mike McShane",
+      "type": "PER",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n72",
+      "name": "March 2016",
+      "type": "TIME",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n73",
+      "name": "Clay County",
+      "type": "LOC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n74",
+      "name": "Red Bird River",
+      "type": "LOC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n75",
+      "name": "Manchester",
+      "type": "LOC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n76",
+      "name": "The Guild",
+      "type": "MISC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n77",
+      "name": "International Academy of Web Television",
+      "type": "ORG",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n78",
+      "name": "Stan",
+      "type": null,
+      "is_title": false,
+      "origin": "AGENT_TEXT"
+    }
+  ],
+  "edges": [
+    {
+      "id": "e0",
+      "head": "n0",
+      "relation": "P179",
+      "tail": "n2",
+      "provenance": [
+        [
+          "Red vs. Blue: Recreation",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e1",
+      "head": "n2",
+      "relation": "P170",
+      "tail": "n10",
+      "provenance": [
+        [
+          "Red vs. Blue: Recreation",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e2",
+      "head": "n0",
+      "relation": "P580",
+      "tail": "n11",
+      "provenance": [
+        [
+          "Red vs. Blue: Recreation",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e3",
+      "head": "n0",
+      "relation": "P582",
+      "tail": "n12",
+      "provenance": [
+        [
+          "Red vs. Blue: Recreation",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e4",
+      "head": "n0",
+      "relation": "P674",
+      "tail": "n13",
+      "provenance": [
+        [
+          "Red vs. Blue: Recreation",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e5",
+      "head": "n14",
+      "relation": "P161",
+      "tail": "n1",
+      "provenance": [
+        [
+          "John Prosky",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e6",
+      "head": "n15",
+      "relation": "P161",
+      "tail": "n1",
+      "provenance": [
+        [
+          "John Prosky",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e7",
+      "head": "n16",
+      "relation": "P161",
+      "tail": "n1",
+      "provenance": [
+        [
+          "John Prosky",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e8",
+      "head": "n17",
+      "relation": "P161",
+      "tail": "n1",
+      "provenance": [
+        [
+          "John Prosky",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e9",
+      "head": "n18",
+      "relation": "P161",
+      "tail": "n1",
+      "provenance": [
+        [
+          "John Prosky",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e10",
+      "head": "n19",
+      "relation": "P161",
+      "tail": "n1",
+      "provenance": [
+        [
+          "John Prosky",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e11",
+      "head": "n20",
+      "relation": "P161",
+      "tail": "n1",
+      "provenance": [
+        [
+          "John Prosky",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e12",
+      "head": "n21",
+      "relation": "P161",
+      "tail": "n1",
+      "provenance": [
+        [
+          "John Prosky",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e13",
+      "head": "n22",
+      "relation": "P161",
+      "tail": "n1",
+      "provenance": [
+        [
+          "John Prosky",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e14",
+      "head": "n23",
+      "relation": "P161",
+      "tail": "n1",
+      "provenance": [
+        [
+          "John Prosky",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e15",
+      "head": "n24",
+      "relation": "P161",
+      "tail": "n1",
+      "provenance": [
+        [
+          "John Prosky",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e16",
+      "head": "n25",
+      "relation": "P161",
+      "tail": "n1",
+      "provenance": [
+        [
+          "John Prosky",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e17",
+      "head": "n26",
+      "relation": "P161",
+      "tail": "n1",
+      "provenance": [
+        [
+          "John Prosky",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e18",
+      "head": "n27",
+      "relation": "P161",
+      "tail": "n1",
+      "provenance": [
+        [
+          "John Prosky",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e19",
+      "head": "n28",
+      "relation": "P161",
+      "tail": "n1",
+      "provenance": [
+        [
+          "John Prosky",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e20",
+      "head": "n29",
+      "relation": "P161",
+      "tail": "n1",
+      "provenance": [
+        [
+          "John Prosky",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e21",
+      "head": "n7",
+      "relation": "P161",
+      "tail": "n1",
+      "provenance": [
+        [
+          "John Prosky",
+          1
+        ],
+        [
+          "Red Bird (web series)",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e22",
+      "head": "n30",
+      "relation": "P161",
+      "tail": "n1",
+      "provenance": [
+        [
+          "John Prosky",
+          2
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e23",
+      "head": "n31",
+      "relation": "P161",
+      "tail": "n1",
+      "provenance": [
+        [
+          "John Prosky",
+          2
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e24",
+      "head": "n32",
+      "relation": "P161",
+      "tail": "n1",
+      "provenance": [
+        [
+          "John Prosky",
+          2
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e25",
+      "head": "n33",
+      "relation": "P161",
+      "tail": "n1",
+      "provenance": [
+        [
+          "John Prosky",
+          3
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e26",
+      "head": "n1",
+      "relation": "P22",
+      "tail": "n34",
+      "provenance": [
+        [
+          "John Prosky",
+          4
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e27",
+      "head": "n34",
+      "relation": "P40",
+      "tail": "n1",
+      "provenance": [
+        [
+          "John Prosky",
+          4
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e28",
+      "head": "n2",
+      "relation": "P170",
+      "tail": "n35",
+      "provenance": [
+        [
+          "Red vs. Blue",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e29",
+      "head": "n2",
+      "relation": "P272",
+      "tail": "n36",
+      "provenance": [
+        [
+          "Red vs. Blue",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e30",
+      "head": "n2",
+      "relation": "P840",
+      "tail": "n37",
+      "provenance": [
+        [
+          "Red vs. Blue",
+          2
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e31",
+      "head": "n2",
+      "relation": "P577",
+      "tail": "n38",
+      "provenance": [
+        [
+          "Red vs. Blue",
+          2
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e32",
+      "head": "n3",
+      "relation": "P495",
+      "tail": "n39",
+      "provenance": [
+        [
+          "Damon Dark",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e33",
+      "head": "n3",
+      "relation": "P170",
+      "tail": "n40",
+      "provenance": [
+        [
+          "Damon Dark",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e34",
+      "head": "n40",
+      "relation": "P27",
+      "tail": "n39",
+      "provenance": [
+        [
+          "Damon Dark",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e35",
+      "head": "n41",
+      "relation": "P131",
+      "tail": "n42",
+      "provenance": [
+        [
+          "Damon Dark",
+          3
+        ],
+        [
+          "Damon Dark",
+          10
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e36",
+      "head": "n42",
+      "relation": "P17",
+      "tail": "n39",
+      "provenance": [
+        [
+          "Damon Dark",
+          3
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e37",
+      "head": "n3",
+      "relation": "P449",
+      "tail": "n41",
+      "provenance": [
+        [
+          "Damon Dark",
+          3
+        ],
+        [
+          "Damon Dark",
+          10
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e38",
+      "head": "n3",
+      "relation": "P400",
+      "tail": "n43",
+      "provenance": [
+        [
+          "Damon Dark",
+          3
+        ],
+        [
+          "Damon Dark",
+          11
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e39",
+      "head": "n3",
+      "relation": "P161",
+      "tail": "n40",
+      "provenance": [
+        [
+          "Damon Dark",
+          6
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e40",
+      "head": "n3",
+      "relation": "P161",
+      "tail": "n44",
+      "provenance": [
+        [
+          "Damon Dark",
+          6
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e41",
+      "head": "n3",
+      "relation": "P161",
+      "tail": "n45",
+      "provenance": [
+        [
+          "Damon Dark",
+          6
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e42",
+      "head": "n3",
+      "relation": "P161",
+      "tail": "n46",
+      "provenance": [
+        [
+          "Damon Dark",
+          6
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e43",
+      "head": "n3",
+      "relation": "P674",
+      "tail": "n47",
+      "provenance": [
+        [
+          "Damon Dark",
+          9
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e44",
+      "head": "n3",
+      "relation": "P161",
+      "tail": "n48",
+      "provenance": [
+        [
+          "Damon Dark",
+          9
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e45",
+      "head": "n3",
+      "relation": "P580",
+      "tail": "n49",
+      "provenance": [
+        [
+          "Damon Dark",
+          10
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e46",
+      "head": "n50",
+      "relation": "P276",
+      "tail": "n42",
+      "provenance": [
+        [
+          "Damon Dark",
+          10
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e47",
+      "head": "n51",
+      "relation": "P170",
+      "tail": "n52",
+      "provenance": [
+        [
+          "Damon Dark",
+          11
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e48",
+      "head": "n51",
+      "relation": "P161",
+      "tail": "n52",
+      "provenance": [
+        [
+          "Damon Dark",
+          11
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e49",
+      "head": "n52",
+      "relation": "P27",
+      "tail": "n53",
+      "provenance": [
+        [
+          "Damon Dark",
+          11
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": true
+    },
+    {
+      "id": "e50",
+      "head": "n4",
+      "relation": "P131",
+      "tail": "n54",
+      "provenance": [
+        [
+          "Beverly, Kentucky",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e51",
+      "head": "n4",
+      "relation": "P131",
+      "tail": "n55",
+      "provenance": [
+        [
+          "Beverly, Kentucky",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e52",
+      "head": "n4",
+      "relation": "P17",
+      "tail": "n56",
+      "provenance": [
+        [
+          "Beverly, Kentucky",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e53",
+      "head": "n5",
+      "relation": "P569",
+      "tail": "n57",
+      "provenance": [
+        [
+          "Armin Shimerman",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e54",
+      "head": "n58",
+      "relation": "P161",
+      "tail": "n5",
+      "provenance": [
+        [
+          "Armin Shimerman",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e55",
+      "head": "n59",
+      "relation": "P161",
+      "tail": "n5",
+      "provenance": [
+        [
+          "Armin Shimerman",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e56",
+      "head": "n60",
+      "relation": "P161",
+      "tail": "n5",
+      "provenance": [
+        [
+          "Armin Shimerman",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e57",
+      "head": "n58",
+      "relation": "P674",
+      "tail": "n61",
+      "provenance": [
+        [
+          "Armin Shimerman",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e58",
+      "head": "n60",
+      "relation": "P674",
+      "tail": "n62",
+      "provenance": [
+        [
+          "Armin Shimerman",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e59",
+      "head": "n6",
+      "relation": "P179",
+      "tail": "n2",
+      "provenance": [
+        [
+          "Red vs. Blue: Reconstruction",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e60",
+      "head": "n6",
+      "relation": "P272",
+      "tail": "n10",
+      "provenance": [
+        [
+          "Red vs. Blue: Reconstruction",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e61",
+      "head": "n6",
+      "relation": "P161",
+      "tail": "n63",
+      "provenance": [
+        [
+          "Red vs. Blue: Reconstruction",
+          2
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e62",
+      "head": "n6",
+      "relation": "P582",
+      "tail": "n64",
+      "provenance": [
+        [
+          "Red vs. Blue: Reconstruction",
+          5
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e63",
+      "head": "n7",
+      "relation": "P136",
+      "tail": "n65",
+      "provenance": [
+        [
+          "Red Bird (web series)",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e64",
+      "head": "n7",
+      "relation": "P170",
+      "tail": "n66",
+      "provenance": [
+        [
+          "Red Bird (web series)",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e65",
+      "head": "n7",
+      "relation": "P170",
+      "tail": "n67",
+      "provenance": [
+        [
+          "Red Bird (web series)",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e66",
+      "head": "n7",
+      "relation": "P161",
+      "tail": "n68",
+      "provenance": [
+        [
+          "Red Bird (web series)",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e67",
+      "head": "n7",
+      "relation": "P161",
+      "tail": "n69",
+      "provenance": [
+        [
+          "Red Bird (web series)",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e68",
+      "head": "n7",
+      "relation": "P161",
+      "tail": "n5",
+      "provenance": [
+        [
+          "Red Bird (web series)",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e69",
+      "head": "n7",
+      "relation": "P161",
+      "tail": "n70",
+      "provenance": [
+        [
+          "Red Bird (web series)",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e70",
+      "head": "n7",
+      "relation": "P161",
+      "tail": "n71",
+      "provenance": [
+        [
+          "Red Bird (web series)",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e71",
+      "head": "n7",
+      "relation": "P449",
+      "tail": "n43",
+      "provenance": [
+        [
+          "Red Bird (web series)",
+          2
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e72",
+      "head": "n7",
+      "relation": "P577",
+      "tail": "n72",
+      "provenance": [
+        [
+          "Red Bird (web series)",
+          2
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e73",
+      "head": "n8",
+      "relation": "P131",
+      "tail": "n73",
+      "provenance": [
+        [
+          "Red Bird River Petroglyphs",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e74",
+      "head": "n8",
+      "relation": "P131",
+      "tail": "n55",
+      "provenance": [
+        [
+          "Red Bird River Petroglyphs",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e75",
+      "head": "n73",
+      "relation": "P131",
+      "tail": "n55",
+      "provenance": [
+        [
+          "Red Bird River Petroglyphs",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e76",
+      "head": "n8",
+      "relation": "P206",
+      "tail": "n74",
+      "provenance": [
+        [
+          "Red Bird River Petroglyphs",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e77",
+      "head": "n8",
+      "relation": "P131",
+      "tail": "n75",
+      "provenance": [
+        [
+          "Red Bird River Petroglyphs",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e78",
+      "head": "n76",
+      "relation": "P161",
+      "tail": "n9",
+      "provenance": [
+        [
+          "Felicia Day",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e79",
+      "head": "n76",
+      "relation": "P58",
+      "tail": "n9",
+      "provenance": [
+        [
+          "Felicia Day",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e80",
+      "head": "n76",
+      "relation": "P162",
+      "tail": "n9",
+      "provenance": [
+        [
+          "Felicia Day",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e81",
+      "head": "n9",
+      "relation": "P463",
+      "tail": "n77",
+      "provenance": [
+        [
+          "Felicia Day",
+          3
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e82",
+      "head": "n59",
+      "relation": "P674",
+      "tail": "n78",
+      "provenance": [
+        [
+          "Armin Shimerman",
+          1
+        ]
+      ],
+      "origin": "AGENT_TEXT",
+      "evidence_edges": [],
+      "created_by": "5ac13e195542994ab5c67cc5:main"
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "qid": "5a7344e95542991f9a20c6ce",
+  "prompt_version": "extract-v1",
+  "raw_triples": 74,
+  "kept": 73,
+  "dropped": [
+    {
+      "title": "B*Witched discography",
+      "triple": {
+        "head": "B*Witched",
+        "head_type": "MISC",
+        "relation": "P175",
+        "tail": "B*Witched",
+        "tail_type": "ORG",
+        "sentences": [
+          4
+        ]
+      },
+      "reason": "self_loop"
+    }
+  ],
+  "suspect": 17,
+  "parse_errors": []
+}

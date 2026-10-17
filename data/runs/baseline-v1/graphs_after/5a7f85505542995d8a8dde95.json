@@ -1,0 +1,1234 @@
+{
+  "qid": "5a7f85505542995d8a8dde95",
+  "nodes": [
+    {
+      "id": "n0",
+      "name": "Heading Out to the Highway",
+      "type": "MISC",
+      "is_title": true,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n1",
+      "name": "Hit and Run – Revisited",
+      "type": "MISC",
+      "is_title": true,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n2",
+      "name": "The Nightcomers (album)",
+      "type": "MISC",
+      "is_title": true,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n3",
+      "name": "List of Girlschool band members",
+      "type": null,
+      "is_title": true,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n4",
+      "name": "Point of Entry",
+      "type": "MISC",
+      "is_title": true,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n5",
+      "name": "Jameson Raid (band)",
+      "type": "ORG",
+      "is_title": true,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n6",
+      "name": "Event Horizon (album)",
+      "type": "MISC",
+      "is_title": true,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n7",
+      "name": "Fire Down Under",
+      "type": "MISC",
+      "is_title": true,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n8",
+      "name": "Venom (band)",
+      "type": "ORG",
+      "is_title": true,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n9",
+      "name": "Angel Witch (album)",
+      "type": "MISC",
+      "is_title": true,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n10",
+      "name": "Judas Priest",
+      "type": "ORG",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n11",
+      "name": "heavy metal",
+      "type": "MISC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n12",
+      "name": "1981",
+      "type": "TIME",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n13",
+      "name": "Girlschool",
+      "type": "ORG",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n14",
+      "name": "2011",
+      "type": "TIME",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n15",
+      "name": "Hit and Run",
+      "type": "MISC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n16",
+      "name": "Holocaust",
+      "type": "ORG",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n17",
+      "name": "Phoenix Record And Filmworks",
+      "type": "ORG",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n18",
+      "name": "Edgy Records",
+      "type": "ORG",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n19",
+      "name": "Castle/Sanctuary",
+      "type": "ORG",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n20",
+      "name": "1978",
+      "type": "TIME",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n21",
+      "name": "new wave of British heavy metal",
+      "type": "MISC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n22",
+      "name": "Kim McAuliffe",
+      "type": "PER",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n23",
+      "name": "Enid Williams",
+      "type": "PER",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n24",
+      "name": "Kelly Johnson",
+      "type": "PER",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n25",
+      "name": "Denise Dufort",
+      "type": "PER",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n26",
+      "name": "Painted Lady",
+      "type": "ORG",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n27",
+      "name": "26 February 1981",
+      "type": "TIME",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n28",
+      "name": "hard rock",
+      "type": "MISC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n29",
+      "name": "Metal For Muthas II",
+      "type": "MISC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n30",
+      "name": "EMI",
+      "type": "ORG",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n31",
+      "name": "I Am I",
+      "type": "ORG",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n32",
+      "name": "2012",
+      "type": "TIME",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n33",
+      "name": "Riot",
+      "type": "ORG",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n34",
+      "name": "Guy Speranza",
+      "type": "PER",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n35",
+      "name": "1979",
+      "type": "TIME",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n36",
+      "name": "Newcastle upon Tyne",
+      "type": "LOC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n37",
+      "name": "Welcome to Hell",
+      "type": "MISC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n38",
+      "name": "Black Metal",
+      "type": "MISC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n39",
+      "name": "1982",
+      "type": "TIME",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n40",
+      "name": "Angel Witch",
+      "type": "ORG",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n41",
+      "name": "1980",
+      "type": "TIME",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n42",
+      "name": "Bronze Records",
+      "type": "ORG",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n43",
+      "name": "Brütal Legend",
+      "type": "MISC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n44",
+      "name": "2009",
+      "type": "TIME",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    }
+  ],
+  "edges": [
+    {
+      "id": "e0",
+      "head": "n0",
+      "relation": "P175",
+      "tail": "n10",
+      "provenance": [
+        [
+          "Heading Out to the Highway",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e1",
+      "head": "n0",
+      "relation": "P361",
+      "tail": "n4",
+      "provenance": [
+        [
+          "Heading Out to the Highway",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e2",
+      "head": "n10",
+      "relation": "P136",
+      "tail": "n11",
+      "provenance": [
+        [
+          "Heading Out to the Highway",
+          0
+        ],
+        [
+          "Point of Entry",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e3",
+      "head": "n4",
+      "relation": "P577",
+      "tail": "n12",
+      "provenance": [
+        [
+          "Heading Out to the Highway",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e4",
+      "head": "n0",
+      "relation": "P577",
+      "tail": "n12",
+      "provenance": [
+        [
+          "Heading Out to the Highway",
+          0
+        ],
+        [
+          "Heading Out to the Highway",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e5",
+      "head": "n1",
+      "relation": "P175",
+      "tail": "n13",
+      "provenance": [
+        [
+          "Hit and Run – Revisited",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e6",
+      "head": "n1",
+      "relation": "P577",
+      "tail": "n14",
+      "provenance": [
+        [
+          "Hit and Run – Revisited",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e7",
+      "head": "n13",
+      "relation": "P136",
+      "tail": "n11",
+      "provenance": [
+        [
+          "Hit and Run – Revisited",
+          0
+        ],
+        [
+          "List of Girlschool band members",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e8",
+      "head": "n15",
+      "relation": "P577",
+      "tail": "n12",
+      "provenance": [
+        [
+          "Hit and Run – Revisited",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e9",
+      "head": "n15",
+      "relation": "P175",
+      "tail": "n13",
+      "provenance": [
+        [
+          "Hit and Run – Revisited",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e10",
+      "head": "n2",
+      "relation": "P175",
+      "tail": "n16",
+      "provenance": [
+        [
+          "The Nightcomers (album)",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e11",
+      "head": "n2",
+      "relation": "P577",
+      "tail": "n12",
+      "provenance": [
+        [
+          "The Nightcomers (album)",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e12",
+      "head": "n16",
+      "relation": "P136",
+      "tail": "n11",
+      "provenance": [
+        [
+          "The Nightcomers (album)",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e13",
+      "head": "n2",
+      "relation": "P264",
+      "tail": "n17",
+      "provenance": [
+        [
+          "The Nightcomers (album)",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e14",
+      "head": "n17",
+      "relation": "P127",
+      "tail": "n16",
+      "provenance": [
+        [
+          "The Nightcomers (album)",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e15",
+      "head": "n2",
+      "relation": "P264",
+      "tail": "n18",
+      "provenance": [
+        [
+          "The Nightcomers (album)",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e16",
+      "head": "n2",
+      "relation": "P264",
+      "tail": "n19",
+      "provenance": [
+        [
+          "The Nightcomers (album)",
+          2
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e17",
+      "head": "n13",
+      "relation": "P571",
+      "tail": "n20",
+      "provenance": [
+        [
+          "List of Girlschool band members",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e18",
+      "head": "n13",
+      "relation": "P136",
+      "tail": "n21",
+      "provenance": [
+        [
+          "List of Girlschool band members",
+          2
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": true
+    },
+    {
+      "id": "e19",
+      "head": "n22",
+      "relation": "P463",
+      "tail": "n13",
+      "provenance": [
+        [
+          "List of Girlschool band members",
+          0
+        ],
+        [
+          "List of Girlschool band members",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e20",
+      "head": "n23",
+      "relation": "P463",
+      "tail": "n13",
+      "provenance": [
+        [
+          "List of Girlschool band members",
+          0
+        ],
+        [
+          "List of Girlschool band members",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e21",
+      "head": "n24",
+      "relation": "P463",
+      "tail": "n13",
+      "provenance": [
+        [
+          "List of Girlschool band members",
+          0
+        ],
+        [
+          "List of Girlschool band members",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e22",
+      "head": "n25",
+      "relation": "P463",
+      "tail": "n13",
+      "provenance": [
+        [
+          "List of Girlschool band members",
+          0
+        ],
+        [
+          "List of Girlschool band members",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e23",
+      "head": "n13",
+      "relation": "P527",
+      "tail": "n22",
+      "provenance": [
+        [
+          "List of Girlschool band members",
+          0
+        ],
+        [
+          "List of Girlschool band members",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e24",
+      "head": "n13",
+      "relation": "P527",
+      "tail": "n23",
+      "provenance": [
+        [
+          "List of Girlschool band members",
+          0
+        ],
+        [
+          "List of Girlschool band members",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e25",
+      "head": "n13",
+      "relation": "P527",
+      "tail": "n24",
+      "provenance": [
+        [
+          "List of Girlschool band members",
+          0
+        ],
+        [
+          "List of Girlschool band members",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e26",
+      "head": "n13",
+      "relation": "P527",
+      "tail": "n25",
+      "provenance": [
+        [
+          "List of Girlschool band members",
+          0
+        ],
+        [
+          "List of Girlschool band members",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e27",
+      "head": "n22",
+      "relation": "P463",
+      "tail": "n26",
+      "provenance": [
+        [
+          "List of Girlschool band members",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e28",
+      "head": "n23",
+      "relation": "P463",
+      "tail": "n26",
+      "provenance": [
+        [
+          "List of Girlschool band members",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e29",
+      "head": "n24",
+      "relation": "P463",
+      "tail": "n26",
+      "provenance": [
+        [
+          "List of Girlschool band members",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e30",
+      "head": "n25",
+      "relation": "P463",
+      "tail": "n26",
+      "provenance": [
+        [
+          "List of Girlschool band members",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e31",
+      "head": "n26",
+      "relation": "P527",
+      "tail": "n22",
+      "provenance": [
+        [
+          "List of Girlschool band members",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e32",
+      "head": "n26",
+      "relation": "P527",
+      "tail": "n23",
+      "provenance": [
+        [
+          "List of Girlschool band members",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e33",
+      "head": "n26",
+      "relation": "P527",
+      "tail": "n24",
+      "provenance": [
+        [
+          "List of Girlschool band members",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e34",
+      "head": "n26",
+      "relation": "P527",
+      "tail": "n25",
+      "provenance": [
+        [
+          "List of Girlschool band members",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e35",
+      "head": "n4",
+      "relation": "P175",
+      "tail": "n10",
+      "provenance": [
+        [
+          "Point of Entry",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e36",
+      "head": "n4",
+      "relation": "P577",
+      "tail": "n27",
+      "provenance": [
+        [
+          "Point of Entry",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e37",
+      "head": "n5",
+      "relation": "P136",
+      "tail": "n11",
+      "provenance": [
+        [
+          "Jameson Raid (band)",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e38",
+      "head": "n5",
+      "relation": "P136",
+      "tail": "n21",
+      "provenance": [
+        [
+          "Jameson Raid (band)",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e39",
+      "head": "n5",
+      "relation": "P136",
+      "tail": "n28",
+      "provenance": [
+        [
+          "Jameson Raid (band)",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e40",
+      "head": "n29",
+      "relation": "P264",
+      "tail": "n30",
+      "provenance": [
+        [
+          "Jameson Raid (band)",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e41",
+      "head": "n6",
+      "relation": "P175",
+      "tail": "n31",
+      "provenance": [
+        [
+          "Event Horizon (album)",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e42",
+      "head": "n6",
+      "relation": "P577",
+      "tail": "n32",
+      "provenance": [
+        [
+          "Event Horizon (album)",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e43",
+      "head": "n31",
+      "relation": "P136",
+      "tail": "n11",
+      "provenance": [
+        [
+          "Event Horizon (album)",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e44",
+      "head": "n7",
+      "relation": "P175",
+      "tail": "n33",
+      "provenance": [
+        [
+          "Fire Down Under",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e45",
+      "head": "n7",
+      "relation": "P175",
+      "tail": "n34",
+      "provenance": [
+        [
+          "Fire Down Under",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e46",
+      "head": "n7",
+      "relation": "P577",
+      "tail": "n12",
+      "provenance": [
+        [
+          "Fire Down Under",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e47",
+      "head": "n33",
+      "relation": "P136",
+      "tail": "n11",
+      "provenance": [
+        [
+          "Fire Down Under",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e48",
+      "head": "n34",
+      "relation": "P463",
+      "tail": "n33",
+      "provenance": [
+        [
+          "Fire Down Under",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e49",
+      "head": "n8",
+      "relation": "P136",
+      "tail": "n11",
+      "provenance": [
+        [
+          "Venom (band)",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e50",
+      "head": "n8",
+      "relation": "P571",
+      "tail": "n35",
+      "provenance": [
+        [
+          "Venom (band)",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e51",
+      "head": "n8",
+      "relation": "P740",
+      "tail": "n36",
+      "provenance": [
+        [
+          "Venom (band)",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e52",
+      "head": "n37",
+      "relation": "P175",
+      "tail": "n8",
+      "provenance": [
+        [
+          "Venom (band)",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": true
+    },
+    {
+      "id": "e53",
+      "head": "n37",
+      "relation": "P577",
+      "tail": "n12",
+      "provenance": [
+        [
+          "Venom (band)",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e54",
+      "head": "n38",
+      "relation": "P175",
+      "tail": "n8",
+      "provenance": [
+        [
+          "Venom (band)",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": true
+    },
+    {
+      "id": "e55",
+      "head": "n38",
+      "relation": "P577",
+      "tail": "n39",
+      "provenance": [
+        [
+          "Venom (band)",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e56",
+      "head": "n9",
+      "relation": "P175",
+      "tail": "n40",
+      "provenance": [
+        [
+          "Angel Witch (album)",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e57",
+      "head": "n40",
+      "relation": "P136",
+      "tail": "n11",
+      "provenance": [
+        [
+          "Angel Witch (album)",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e58",
+      "head": "n9",
+      "relation": "P577",
+      "tail": "n41",
+      "provenance": [
+        [
+          "Angel Witch (album)",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e59",
+      "head": "n9",
+      "relation": "P264",
+      "tail": "n42",
+      "provenance": [
+        [
+          "Angel Witch (album)",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e60",
+      "head": "n43",
+      "relation": "P577",
+      "tail": "n44",
+      "provenance": [
+        [
+          "Angel Witch (album)",
+          3
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e61",
+      "head": "n40",
+      "relation": "P1441",
+      "tail": "n43",
+      "provenance": [
+        [
+          "Angel Witch (album)",
+          3
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    }
+  ]
+}

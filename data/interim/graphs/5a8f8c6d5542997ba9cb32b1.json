@@ -1,0 +1,959 @@
+{
+  "qid": "5a8f8c6d5542997ba9cb32b1",
+  "nodes": [
+    {
+      "id": "n0",
+      "name": "Triangulaire",
+      "type": "MISC",
+      "is_title": true,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n1",
+      "name": "Asian brown cloud",
+      "type": "MISC",
+      "is_title": true,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n2",
+      "name": "Ahmed Abdulla Al Shamisi",
+      "type": "PER",
+      "is_title": true,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n3",
+      "name": "Sri Lankan Tamil nationalism",
+      "type": null,
+      "is_title": true,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n4",
+      "name": "Ahmed Abdulla (Maldivian footballer)",
+      "type": "PER",
+      "is_title": true,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n5",
+      "name": "Sri Lankan Tamils",
+      "type": "MISC",
+      "is_title": true,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n6",
+      "name": "Maldives",
+      "type": "LOC",
+      "is_title": true,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n7",
+      "name": "List of schools in the Maldives",
+      "type": null,
+      "is_title": true,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n8",
+      "name": "Geography of Indonesia",
+      "type": null,
+      "is_title": true,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n9",
+      "name": "Sugata Bose",
+      "type": "PER",
+      "is_title": true,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n10",
+      "name": "Mauritius",
+      "type": "LOC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n11",
+      "name": "Réunion",
+      "type": "LOC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n12",
+      "name": "Madagascar",
+      "type": "LOC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n13",
+      "name": "Indian Ocean Island Games",
+      "type": "MISC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n14",
+      "name": "South Asia",
+      "type": "LOC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n15",
+      "name": "Indian Ocean",
+      "type": "LOC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n16",
+      "name": "India",
+      "type": "LOC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n17",
+      "name": "Pakistan",
+      "type": "LOC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n18",
+      "name": "Emirates Club",
+      "type": "ORG",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n19",
+      "name": "Al-Wasl",
+      "type": "ORG",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n20",
+      "name": "Sri Lanka",
+      "type": "LOC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n21",
+      "name": "Arumuga Navalar",
+      "type": "PER",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n22",
+      "name": "Hinduism",
+      "type": "MISC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n23",
+      "name": "11 March 1987",
+      "type": "TIME",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n24",
+      "name": "T.C. Sports Club",
+      "type": "ORG",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n25",
+      "name": "Maldives national team",
+      "type": "ORG",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n26",
+      "name": "Tamil ethnic group",
+      "type": "MISC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n27",
+      "name": "Northern Province",
+      "type": "LOC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n28",
+      "name": "Eastern Province",
+      "type": "LOC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n29",
+      "name": "Arabian Sea",
+      "type": "LOC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n30",
+      "name": "Malé",
+      "type": "LOC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n31",
+      "name": "island country",
+      "type": "MISC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n32",
+      "name": "Indonesia",
+      "type": "LOC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n33",
+      "name": "Pacific Ocean",
+      "type": "LOC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n34",
+      "name": "7 September 1956",
+      "type": "TIME",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n35",
+      "name": "United States",
+      "type": "LOC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n36",
+      "name": "Tufts University",
+      "type": "ORG",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n37",
+      "name": "Harvard University",
+      "type": "ORG",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n38",
+      "name": "Netaji Research Bureau",
+      "type": "ORG",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n39",
+      "name": "Kolkata",
+      "type": "LOC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n40",
+      "name": "His Majesty's Opponent: Subhas Chandra Bose and India's Struggle against Empire",
+      "type": "MISC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n41",
+      "name": "2011",
+      "type": "TIME",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n42",
+      "name": "A Hundred Horizons: The Indian Ocean in the Age of Global Empire",
+      "type": "MISC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n43",
+      "name": "2006",
+      "type": "TIME",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    }
+  ],
+  "edges": [
+    {
+      "id": "e0",
+      "head": "n0",
+      "relation": "P710",
+      "tail": "n10",
+      "provenance": [
+        [
+          "Triangulaire",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e1",
+      "head": "n0",
+      "relation": "P710",
+      "tail": "n11",
+      "provenance": [
+        [
+          "Triangulaire",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e2",
+      "head": "n0",
+      "relation": "P710",
+      "tail": "n12",
+      "provenance": [
+        [
+          "Triangulaire",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e3",
+      "head": "n0",
+      "relation": "P1366",
+      "tail": "n13",
+      "provenance": [
+        [
+          "Triangulaire",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e4",
+      "head": "n13",
+      "relation": "P1365",
+      "tail": "n0",
+      "provenance": [
+        [
+          "Triangulaire",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e5",
+      "head": "n1",
+      "relation": "P276",
+      "tail": "n14",
+      "provenance": [
+        [
+          "Asian brown cloud",
+          0
+        ],
+        [
+          "Asian brown cloud",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e6",
+      "head": "n1",
+      "relation": "P276",
+      "tail": "n15",
+      "provenance": [
+        [
+          "Asian brown cloud",
+          0
+        ],
+        [
+          "Asian brown cloud",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e7",
+      "head": "n1",
+      "relation": "P276",
+      "tail": "n16",
+      "provenance": [
+        [
+          "Asian brown cloud",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e8",
+      "head": "n1",
+      "relation": "P276",
+      "tail": "n17",
+      "provenance": [
+        [
+          "Asian brown cloud",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e9",
+      "head": "n16",
+      "relation": "P361",
+      "tail": "n14",
+      "provenance": [
+        [
+          "Asian brown cloud",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e10",
+      "head": "n17",
+      "relation": "P361",
+      "tail": "n14",
+      "provenance": [
+        [
+          "Asian brown cloud",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e11",
+      "head": "n2",
+      "relation": "P54",
+      "tail": "n18",
+      "provenance": [
+        [
+          "Ahmed Abdulla Al Shamisi",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e12",
+      "head": "n2",
+      "relation": "P54",
+      "tail": "n19",
+      "provenance": [
+        [
+          "Ahmed Abdulla Al Shamisi",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e13",
+      "head": "n5",
+      "relation": "P17",
+      "tail": "n20",
+      "provenance": [
+        [
+          "Sri Lankan Tamil nationalism",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": true
+    },
+    {
+      "id": "e14",
+      "head": "n21",
+      "relation": "P140",
+      "tail": "n22",
+      "provenance": [
+        [
+          "Sri Lankan Tamil nationalism",
+          2
+        ],
+        [
+          "Sri Lankan Tamil nationalism",
+          3
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e15",
+      "head": "n4",
+      "relation": "P569",
+      "tail": "n23",
+      "provenance": [
+        [
+          "Ahmed Abdulla (Maldivian footballer)",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e16",
+      "head": "n4",
+      "relation": "P27",
+      "tail": "n6",
+      "provenance": [
+        [
+          "Ahmed Abdulla (Maldivian footballer)",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e17",
+      "head": "n4",
+      "relation": "P54",
+      "tail": "n24",
+      "provenance": [
+        [
+          "Ahmed Abdulla (Maldivian footballer)",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e18",
+      "head": "n4",
+      "relation": "P54",
+      "tail": "n25",
+      "provenance": [
+        [
+          "Ahmed Abdulla (Maldivian footballer)",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e19",
+      "head": "n5",
+      "relation": "P361",
+      "tail": "n26",
+      "provenance": [
+        [
+          "Sri Lankan Tamils",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e20",
+      "head": "n27",
+      "relation": "P17",
+      "tail": "n20",
+      "provenance": [
+        [
+          "Sri Lankan Tamils",
+          3
+        ],
+        [
+          "Sri Lankan Tamils",
+          4
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e21",
+      "head": "n28",
+      "relation": "P17",
+      "tail": "n20",
+      "provenance": [
+        [
+          "Sri Lankan Tamils",
+          3
+        ],
+        [
+          "Sri Lankan Tamils",
+          4
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e22",
+      "head": "n20",
+      "relation": "P150",
+      "tail": "n27",
+      "provenance": [
+        [
+          "Sri Lankan Tamils",
+          3
+        ],
+        [
+          "Sri Lankan Tamils",
+          4
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e23",
+      "head": "n20",
+      "relation": "P150",
+      "tail": "n28",
+      "provenance": [
+        [
+          "Sri Lankan Tamils",
+          3
+        ],
+        [
+          "Sri Lankan Tamils",
+          4
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e24",
+      "head": "n6",
+      "relation": "P206",
+      "tail": "n15",
+      "provenance": [
+        [
+          "Maldives",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e25",
+      "head": "n6",
+      "relation": "P206",
+      "tail": "n29",
+      "provenance": [
+        [
+          "Maldives",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e26",
+      "head": "n6",
+      "relation": "P36",
+      "tail": "n30",
+      "provenance": [
+        [
+          "Maldives",
+          4
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e27",
+      "head": "n30",
+      "relation": "P1376",
+      "tail": "n6",
+      "provenance": [
+        [
+          "Maldives",
+          4
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e28",
+      "head": "n30",
+      "relation": "P17",
+      "tail": "n6",
+      "provenance": [
+        [
+          "Maldives",
+          4
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e29",
+      "head": "n6",
+      "relation": "P31",
+      "tail": "n31",
+      "provenance": [
+        [
+          "List of schools in the Maldives",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e30",
+      "head": "n32",
+      "relation": "P206",
+      "tail": "n15",
+      "provenance": [
+        [
+          "Geography of Indonesia",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e31",
+      "head": "n32",
+      "relation": "P206",
+      "tail": "n33",
+      "provenance": [
+        [
+          "Geography of Indonesia",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e32",
+      "head": "n9",
+      "relation": "P569",
+      "tail": "n34",
+      "provenance": [
+        [
+          "Sugata Bose",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e33",
+      "head": "n9",
+      "relation": "P27",
+      "tail": "n16",
+      "provenance": [
+        [
+          "Sugata Bose",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e34",
+      "head": "n9",
+      "relation": "P937",
+      "tail": "n35",
+      "provenance": [
+        [
+          "Sugata Bose",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e35",
+      "head": "n9",
+      "relation": "P108",
+      "tail": "n36",
+      "provenance": [
+        [
+          "Sugata Bose",
+          2
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e36",
+      "head": "n9",
+      "relation": "P108",
+      "tail": "n37",
+      "provenance": [
+        [
+          "Sugata Bose",
+          2
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e37",
+      "head": "n38",
+      "relation": "P131",
+      "tail": "n39",
+      "provenance": [
+        [
+          "Sugata Bose",
+          3
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e38",
+      "head": "n38",
+      "relation": "P17",
+      "tail": "n16",
+      "provenance": [
+        [
+          "Sugata Bose",
+          3
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e39",
+      "head": "n39",
+      "relation": "P17",
+      "tail": "n16",
+      "provenance": [
+        [
+          "Sugata Bose",
+          3
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e40",
+      "head": "n40",
+      "relation": "P50",
+      "tail": "n9",
+      "provenance": [
+        [
+          "Sugata Bose",
+          4
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e41",
+      "head": "n40",
+      "relation": "P577",
+      "tail": "n41",
+      "provenance": [
+        [
+          "Sugata Bose",
+          4
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e42",
+      "head": "n42",
+      "relation": "P50",
+      "tail": "n9",
+      "provenance": [
+        [
+          "Sugata Bose",
+          4
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e43",
+      "head": "n42",
+      "relation": "P577",
+      "tail": "n43",
+      "provenance": [
+        [
+          "Sugata Bose",
+          4
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    }
+  ]
+}

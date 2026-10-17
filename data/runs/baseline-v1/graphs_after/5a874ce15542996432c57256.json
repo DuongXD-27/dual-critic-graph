@@ -1,0 +1,939 @@
+{
+  "qid": "5a874ce15542996432c57256",
+  "nodes": [
+    {
+      "id": "n0",
+      "name": "Mamzer",
+      "type": null,
+      "is_title": true,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n1",
+      "name": "Leontyne Price",
+      "type": "PER",
+      "is_title": true,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n2",
+      "name": "Les Irwin",
+      "type": "PER",
+      "is_title": true,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n3",
+      "name": "Nabi Tajima",
+      "type": "PER",
+      "is_title": true,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n4",
+      "name": "Myrna Sharlow",
+      "type": "PER",
+      "is_title": true,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n5",
+      "name": "Camille Zamora",
+      "type": "PER",
+      "is_title": true,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n6",
+      "name": "Apprentice Adept",
+      "type": "MISC",
+      "is_title": true,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n7",
+      "name": "Fred H. Hale Sr.",
+      "type": "PER",
+      "is_title": true,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n8",
+      "name": "Mississippi Institute of Arts and Letters",
+      "type": "ORG",
+      "is_title": true,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n9",
+      "name": "Edwin L. Mechem",
+      "type": "PER",
+      "is_title": true,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n10",
+      "name": "February 10, 1927",
+      "type": "TIME",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n11",
+      "name": "Laurel",
+      "type": "LOC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n12",
+      "name": "Mississippi",
+      "type": "LOC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n13",
+      "name": "African Americans",
+      "type": "MISC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n14",
+      "name": "CBE",
+      "type": "MISC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n15",
+      "name": "1 May 1898",
+      "type": "TIME",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n16",
+      "name": "28 January 1985",
+      "type": "TIME",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n17",
+      "name": "Newcastle",
+      "type": "LOC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n18",
+      "name": "New South Wales",
+      "type": "LOC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n19",
+      "name": "Liberal",
+      "type": "ORG",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n20",
+      "name": "World War I",
+      "type": "MISC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n21",
+      "name": "4 August 1900",
+      "type": "TIME",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n22",
+      "name": "19 July 1893",
+      "type": "TIME",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n23",
+      "name": "Francesca da Rimini",
+      "type": "MISC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n24",
+      "name": "Riccardo Zandonai",
+      "type": "PER",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n25",
+      "name": "December 14, 1970",
+      "type": "TIME",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n26",
+      "name": "opera",
+      "type": "MISC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n27",
+      "name": "zarzuela",
+      "type": "MISC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n28",
+      "name": "oratorio",
+      "type": "MISC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n29",
+      "name": "art song",
+      "type": "MISC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n30",
+      "name": "Robert Aldridge",
+      "type": "PER",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n31",
+      "name": "Grammy Award",
+      "type": "MISC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n32",
+      "name": "Herschel Garfein",
+      "type": "PER",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n33",
+      "name": "Christopher Theofanidis",
+      "type": "PER",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n34",
+      "name": "Prix de Rome",
+      "type": "MISC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n35",
+      "name": "Piers Anthony",
+      "type": "PER",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n36",
+      "name": "fantasy",
+      "type": "MISC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n37",
+      "name": "science fiction",
+      "type": "MISC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n38",
+      "name": "Phaze",
+      "type": "LOC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n39",
+      "name": "Proton",
+      "type": "LOC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n40",
+      "name": "December 1, 1890",
+      "type": "TIME",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n41",
+      "name": "November 19, 2004",
+      "type": "TIME",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n42",
+      "name": "United States",
+      "type": "LOC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n43",
+      "name": "Maine",
+      "type": "LOC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n44",
+      "name": "William Winter",
+      "type": "PER",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n45",
+      "name": "Cora Norman",
+      "type": "PER",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n46",
+      "name": "Aubrey Lucas",
+      "type": "PER",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n47",
+      "name": "Noel Polk",
+      "type": "PER",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n48",
+      "name": "Republican",
+      "type": "ORG",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n49",
+      "name": "Governor of New Mexico",
+      "type": "MISC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n50",
+      "name": "New Mexico",
+      "type": "LOC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n51",
+      "name": "Federal Judge",
+      "type": "MISC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    }
+  ],
+  "edges": [
+    {
+      "id": "e0",
+      "head": "n1",
+      "relation": "P569",
+      "tail": "n10",
+      "provenance": [
+        [
+          "Leontyne Price",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e1",
+      "head": "n1",
+      "relation": "P19",
+      "tail": "n11",
+      "provenance": [
+        [
+          "Leontyne Price",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e2",
+      "head": "n11",
+      "relation": "P131",
+      "tail": "n12",
+      "provenance": [
+        [
+          "Leontyne Price",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e3",
+      "head": "n1",
+      "relation": "P172",
+      "tail": "n13",
+      "provenance": [
+        [
+          "Leontyne Price",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e4",
+      "head": "n2",
+      "relation": "P166",
+      "tail": "n14",
+      "provenance": [
+        [
+          "Les Irwin",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e5",
+      "head": "n2",
+      "relation": "P569",
+      "tail": "n15",
+      "provenance": [
+        [
+          "Les Irwin",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e6",
+      "head": "n2",
+      "relation": "P570",
+      "tail": "n16",
+      "provenance": [
+        [
+          "Les Irwin",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e7",
+      "head": "n2",
+      "relation": "P19",
+      "tail": "n17",
+      "provenance": [
+        [
+          "Les Irwin",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e8",
+      "head": "n17",
+      "relation": "P131",
+      "tail": "n18",
+      "provenance": [
+        [
+          "Les Irwin",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e9",
+      "head": "n2",
+      "relation": "P102",
+      "tail": "n19",
+      "provenance": [
+        [
+          "Les Irwin",
+          3
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e10",
+      "head": "n2",
+      "relation": "P607",
+      "tail": "n20",
+      "provenance": [
+        [
+          "Les Irwin",
+          4
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e11",
+      "head": "n3",
+      "relation": "P569",
+      "tail": "n21",
+      "provenance": [
+        [
+          "Nabi Tajima",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e12",
+      "head": "n4",
+      "relation": "P569",
+      "tail": "n22",
+      "provenance": [
+        [
+          "Myrna Sharlow",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e13",
+      "head": "n23",
+      "relation": "P86",
+      "tail": "n24",
+      "provenance": [
+        [
+          "Myrna Sharlow",
+          3
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e14",
+      "head": "n5",
+      "relation": "P569",
+      "tail": "n25",
+      "provenance": [
+        [
+          "Camille Zamora",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e15",
+      "head": "n5",
+      "relation": "P136",
+      "tail": "n26",
+      "provenance": [
+        [
+          "Camille Zamora",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e16",
+      "head": "n5",
+      "relation": "P136",
+      "tail": "n27",
+      "provenance": [
+        [
+          "Camille Zamora",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e17",
+      "head": "n5",
+      "relation": "P136",
+      "tail": "n28",
+      "provenance": [
+        [
+          "Camille Zamora",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e18",
+      "head": "n5",
+      "relation": "P136",
+      "tail": "n29",
+      "provenance": [
+        [
+          "Camille Zamora",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e19",
+      "head": "n30",
+      "relation": "P166",
+      "tail": "n31",
+      "provenance": [
+        [
+          "Camille Zamora",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e20",
+      "head": "n32",
+      "relation": "P166",
+      "tail": "n31",
+      "provenance": [
+        [
+          "Camille Zamora",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e21",
+      "head": "n33",
+      "relation": "P166",
+      "tail": "n34",
+      "provenance": [
+        [
+          "Camille Zamora",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e22",
+      "head": "n6",
+      "relation": "P50",
+      "tail": "n35",
+      "provenance": [
+        [
+          "Apprentice Adept",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e23",
+      "head": "n6",
+      "relation": "P136",
+      "tail": "n36",
+      "provenance": [
+        [
+          "Apprentice Adept",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e24",
+      "head": "n6",
+      "relation": "P136",
+      "tail": "n37",
+      "provenance": [
+        [
+          "Apprentice Adept",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e25",
+      "head": "n6",
+      "relation": "P840",
+      "tail": "n38",
+      "provenance": [
+        [
+          "Apprentice Adept",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e26",
+      "head": "n6",
+      "relation": "P840",
+      "tail": "n39",
+      "provenance": [
+        [
+          "Apprentice Adept",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e27",
+      "head": "n7",
+      "relation": "P569",
+      "tail": "n40",
+      "provenance": [
+        [
+          "Fred H. Hale Sr.",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e28",
+      "head": "n7",
+      "relation": "P570",
+      "tail": "n41",
+      "provenance": [
+        [
+          "Fred H. Hale Sr.",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e29",
+      "head": "n7",
+      "relation": "P27",
+      "tail": "n42",
+      "provenance": [
+        [
+          "Fred H. Hale Sr.",
+          0
+        ],
+        [
+          "Fred H. Hale Sr.",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e30",
+      "head": "n7",
+      "relation": "P19",
+      "tail": "n43",
+      "provenance": [
+        [
+          "Fred H. Hale Sr.",
+          3
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e31",
+      "head": "n8",
+      "relation": "P112",
+      "tail": "n44",
+      "provenance": [
+        [
+          "Mississippi Institute of Arts and Letters",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e32",
+      "head": "n8",
+      "relation": "P112",
+      "tail": "n45",
+      "provenance": [
+        [
+          "Mississippi Institute of Arts and Letters",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e33",
+      "head": "n8",
+      "relation": "P112",
+      "tail": "n46",
+      "provenance": [
+        [
+          "Mississippi Institute of Arts and Letters",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e34",
+      "head": "n8",
+      "relation": "P112",
+      "tail": "n47",
+      "provenance": [
+        [
+          "Mississippi Institute of Arts and Letters",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e35",
+      "head": "n1",
+      "relation": "P166",
+      "tail": "n8",
+      "provenance": [
+        [
+          "Mississippi Institute of Arts and Letters",
+          0
+        ],
+        [
+          "Mississippi Institute of Arts and Letters",
+          5
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e36",
+      "head": "n9",
+      "relation": "P102",
+      "tail": "n48",
+      "provenance": [
+        [
+          "Edwin L. Mechem",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e37",
+      "head": "n9",
+      "relation": "P39",
+      "tail": "n49",
+      "provenance": [
+        [
+          "Edwin L. Mechem",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e38",
+      "head": "n9",
+      "relation": "P19",
+      "tail": "n50",
+      "provenance": [
+        [
+          "Edwin L. Mechem",
+          2
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e39",
+      "head": "n9",
+      "relation": "P39",
+      "tail": "n51",
+      "provenance": [
+        [
+          "Edwin L. Mechem",
+          3
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    }
+  ]
+}

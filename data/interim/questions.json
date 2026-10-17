@@ -1,0 +1,2279 @@
+[
+  {
+    "_id": "5a9051615542995651fb5136",
+    "answer": "18.7 miles",
+    "question": "Shenley Hall is a house at a parish how far from central London?",
+    "supporting_facts": [
+      [
+        "Shenley Hall",
+        0
+      ],
+      [
+        "Shenley, Hertfordshire",
+        1
+      ]
+    ],
+    "context": [
+      [
+        "Sanderstead",
+        [
+          "Sanderstead is a village in the London Borough of Croydon, situated on high ground at the edge of the built-up area of Greater London.",
+          " From 1915 to 1965 it formed a parish in the Coulsdon and Purley Urban District of Surrey.",
+          " Having been a farming community in previous centuries, Sanderstead is now essentially a dormitory village for commuters to central London and Croydon.",
+          " The Grade I listed All Saints' Church dates from the 13th century but was extensively altered in later periods.",
+          " Sanderstead station is lower down the hill and has trains to East Croydon and central London, and to East Grinstead and Uckfield.",
+          " Sanderstead was the place of origin of the Sanders surname."
+        ]
+      ],
+      [
+        "Colnbrook with Poyle",
+        [
+          "Colnbrook with Poyle is a civil parish in the borough of Bracknell in Berkshire, England.",
+          " Located approximately 17 mi west of central London and adjacent to the Greater London boundary, it is an urbanised parish with some industrial development and open land.",
+          " The local council is Colnbrook with Poyle Parish Council.",
+          " The parish was created on 1 April 1995 as an amalgamation of Colnbrook from the parish of Iver with Poyle from an unparished area.",
+          " At the 2001 census it had a population of 5,426."
+        ]
+      ],
+      [
+        "Ridge, Hertfordshire",
+        [
+          "Ridge is a village and civil parish in the Hertsmere borough of Hertfordshire, situated between Potters Bar and Shenley.",
+          " At the 2011 Census the village was a civil parish in its own name.",
+          " The population of the parish was 177.",
+          " It has a church, St Margaret's; a children's playground; and the Old Guinea public house, which serves food on most days.",
+          " The village holds an annual fete on the August bank holiday.",
+          " Ridge is surrounded by countryside with numerous public footpaths.",
+          " In 1926, the parish boundary between Ridge, Hertfordshire, and South Mimms, Middlesex, was subject to a minor adjustment."
+        ]
+      ],
+      [
+        "Shenley, Hertfordshire",
+        [
+          "Shenley is a village and civil parish in Hertfordshire, England, between Barnet and St Albans.",
+          " The village is located 18.7 miles from Central London."
+        ]
+      ],
+      [
+        "Shenley Hall",
+        [
+          "Shenley Hall is a Grade II listed country house at Shenley in Hertfordshire."
+        ]
+      ],
+      [
+        "Chelsham and Farleigh",
+        [
+          "Chelsham and Farleigh is a civil parish in the Tandridge District of Surrey, England.",
+          " The parish is high on the North Downs and centred 14 mi south-southeast of central London and it adjoins the Greater London boundary; it is a predominantly rural/wooded parish aside from minority of land used for homes and gardens.",
+          " Other than the villages of Chelsham and Farleigh, the parish also includes the hamlet of Fickleshole.",
+          " The parish was created on 1 April 1969 as an amalgamation of its two named small villages."
+        ]
+      ],
+      [
+        "John Cutts (died 1615)",
+        [
+          "Sir John Cutts (or Cutt) (1545–1615), of Horham Hall, Essex; Shenley Hall, Hertfordshire and Childerley, Cambridgeshire, was an English politician."
+        ]
+      ],
+      [
+        "Woldingham",
+        [
+          "Woldingham is a village and civil parish high on the North Downs in Surrey within the M25, 17.5 mi south-by-southeast of London; its buildings lie at 150–248m AOD.",
+          " Situated between Oxted and Warlingham, the village has 2,141 inhabitants.",
+          " Central London can be reached in 33 minutes by train and the village is served by the Oxted lines.",
+          " Many of Woldingham's inhabitants work in Croydon or central London, making Woldingham part of the London commuter belt."
+        ]
+      ],
+      [
+        "South Bank",
+        [
+          "The South Bank is an entertainment and commercial district of central London, next to the River Thames opposite the City of Westminster.",
+          " It forms a narrow, unequal strip of riverside land within the London Borough of Lambeth and the London Borough of Southwark where it joins Bankside.",
+          " As with most central London districts its edges evolve and are informally defined however its central area is bounded by Westminster Bridge and Blackfriars Bridge.",
+          " Its name was adopted during the Festival of Britain over the local less attractive name of 'Lambeth Marsh'; it includes the County Hall, complex with the Sea Life London Aquarium, the London Dungeon, Jubilee Gardens and the London Eye, the Southbank Centre, Royal Festival Hall and National Theatre, among its long list of attractions.",
+          " Both the County Hall and the Shell Centre contain major residential parts."
+        ]
+      ],
+      [
+        "Watford Rural",
+        [
+          "Watford Rural is a civil parish in the Three Rivers District of Hertfordshire, England.",
+          " Located approximately 14 mi northwest of central London and adjacent to the Greater London boundary, it is an urbanised parish characterised by suburban residential development.",
+          " The local council is Watford Rural Parish Council.",
+          " The parish covers South Oxhey and Carpenders Park, which although part of the Watford urban area, are outside the borough of Watford.",
+          " The parish was created in 1894 when the ancient Watford parish was split into urban and rural parishes.",
+          " At the 2001 census it had a population of 20,250."
+        ]
+      ]
+    ],
+    "type": "bridge",
+    "level": "hard"
+  },
+  {
+    "_id": "5a722a6855429971e9dc9320",
+    "answer": "Chief Detective Maria Shvetsova",
+    "question": "What is the character's name for which Anna Leonidovna Kovalchuk won a prize in the legal festival \"Law and Society\"?",
+    "supporting_facts": [
+      [
+        "Anna Kovalchuk",
+        1
+      ],
+      [
+        "Tainy Sledstviya",
+        2
+      ]
+    ],
+    "context": [
+      [
+        "Tainy Sledstviya",
+        [
+          "Tainy Sledstviya Russian:    (\"Secrets of Investigation\" or \"Confidentiality of Investigation\") is a Russian television series filmed from 2000 through 2013.",
+          " The format of the series features 2 to 4 50 minutes episodes arranged into story clusters.",
+          " The television series follows the work of a Chief Detective Maria Shvetsova (played by Anna Kovalchuk)of a St.Petersburg Saint Petersburg District IC Investigative Committee of Russia.",
+          " For the end of 2013 the series contains 94 episodes (in 13 seasons)."
+        ]
+      ],
+      [
+        "Legal history",
+        [
+          "Legal history or the history of law is the study of how law has evolved and why it changed.",
+          " Legal history is closely connected to the development of civilisations and is set in the wider context of social history.",
+          " Among certain jurists and historians of legal process, it has been seen as the recording of the evolution of laws and the technical explanation of how these laws have evolved with the view of better understanding the origins of various legal concepts; some consider it a branch of intellectual history.",
+          " Twentieth century historians have viewed legal history in a more contextualised manner more in line with the thinking of social historians.",
+          " They have looked at legal institutions as complex systems of rules, players and symbols and have seen these elements interact with society to change, adapt, resist or promote certain aspects of civil society.",
+          " Such legal historians have tended to analyse case histories from the parameters of social science inquiry, using statistical methods, analysing class distinctions among litigants, petitioners and other players in various legal processes.",
+          " By analysing case outcomes, transaction costs, number of settled cases they have begun an analysis of legal institutions, practices, procedures and briefs that give us a more complex picture of law and society than the study of jurisprudence, case law and civil codes can achieve."
+        ]
+      ],
+      [
+        "Gregory Shaffer",
+        [
+          "Gregory Shaffer is a leading scholar of the World Trade Organization, of law and globalization, and of transnational legal orders and legal ordering, working in the tradition of legal realism and socio-legal studies.",
+          " He introduced the concept of public-private partnerships in the WTO dispute settlement system, examining how they work in practice in the United States, the European Union and Brazil.",
+          " He also has written major books on the international law and politics governing genetically modified foods, transatlantic relations, and transnational legal orders.",
+          " Shaffer is a Chancellor's Professor of Law at the University of California, Irvine School of Law.",
+          " He has previously been the Melvin C. Steen Professor of Law at the University of Minnesota Law School, held the first Chair at Loyola University Chicago School of Law (the Wing-Tat Lee Chair), and was a Professor at the University of Wisconsin Law School, where he was Co-Director of the Center on World Affairs and the Global Economy.",
+          " He serves as the Senior Research Fellow at the International Centre for Trade and Sustainable Development (ICTSD) for its project on WTO Dispute Settlement and Developing Countries, and served on the Executive Council of the American Society of International Law.",
+          " He received his B.A. from Dartmouth College and his J.D. from Stanford Law School."
+        ]
+      ],
+      [
+        "Feminism and Legal Theory Project",
+        [
+          "The Feminism and Legal Theory Project is a project aimed at addressing issues relating to women and law.",
+          " It was founded in 1984 by legal theorist Martha Fineman, a pioneer in feminist legal theory.",
+          " The project nurtures scholars from around the world, bringing them together to study and debate a wide range of topics related to feminist theory and law.",
+          " The project began at the University of Wisconsin Law School to provide a forum for interdisciplinary feminist scholarship addressing important issues in law and society.",
+          " In 1990, the project moved to Columbia Law School, and in 1999, to Cornell Law School.",
+          " Since 2004, the project has been part of Emory University School of Law, where Fineman holds a Robert W. Woodruff Professorship.",
+          " The project has resulted in the publication of several books on feminist legal theory.",
+          " Fineman has been its director since 1984."
+        ]
+      ],
+      [
+        "John Ballem",
+        [
+          "John Bishop Ballem (1925–2010) was a Canadian murder mystery/thriller novelist.",
+          " While best known for his novels about the oil industry and private law, Ballem was also a naval air force pilot, assistant professor, specialist in the oil industry and private law lawyer.",
+          " He was an acknowledged legal authority on oil and gas and winner of the Petroleum Law Foundation Prize in 1973.",
+          " He was a member of the Crime Writers of Canada, the Probus Club of Calgary and the Air Crew Association of Alberta: Southern Alberta Branch.",
+          " In 2009, the Law Society of Alberta and the Canadian Bar Association of Alberta awarded John the Distinguished Service Award for Legal Scholarship.",
+          " He was also a Calgary Herald world travels reporter and visited many exotic locations such as both poles.",
+          " Ballem's most important and well known work is the internationally recognized authoritative text,\"The Oil and Gas Lease in Canada\", a standard legal reference that went to four editions, the final being 2008."
+        ]
+      ],
+      [
+        "The Critical Legal Studies Movement (book)",
+        [
+          "The Critical Legal Studies Movement is a book by philosopher and politician Roberto Mangabeira Unger.",
+          " First published in 1983 as an article in the \"Harvard Law Review\", published in book form in 1986, and reissued with a new introduction in 2015, \"The Critical Legal Studies Movement\" is a principal document of the American critical legal studies movement that supplied the book with its title.",
+          " In the book, Unger argues that law and legal thought offers unrealized possibilities for the self-construction of a more democratic society, and that many lawyers and legal theorists have uncritically surrendered to constraints that undermine their ability to make use of law’s transformative potential.",
+          " Unger explains how the critical legal studies movement has refined and reformulated the major themes of leftist and progressive legal theorists, namely the critique of formalism and objectivism in legal doctrine, and the purely instrumental use of legal practice and doctrine to advance leftist aims, and in doing so, has identified elements of a constructive program for the reconstruction of society."
+        ]
+      ],
+      [
+        "Community Legal Assistance Society",
+        [
+          "Community Legal Assistance Society (CLAS), which previously went by the name \"Vancouver Community Legal Assistance Society (V-CLAS)\", is a non-governmental organization in British Columbia, Canada which provides legal services to low- and moderate-income persons in the areas of mental health law, human rights law, and poverty law.",
+          " Founded in 1971, CLAS is often referred to as Canada's first community law office.",
+          " CLAS operates a BC Human Rights Clinic, a Mental Health Law Program, and a poverty law-focused Community Law Program."
+        ]
+      ],
+      [
+        "Glanville Davies affair",
+        [
+          "The Glanville Davies affair was a scandal in the English legal profession which resulted in greater reform of the regulatory processes for solicitors and was one of the justifications for the Courts and Legal Services Act 1990.",
+          " Glanville Davies was a well-respected solicitor and a member of the Council of the Law Society of England and Wales who massively overcharged his client, Leslie Persons, sending him a bill for £197,000 that was reduced on taxation to £67,000.",
+          " Davies was not punished by the Law Society's internal regulatory committees, which allowed him to resign from the council on the grounds of ill-health with his reputation intact.",
+          " Following litigation and public criticism, the Law Society commissioned an internal report that found \"administrative failures, wrong decisions, mistakes, errors of judgement, failures in communication and insensitivity\".",
+          " A private member's bill reformed the way in which the Law Society investigated disciplinary complaints, although not to the extent initially proposed, and paved the way for the Courts and Legal Services Act 1990 that created an independent disciplinary body."
+        ]
+      ],
+      [
+        "Anna Kovalchuk",
+        [
+          "Anna Leonidovna Kovalchuk (Russian: А́нна Леони́довна Ковальчу́к ; born 15 June 1977) is a Russian actress.",
+          " The winner of the prize for the presentation of the image of \"good character\" in the international legal Festival \"Law and Society\" for the title role in the television series \"Tainy Sledstviya\"."
+        ]
+      ],
+      [
+        "Loan modification in the United States",
+        [
+          "Loan modification is the systematic alteration of mortgage loan agreements that help those having problems making the payments by reducing interest rates, monthly payments or principal balances.",
+          " Lending institutions could make one or more of these changes to relieve financial pressure on borrowers to prevent the condition of foreclosure.",
+          " Loan modifications have been practiced in the United States since The 2008 Crash Of The Housing Market from Washington Mutual, Chase Home Finance, Chase, JP Morgan & Chase, other contributors like MER's.",
+          " Crimes of Mortgage ad Real Estate Staff had long assisted nd finally the squeaky will could not continue as their deviant practices broke the state and crashed.",
+          " Modification owners either ordered by The United States Department of Housing, The United States IRS or President Obamas letters from Note Holders came to those various departments asking for the Democratic process to help them keep their homes and protection them from explosion.",
+          " Thus the birth of Modifications.",
+          " It is yet to date for clarity how theses enforcements came into existence and except b whom, but t is certain that note holders form the Midwest reached out in the Democratic Process for assistance.",
+          " FBI Mortgage Fraud Department came into existence.",
+          " Modifications HMAP HARP were also birthed to help note holders get Justice through reduced mortgage by making terms legal.",
+          " Modification of mortgage terms was introduced by IRS staff addressing the crisis called the HAMP TEAMS that went across the United States desiring the new products to assist homeowners that were victims of predatory lending practices, unethical staff, brokers, attorneys and lenders that contributed to the crash.",
+          " Modification were a fix to the crash as litigation has ensued as the lenders reorganized and renamed the lending institutions and government agencies are to closely monitor them.",
+          " Prior to modifications loan holders that experiences crisis would use Loan assumptions and Loan transfers to keep the note in the 1930s.",
+          " During the Great Depression, loan transfers, loan assumption, and loan bail out programs took place at the state level in an effort to reduce levels of loan foreclosures while the Federal Bureau of Investigation, Federal Trade Commission, Comptroller, the United States Government and State Government responded to lending institution violations of law in these arenas by setting public court records that are legal precedence of such illegal actions.",
+          " The legal precedents and reporting agencies were created to address the violations of laws to consumers while the Modifications were created to assist the consumers that are victims of predatory lending practices.",
+          " During the so-called \"Great Recession\" of the early 21st century, loan modification became a matter of national policy, with various actions taken to alter mortgage loan terms to prevent further economic destabilization.",
+          " Due to absorbent personal profits nothing has been done to educate Homeowners or Creditors that this money from equity, escrow is truly theirs the Loan Note Holder and it is their monetary rights as the real prize and reason for the Housing Crash was the profit n obtaining the mortgage holders Escrow.",
+          " The Escrow and Equity that is accursed form the Note Holders payments various staff through the United States claimed as recorded and cashed by all staff in real-estate from local residential Tax Assessing Staff, Real Estate Staff, Ordinance Staff, Police Staff, Brokers, attorneys, lending institutional staff but typically Attorneys who are also typically the owners or Rental properties that are trained through Bankruptcies'.",
+          " that collect the Escrow that is rightfully the Homeowners but because most Homeowners are unaware of what money is due them and how they can loose their escrow.",
+          " Most Creditors are unaware that as the note holder that the Note Holder are due a annual or semi annual equity check and again bank or other lending and or legal intuitions staff claim this monies instead.",
+          " This money Note Holders were unaware of is the prize of real estate and the cause of the Real Estate Crash of 2008 where Lending Institutions provided mortgages to people years prior they know they would eventually loose with Loan holders purchasing Balloon Mortgages lending product that is designed to make fast money off the note holder whom is always typically unaware of their escrow, equity and that are further victimized by conferences and books on HOW TO MAKE MONEY IN REAL STATE - when in fact the money is the Note Holder.",
+          " The key of the crash was not the House, but the loan product used and the interest and money that was accrued form the note holders that staff too immorally.",
+          " The immoral and illegal actions of predatory lending station and their staff began with the inception of balloon mortgages although illegal activity has always existed in the arena, yet the crash created \"Watch Dog\" like HAMP TEAM, IRS, COMPTROLLER< Federal Trade Commission Consumer Protection Bureau, FBI, CIA, Local Police Department, ICE ( The FBI online Computer crime division receives and investigates computer crimes that record keeping staff from title companies, lending institutional staff, legal staff and others created fraudulent documents to change payments and billing of note holders to obtain the money note holders are typically unaware of) and other watch dog agencies came into existence to examine if houses were purchased through a processed check at Government Debited office as many obtained free homes illegally.",
+          " Many were incarcerated for such illegal actions.",
+          " Modifications fixed the Notes to proper lower interest, escrow, tax fees that staff typically raised for no reason.",
+          " Many people from various arenas involved in reals estate have been incarcerated for these actions as well as other illegal actions like charging for a modification.",
+          " Additionally Modifications were also made to address the falsifications such as inappropriate mortgage charges, filing of fraudulently deeds, reporting of and at times filing of fraudulent mortgages that were already paid off that were fraudulently continued by lenders staff and attorneys or brokers or anyone in the Real Estate Chain through the issues of real estate terms to continue to violate United States Laws, contract law and legal precedence where collusion was often done again to defraud and steal from the Note Holder was such a common practice that was evidence as to why the Mortgage Crash in 2008 occurred for the purpose of wining the prize of stealing form Homeowners and those that foreclosed was actually often purposefully for these monies note holders were unaware of to be obtained which was why Balloon mortgages and loans were given to the staff in the Real Estate Market with the hoper and the expectation that the loan holders would default as it offered opportunity to commit illegal transactions of obtaining the homeowners funds.",
+          " While such scams were addressed through modifications in 2008.",
+          " The Market relied heavily on Consumers ignorance to prosper, ignorance of real estate terms, ignorance on what they were to be charged properly for unethical financial gain and while staff in real estates lending arenas mingled terms to deceive y deliberate confusion consumers out of cash and homes while the USA Government provided Justice through President Obamas Inception and IRS Inception of Modifications which addressed these unethical profits in Reals Estate.",
+          " It was in 2009 that HARP, HAMP and Modifications were introduced to stop the victimization of Note Holders.",
+          " Taking on the Banks that ran USA Government was a great and dangerous undertaking that made America Great Again as Justice for Consumers reigned.",
+          " Legal action taken against institutions that have such business practices can be viewed in State Code of Law and Federal Law on precedent cases that are available to the public.",
+          " Finally, It had been unlawful to be charged by an attorney to modify as well as fro banking staff to modify terms to increase a mortgage and or change lending product to a balloon in an concerted effort to make homeowner foreclose which is also illegal, computer fraud and not the governments intended purpose or definition of a modification."
+        ]
+      ]
+    ],
+    "type": "bridge",
+    "level": "hard"
+  },
+  {
+    "_id": "5a874ce15542996432c57256",
+    "answer": "Laurel, Mississippi",
+    "question": "Where was the person born who was recognized by MIAL and is an American soprano?",
+    "supporting_facts": [
+      [
+        "Mississippi Institute of Arts and Letters",
+        5
+      ],
+      [
+        "Leontyne Price",
+        1
+      ]
+    ],
+    "context": [
+      [
+        "Mamzer",
+        [
+          "A mamzer (Hebrew: ממזר‎ ‎ ) is a person born from certain forbidden relationships, or the descendant of such a person, in the Hebrew Bible and Jewish religious law.",
+          " A \"mamzer\" in modern Jewish culture is someone who is either born out of adultery by a married Jewish woman and a Jewish man who is not her husband, or born out of incest (as defined by the Bible), or someone who has a \"mamzer\" as a parent.",
+          " Mamzer status is not synonymous with illegitimacy, since it does not include children whose mothers were unmarried."
+        ]
+      ],
+      [
+        "Leontyne Price",
+        [
+          "Mary Violet Leontyne Price (born February 10, 1927) is an American soprano.",
+          " Born and raised in Laurel, Mississippi, she rose to international acclaim in the 1950s and 1960s, and was one of the first African Americans to become a leading artist at the Metropolitan Opera."
+        ]
+      ],
+      [
+        "Les Irwin",
+        [
+          "Leslie Herbert \"Les\" Irwin, CBE (1 May 1898 – 28 January 1985) was an Australian politician.",
+          " Born in Newcastle, New South Wales, he was educated at state schools and underwent military service 1916–30.",
+          " Upon the end of his service, he became a bank manager.",
+          " In 1963, he was selected as the Liberal candidate for the seat of Mitchell in the Australian House of Representatives.",
+          " He was the last person born in the nineteenth century, the last person born before Federation, and the last World War I veteran elected to the House.",
+          " He held Mitchell until his defeat in 1972.",
+          " Irwin died in 1985."
+        ]
+      ],
+      [
+        "Nabi Tajima",
+        [
+          "Nabi Tajima (田島 ナビ , Tajima Nabi , born 4 August 1900) is a Japanese supercentenarian.",
+          " At the age of , she is the world's oldest verified living person and the last surviving person born in the 19th century.",
+          " She is the oldest verified Japanese and Asian person ever."
+        ]
+      ],
+      [
+        "Myrna Sharlow",
+        [
+          "Myrna Docia Sharlow (19 July 1893 – after 1935) was an American soprano who had an active performance career in operas and concerts during the 1910s through the 1930s.",
+          " She began her career in 1912 with the Boston Opera Company and became one of Chicago's more active sopranos from 1915–1920, and again in 1923–1924 and 1926–1927.",
+          " She sang with several other important American opera companies during her career, including one season at the Metropolitan Opera.",
+          " She made only a handful of opera appearances in Europe during her career, most notably singing in the English premiere of Riccardo Zandonai's \"Francesca da Rimini\" at Covent Garden in 1914.",
+          " Her repertoire spanned a wide range from leading dramatic soprano roles to lighter lyric soprano fair and comprimario parts.",
+          " She even performed a few roles traditionally sung by mezzo-sopranos or contraltos."
+        ]
+      ],
+      [
+        "Camille Zamora",
+        [
+          "Camille Amy Zamora (born December 14, 1970) is an American soprano recognized for her performance of opera, zarzuela, oratorio, art song and American songbook.",
+          " She performs repertoire ranging from the early Baroque to 21st century premieres by composers including Grammy Award winners Robert Aldridge and Herschel Garfein as well as Prix de Rome winner Christopher Theofanidis."
+        ]
+      ],
+      [
+        "Apprentice Adept",
+        [
+          "Apprentice Adept is a heptalogy of fantasy and science fiction novels written by English American author Piers Anthony.",
+          " The series takes place on \"Phaze\" and \"Proton\", two worlds occupying the same space in two different dimensional planes.",
+          " Phaze is a lush planet of magic, where Proton is a barren mining planet of science.",
+          " As the series opens, each person born on Phaze and Proton has an alternate self living on the other world.",
+          " But if a person on either world lacks a duplicate (for instance if a Proton citizen immigrated there from another planet, or a counterpart from the opposite frame died), he can cross to the other through an energy \"curtain\" that circumscribes each frame."
+        ]
+      ],
+      [
+        "Fred H. Hale Sr.",
+        [
+          "Frederick \"Fred\" Harold Hale Sr. (December 1, 1890 – November 19, 2004) was an American supercentenarian.",
+          " After the death of John Ingram McMorran in February 2003, at the age of 112 years, Hale was recognized as the oldest living man in the United States.",
+          " In March 2004, at 113, he became the oldest living man in the world, following the death of the Spaniard Joan Riudavets.",
+          " Hale is verified to be one of the ten oldest men in recorded history, as well as the oldest recorded person born in the state of Maine."
+        ]
+      ],
+      [
+        "Mississippi Institute of Arts and Letters",
+        [
+          "The Mississippi Institute of Arts and Letters (MIAL) is a privately funded foundation created to recognize annually the greatest accomplishments in art, music, literature, and photography among Mississippians.",
+          " The idea was conceived by, among others, former Mississippi Governor William Winter, Dr. Cora Norman, Dr. Aubrey Lucas, and Dr. Noel Polk in 1978, and the first awards were given out in 1980.",
+          " Nominations for these awards may be made only by registered members of the Institute.",
+          " The winners are chosen by a jury of prominent academics in each of the seven fields: Fiction, Non-fiction, Visual Art, Concert Musical Composition, Popular Musical Composition, Photography, and Poetry.",
+          " The ceremony is held in a different Mississippi city each year.",
+          " Past winners have included Walker Percy, Ellen Douglas, Ellen Gilchrist, Richard Ford, Larry Brown, Rick Bass, Lewis Nordan, Beverly Lowry, Donna Tartt, Clifton Taulbert, Barry Hannah, Willie Morris, Leontyne Price, Cynthia Shearer, Stephen Ambrose, Steve Yarbrough, Tom Franklin, Brad Watson, Shelby Foote, Natasha Trethewey, Birney Imes, Maude Schyler Clay, William Grant Still, Morgan Freeman, Christopher Maurer, Wyatt Waters, Logan Skelton, and many others.",
+          " Lifetime achievement awards have been presented to artists such as Gulf Coast painter and potter Walter Anderson, Jackson writer Eudora Welty, and the distinguished film actor from the Delta, Morgan Freeman."
+        ]
+      ],
+      [
+        "Edwin L. Mechem",
+        [
+          "Edwin Leard Mechem (July 2, 1912November 27, 2002) was a prominent Republican politician from New Mexico.",
+          " He served as the 15th, 17th and 19th Governor of New Mexico and represented the state in the United States Senate.",
+          " Mechem was the first person born in the 20th century to become the state's governor, as well as the first person born in New Mexico after statehood to succeed to the office.",
+          " He later served as a Federal Judge."
+        ]
+      ]
+    ],
+    "type": "bridge",
+    "level": "hard"
+  },
+  {
+    "_id": "5a7344e95542991f9a20c6ce",
+    "answer": "Rudebox",
+    "question": "What song was number 4 on the charts when a song from FutureSex/LoveSounds was number 1?",
+    "supporting_facts": [
+      [
+        "Rudebox (song)",
+        0
+      ],
+      [
+        "Rudebox (song)",
+        3
+      ],
+      [
+        "SexyBack",
+        0
+      ]
+    ],
+    "context": [
+      [
+        "I Think We're Alone Now",
+        [
+          "\"I Think We're Alone Now\" is a song written and composed by Ritchie Cordell that was the title selection for a highly successful album released by the American recording artists Tommy James and the Shondells.",
+          " \"I Think We're Alone Now\" was a 1967 US hit for James and the Shondells, reaching number 4 on the \"Billboard\" Hot 100 chart.",
+          " The song has since been covered several times by other artists.",
+          " The late 1987 recording by Tiffany reached number 1 on the charts of various countries including the US, UK, Canada, and New Zealand.",
+          " One month earlier, another Tommy James song had also hit number 1—Billy Idol's version of \"Mony, Mony\".",
+          " Other cover versions have also charted, including those by The Rubinoos (number 45 US, 1977) and Girls Aloud (number 4 UK, 2006)."
+        ]
+      ],
+      [
+        "B*Witched discography",
+        [
+          "The discography of B*Witched, an Irish pop girl group, consists of two studio album, one extended play and one compilation.",
+          " The group released their debut single \"C'est la Vie\" on 25 May 1998.",
+          " Despite mixed reviews, it reached Number 1 on the UK charts, making them the youngest female group ever to do so, and also made Number 9 in the US.",
+          " Subsequent singles \"Rollercoaster\", \"To You I Belong\" and \"Blame It on the Weatherman\" also topped the UK charts.",
+          " The group's debut album, \"B*Witched\", was released in October 1998, reaching Number 3 in the UK charts and was certified Double Platinum in the UK and Platinum in the US.",
+          " B*Witched's second album, \"Awake and Breathe\", released almost exactly a year after their debut, peaked at Number 5 on the charts and was certified Platinum.",
+          " Singles from the album were less successful than earlier releases (\"Jesse Hold On\" reached Number 4, \"I Shall Be There\" Number 13 and \"Jump Down\" Number 16 in the UK).",
+          " The latter two appeared on their new American EP, \"Across America 2000\", along with live tracks and the earlier cover of \"Does Your Mother Know\".",
+          " However, in September 2002, the group officially split when O'Carroll decided to leave the band."
+        ]
+      ],
+      [
+        "Dead and Gone",
+        [
+          "\"Dead and Gone\" is a song by American hip hop recording artist T.I., featuring American singer-songwriter Justin Timberlake.",
+          " It was released as the eighth single from T.I.'s sixth studio album, \"Paper Trail\" (2008).",
+          " Due to the high number of digital downloads upon the album's release, the song debuted on the \"Billboard\" Hot 100 before its official single release.",
+          " The song marked the second collaboration between T.I. and Justin Timberlake, the first being the hit single \"My Love\", from Timberlake's second album, \"FutureSex/LoveSounds\" (2006).",
+          " T.I. and Timberlake performed this song at the 51st Grammy Awards.",
+          " The song was later nominated twice at the 52nd Grammy Awards, for Best Rap/Sung Collaboration and Best Rap Song.",
+          " It was the 10th bestselling digital single of 2009 in the United States.",
+          " As of 2012, it had sold 3.1 million copies in the country."
+        ]
+      ],
+      [
+        "Galveston (song)",
+        [
+          "\"Galveston\" is a song written by Jimmy Webb and popularized by American country music singer Glen Campbell who recorded it with the instrumental backing of members of The Wrecking Crew.",
+          " In 2003, this song ranked number 8 in \"CMT's 100 Greatest Songs in Country Music\".",
+          " Campbell's version of the song also went to number 1 on the country music charts.",
+          " On other charts, \"Galveston\" went to number 4 on the \"Billboard\" Hot 100 and number one on the \"Easy Listening\" charts.",
+          " It was certified gold by the RIAA in October 1969."
+        ]
+      ],
+      [
+        "Daddy Don't You Walk So Fast",
+        [
+          "\"Daddy Don't You Walk So Fast\" is a song written by Peter Callander and Geoff Stephens and performed by Wayne Newton.",
+          " It sold over one million copies and was awarded a gold disc by the RIAA in July 1972.",
+          " The song reached number 3 on the adult contemporary chart, and number 4 on the \"Billboard\" Hot 100.",
+          " The song spent one week at number 1 on the \"Cashbox\" chart on August 5, 1972, one week at number 1 in Canada, and spent three weeks at number 1 in Australia.",
+          " The song appeared on Newton's 1972 album, \"Daddy Don't You Walk So Fast\"."
+        ]
+      ],
+      [
+        "FutureSex/LoveSound",
+        [
+          "\"FutureSex/LoveSound\" is a song recorded by American singer and songwriter Justin Timberlake for his second studio album, \"FutureSex/LoveSounds\" (2006).",
+          " It was written and produced by Timberlake, Timothy \"Timbaland\" Mosley and Nate \"Danja\" Hills.",
+          " The song was produced following Timberlake's two-year hiatus from the music industry, when he felt \"burnt out\" after the release of his debut solo album \"Justified\" in 2002.",
+          " \"FutureSex/LoveSound\" incorporates elements of new wave and industrial rock into its production.",
+          " The song received generally mixed reviews from music critics, with some of them praising its production and others criticizing its simplistic lyrics.",
+          " Following the release of the album, \"FutureSex/LoveSound\" peaked at number 13 on the \"Billboard\" Bubbling Under Hot 100 Singles chart.",
+          " It was included on the set list of Timberlake's second worldwide tour FutureSex/LoveShow (2007)."
+        ]
+      ],
+      [
+        "I Want to Be Loved Like That",
+        [
+          "\"I Want to Be Loved Like That\" is a song written by Phil Barnhart, Sam Hogin and Bill LaBounty, and recorded by American country music band Shenandoah.",
+          " It was released in September 1993 as the second single from the album \"Under the Kudzu\".",
+          " The song spent twenty weeks on the Hot Country Songs charts, reaching a peak of number 3.",
+          " It also went to number 2 on \"Gavin Report\" and number 1 on \"Radio & Records\".",
+          " The song also peaked at number 4 on the \"RPM\" Country Tracks charts dated for January 24, 1994."
+        ]
+      ],
+      [
+        "SexyBack",
+        [
+          "\"SexyBack\" is a song recorded by American singer-songwriter Justin Timberlake for his second studio album, \"FutureSex/LoveSounds\" (2006).",
+          " It was released on July 18, 2006, to US mainstream and rhythmic radio stations by Jive Records as the lead single from the album.",
+          " The song was written and produced by Nate Hills, Tim Mosley, and Timberlake himself.",
+          " Discussing \"SexyBack\", Timberlake revealed that he went \"left\", singing the song in a rock style, not an R&B style.",
+          " He described the song as musicians David Bowie and David Byrne \"covering\" James Brown's 1970 song \"Sex Machine\".",
+          " The track features Timbaland on backing vocals, while Timberlake's voice is distorted.",
+          " The instrumentation used in the song includes a pounding bass beat, electronic chords, and drum machine sounds."
+        ]
+      ],
+      [
+        "Between Now and Forever",
+        [
+          "Between Now and Forever is the second studio album by American country music artist Bryan White.",
+          " It was released in 1996 (see 1996 in country music) on Asylum Records.",
+          " Like his debut album \"Bryan White\", it was certified platinum by the RIAA for U.S. sales of one million copies.",
+          " The album produced four singles for White on the \"Billboard\" Hot Country Singles & Tracks (now Hot Country Songs) charts.",
+          " In order of release, these were \"I'm Not Supposed to Love You Anymore\" (number 4), \"So Much for Pretending\" (number 1), \"That's Another Song\" (number 15), and \"Sittin' on Go\" (number 1).",
+          " \"Sittin' on Go\" was also his last Number One hit."
+        ]
+      ],
+      [
+        "Rudebox (song)",
+        [
+          "\"Rudebox\" is song by English musician Robbie Williams, from the his seventh studio album of the same name (2006).",
+          " It is based on a sample from the song \"Boops (Here to Go)\" by Sly and Robbie.",
+          " The single was released on 4 September 2006, although download purchases allowed it to reach number 30 on the UK Singles Chart on 3 September.",
+          " After the release of the CD single, it ascended 26 places to number 4, selling 24,821 copies, beaten by Nelly Furtado featuring Timbaland's \"Promiscuous\", Justin Timberlake's \"SexyBack\" and Scissor Sisters' \"I Don't Feel Like Dancin'\"."
+        ]
+      ]
+    ],
+    "type": "bridge",
+    "level": "hard"
+  },
+  {
+    "_id": "5a8f8c6d5542997ba9cb32b1",
+    "answer": "Maldives",
+    "question": "What is the name of this South Asian island country, located in the Indian Ocean for which Ahmed Abdulla is a professional footballer?",
+    "supporting_facts": [
+      [
+        "Ahmed Abdulla (Maldivian footballer)",
+        0
+      ],
+      [
+        "Maldives",
+        0
+      ]
+    ],
+    "context": [
+      [
+        "Triangulaire",
+        [
+          "The Indian Ocean Games Triangulaire was a triangulaire, or tournament between three teams, between Mauritius, Réunion, and Madagascar.",
+          " It was the predecessor to the Indian Ocean Island Games.",
+          " The triangulaire was held every year from 1947 until 1958, and then once more in 1963.",
+          " In 1963, the last game, Mauritius vs Madagascar was abandoned in the 54th minute, which gave Madagascar the win that year.",
+          " After that, Mauritius did not want to play Madagascar, and the tournament was not held.",
+          " The Indian Ocean Island Games started in 1979 as a multi-sport event.",
+          " In the football portion, Mauritius participated along with Réunion, Seychelles, Comoros, and the Maldives.",
+          " Madagascar did not join until the second Indian Ocean Island Games, which was in Mauritius in 1985.",
+          " The three triangulaire teams have been to every Indian Ocean Island Games since."
+        ]
+      ],
+      [
+        "Asian brown cloud",
+        [
+          "The Indian Ocean brown cloud or Asian brown cloud is a layer of air pollution that recurrently covers parts of South Asia, namely the northern Indian Ocean, India, and Pakistan.",
+          " Viewed from satellite photos, the cloud appears as a giant brown stain hanging in the air over much of South Asia and the Indian Ocean every year between January and March, possibly also during earlier and later months.",
+          " The term was coined in reports from the UNEP Indian Ocean Experiment (INDOEX)."
+        ]
+      ],
+      [
+        "Ahmed Abdulla Al Shamisi",
+        [
+          "Ahmed Abdulla (born.",
+          " Ahmed Abdulla Mohamed Abdulla Al Shamisi) is an Emarati footballer who plays for the Emirates Club on from loan Al-Wasl ."
+        ]
+      ],
+      [
+        "Sri Lankan Tamil nationalism",
+        [
+          "Sri Lankan Tamil nationalism is the conviction of the Sri Lankan Tamil people, a minority ethnic group in the South Asian island country of Sri Lanka (formerly known as Ceylon), that they have the right to constitute an independent or autonomous political community.",
+          " This idea has not always existed.",
+          " Sri Lankan Tamil national awareness began during the era of British rule during the nineteenth century, as Tamil Hindu revivalists tried to counter Protestant missionary activity.",
+          " The revivalists, led by Arumuga Navalar, used literacy as a tool to spread Hinduism and its principles."
+        ]
+      ],
+      [
+        "Ahmed Abdulla (Maldivian footballer)",
+        [
+          "Ahmed Abdulla (born 11 March 1987), nicknamed \"Lily\" is a Maldivian professional footballer who plays for T.C. Sports Club and Maldives national team."
+        ]
+      ],
+      [
+        "Sri Lankan Tamils",
+        [
+          "Sri Lankan Tamils (Tamil: இலங்கை தமிழர், \"ilankai tamiḻar\"  also Tamil: ஈழத் தமிழர், \"īḻat tamiḻar\"  ) or Ceylon Tamils, also known as Eelam Tamils in Tamil, are members of the Tamil ethnic group native to the South Asian island state of Sri Lanka.",
+          " According to anthropological and archaeological evidence, Sri Lankan Tamils have a very long history in Sri Lanka and have lived on the island since at least around the 2nd century BC.",
+          " Most modern Sri Lankan Tamils claim descent from residents of Jaffna Kingdom, a former kingdom in the north of the island and Vannimai chieftaincies from the east.",
+          " They constitute a majority in the Northern Province, live in significant numbers in the Eastern Province, and are in the minority throughout the rest of the country.",
+          " 70% of Sri Lankan Tamils in Sri Lanka live in the Northern and Eastern provinces."
+        ]
+      ],
+      [
+        "Maldives",
+        [
+          "The Maldives ( , , or ), (pronounced Mal-deevs) officially the Republic of Maldives (Maldivian: ދިވެހިރާއްޖޭގެ ޖުމްހޫރިއްޔާ , \"Dhivehi Raa'jeyge Jumhooriyya \"), is a South Asian island country, located in the Indian Ocean, situated in the Arabian Sea.",
+          " It lies southwest of India and Sri Lanka.",
+          " The chain of twenty-six atolls stretches from Ihavandhippolhu Atoll in the north to the Addu City in the south.",
+          " Comprising a territory spanning roughly 298 km2 , the Maldives is one of the world's most geographically dispersed countries, as well as the smallest Asian country by both land area and population, with around inhabitants.",
+          " Malé is the capital and most populated city, traditionally called the \"King's Island\" for its central location."
+        ]
+      ],
+      [
+        "List of schools in the Maldives",
+        [
+          "This is a list of primary and secondary schools in the South Asian island country of the Maldives.",
+          " Tertiary schools are included in the separate list of universities and colleges in the Maldives."
+        ]
+      ],
+      [
+        "Geography of Indonesia",
+        [
+          "Indonesia is an archipelagic island country in South east Asia, lying between the Indian Ocean and the Pacific Ocean.",
+          " It is in a strategic location astride or along major sea lanes from Indian Ocean to Pacific Ocean.",
+          " Indonesia's different cultures have been shaped—although not specifically determined—by centuries of complex interactions with the physical environment."
+        ]
+      ],
+      [
+        "Sugata Bose",
+        [
+          "Sugata Bose (born 7 September 1956) is an Indian historian and politician who has taught and worked in the United States since the mid-1980s.",
+          " His fields of study are South Asian and Indian Ocean history.",
+          " Bose taught at Tufts University until 2001, when he accepted the Gardiner Chair of Oceanic History and Affairs at Harvard University.",
+          " Bose is also the Director of the Netaji Research Bureau in Kolkata, India, a research center and archives devoted to the life and work of Bose's great uncle, the Indian nationalist, Subhas Chandra Bose.",
+          " Bose is the author most recently of \"His Majesty's Opponent: Subhas Chandra Bose and India's Struggle against Empire\" (2011) and \"A Hundred Horizons: The Indian Ocean in the Age of Global Empire\" (2006)."
+        ]
+      ]
+    ],
+    "type": "bridge",
+    "level": "hard"
+  },
+  {
+    "_id": "5ae3f0c85542995ad6573cb1",
+    "answer": "October 21, 2016",
+    "question": "When was the album released for which Lady Gaga used for material for her Super Bowl LI halftime show?",
+    "supporting_facts": [
+      [
+        "Super Bowl LI halftime show",
+        1
+      ],
+      [
+        "Joanne (album)",
+        1
+      ]
+    ],
+    "context": [
+      [
+        "Super Bowl XLVII halftime show",
+        [
+          "The Super Bowl XLVII halftime show occurred on February 3, 2013 at the Mercedes-Benz Superdome in New Orleans as part of Super Bowl XLVII and featured American entertainer Beyoncé with special guests Kelly Rowland and Michelle Williams from Destiny's Child.",
+          " The show was produced by Ricky Kirshner and directed by Hamish Hamilton.",
+          " It received acclaim from music critics who commented that Beyoncé once more proved her abilities during live performances.",
+          " It became the then second most watched show in Super Bowl history by garnering 110.8 million viewers.",
+          " The performance, and the stadium blackout that followed, generated more than 299,000 tweets per minute, making it the then second most tweeted moment in the history of Twitter.",
+          " This would be the first Pepsi sponsored halftime show since Prince's performance in Super Bowl XLI."
+        ]
+      ],
+      [
+        "Super Bowl XXXVIII halftime-show controversy",
+        [
+          "Super Bowl XXXVIII – which was broadcast live on February 1, 2004 from Houston, Texas on the CBS television network in the United States – was noted for a controversial halftime show in which Janet Jackson's breast, adorned with a nipple shield, was exposed by Justin Timberlake for about half a second, in what was later referred to as a \"wardrobe malfunction\".",
+          " The incident, sometimes referred to as Nipplegate, was widely discussed.",
+          " Along with the rest of the halftime show, it led to an immediate crackdown and widespread debate on perceived indecency in broadcasting.",
+          " The Federal Communications Commission (FCC) fined CBS a record US$550,000 which was fought in the Supreme Court, but that fine was appealed and ultimately voided by the Third Circuit Court of Appeals in a 2011 ruling, and a case to reinstate the fine was refused in 2012."
+        ]
+      ],
+      [
+        "Super Bowl 50 halftime show",
+        [
+          "The Super Bowl 50 Halftime Show took place on February 7, 2016, at Levi's Stadium in Santa Clara, California as part of Super Bowl 50.",
+          " It was headlined by the British rock group Coldplay with special guest performers Beyoncé and Bruno Mars, who previously had headlined the Super Bowl XLVII and Super Bowl XLVIII halftime shows, respectively."
+        ]
+      ],
+      [
+        "Super Bowl XLVIII halftime show",
+        [
+          "The Super Bowl XLVIII halftime show occurred on February 2, 2014 at MetLife Stadium in New Jersey as part of Super Bowl XLVIII and was headlined by American singer Bruno Mars alongside his band The Hooligans with special guests The Red Hot Chili Peppers.",
+          " The show was produced by Ricky Kirshner and directed by Hamish Hamilton.",
+          " At the time of airing the halftime show attracted the largest audience in the history of the Super Bowl, attracting 115.3 million viewers.",
+          " The show was later surpassed by the following year's Super Bowl XLIX halftime show in which American pop star Katy Perry was headliner.",
+          " The performance generated 2.2 million tweets, due to clamoring for tickets to Mars' Moonshine Jungle Tour."
+        ]
+      ],
+      [
+        "Joanne (album)",
+        [
+          "Joanne is the fifth studio album by American singer Lady Gaga.",
+          " It was released on October 21, 2016, by Streamline and Interscope Records.",
+          " Gaga collaborated with several producers on the album, including Mark Ronson, Jeff Bhasker, BloodPop and RedOne, and co-produced the majority of the material.",
+          " The music of \"Joanne\" features \"stripped-down\" soft rock and dance-pop styles in order to emphasize the singer's vocal abilities.",
+          " Lyrically, the album delves on the theme of family and life's emotions, with the death of her aunt, Joanne Stefani Germanotta, having a deep influence on the record."
+        ]
+      ],
+      [
+        "Lady Gaga: Queen of Pop",
+        [
+          "Lady Gaga: Queen of Pop is a biography of American singer Lady Gaga.",
+          " It was written by Emily Herbert (pen name for Virginia Blackburn) and published in the United Kingdom by John Blake Publishing Ltd. The book was published by Overlook Press in the United States with the title Lady Gaga: Behind the Fame.",
+          " Additional versions under the title \"Lady Gaga: Queen of Pop\" were published in 2010 by Wilkinson Publishing of Melbourne in Australia and by Gardners Books in the United Kingdom.",
+          " The book discusses Gaga's early life when she was known as Stefani Joanne Angelina Germanotta from her birth in 1986, and chronicles her education at Convent of the Sacred Heart in New York, her early visits to nightclubs with her mother to perform at open-mic events, and her brief foray into the Tisch School of the Arts, leading up to her first experience of fame.",
+          " Germanotta took the name \"Lady Gaga\" from the song \"Radio Ga Ga\" by the rock group Queen; she released her first album \"The Fame\" in 2008.",
+          " \"Lady Gaga: Queen of Pop\" describes the musician's success in the industry, noting her business collaborations and appearance on the cover of \"Rolling Stone\" in 2009."
+        ]
+      ],
+      [
+        "Gaga: Five Foot Two",
+        [
+          "Gaga: Five Foot Two is a 2017 documentary film about American singer-songwriter Lady Gaga.",
+          " The film documents the events around the production and release of her fifth studio album, \"Joanne\", and her halftime performance at Super Bowl LI.",
+          " The film, directed by visual artist and documentarian Chris Moukarbel, made its debut at the 2017 Toronto International Film Festival before having a worldwide streaming release on Netflix on September 22, 2017."
+        ]
+      ],
+      [
+        "List of Super Bowl halftime shows",
+        [
+          "Halftime shows are a tradition during American football games at all levels of competition.",
+          " Entertainment during the Super Bowl, the annual championship game of the National Football League (NFL), represents a fundamental link to pop culture, which helps broaden the television audience and nationwide interest.",
+          " As the Super Bowl itself is typically the most-watched event on television in the United States annually, the halftime show has been equally-viewed in recent years: the halftime show of Super Bowl XLIX featuring Katy Perry was viewed by 118.5 million, as part of an overall telecast that peaked at 120.3 million at its conclusion—the most-watched television broadcast in U.S. history.",
+          " The NFL claims that the Super Bowl LI halftime show, with Lady Gaga was the \"most-watched musical event of all-time\", citing a figure of 150 million viewers based on the television audience, as well as unique viewership of video postings of the halftime show on the league's platforms, and social media interactions.",
+          " However, the show was only seen by 117.5 million television viewers, making it the second-highest-rated halftime show behind Super Bowl XLIX."
+        ]
+      ],
+      [
+        "Super Bowl LI halftime show",
+        [
+          "The Super Bowl LI Halftime show took place on February 5, 2017, at NRG Stadium in Houston, Texas as part of Super Bowl LI.",
+          " The show was headlined by Lady Gaga, who performed a medley of her songs, including newer material from her most recent studio album \"Joanne\"."
+        ]
+      ],
+      [
+        "Super Bowl XLIX halftime show",
+        [
+          "The Super Bowl XLIX halftime show took place on February 1, 2015, at the University of Phoenix Stadium in Glendale, Arizona as part of Super Bowl XLIX.",
+          " It featured American singer Katy Perry, with singers Lenny Kravitz and Missy Elliott as special guests.",
+          " The halftime show was critically acclaimed and attracted 118.5 million viewers, the largest ratings in the history of the Super Bowl.",
+          " It also won two Emmy Awards in September 2015."
+        ]
+      ]
+    ],
+    "type": "bridge",
+    "level": "hard"
+  },
+  {
+    "_id": "5a7d26fd554299452d57bb2a",
+    "answer": "their unusual behavior",
+    "question": "What was the significance of the lions, about whom a fictionalized account provided the basis of the film, The Ghost and the Darkness?",
+    "supporting_facts": [
+      [
+        "The Ghost and the Darkness",
+        0
+      ],
+      [
+        "The Ghost and the Darkness",
+        2
+      ],
+      [
+        "Tsavo Man-Eaters",
+        1
+      ]
+    ],
+    "context": [
+      [
+        "Jammers Minde",
+        [
+          "Jammers Minde (literally A Memory of Lament), translated into English as Memoirs of Leonora Christina, is an autobiography completed in 1674 by Leonora Christina, daughter of Christian IV of Denmark and Kirsten Munk.",
+          " The work, first published in 1869, is included in the Danish Culture Canon.",
+          " It is considered to be the finest piece of prose work written in 17th-century Denmark.",
+          " It relates a partly fictionalized account of Christina's time during captivity, with a detailed personal account of prison life, often drawing upon biblical references and black humour, and contrasting the comical with the macabre.",
+          " Radical for its period in its personal account, it is considered an existential religious writing."
+        ]
+      ],
+      [
+        "Field of Chaos",
+        [
+          "Field of Chaos is a compilation of two novella works written by Tom Barbalet in 1993.",
+          " The first novella deals with a fictionalized account of Barbalet's experiences writing anti computer virus software for the Australian government.",
+          " This anti-viral software was the basis of Barbalet's Noble Ape cognitive simulation.",
+          " The second novella is a non-fiction account of Barbalet's experiences in a revolutionary commune in Elands in northern New South Wales."
+        ]
+      ],
+      [
+        "The Invention of Everything Else",
+        [
+          "The Invention of Everything Else is a novel written by American author Samantha Hunt, published in 2008.",
+          " The novel presents a fictionalized account of the last days in the life of Nikola Tesla, the Serbian-American electrical engineer.",
+          " Other fictionalized versions of historical characters include Thomas Edison (a rival), George Westinghouse, and Mark Twain.",
+          " Tesla is the novel's protagonist along with a chambermaid named Louisa with whom he shares some common interests including science and pigeons.",
+          " Much of the book takes place in the New Yorker Hotel.",
+          " The book also includes elements of science fiction, namely time travel."
+        ]
+      ],
+      [
+        "Cheque guarantee card",
+        [
+          "A cheque guarantee card was essentially an abbreviated portable letter of credit granted by a bank to a qualified depositor in the form of a plastic card that was used in conjunction with a cheque.",
+          " This allowed retailers to accept cheques and providing that the retailer wrote the card number on the back of the cheque, it was signed in the retailer's presence, and the retailer verified the signature on the cheque against the signature on the card, then the cheque could not be stopped and payment could not be refused by the bank.",
+          " This arrangement worked only for cheques drawn on an account provided by the bank that issued the card and could result in an overdraft with penalty interest."
+        ]
+      ],
+      [
+        "Shadowland (Arnold novel)",
+        [
+          "\"Shadowland: Search for Frances Farmer\" is a 1978 biographical novel by William Arnold, ostensibly about the life of actress Frances Farmer.",
+          " The book is a fictionalized account which was further distorted when adapted as the film \"Frances\" in 1982.",
+          " Arnold sued for copyright infringement, claiming the film's screenplay writers appropriated several of his \"fictionalized\" elements, but eventually lost."
+        ]
+      ],
+      [
+        "The Ghost and the Darkness",
+        [
+          "The Ghost and the Darkness is a 1996 American historical adventure film directed by Stephen Hopkins and starring Val Kilmer and Michael Douglas.",
+          " The screenplay was written by William Goldman.",
+          " The story is a fictionalized account of the Tsavo Man-Eaters, two lions that attacked and killed workers at Tsavo, Kenya, during the building of the Uganda-Mombasa Railway in East Africa in 1898."
+        ]
+      ],
+      [
+        "Pride of Baghdad",
+        [
+          "Pride of Baghdad is a graphic novel written by Brian K. Vaughan and illustrated by Niko Henrichon released by DC Comics' Vertigo imprint on September 13, 2006.",
+          " The story is a fictionalized account of the true story of four African lions that escaped from the Baghdad Zoo after an American bombing in 2003.",
+          " The book won the IGN award for best original graphic novel in 2006."
+        ]
+      ],
+      [
+        "Charles de Batz de Castelmore d'Artagnan",
+        [
+          "Charles Ogier de Batz de Castelmore, Comte d'Artagnan (] ) ( 1611 – 25 June 1673) served Louis XIV as captain of the Musketeers of the Guard and died at the Siege of Maastricht in the Franco-Dutch War.",
+          " A fictionalized account of his life by Gatien de Courtilz de Sandras formed the basis for the d'Artagnan Romances of Alexandre Dumas, most famously including \"The Three Musketeers\" (1844).",
+          " The heavily fictionalized version of d'Artagnan featured in Dumas' works and their subsequent screen adaptations is now far more widely known than the real historical figure."
+        ]
+      ],
+      [
+        "TV Everywhere",
+        [
+          "TV Everywhere (also known as authenticated streaming or authenticated video on-demand) refers to a business model wherein access to streaming video content from a television channel requires users to \"authenticate\" themselves as current subscribers to the channel, via an account provided by their participating pay television provider, in order to access the content."
+        ]
+      ],
+      [
+        "Tsavo Man-Eaters",
+        [
+          "The Tsavo Man-Eaters were a pair of man-eating Tsavo lions responsible for the deaths of a number of construction workers on the Kenya-Uganda Railway from March through December 1898.",
+          " The significance of this pair of lions was their unusual behavior, such as the number of men killed and the manner of the attacks."
+        ]
+      ]
+    ],
+    "type": "bridge",
+    "level": "hard"
+  },
+  {
+    "_id": "5ac51c2855429924173fb5b5",
+    "answer": "Henry Madison Morris",
+    "question": "The Genesis Flood is a book by John C. Whitcomb and what founder of the Creation Research Society and the Institute for Creation Research?",
+    "supporting_facts": [
+      [
+        "The Genesis Flood",
+        0
+      ],
+      [
+        "Henry M. Morris",
+        0
+      ],
+      [
+        "Henry M. Morris",
+        1
+      ]
+    ],
+    "context": [
+      [
+        "Noah's Ark",
+        [
+          "Noah's Ark (Hebrew: תיבת נח‎ ‎ ; Biblical Hebrew: \"Tevat Noaḥ\") is the vessel in the Genesis flood narrative (Genesis chapters 6–9) by which God spares Noah, his family, and a remnant of all the world's animals from a world-engulfing flood.",
+          " According to Genesis, God gave Noah instructions for building the ark.",
+          " Seven days before the deluge, God told Noah to enter the ark with his household and the animals.",
+          " The story goes on to describe the ark being afloat for 150 days and then coming to rest on the Mountains of Ararat and the subsequent receding of the waters.",
+          " The story is repeated, with variations, in the Quran, where the ark appears as \"Safina Nūḥ\" (Arabic: سفينة نوح‎ ‎ \"Noah's boat\").",
+          " The Genesis flood narrative is similar to numerous other flood myths from a variety of cultures.",
+          " The earliest known written flood myth is the Sumerian flood myth found in the \"Epic of Ziusudra\"."
+        ]
+      ],
+      [
+        "Hendren v. Campbell",
+        [
+          "Hendren et al. v. Campbell et al. was a 1977 ruling by an Indiana state superior court that the young-earth creationist textbook could not be used in Indiana public schools.",
+          " Jon Hendren, a ninth-grade student in the West Clark Community Schools, sued when the district picked \"Biology: A Search For Order In Complexity\", published by the Creation Research Society and promoted through the Institute for Creation Research, as the sole biology textbook."
+        ]
+      ],
+      [
+        "John C. Whitcomb",
+        [
+          "John Clement Whitcomb, Jr. (born June 22, 1924 in Washington, D.C.) is an American theologian and young earth creationist.",
+          " He is well known as the co-author with Henry M. Morris of \"The Genesis Flood\", which influenced many conservative American Christians to adopt Flood geology."
+        ]
+      ],
+      [
+        "Frank Lewis Marsh",
+        [
+          "Frank Lewis Marsh (18 October 1899, Aledo, Illinois – 14 July 1992) was an American Seventh-day Adventist biologist, educator and young Earth creationist author.",
+          " In 1963 he was one of the ten founding members of the Creation Research Society."
+        ]
+      ],
+      [
+        "RATE project",
+        [
+          "The RATE project (Radioisotopes and the Age of The Earth) was a research project conducted by the Creation Research Society and the Institute for Creation Research between 1997 and 2005 to assess the validity of radiometric dating and other dating techniques in the light of the doctrine of a recent creation.",
+          " It was funded by $250,000 from the Institute for Creation Research and over $1 million in donations.",
+          " The RATE team was chaired by Larry Vardiman (meteorology) and included Steven A. Austin (soft rock geology), John Baumgardner (geophysics), Steven W. Boyd (Hebrew), Eugene F. Chaffin (physics), Donald B. DeYoung (physics), Russell Humphreys (physics) and Andrew Snelling (hard rock geology)."
+        ]
+      ],
+      [
+        "Biblical Creation Society",
+        [
+          "The Biblical Creation Society (BCS) is a United Kingdom-based creationary organisation founded in 1977 by Scottish minister Nigel M. de S. Cameron (now President of the Center for Policy on Emerging Technologies and a group of evangelical students, who were concerned about the popularity of theistic evolution among conservative Christians, but were repelled by the \"wholly negative\" attitude of the Evolution Protest Movement.",
+          " Although inspired by the scientific creationism of John C. Whitcomb and Henry M. Morris (authors of \"The Genesis Flood\"), it refused to limit its membership to only Young Earth creationists, and in its name rejected American attempts to separate scientific creationism from its Biblical roots (a separation rendered unnecessary by the lack of constitutional barriers to teaching creationism in the United Kingdom).",
+          " The organisation is based in Rugby, Warwickshire."
+        ]
+      ],
+      [
+        "Henry M. Morris",
+        [
+          "Henry Madison Morris (October 6, 1918 – February 25, 2006) was an American young Earth creationist, Christian apologist, and engineer.",
+          " He was one of the founders of the Creation Research Society and the Institute for Creation Research.",
+          " He is considered by many to be \"the father of modern creation science.\"",
+          " He is widely known for coauthoring \"The Genesis Flood\" with John C. Whitcomb in 1961."
+        ]
+      ],
+      [
+        "Institute for Creation Research",
+        [
+          "The Institute for Creation Research (ICR) is a Creationist apologetics institute in Dallas, Texas that specializes in media promotion of pseudoscientific creation science and interpretation of the Genesis creation narrative as a historical event.",
+          " The ICR adopts the Bible as an inerrant and literal documentary of scientific and historical fact as well as religious and moral truths, and espouses a Young Earth creationist worldview.",
+          " It rejects evolutionary biology, which it views as a corrupting moral and social influence and threat to religious belief.",
+          " The ICR was formed by Henry M. Morris in 1972 following an organizational split with the Creation Science Research Center (CSRC)."
+        ]
+      ],
+      [
+        "The Genesis Flood",
+        [
+          "The Genesis Flood: The Biblical Record and its Scientific Implications is a 1961 book by young earth creationists John C. Whitcomb and Henry M. Morris that, according to Ronald Numbers, elevated young earth creationism \"to a position of fundamentalist orthodoxy.\""
+        ]
+      ],
+      [
+        "Creation Research Society",
+        [
+          "The Creation Research Society (CRS) is a Christian research group that engages in creation science.",
+          " The organization has produced various publications, including a journal and a creation-based biology textbook.",
+          " During the first few years of its existence, different beliefs about Creationism and disagreement over its statement of beliefs resulted in various members of the board and voting members being forced out of the organization."
+        ]
+      ]
+    ],
+    "type": "bridge",
+    "level": "hard"
+  },
+  {
+    "_id": "5ab2e9b4554299340b525565",
+    "answer": "Dominican",
+    "question": "What nationality is Amed Rosario, the shortstop for the New York Mets?",
+    "supporting_facts": [
+      [
+        "Amed Rosario",
+        0
+      ],
+      [
+        "New York Mets",
+        0
+      ]
+    ],
+    "context": [
+      [
+        "Asdrúbal Cabrera",
+        [
+          "Asdrúbal José Cabrera (] ; born November 13, 1985) is a Venezuelan professional baseball shortstop for the New York Mets of Major League Baseball (MLB).",
+          " He previously played for the Cleveland Indians, Washington Nationals, and Tampa Bay Rays.",
+          " Cabrera, a switch hitter, is a two-time All-Star.",
+          " Cabrera was primarily a second baseman early in his career before transitioning to shortstop and then in 2017, he transitioned to also play third base for the Mets."
+        ]
+      ],
+      [
+        "Tom Seaver",
+        [
+          "George Thomas Seaver (born November 17, 1944), nicknamed Tom Terrific and The Franchise, is a retired Major League Baseball (MLB) pitcher.",
+          " He pitched from 1967 to 1986 for four different teams, but is noted primarily for his time with the New York Mets and especially for his role in the team's 1969 World Championship.",
+          " During a 20-year career, Seaver compiled 311 wins, 3,640 strikeouts, 61 shutouts and a 2.86 earned run average.",
+          " In 1992 , he was inducted into the National Baseball Hall of Fame by the highest percentage of votes ever recorded at the time (98.84%; subsequently surpassed in 2016 by Ken Griffey Jr. with 99.32%), and is one of two players (with Mike Piazza) wearing a New York Mets hat on his plaque at Cooperstown.",
+          " As of 2016, Seaver, Mike Piazza and Gil Hodges (who played for the expansion Mets in 1962–63) are the only Mets players to have their jersey numbers retired by the team (Hodges' number was retired as a manager even though he also played for the Mets)."
+        ]
+      ],
+      [
+        "Roy McMillan",
+        [
+          "Roy David McMillan (July 17, 1929 – November 2, 1997) was a shortstop, coach and manager in Major League Baseball.",
+          " From 1951 through 1966, McMillan played for the Cincinnati Reds (1951–60), Milwaukee Braves (1961–64) and New York Mets (1964–66).",
+          " He batted and threw right-handed.",
+          " Following his retirement as a player, McMillan managed the Milwaukee Brewers (1972) and New York Mets (1975).",
+          " He was born in Bonham, Texas."
+        ]
+      ],
+      [
+        "Hubie Brooks",
+        [
+          "Hubert \"Hubie\" Brooks (born September 24, 1956) is an American former professional baseball right fielder, third baseman, and shortstop.",
+          " He played fifteen seasons in Major League Baseball (MLB) from 1980 to 1994 for the New York Mets, Montreal Expos, Los Angeles Dodgers, California Angels, and Kansas City Royals.",
+          " Brooks was selected third overall in the 1978 Major League Baseball draft by the New York Mets, and went on to play for five different teams over a 15-year career, and was twice named an All-Star.",
+          " MLB pitcher Donnie Moore, who died in 1989, was Brooks' cousin."
+        ]
+      ],
+      [
+        "Logos and uniforms of the New York Mets",
+        [
+          "The New York Mets, founded in 1962, returned National League baseball to New York following the departure of the Brooklyn Dodgers to Los Angeles and the New York Giants to San Francisco.",
+          " The Mets' uniform was designed to incorporate elements of both departed clubs, with the Dodgers' royal blue becoming the Mets' primary color and the Giants' orange the trim color, along with the Giants' \"NY\" crest adopted as the new team's cap logo.",
+          " The original Mets uniform had a \"clean and classic\" look that, while it has undergone a number of changes over the course of the team's history, has never been substantially revised.",
+          " The basic template has always been a conventional short-sleeved baseball uniform with \"Mets\" in script on a white pinstriped home jersey, and either \"NEW YORK\" or \"Mets\" on a gray road jersey.",
+          " The most notable variations were the \"racing stripe\" uniforms of the 1980s and early '90s, and the addition of black as a trim color along with black alternate jerseys and caps that were worn from 1998 through 2011.",
+          " For 2012, in recognition of its 50th Anniversary, the club restored its classic look by removing the black trim from all of its uniforms and phasing out the black jerseys and caps.",
+          " Since then the club has adopted blue alternate jerseys and caps, but has generally worn its primary uniform in most games, home and away."
+        ]
+      ],
+      [
+        "2007 New York Mets season",
+        [
+          "The New York Mets' 2007 season was the 46th regular season for the Mets.",
+          " The Mets were defending their first divisional championship since 1988.",
+          " While the Atlanta Braves were counted as possible competition, the Philadelphia Phillies were predicted as the front-runners, albeit by their own star shortstop, Jimmy Rollins.",
+          " Ultimately, Rollins' prediction rang true, as the Phillies won the NL East Division title on the last day of the regular season.",
+          " With a seven-game division lead on September 12, the Mets suffered a historic collapse by losing 12 of their last 17 games and missing the postseason."
+        ]
+      ],
+      [
+        "Bud Harrelson",
+        [
+          "Derrel McKinley \"Bud\" Harrelson (born June 6, 1944) is a former Major League Baseball shortstop who played for the New York Mets, Philadelphia Phillies and Texas Rangers from to .",
+          " After retiring, he served as a coach for the World Champion Mets, and as manager of the Mets in 1990 and 1991.",
+          " He was inducted into the New York Mets Hall of Fame in .",
+          " Harrelson remains the only person in New York Mets history to win two world series with the Mets, both of which are the first two in franchise history.",
+          " He won in 1969 as a player and in 1986 as a coach.",
+          " He is currently a part-owner of the Long Island Ducks, in Central Islip, New York."
+        ]
+      ],
+      [
+        "Kevin Baez",
+        [
+          "Kevin Richard Baez (born January 10, 1967 in Brooklyn, New York) is a former American Major League Baseball player.",
+          " He was a shortstop for the New York Mets in 1990, 1992 and 1993.",
+          " Baez attended college at Dominican College and was drafted by the New York Mets in the 7th round in 1988.",
+          " He made his debut on September 3, 1990.",
+          " In 63 career games, he was 27 for 126 (a .179 average).",
+          " He had 7 career RBIs.",
+          " Baez played in his final game on October 3, 1993.",
+          " He is currently the manager for the Long Island Ducks."
+        ]
+      ],
+      [
+        "Amed Rosario",
+        [
+          "German Amed Valdez Rosario (born November 20, 1995) is a Dominican professional baseball shortstop for the New York Mets of Major League Baseball (MLB)."
+        ]
+      ],
+      [
+        "New York Mets",
+        [
+          "The New York Mets are an American professional baseball team based in the New York City borough of Queens.",
+          " The Mets compete in Major League Baseball (MLB) as a member club of the National League (NL) East division.",
+          " The Mets are one of two Major League clubs based in New York City; the other is the New York Yankees."
+        ]
+      ]
+    ],
+    "type": "bridge",
+    "level": "hard"
+  },
+  {
+    "_id": "5ade3b925542992fa25da70a",
+    "answer": "Lynwood",
+    "question": "What was the middle name of the pilot who was portrayed by Levon Helm in the film The Right Stuff ?",
+    "supporting_facts": [
+      [
+        "The Right Stuff (film)",
+        3
+      ],
+      [
+        "Jack Ridley (pilot)",
+        0
+      ]
+    ],
+    "context": [
+      [
+        "Levon Helm (1978 album)",
+        [
+          "Levon Helm is a 1978 album by Levon Helm.",
+          " It was Helm's second studio album independent of the Band."
+        ]
+      ],
+      [
+        "Jack Ridley (pilot)",
+        [
+          "Colonel Jackie Lynwood \"Jack\" Ridley (June 16, 1915 – March 12, 1957) was an aeronautical engineer, USAF test pilot and chief of the U.S. Air Force's Flight Test Engineering Laboratory.",
+          " He helped develop and test many Cold War era military aircraft but is best known for his work on the Bell X-1, the first aircraft to achieve supersonic flight.",
+          " He was highly respected among fellow test pilots, most notably Chuck Yeager, for his engineering skills."
+        ]
+      ],
+      [
+        "Amy Helm",
+        [
+          "Amy Helm (born December 3, 1970) is an American singer-songwriter and daughter of The Band drummer Levon Helm and singer Libby Titus.",
+          " She is a past and current member of the Levon Helm Band, the Dirt Farmer Band, the Midnight Ramble Band, Ollabelle, as well as her own touring band, Amy Helm & The Handsome Strangers."
+        ]
+      ],
+      [
+        "Levon Helm &amp; the RCO All-Stars",
+        [
+          "Levon Helm and the RCO All-Stars is a 1977 album by the short-lived musical group of the same name.",
+          " It was Levon Helm's first studio album independent of the Band."
+        ]
+      ],
+      [
+        "Levon Helm (1982 album)",
+        [
+          "Levon Helm is a 1982 album by Levon Helm.",
+          " It was his second eponymous album and his last studio album until \"Dirt Farmer\", released in 2007."
+        ]
+      ],
+      [
+        "Love for Levon",
+        [
+          "Love for Levon: Benefit To Save The Barn was a concert held on October 3, 2012 at the Izod Center in East Rutherford, New Jersey.",
+          " The concert was a tribute to the life of The Band lead vocalist and drummer Levon Helm.",
+          " The concert featured a wide variety of musicians who had worked with Helm as well as musicians who were influenced by him.",
+          " Proceeds from the concert went towards keeping Helm's Woodstock barn in his family's control as well as continuing his Midnight Ramble concert series in the barn.",
+          " The concert's musical directors were Don Was and Helm's frequent collaborator Larry Campbell.",
+          " The concert was released on CD and DVD on March 19, 2013."
+        ]
+      ],
+      [
+        "Jemima Surrender",
+        [
+          "\"Jemima Surrender\" is a song written by Levon Helm and Robbie Robertson.",
+          " It was first released on the Band's self-titled album in 1969.",
+          " Usual Band drummer Levon Helm played guitar and sang the lead vocal while usual Band pianist Richard Manuel played drums.",
+          " The song's lasciviousness helped inspire Naomi Weisstein to form the Chicago Women's Liberation Rock Band."
+        ]
+      ],
+      [
+        "American Son (album)",
+        [
+          "American Son is a studio album by American country rock musician Levon Helm, who is most famous for his work as drummer for the rock group the Band.",
+          " It was released in October 1980 on MCA Records and was Helm's third studio album.",
+          " It has been generally considered Levon Helm's best solo work until the release of \"Dirt Farmer\" in 2007."
+        ]
+      ],
+      [
+        "The Right Stuff (film)",
+        [
+          "The Right Stuff is a 1983 American epic historical drama film.",
+          " It was adapted from Tom Wolfe's best-selling 1979 book of the same name about the Navy, Marine and Air Force test pilots who were involved in aeronautical research at Edwards Air Force Base, California, as well as the Mercury Seven, the seven military pilots who were selected to be the astronauts for Project Mercury, the first manned spaceflight by the United States.",
+          " \"The Right Stuff\" was written and directed by Philip Kaufman and stars Ed Harris, Scott Glenn, Sam Shepard, Fred Ward, Dennis Quaid and Barbara Hershey.",
+          " Levon Helm is the narrator in the introduction and elsewhere in the film, as well as having a co-starring role as Air Force test pilot Jack Ridley."
+        ]
+      ],
+      [
+        "The Right Stuff (dating web site)",
+        [
+          "The Right Stuff is a dating service in New Jersey, in business since 1993.",
+          " Membership is international, and limited to single students, graduates, and faculty, of medical schools, and of select universities and colleges.",
+          " TIME Magazine mentioned it in a review of dating services, saying, \"If you’re highly educated and seeking a highly educated partner, Right Stuff Dating ('The Ivy League of Dating') may be right for you.\"",
+          " According to the Right Stuff web site, as of 2015, there are about 4,900 members, and 310 couples have met and married through the site."
+        ]
+      ]
+    ],
+    "type": "bridge",
+    "level": "hard"
+  },
+  {
+    "_id": "5adbd1d25542994650320bf6",
+    "answer": "She currently works as a coach and choreographer",
+    "question": "What is the current job of the former partner in ice skating of Vladimir Fedorov?",
+    "supporting_facts": [
+      [
+        "Vladimir Fedorov",
+        1
+      ],
+      [
+        "Anjelika Krylova",
+        2
+      ]
+    ],
+    "context": [
+      [
+        "Anjelika Krylova",
+        [
+          "Anjelika Alexeyevna Krylova (Russian: Анжелика Алексеевна Крылова ; born 4 July 1973) is a Russian retired ice dancer.",
+          " With partner Oleg Ovsyannikov, she is the 1998 Olympic silver medalist and two-time (1998, 1999) World champion.",
+          " She currently works as a coach and choreographer in Bloomfield Hills, Michigan."
+        ]
+      ],
+      [
+        "Palandöken Ice Skating Hall",
+        [
+          "Palandöken Ice Skating Hall (Turkish: \"Palandöken Buz Pateni Salonu\" ), formerly GSIM Yenişehir Ice Hockey Hall (Turkish: \"GSİM Yenişehir Buz Hokey Salonu\" ) or Erzurum Ice Skating Hall (Turkish: \"Erzurum Buz Pateni Salonu\" ), is an indoor ice skating and ice hockey rink located at Ahmet Baba neighborhood of Palandöken district in Erzurum, eastern Turkey.",
+          " It was opened in 2008."
+        ]
+      ],
+      [
+        "John Towill",
+        [
+          "John Towill coached and choreographed national and international champions in dance, freestyle, pairs, and synchronized ice skating.",
+          " He is a member of the National Ice Skating Association, U.S. Figure Skating, PSA, and the Ice Skating Institute.",
+          " He was a member of the Great Britain International Team and a Great Britain Professional Champion.",
+          " Towill is currently the head coach of the Precisely Right synchronized skating team from Mennen Arena in Morris Plains, New Jersey, United States."
+        ]
+      ],
+      [
+        "Vladimir Fedorov",
+        [
+          "Vladimir Anatolyevich Fedorov or Fyodorov (Russian: Владимир Анатольевич Фёдоров , born 22 April 1971) is a Russian former competitive ice dancer.",
+          " He is the 1993 World bronze medalist with Anjelika Krylova."
+        ]
+      ],
+      [
+        "Canterbury Olympic Ice Rink",
+        [
+          "Canterbury Olympic Ice Rink is an ice sports and public ice skating centre, located in the Sydney suburb of Canterbury, New South Wales.",
+          " It hosts a number of major ice hockey games, including Australian Women's Ice Hockey League games.",
+          " The venue offers a wide variety of activities including ice skating lessons, birthday parties, figure skating, speed skating, curling, synchronised skating, public skating sessions, and it is also the home venue of the Sydney Sirens.",
+          " It is also the home venue of the Sydney Figure Skating Club, Sydney Arrows (speed skating), Canterbury Eagles Ice Hockey Club and is also a host venue of the East Coast Super League, Sydney's elite ice hockey tournament."
+        ]
+      ],
+      [
+        "Ice Skating Institute",
+        [
+          "The Ice Skating Institute (formerly the Ice Skating Institute of America) is a trade association for ice rinks, and also an international governing body for recreational figure skating.",
+          " It was founded in 1959 to proliferate the building of permanent indoor ice rinks, which numbered fewer than 100 at the time, as well as to promote skating as a recreational activity.",
+          " The ISI has developed a program of tests and competitions in all areas of figure skating, as well as limited areas of speed skating and ice hockey, from \"Tot\" levels to advanced tests that would provide interesting challenges even to Olympic medalists."
+        ]
+      ],
+      [
+        "Ice rink",
+        [
+          "An ice rink (or ice skating rink) is a frozen body of water and/or hardened chemicals where people can ice skate or play winter sports. Besides recreational ice skating, some of its uses include ice hockey, bandy, rink bandy, ringette, broomball, speed skating, figure skating, ice stock sport and curling as well as exhibitions, contests and ice shows.",
+          " There are two types of rinks in prevalent use today: natural, where freezing occurs from cold ambient temperatures, and artificial (or mechanically frozen), where a coolant produces cold temperatures in the surface below the water, causing the water to freeze.",
+          " There are also synthetic ice rinks where skating surfaces are made out of plastics."
+        ]
+      ],
+      [
+        "Ice skating in India",
+        [
+          "Ice skating is popular in the north of India in places like Ladakh, Kashmir and Shimla where cold weather occurs and it is possible to skate outdoors.",
+          " Much of India has a tropical climate, hence in the rest of the country, ice skating is limited to the few artificial rinks available.",
+          " Many skating lovers from India head to places like Shimla, Kashmir and Ladakh, and also many expatriates from countries where ice skating is popular in order to experience ice skating at some of the highest rinks in the world.",
+          " An ice skating festival is organised in Shimla every year."
+        ]
+      ],
+      [
+        "Adelaide Glaciarium",
+        [
+          "The Adelaide Glaciarium (also known as Ice Palace Skating Rink) was the first indoor ice skating facility built in Australia.",
+          " This is the birthplace for ice skating in Australia and is the location of the first hockey on the ice match in the country, which was an adaptation of roller polo for the ice using ice skates.",
+          " Contemporary ice hockey was never played at this venue but this ice skating rink, the country's first, provided the \"test bed\" facility for its successor the Melbourne Glaciarium, the birthplace of ice hockey in Australia."
+        ]
+      ],
+      [
+        "Ice World Boondall",
+        [
+          "Iceworld Boondall is an ice sports and public ice skating centre, located approximately 20 km north of Brisbane, Queensland.",
+          " It hosts a number of major ice hockey games, including Australian Women's Ice Hockey League games.",
+          " The venue offers a wide variety of activities including ice skating lessons, birthday parties, figure skating, speed skating, curling, synchronised skating, public skating sessions, and it is also the home venue of the Brisbane Goannas.",
+          " The venue has been operating in Brisbane for over 30 years.",
+          " Iceworld Boondall is also a host venue for the Duke Trophy, an annual inter-state short track speed skating competition in Australia."
+        ]
+      ]
+    ],
+    "type": "bridge",
+    "level": "hard"
+  },
+  {
+    "_id": "5ab9535a5542996be202047e",
+    "answer": "ten",
+    "question": "How many episodes were in the season of \"Rick and Morty\" that featured an episode called \"The Ricks Must Be Crazy\"?",
+    "supporting_facts": [
+      [
+        "The Ricks Must Be Crazy",
+        0
+      ],
+      [
+        "Rick and Morty (season 2)",
+        1
+      ]
+    ],
+    "context": [
+      [
+        "Rick Potion No. 9",
+        [
+          "\"Rick Potion #9\" is the sixth episode of \"Rick and Morty\".",
+          " It premiered on Adult Swim on January 27, 2014, was written by Justin Roiland, and directed by Stephen Sandoval.",
+          " In the episode, a love potion goes wrong, creating a virus that begins to infect the entire world population, making everyone fall in love with Morty.",
+          " The episode has been well received, and was seen by about 1.7 million viewers when airing.",
+          " The title of the episode is in reference to the 1959 song \"Love Potion No. 9\" by the Clovers."
+        ]
+      ],
+      [
+        "Rick and Morty (season 2)",
+        [
+          "The second season of the animated television series \"Rick and Morty\" originally aired in the United States on Cartoon Network's late night programming block, Adult Swim, which premiered on July 26, 2015 with \"A Rickle in Time\", and concluded on October 4 with \"The Wedding Squanchers\".",
+          " This season aired a total of ten episodes."
+        ]
+      ],
+      [
+        "Meeseeks and Destroy",
+        [
+          "\"Meeseeks and Destroy\" is the fifth episode of the first season of \"Rick and Morty\".",
+          " It premiered on Adult Swim on January 20, 2014.",
+          " The episode was written by Ryan Ridley and directed by Bryan Newton.",
+          " In the episode, Rick provides the family with a solution to their problems, freeing him up to go on an adventure led by Morty.",
+          " The episode has been well received, and was seen by about 1.6 million viewers when it was first aired on the Adult Swim channel."
+        ]
+      ],
+      [
+        "Legends of Bikini Bottom",
+        [
+          "Legends of Bikini Bottom is an anthology series of six episodes in the American animated television series \"SpongeBob SquarePants\", as part of its seventh season.",
+          " As the name suggests, the episodes have plots involving things like monsters, magic and mythical creatures.",
+          " The first episode called \"Trenchbillies\" first premiered on the online social networking service Facebook on January 27, 2011 before airing on Nickelodeon on January 29, 2011.",
+          " The four other episodes titled \"Sponge-Cano!\"",
+          ", \"The Main Drain\", \"The Monster Who Came to Bikini Bottom\" and \"Welcome to the Bikini Bottom Triangle\" premiered on Nickelodeon as part of an hour-long special on January 28, 2011.",
+          " The decision to air the series online was aimed at attracting \"the young and the restless hooked to the internet and the social media.\""
+        ]
+      ],
+      [
+        "Faerie Tale Theatre",
+        [
+          "Faerie Tale Theatre (also known as Shelley Duvall's Faerie Tale Theatre) is an American award-winning live-action children's anthology television series, starring many famous and well known actors (particularly of the period) including Robin Williams, consisting of 27 episodes retelling 25 classic fairy tales, particularly of The Brothers Grimm, plus the poem The Pied Piper of Hamelin and a special episode called \"The Grimm's Party\", showcasing the series cast and crew, (including Duvall and Teri Garr), that originally aired on Showtime from September 11, 1982 until November 14, 1987.",
+          " Shelley Duvall, who created the series served as narrator, host and executive producer of the program alongside Fred Fuchs, and occasionally starred in episodes.",
+          " The series was followed by two other, albeit less successful shorter anthology series \"Tall Tales & Legends\" (episode 9) which followed the same format as \"Faerie Tale Theatre\" and focused on classic American folk tales and third series Nightmare Classics (4 episodes, originally planned as 6).",
+          " This was one of the first examples of cable original programming, alongside HBO's \"Fraggle Rock\"."
+        ]
+      ],
+      [
+        "Rixty Minutes",
+        [
+          "\"Rixty Minutes\" is the eighth episode of the first season of \"Rick and Morty\".",
+          " It premiered on Adult Swim on March 17, 2014.",
+          " The episode was written by Tom Kauffman and Justin Roiland, and directed by Bryan Newton.",
+          " In the episode, Rick and Morty watch cable from other dimensions, while Jerry, Beth, and Summer watch alternate reality versions of themselves using a pair of interdimensional goggles.",
+          " The episode was well received and watched by about 1.48 million viewers in the United States."
+        ]
+      ],
+      [
+        "Pilot (Rick and Morty)",
+        [
+          "\"Pilot\" is the first episode of \"Rick and Morty\".",
+          " It premiered on Adult Swim on December 2, 2013.",
+          " It is written by series creators Dan Harmon and Justin Roiland, and directed by Roiland.",
+          " The series introduces protagonists, alcoholic scientist Rick Sanchez and his innocent teenage grandson Morty Smith, as they embark on a dangerous interdimensional adventure to fetch Mega tree seeds.",
+          " The pilot had a mixed to positive reception and was seen by about 1.1 million viewers when airing."
+        ]
+      ],
+      [
+        "Lawnmower Dog",
+        [
+          "\"Lawnmower Dog\" is the second episode of \"Rick and Morty\".",
+          " It premiered on Adult Swim on December 9, 2013, was written by Ryan Ridley, and directed by John Rice.",
+          " In the episode, Rick gives Jerry a device to enhance the dog's intelligence, whilst Rick and Morty get lost in the dreams of Morty's math teacher.",
+          " The episode was well received, with approximately 1.5 million viewers when airing."
+        ]
+      ],
+      [
+        "It's Always Sunny in Philadelphia (season 6)",
+        [
+          "The sixth season of the American comedy television series \"It's Always Sunny in Philadelphia\" premiered on FX on September 16, 2010.",
+          " The season contains 14 episodes and concluded airing on December 9, 2010 with the hour-long Christmas special (which was produced for season 5, however aired as part of season 6).",
+          " An additional episode called \"The Gang Gets Successful\" (production code IP06004) was produced for this season, but was not aired, despite scenes from the episode being included in promotional material for season 6.",
+          " It was later re-edited with new scenes to create the season 7 episode \"How Mac Got Fat\"."
+        ]
+      ],
+      [
+        "The Ricks Must Be Crazy",
+        [
+          "\"The Ricks Must Be Crazy\" is the sixth episode in the second season of the American animated television sitcom \"Rick and Morty\", and the seventeenth overall episode in the series.",
+          " Written by Dan Guterman and directed by Dominic Polcino, the episode first aired on Adult Swim in the United States on August 30, 2015.",
+          " It is speculated that the title of the episode is a reference to the 1980 film \"The Gods Must Be Crazy\"."
+        ]
+      ]
+    ],
+    "type": "bridge",
+    "level": "hard"
+  },
+  {
+    "_id": "5ae5ff845542996de7b71ad0",
+    "answer": "The Jeffersons",
+    "question": "An actress in Strange Fruit was better known for a role in CBS sitcom.  Which sitcom is this actress better known for than her role in Strange Fruit?",
+    "supporting_facts": [
+      [
+        "Strange Fruit (film)",
+        1
+      ],
+      [
+        "Berlinda Tolbert",
+        1
+      ]
+    ],
+    "context": [
+      [
+        "Berlinda Tolbert",
+        [
+          "Berlinda Tolbert (born November 4, 1949) is an American film and television actress.",
+          " Tolbert is best known for her role as Jenny Willis Jefferson, the daughter of Tom and Helen Willis on the CBS sitcom \"The Jeffersons\", which originally aired from 1975 until 1985."
+        ]
+      ],
+      [
+        "Lillian Smith (author)",
+        [
+          "Lillian Eugenia Smith (December 12, 1897 – September 28, 1966) was a writer and social critic of the Southern United States, known most prominently for her best-selling novel \"Strange Fruit\" (1944).",
+          " A white woman who openly embraced controversial positions on matters of race and gender equality, she was a southern liberal unafraid to criticize segregation and work toward the dismantling of Jim Crow laws, at a time when such actions virtually guaranteed social ostracism."
+        ]
+      ],
+      [
+        "The Seat Filler",
+        [
+          "The Seat Filler is an American romantic comedy musical film produced by the Company Production of Magnolia Home Entertainment, Seat Filler Productions, Shake Martin Films and Strange Fruit Films, which released in 2004.",
+          " It stars Kelly Rowland, Duane Martin, Mel B, Kyla Pratt and Shemar Moore.",
+          " The movie received mainly average reviews.",
+          " The film is also recognized as Duane Martin's first (and to date, only) appearance in a musical film and Kelly Rowland's most successful film in a leading role performance."
+        ]
+      ],
+      [
+        "Strange Fruit Project",
+        [
+          "Strange Fruit Project is an underground hip hop group from Waco, Texas, which consists of producer and emcee Symbolyc One (also known as S1, born Larry D. Griffin Jr.), his cousin emcee Myth (short for Mythological, born Kevin Gaither) and emcee Myone (pronounced \"My Own\", born Anthony Ligawa, originally from Indiana).",
+          " The trio officially debuted in 2004, with a pair of underground releases, \"Soul Travelin\" and \"From Divine\".",
+          " Their biggest exposure came with the release of their acclaimed 2006 album \"The Healing\".",
+          " The group's name is derived from the Billie Holiday civil rights song \"Strange Fruit\"."
+        ]
+      ],
+      [
+        "Strange Fruit (film)",
+        [
+          "Strange Fruit is a 2004 film written and directed by Kyle Schickner and produced by FenceSitter Films.",
+          " It stars Kent Faulcon as William Boyals and Berlinda Tolbert as Emma Ayers.",
+          " The title comes from the 1939 Billie Holiday song."
+        ]
+      ],
+      [
+        "Joe Overstreet",
+        [
+          "Joe Overstreet (born 1933) is an American painter who lives and works in New York City.",
+          " In the 1950s and early 1960s he was associated with the Abstract Expressionist movement.",
+          " During the Civil Rights Movement he became known for works such as \"Strange Fruit\" and \"The New Jemima\", which reflected his interest in contemporary social issues and the Black Arts Movement.",
+          " He also worked with Amiri Baraka as the Art Director for the Black Arts Repertory Theatre and School in Harlem, and in 1974 he co-founded Kenkeleba House, an East Village gallery and studio.",
+          " In the 1980s he returned to figuration with his \"Storyville\" paintings, which recall the New Orleans jazz scene of the early 1940s.",
+          " His work draws on a variety of influences, including his own African-American and Native American heritage, and has been exhibited in galleries around the world."
+        ]
+      ],
+      [
+        "Symbolyc One",
+        [
+          "Larry Darnell Griffin Jr., professionally known as Symbolyc One or S1, is an American record producer from Waco, Texas.",
+          " He founded the group Strange Fruit Project and is signed to Kanye West's Very GOOD Beats as a producer."
+        ]
+      ],
+      [
+        "The Janice Long Session EP",
+        [
+          "The Janice Long Session EP is an EP by Danielle Dax, an English experimental musician and former member of The Lemon Kittens.",
+          " It is also known as the \"BBC Sessions\" and was recorded on 1 December 1985, and was first transmitted on 14 January 1986.",
+          " The recording was later released in 1988 on the Strange Fruit Records label."
+        ]
+      ],
+      [
+        "The Peel Sessions (Bonzo Dog Band album)",
+        [
+          "The Peel Sessions is an album of music by The Bonzo Dog Band recorded in 1969.",
+          " This is one of a series of original recordings made in the BBC studios for the John Peel shows on BBC Radio 1 known collectively as the Peel Sessions.",
+          " It was released in 1990 on Strange Fruit Records under license from BBC Records and Tapes.",
+          " Distributed by Dutch East India Trading."
+        ]
+      ],
+      [
+        "Commodore Records",
+        [
+          "Commodore Records was an American independent record label known for producing Dixieland jazz and swing.",
+          " It is also remembered for releasing Billie Holiday's hit \"Strange Fruit\"."
+        ]
+      ]
+    ],
+    "type": "bridge",
+    "level": "hard"
+  },
+  {
+    "_id": "5a7f85505542995d8a8dde95",
+    "answer": "Point of Entry",
+    "question": "What is the name of the album released by a British heavy metal band in February of 1981 that contains a reference to a highway?",
+    "supporting_facts": [
+      [
+        "Heading Out to the Highway",
+        0
+      ],
+      [
+        "Point of Entry",
+        0
+      ],
+      [
+        "Point of Entry",
+        1
+      ]
+    ],
+    "context": [
+      [
+        "Heading Out to the Highway",
+        [
+          "\"Heading Out to the Highway\" is a song by British heavy metal band Judas Priest from their 1981 album \"Point of Entry\".",
+          " It was released as a single later that year."
+        ]
+      ],
+      [
+        "Hit and Run – Revisited",
+        [
+          "Hit and Run – Revisited is the twelfth studio album by the British heavy metal band Girlschool, released in 2011.",
+          " The album is a re-recording of the 1981 album \"Hit and Run\", considered by most critics a classic of the new wave of British heavy metal period and the most commercially successful for Girlschool.",
+          " The new album celebrates the 30th anniversary of the release of \"Hit and Run\" and includes as bonus track a re-recording of \"Demolition Boys\" and a duet with the German metal singer Doro on a new version of the title track."
+        ]
+      ],
+      [
+        "The Nightcomers (album)",
+        [
+          "The Nightcomers is the debut studio album by Scottish heavy metal band Holocaust, released in 1981 at the apex of the new wave of British heavy metal phenomenon.",
+          " The album was released by Holocaust's own label Phoenix Record And Filmworks and re-issued on CD by Edgy Records only in 2000.",
+          " It was remastered and re-issued as a double CD by Castle/Sanctuary in 2003, including all the tracks from the \"Smokin' Valves\", \"Heavy Metal Mania\", and \"Coming Through\" singles and from the \"Live from the Raw Loud 'n' Live Tour\" EP."
+        ]
+      ],
+      [
+        "List of Girlschool band members",
+        [
+          "Girlschool are an all-female British heavy metal band, founded in 1978.",
+          " The original members Kim McAuliffe, Enid Williams, Kelly Johnson and Denise Dufort come from the club cover band Painted Lady.",
+          " During the early 1980s the band was one of the relevant groups of the new wave of British heavy metal (NWOBHM) movement, entering the British charts with both singles and albums.",
+          " Unlike many heavy metal bands, Girlschool often had more than one lead vocalist, with vocal duties in the 'classic' line-up shared amongst Williams, McAuliffe and Johnson."
+        ]
+      ],
+      [
+        "Point of Entry",
+        [
+          "Point of Entry is the seventh album from the British heavy metal band Judas Priest.",
+          " It was released on 26 February 1981."
+        ]
+      ],
+      [
+        "Jameson Raid (band)",
+        [
+          "Jameson Raid are a British heavy metal band.",
+          " They are usually considered to be part of the new wave of British heavy metal, following their inclusion on EMI's album \"Metal For Muthas II\", although they were established on the Birmingham circuit as a hard rock band several years before this."
+        ]
+      ],
+      [
+        "Event Horizon (album)",
+        [
+          "Event Horizon is the debut studio album by British heavy metal band I Am I, released in 2012.",
+          " The album was originally released on USB, then onto CD format, making I Am I the first heavy metal band ever to release an album only on USB first.",
+          " The album has a few traces of the power metal sound of ZP's previous band DragonForce.",
+          " The album has been described as \"old school meets new school\" by lead vocalist and co-writer ZP Theart.",
+          " The album is quite melodic and a bit similar to the AOR of the 1970s and 1980s.",
+          " The lyrics deal with human emotions, social life, and issues that people struggle with."
+        ]
+      ],
+      [
+        "Fire Down Under",
+        [
+          "Fire Down Under is the third album by American heavy metal band Riot, released in 1981, and the last with original vocalist Guy Speranza.",
+          " The song \"Flashbacks\" is dedicated to Neal Kay, the British DJ who supported heavy metal in the UK during the new wave of British heavy metal."
+        ]
+      ],
+      [
+        "Venom (band)",
+        [
+          "Venom are an English heavy metal band formed in 1979 in Newcastle upon Tyne.",
+          " Coming to prominence towards the end of the new wave of British heavy metal, Venom's first two albums—\"Welcome to Hell\" (1981) and \"Black Metal\" (1982)—are considered a major influence on thrash metal and extreme metal in general.",
+          " Venom's second album proved influential enough that its title was used as the name of an extreme metal subgenre: black metal."
+        ]
+      ],
+      [
+        "Angel Witch (album)",
+        [
+          "Angel Witch is the first album by British heavy metal band Angel Witch.",
+          " The album was released in 1980 through Bronze Records, and since then re-released in four editions over the years.",
+          " The cover features a painting formerly attributed to John Martin titled \"The Fallen Angels Entering Pandemonium\".",
+          " The song \"Angel Witch\" was featured in the 2009 video game, \"Brütal Legend\".",
+          " The album made Angel Witch one of the key bands in the new wave of British heavy metal movement."
+        ]
+      ]
+    ],
+    "type": "bridge",
+    "level": "hard"
+  },
+  {
+    "_id": "5a88a4e65542997e5c09a671",
+    "answer": "a Ghanaian boxer",
+    "question": "The boxer that defeated Oliver Lavigilante in the 2012 Summer Olympics is of what nationality?",
+    "supporting_facts": [
+      [
+        "Oliver Lavigilante",
+        0
+      ],
+      [
+        "Oliver Lavigilante",
+        1
+      ],
+      [
+        "Duke Micah",
+        0
+      ]
+    ],
+    "context": [
+      [
+        "Shafiq Chitou",
+        [
+          "Shafiq Chitou (born 23 May 1985) is a Beninese boxer.",
+          " He qualified to compete in boxing at the 2012 Summer Olympics, but funding woes are a concern for him.",
+          " He currently works as a house painter.",
+          " Chitou lost to Félix Verdejo of Puerto Rico in the first round of the Men's lightweight event at the 2012 Summer Olympics."
+        ]
+      ],
+      [
+        "Aliaksandr Buikevich",
+        [
+          "Aliaksandr Mikalayevich Buikevich (Belarusian: Аляксандар Мікалаевіч Буйкевіч , Russian: Александр Буйкевич ; born 19 November 1984) is a Belarusian sabre fencer, European champion in 2008 and team silver medallist at the 2011 World Championships in Catania.",
+          " At the 2008 Summer Olympics, he reached the quarter-finals in the individual sabre, losing to Romania's Mihai Covaliu, while the Belarusian sabre team also reached the quarter-finals.",
+          " At the 2012 Summer Olympics, he competed in the men's sabre, but was defeated in the table of 16 by Romania's Rareș Dumitrescu.",
+          " The Belarusian team again reached the quarter-finals.",
+          " Aliaksandr qualified for the 2016 Summer Olympics in Rio de Janeiro as the only Belarusian fencer.",
+          " In men's sabre in the table of 32 he defeated Joseph Polossifakis of Canada.",
+          " He could not advance to the quarter-finals as in the table of 16 he lost to the eventual winner Áron Szilágyi of Hungary, who claimed his second consecutive gold medal at the Olympics individual men's sabre.",
+          " Aliaksandr finished 12th in the event."
+        ]
+      ],
+      [
+        "Duke Micah",
+        [
+          "Duke Akueteh Micah (born 16 September 1991) is a Ghanaian boxer.",
+          " He competed in the Men's flyweight division in the boxing at the 2012 Summer Olympics.",
+          " He won his first bout against Jason Lavigilante of Mauritius by 18 points to 14.",
+          " In the second round, he lost to the Irish boxer, Michael Conlan, losing by 19 points to 8."
+        ]
+      ],
+      [
+        "Belize at the 2012 Summer Olympics",
+        [
+          "Belize competed at the 2012 Summer Olympics in London, which were held from 27 July to 12 August 2012.",
+          " The country's participation in London was its eleventh appearance in the Summer Olympics since its debut at the 1968 Summer Olympics.",
+          " The delegation included two short-distance runners and one judoka: Kenneth Medwood, Kaina Martinez and Eddermys Sanchez.",
+          " Medwood qualified by recording a time that met qualification standards while the latter two entered through wildcard places.",
+          " Medwood was selected as the flag bearer for both the opening and closing ceremonies.",
+          " Medwood reached the semifinals of the men's 400 metres hurdles before he was eliminated from competition while Martinez did not progress farther than the quarterfinal stage of the women's 100 metres.",
+          " Sanchez was defeated by his opponent Miklós Ungvári of Hungary in a 19-second match in the Round of 32 of the men's half-lightweight judo competition."
+        ]
+      ],
+      [
+        "Mayelis Caripá",
+        [
+          "Mayelis Yesenia Caripá Castillo (born 16 August 1980 in Valencia) is a Venezuelan freestyle wrestler.",
+          " She competed at the 2004, 2008 and 2012 Summer Olympics.",
+          " In 2004, she did not get out of her pool in the 48 kg freestyle event.",
+          " At the 2008 Summer Olympics, she lost to Vanessa Boubryemm in the first round of the 48 kg event.",
+          " She competed in the freestyle 48 kg event at the 2012 Summer Olympics; she defeated Alexandra Engelhardt in the 1/8 finals and was eliminated by Irini Merleni in the quarterfinals."
+        ]
+      ],
+      [
+        "Ilyas Abbadi",
+        [
+          "Ilyas Abbadi (born 21 October 1992 in Médéa) is an Algerian boxer.",
+          " At the 2012 Summer Olympics, he competed in the Men's welterweight, but was defeated in the first round.",
+          " At the 2016 Summer Olympics in Rio de Janeiro, he competed in the men's middleweight division.",
+          " He was defeated in the second round by Zhanibek Alimkhanuly of Kazakhstan."
+        ]
+      ],
+      [
+        "Yann Siccardi",
+        [
+          "Yann Siccardi (born April 11, 1984 in La Colle, Monaco) is a Monégasque Olympic judoka who competes in the Men's 60 kg category.",
+          " He competed in the 2008 and the 2012 Summer Olympics.",
+          " At the 2008 Summer Olympics, he lost in the first round to Craig Fallon of Great Britain.",
+          " At the 2012 Summer Olympics, he was defeated in the third round by Russian Arsen Galstyan.",
+          " Siccardi won a gold medal in the 60 kg and under category at the 2011 Games of the Small States of Europe.",
+          " Siccardi qualified for the 2016 Summer Olympics and is the Monégasque flag bearer."
+        ]
+      ],
+      [
+        "Oliver Lavigilante",
+        [
+          "Jason Oliver Lavigilante is a Mauritian boxer.",
+          " At the 2012 Summer Olympics, he competed in the Men's flyweight, but was defeated in the first round by Duke Micah."
+        ]
+      ],
+      [
+        "Tsedevsürengiin Mönkhzayaa",
+        [
+          "Tsedevsürengiin Mönkhzaya (Mongolian: Цэдэвсүрэнгийн Мөнхзаяа , born 13 June 1986) is a retired Mongolian judoka.",
+          " At the 2012 Summer Olympics she competed in the Women's 63 kg.",
+          " Her first and quickest performance was on the fourth day of the 2012 Summer Olympics on July 31, 2012 during the elimination round of 32 matches.",
+          " In three rounds totaling only 46 seconds, she expeditiously defeated Palau's 35-year-old Jennifer Anson.",
+          " In that match, Munkhzaya Tsedevsuren scored \"Ippon\", the perfect score of 110 to 0.",
+          " In the 16th elimination round, she defeated Finland's Johanna Ylinen with a score of 100 to 0.",
+          " In the quarterfinal, she defeated France's Gevrise Emane and advanced to the semifinal of Table B where she lost to Slovenia's Urska Zolnir who went on to win the gold.",
+          " Munkhzaya Tsedevsuren fought for the bronze and lost to Japan's Yoshie Ueno."
+        ]
+      ],
+      [
+        "Iran at the 2012 Summer Olympics",
+        [
+          "Iran (officially the Islamic Republic of Iran) competed at the 2012 Summer Olympics in London, from 27 July to 12 August 2012.",
+          " The nation has competed at every Summer Olympic games since its official debut in 1948 with the exception of the 1980 and 1984 Summer Olympics.",
+          " The National Olympic Committee of the Islamic Republic of Iran sent the nation's second-largest delegation to the Games, one less than it sent to Beijing.",
+          " A total of 53 athletes, 45 men and 8 women, competed in 14 sports.",
+          " This was also the youngest delegation in Iran's Olympic history, with half the team under the age of 25, and many of them are expected to reach their peak in time for the 2016 Summer Olympics in Rio de Janeiro.",
+          " Heavyweight boxer Ali Mazaheri was the nation's flag bearer at the opening ceremony."
+        ]
+      ]
+    ],
+    "type": "bridge",
+    "level": "hard"
+  },
+  {
+    "_id": "5ac13e195542994ab5c67cc5",
+    "answer": "Kramer's caddy Stan",
+    "question": "One of the actors from the web series Red Bird is also known for what character in the popular television show Seinfeld?",
+    "supporting_facts": [
+      [
+        "Red Bird (web series)",
+        1
+      ],
+      [
+        "Armin Shimerman",
+        1
+      ]
+    ],
+    "context": [
+      [
+        "Red vs. Blue: Recreation",
+        [
+          "Red vs. Blue: Recreation is the seventh season of the action comedy science fiction machinima web series Red vs. Blue created by Rooster Teeth Productions that premiered on June 9, 2009, and concluded on October 26, 2009.",
+          " Set three days after the \"\" mini-series, the Red team are back plotting against the Blue team, which currently consists of only one person, Caboose.",
+          " New episodes were released every Monday at 9:00 CST."
+        ]
+      ],
+      [
+        "John Prosky",
+        [
+          "John Prosky is an American film, theatre, and television actor.",
+          " His numerous TV credits include \"NYPD Blue\", \"ER\", \"Heroes\", \"Criminal Minds\", \"True Blood\", \"JAG\", \"My So-Called Life\", \"\", \"The Practice\", \"The X-Files\", \"The West Wing\", \"Charmed\", \"24\", \"House\", \"Grey's Anatomy\", \"Veronica Mars\", \"Fringe,\" and the web series \"Red Bird\".",
+          " His film credits include \"The Nutty Professor\", \"Bowfinger\", and \"A.I. Artificial Intelligence\".",
+          " He also contributed voice work to the \"L.A. Noire\" video game.",
+          " He is the son of actor Robert Prosky."
+        ]
+      ],
+      [
+        "Red vs. Blue",
+        [
+          "Red vs. Blue (stylized as redvsblue), often abbreviated as RvB, is an American comic science fiction web television series created by Burnie Burns with his production company Rooster Teeth.",
+          " The show is distributed through Rooster Teeth's website, as well as on DVD, Blu-ray, and more recently syndicated on the El Rey Network, Netflix and its own YouTube channel.",
+          " The series initially centers on two opposing teams of soldiers fighting a civil war in the middle of a desolate box canyon (Blood Gulch), in a parody of first-person shooter video games, military life, and science fiction films. Initially intended to be a short series of six to eight episodes, the project quickly and unexpectedly achieved significant popularity following its premiere on April 1, 2003.",
+          " The series consists of fifteen seasons and five mini-series.",
+          " \"Red vs. Blue\" is the longest running episodic web series and second longest running web series of all time."
+        ]
+      ],
+      [
+        "Damon Dark",
+        [
+          "Damon Dark is an independent public access TV series and web series from Australia about a heroic and obsessive investigator of UFO incidents and other strange cases, created by Australian writer, actor and film maker Adrian Sherlock.",
+          " Damon James Dark became a dedicated alien investigator after a close encounter during his teenage years.",
+          " He is associated with both the secret service and friendly aliens, including a character called Vincent Kosmos (an alien time traveller) and Trans-Dimensional Control (an alien law enforcement agency).",
+          " The character of Damon Dark has appeared in a 5-week TV series on Community TV 31 in Melbourne Australia, a self-published novel (\"Biodome\") on Amazon's createspace platform and a long running web series on YouTube.",
+          " He has also been involved in related web series \"Young Damon Dark\" and \"Vincent Kosmos.\"",
+          " He has also been the focus of a one actor stage drama.",
+          " The character of Damon Dark has been played by Adrian Sherlock, Bruce Hughes, Aiden Sherlock and Jack Knoll.",
+          " Damon Dark is a loner, dresses in black, has a huge experience of aliens and their technology.",
+          " Damon is characterized by his high intelligence, idealistic moral outlook and wry sense of humor.",
+          " His best friend in the series is the long-suffering Gary Sutton, played by actor Robert Trott.",
+          " Damon Dark began in 1999, with a five-part weekly series on Melbourne's Community TV 31, (although the pilot was shot in 1996 and the show had been in development since 1990) following a screening of a 65-minute version of the story \"Maddox\" at the 57th World Science Fiction Convention (Aussiecon Three) held in Melbourne.",
+          " The series was later revived as a YouTube webseries which inspired several related webseries, including \"The Young Damon Dark Adventures\" in which the character is played as a teenager, and Vincent Kosmos, (created by and starring Chris Heaven, , an Italian actor and musician, about a renegade alien character who is a friend of Damon."
+        ]
+      ],
+      [
+        "Beverly, Kentucky",
+        [
+          "Beverly is an unincorporated community in Bell County, Kentucky, United States.",
+          " It was also known as Nuckles and Red Bird which was a coal town.",
+          " Its post office is closed."
+        ]
+      ],
+      [
+        "Armin Shimerman",
+        [
+          "Armin Shimerman (born November 5, 1949) is an American actor, voice actor and author.",
+          " Shimerman is known for playing the Ferengi bartender Quark in the television series \"\", Principal Snyder in \"Buffy the Vampire Slayer\", Kramer's caddy Stan on \"Seinfeld\", for voicing Dr. Nefarious in the \"Ratchet & Clank\" series, and for voicing Andrew Ryan, one of the antagonists of \"BioShock\"."
+        ]
+      ],
+      [
+        "Red vs. Blue: Reconstruction",
+        [
+          "Red vs. Blue: Reconstruction (stylized as redvsblue RΞCONSTRUCTION) is the sixth season of the action comedy-drama science fiction machinima web series Red vs. Blue, produced by Rooster Teeth Productions and distributed via the Rooster Teeth website.",
+          " \"Red vs Blue: Reconstruction\" is set over a year after \"The Blood Gulch Chronicles\" and picks up where the \"\" miniseries left off.",
+          " The credits for the trailer state that \"Reconstruction\" stars several voices from the original Blood Gulch Chronicles, as well as \"Recovery One\" voice actor Shannon McCormick.",
+          " On May 26, Rooster Teeth released Chapter One of \"Reconstruction\".",
+          " The season begins an era of \"Red vs. Blue\" known as \"The Recollection Trilogy\" which refers to the sixth, seventh, and eight season of the series.",
+          " The season concluded on October 30, 2008 with the 19th chapter.",
+          " It was followed up by the \"\" mini-series, and then by the seventh season entitled \"\"."
+        ]
+      ],
+      [
+        "Red Bird (web series)",
+        [
+          "Red Bird is an American Western web series.",
+          " Created by Misti Boland and Jeremy Osbern, the series stars Alexandra Goodman, Ian Stark, Armin Shimerman, Kitty Swink, Mike McShane, and John Prosky.",
+          " The series of eight three to five minute episodes premiered on YouTube and the show's website in March 2016."
+        ]
+      ],
+      [
+        "Red Bird River Petroglyphs",
+        [
+          "The Red Bird River Petroglyphs, also known as the Red Bird Petroglyphs are a series of petroglyphs, or carvings, on a stone in Clay County, Kentucky.",
+          " The rock originally was situated along the Red Bird River but was moved to a park in Manchester after it fell onto the roadway below in 1994."
+        ]
+      ],
+      [
+        "Felicia Day",
+        [
+          "Kathryn Felicia Day is an American actress, singer, writer, and web series creator.",
+          " She is the star, writer, and producer of the original web series \"The Guild\" (2007–2013), a show loosely based on her life as a gamer.",
+          " She also wrote and starred in the \"Dragon Age\" web series \"\" (2011).",
+          " Day was a member of the board of directors of the International Academy of Web Television beginning December 2009 until the end of July 2012."
+        ]
+      ]
+    ],
+    "type": "bridge",
+    "level": "hard"
+  },
+  {
+    "_id": "5a8c30f6554299240d9c20d1",
+    "answer": "yes",
+    "question": "Were The Bomb and Rolling Papers released in the same year?",
+    "supporting_facts": [
+      [
+        "The Bomb (film)",
+        0
+      ],
+      [
+        "Rolling Papers (film)",
+        0
+      ]
+    ],
+    "context": [
+      [
+        "The Race (Wiz Khalifa song)",
+        [
+          "\"The Race\" is a song by American rapper Wiz Khalifa from his third studio album \"Rolling Papers\".",
+          " The song was written by Khalifa and produced by Eric Dan and Jeremy \"Big Jerm\" Kulousek for ID Labs.",
+          " \"The Race\" was released as the third single from \"Rolling Papers\" on March 8, 2011, and debuted and peaked at number 66 on the \"Billboard\" Hot 100."
+        ]
+      ],
+      [
+        "The Bomb (film)",
+        [
+          "The Bomb is a 2015 American documentary film about the history of nuclear weapons, from theoretical scientific considerations at the very beginning, to their first use on August 6, 1945, to their global political implications in the present-day.",
+          " The two-hour PBS film was written and directed by Rushmore DeNooyer, who noted the project took a year and a half to complete, since much of the film footage and images was only recently declassified by the United States Department of Defense.",
+          " According to DeNooyer, “It wouldn’t take very many bombs to really change life on Earth, ... The idea that there are thousands of them sitting around is pretty scary.",
+          " I don’t think people today realize that.",
+          " They don’t think about it.",
+          " I don’t think they are scared.",
+          " But in a way, they should be.”",
+          " Mark Dawidziak, of the \"Cleveland Plain Dealer\", summarized the film as follows: \"\"The Bomb\" moves swiftly to cover Hiroshima and Nagasaki, the Cold War, the arms race, the Red Scare, the witch hunt, the Cuban Missile Crisis, test-ban treaties, the \"Star Wars\" initiative, the anti-nuke movement, the collapse of the Soviet Union and the rise of new nuclear threats.\"",
+          " According to historian Richard Rhodes, “The invention [of 'The Bomb'] was a millennial change in human history: for the first time, we were now capable of our own destruction, as a species.”"
+        ]
+      ],
+      [
+        "Smoking (rolling paper)",
+        [
+          "Smoking is a brand of rolling papers, manufactured by Miquel y Costas in Barcelona, Spain.",
+          " According to their website, they were one of the earliest factories to produce rolling papers.",
+          " Smoking offers different color packages to differentiate the weights or materials of the paper inside."
+        ]
+      ],
+      [
+        "Amber Leaf",
+        [
+          "Amber Leaf is a brand of rolling tobacco.",
+          " It is a product of the Gallagher Group division of Japan Tobacco.",
+          " As of May 2016, Amber Leaf tobacco is available in 30g boxes which include papers and filters, 30g pouches with rolling papers and 50g pouches with rolling papers.",
+          ".",
+          " In 2011 and in recent years promotional Amber Leaf tobacco tins were sold with the tobacco in some stores in the UK and Ireland."
+        ]
+      ],
+      [
+        "Rolling Papers (Wiz Khalifa album)",
+        [
+          "Rolling Papers is the third studio album by American rapper Wiz Khalifa.",
+          " It was released on March 29, 2011, by Atlantic Records and Rostrum Records.",
+          " It is his first album under a major label after his independent releases, \"Show and Prove\" and \"Deal or No Deal\".",
+          " The album features guest appearances from Too $hort, Curren$y and Chevy Woods.",
+          " \"Rolling Papers\" was supported by five singles: \"Black and Yellow\", \"Roll Up\", \"On My Level\", \"No Sleep\" and \"The Race\".",
+          " The album has been noted by music writers for having a pop rap style."
+        ]
+      ],
+      [
+        "Big Bambu",
+        [
+          "Big Bambú is the second album by Cheech & Chong, released in 1972.",
+          " The name \"Big Bambu\" is a reference to a type of rolling paper made by the Bambu company; the original LP sleeve was designed by Ernie Cefalu and manufactured to look like a giant rolling paper package, and originally contained a giant rolling paper with the record.",
+          " Vinyl copies with the rolling paper have become hard to find.",
+          " The original CD packaging has been slightly reformatted, and does not contain rolling papers."
+        ]
+      ],
+      [
+        "Zig-Zag (company)",
+        [
+          "Zig-Zag is a brand of rolling papers that originated in France.",
+          " It is marketed in the USA by National Tobacco, in Europe by Republic Technologies, and in Japan by Tsuge Pipes.",
+          " The Zig-Zag brand produces primarily hand-rolled tobacco related products such as cigarette rolling papers, cigarette tubes and rolling accessories."
+        ]
+      ],
+      [
+        "Joint (cannabis)",
+        [
+          "A joint ( ), or spliff, is a rolled marijuana cigarette.",
+          " Unlike commercial tobacco cigarettes, joints are ordinarily hand-rolled by the user with rolling papers, though in some cases they are machine-rolled.",
+          " Rolling papers are the most common rolling medium in industrialized countries; however, brown paper, cigarettes with the tobacco removed, beedies with the tobacco removed, receipts, and newspaper can also be used, particularly in developing countries.",
+          " Modern papers are manufactured in a range of sizes from a wide variety of materials including rice, hemp, and flax, and are also available in liquorice and other flavoured varieties."
+        ]
+      ],
+      [
+        "Rolling Papers (film)",
+        [
+          "Rolling Papers is a 2015 documentary film directed by Mitch Dickman and featuring Ricardo Baca."
+        ]
+      ],
+      [
+        "List of rolling papers",
+        [
+          "Rolling papers (aka Blanks) are small sheets, rolls, or leaves of paper, invented by the Spanish , which are sold for rolling cigarettes either by hand or with a rolling machine.",
+          " When rolling a cigarette, one fills the rolling paper with tobacco, cannabis, cloves, damiana, hash or other herbs.",
+          " The paper for holding the tobacco blend may vary in porosity to allow ventilation of the burning ember or contain materials that control the burning rate of the cigarette and stability of the produced ash."
+        ]
+      ]
+    ],
+    "type": "comparison",
+    "level": "hard"
+  },
+  {
+    "_id": "5ae40b2b55429970de88d8b3",
+    "answer": "California Polytechnic State University",
+    "question": "In between  Polytechnic University of the Philippines and California Polytechnic State University which was founded as a vocational high school?",
+    "supporting_facts": [
+      [
+        "Polytechnic University of the Philippines",
+        0
+      ],
+      [
+        "California Polytechnic State University",
+        0
+      ],
+      [
+        "California Polytechnic State University",
+        1
+      ]
+    ],
+    "context": [
+      [
+        "Cal Poly Mustangs men's soccer",
+        [
+          "The Cal Poly Mustangs men's soccer program represents California Polytechnic State University in men's soccer at the NCAA Division I level.",
+          " Cal Poly is coached by former United States men's national team head coach Steve Sampson.",
+          " Like most teams from Cal Poly, they play in the Big West Conference.",
+          " The Big West Conference stopped sponsoring soccer in 1991, but resumed soccer in 2001.",
+          " Over this period, Cal Poly competed in a regional conference called the MPSF.",
+          " Since the return of soccer to the Big West, the Mustangs have appeared in 2 NCAA tournaments, most recently in 2015.",
+          " Posting the program's best record in 2008 (11–6–6), Cal Poly placed 3rd in the Big West and qualified for the NCAA Division I Tournament for the first time in the school's history.",
+          " Cal Poly managed to upset #11 UCLA 1–0 to advance to second round before losing 0–3 to #14 UC Irvine.",
+          " The Mustangs play in Alex G. Spanos Stadium (capacity of 11,075) on the campus of the California Polytechnic State University.",
+          " In 2011, collegesoccernews.com chose the Cal Poly vs UCSB soccer game as the #1 rivalry in college soccer."
+        ]
+      ],
+      [
+        "Chicago Vocational High School",
+        [
+          "Chicago Vocational High School (commonly known as CVCA, Chicago Vocational Career Academy or CVS) is a public 4–year vocational high school located in the Avalon Park neighborhood on the south side of Chicago, Illinois, United States.",
+          " Operated by Chicago Public Schools, Chicago Vocational High School opened in 1941.",
+          " The school was barely opened when the outbreak of World War II caused a change in plan.",
+          " The school would be a vocational school, but one under the control of the United States Navy, where many mechanics who would build and repair aircraft, among others, were trained.",
+          " After the war, the school was instrumental in helping returning veterans who went off to war prior to graduation to earn their diploma.",
+          " The school is also closely associated with a few of its notable alumni, none more so than Dick Butkus, who played football at CVS and at the University of Illinois before his Hall of Fame career for the Chicago Bears."
+        ]
+      ],
+      [
+        "Kwantlen Polytechnic University",
+        [
+          "Kwantlen Polytechnic University (commonly abbreviated to KPU) is a public degree-granting undergraduate polytechnic university in British Columbia with campuses located in Surrey, Richmond, Cloverdale, and Langley.",
+          " KPU is one of the largest institutions by enrollment in British Columbia with a total of 20,000 students and 1,400 faculty members across its four locations, encompassing the Metro Vancouver district.",
+          " KPU operates as the only English-language polytechnic university in Canada and provides undergraduate and vocational education including bachelor's degrees, associate degrees, diplomas, certificates, apprenticeships and citations in more than 120 diverse programs.",
+          " The school operates largely as an undergraduate polytechnic university but also functions as a vocational and technical school, offering apprenticeships for the skilled trades and diplomas in vocational education for skilled technicians and workers in support roles in professions such as engineering, accountancy, business administration, nursing, medicine, architecture, and criminology."
+        ]
+      ],
+      [
+        "Julian A. McPhee",
+        [
+          "Julian Aeneas McPhee (February 7, 1896 – November 10, 1967) was the sixth university president of California Polytechnic State University, San Luis Obispo (Cal Poly SLO) from 1933 to 1966 and the first president of California State Polytechnic University, Pomona (Cal Poly Pomona) from 1938 to 1966."
+        ]
+      ],
+      [
+        "Grant Vocational High School",
+        [
+          "Grant Vocational High School, also known as the Board of Education and the Cedar Rapids School District Central Office, is a historic building located in Cedar Rapids, Iowa, United States.",
+          " Completed in 1915, this is a rare example of a vocational high school in Iowa as only a handful were ever built.",
+          " While it offered various student activities in athletics and the arts, its curriculum was based on the manual arts instead of humanities or college preparatory courses.",
+          " A Progressive Era idea, vocational education began in Cedar Rapids in 1904.",
+          " Within a year there was a call for a dedicated vocational high school.",
+          " There was much debate as the local school district's regular high school was beyond capacity and there was a need for new elementary schools.",
+          " Efforts to build the school began with the passage of a bond referendum in 1911.",
+          " Cedar Rapids architect William J. Brown designed the three-story, brick Prairie School structure and it was built by the F.P. Gould Company of Omaha."
+        ]
+      ],
+      [
+        "Polytechnic University of the Philippines",
+        [
+          "Polytechnic University of the Philippines (Filipino: \"Politeknikong Unibersidad ng Pilipinas\"; abbreviated as PUP and commonly known as PUP Main, PUP Sta.",
+          " Mesa, and PUP Manila) is a coeducational, research state university located in Santa Mesa, Manila, Philippines.",
+          " It was founded on October 19, 1904 as the Manila Business School.",
+          " The university is ruled by Republic Act Number 8292, or the Higher Education Modernization Act of 1997.",
+          " PUP has a total of 71,963 students enrolled, and it has 25 branches and campuses located in Metro Manila, Northern and Central Luzon, and in Southern Luzon."
+        ]
+      ],
+      [
+        "University of Northern Philippines",
+        [
+          "The University of Northern Philippines (UNP) is a university in Barangay Tamag, in the City of Vigan in the province of Ilocos Sur, Philippines.",
+          " It is the first and oldest state university in Northern Luzon which offers low tuition fee, tracing its roots to 1906, which is older than the University of the Philippines by two years.",
+          " It is the only state university in the province aimed for less-fortunate people and one of three state-owned educational institutions of higher learning operating in Ilocos Sur (with the Ilocos Sur Polytechnic State College and the Northern Luzon Polytechnic State College, a former branch of the university)."
+        ]
+      ],
+      [
+        "California Polytechnic State University",
+        [
+          "California Polytechnic State University, also known as California Polytechnic State University, San Luis Obispo, Cal Poly San Luis Obispo, or Cal Poly, is a public university located in San Luis Obispo, California, United States.",
+          " Founded in 1901 as a vocational high school, it is currently one of only two polytechnic universities in the 23-member California State University system.",
+          " With six colleges, the university offers 64 bachelor's degrees, 32 master's degrees, and 7 teaching credentials.",
+          " The university does not grant doctoral degrees."
+        ]
+      ],
+      [
+        "Myron Angel House",
+        [
+          "The Myron Angel House is a historic house located at 714 Buchon St. in San Luis Obispo, California.",
+          " Built circa 1880, the house has a vernacular design which does not follow a particular architectural style.",
+          " The two-story wood frame house has redwood siding, a shingled gable roof, and some Eastlake details in the window surrounds and gable ends.",
+          " The house was the home of Myron Angel, the main figure in the establishment of California Polytechnic State University.",
+          " Angel, who lived in the house from 1889 to his 1911 death, proposed and lobbied for the creation of a polytechnic school in California; it was mainly due to his campaign that Cal Poly was founded in San Luis Obispo.",
+          " In addition to his educational activism, Angel was also an influential journalist and historian."
+        ]
+      ],
+      [
+        "Michael Marlow (economist)",
+        [
+          "Michael L. Marlow is a professor of economics at California Polytechnic State University (Cal Poly).",
+          " He is also an affiliated senior scholar at the Mercatus Center at George Mason University.",
+          " He holds a BA from George Washington University and a PhD from Virginia Tech, both in economics.",
+          " He joined the California Polytechnic State University faculty in 1988 and was named a University Distinguished Scholar by the university in 2007.",
+          " Prior to joining Cal Poly, he was an associate professor of economics at George Washington University from 1979 to 1983, and also worked as a senior financial economist at the U.S. Treasury from 1983 to 1988.",
+          " He is known for opposing government regulation of e-cigarettes and of unhealthy foods and beverages.",
+          " He has also argued that alcohol taxes primarily reduce consumption by light drinkers, not by heavy drinkers, and has criticized Proposition 65 for being ineffective with respect to public health benefits.",
+          " His research into the effects of smoking laws has been criticized for being funded by Philip Morris, and for methodological flaws."
+        ]
+      ]
+    ],
+    "type": "comparison",
+    "level": "hard"
+  },
+  {
+    "_id": "5a85e24a5542994775f6067f",
+    "answer": "no",
+    "question": "Are Hoodoo Gurus and Pierre Bouvier of the same nationality?",
+    "supporting_facts": [
+      [
+        "Hoodoo Gurus",
+        0
+      ],
+      [
+        "Pierre Bouvier",
+        0
+      ]
+    ],
+    "context": [
+      [
+        "Dubrovniks",
+        [
+          "The Dubrovniks were an Australian rock band which formed in August 1986 as The Adorable Ones.",
+          " Early in 1987 they changed their name, which acknowledges two of their founders, Roddy Radalj and Boris Sujdovic, birthplace in Dubrovnik, a town in Croatia.",
+          " Both Radalj and fellow founder James Baker had also founded Hoodoo Gurus (as Le Hoodoo Gurus) in 1981.",
+          " All three had earlier associations in the Perth punk scene of the late 1970s.",
+          " The group issued four albums, \"Dubrovnik Blues\" (August 1989), \"Audio Sonic Love Affair\" (September 1990), \"Chrome\" (June 1992), and \"Medicine Wheel\" (1994), before disbanding in 1995."
+        ]
+      ],
+      [
+        "Hoodoo Gurus discography",
+        [
+          "Australian rock group Hoodoo Gurus have released nine studio albums, thirty-six singles, two extended plays, six compilation albums and four video albums. Formed in January 1981, the band was originally known as Le Hoodoo Gurus for the release of their first single, \"Leilani\", in October 1982.",
+          " As Hoodoo Gurus, the band signed with Big Time Records and premiered their debut album, \"Stoneage Romeos\", in March 1984.",
+          " Also issued in the United States through A&M Records, the record remained atop the Alternative/College Albums Chart for four consecutive weeks, with it also becoming one of the most played albums of that year on the college network.",
+          " The group's subsequent albums, \"Mars Needs Guitars!",
+          "\", \"Blow Your Cool!",
+          "\" and \"Magnum Cum Louder\", all reached the \"Billboard\" 200."
+        ]
+      ],
+      [
+        "You Open My Eyes",
+        [
+          "\"You Open My Eyes\" is a single by iconic Australian rock group Hoodoo Gurus which reached #43 on the ARIA Singles Charts.",
+          " It was released on BMG in February, 1994; and was written by Brad Shepherd.",
+          " This was the first Hoodoo Gurus single that was not written or co-written by Dave Faulkner.",
+          " The B side, \"Something I Forgot to Say\", was written by Faulkner.",
+          " The second B side was a cover of The Victims' \"Television Addict\" written by James Baker and Faulkner (both were members of The Victims and of Hoodoo Gurus).",
+          " The music video for \"You Open My Eyes\" was directed by former Guru, Kimble Rendall and was their most expensive to date."
+        ]
+      ],
+      [
+        "Leilani (song)",
+        [
+          "\"Leilani\" was the first single by iconic Australian rock group Hoodoo Gurus when they were called Le Hoodoo Gurus and was released on Phantom Records in October 1982.",
+          " It had been written by all four Gurus: James Baker, Dave Faulkner, Roddy Radalj and Kimble Rendall.",
+          " Rendall left shortly before its release and, not long after, the band dropped the 'Le' to become Hoodoo Gurus.",
+          " Le Hoodoo Gurus were noted for having three guitars and no bass player, creating a distinctive, layered sound.",
+          " This was captured on \"Leilani\", which told the story of a maiden sacrificed to the gods and an erupting volcano while her true love looked on helplessly.",
+          " The song was later released on Hoodoo Gurus' first album \"Stoneage Romeos\" (1984)."
+        ]
+      ],
+      [
+        "Armchair Gurus",
+        [
+          "Armchair Gurus is the third compilation album by Australian rock group Hoodoo Gurus.",
+          " It was originally released as a 2-CD set, to coincide with the band's 1997 farewell tour of Australia (the 'Spit The Dummy' tour).",
+          " It was also released separately with \"Electric Chair\", the album features seventeen Hoodoo Gurus' ballads and slower songs whilst \"Electric Chair\" contains seventeen party tracks.",
+          " The double set contains two tracks not previously found on Gurus' albums and five totally new songs including the single \"The Real Deal\".",
+          " The album went gold."
+        ]
+      ],
+      [
+        "Pierre Bouvier",
+        [
+          "Pierre Charles Bouvier {'1': \", '2': \", '3': \", '4': \"} (born 9 May 1979) is a Canadian singer, songwriter, musician, composer and actor who is best known as the lead singer and guitarist of the rock band Simple Plan."
+        ]
+      ],
+      [
+        "Richard Grossman (bassist)",
+        [
+          "Richard Grossman (born 28 November 1959) is an Australian rock musician who has played bass guitar for two iconic bands: Divinyls and Hoodoo Gurus.",
+          " Hoodoo Gurus' status on the Australian rock scene was acknowledged when they were inducted into the 2007 ARIA Hall of Fame.",
+          " For Grossman, this was his second Hall of Fame induction in a row; the 2006 award was for his stint with Divinyls.",
+          " Often referred to as Rick Grossman, he has also performed with other Australian bands: Matt Finish, Ghostwriters, Persian Rugs, The Kelly Gang and Men At Work."
+        ]
+      ],
+      [
+        "Electric Chair (album)",
+        [
+          "Electric Chair is a compilation album by Australian rock group Hoodoo Gurus.",
+          " It was originally released as a 2-CD set with \"Armchair Gurus\", the album features seventeen Hoodoo Gurus' rock/party tracks whilst \"Armchair Gurus\" contains seventeen ballads and slower songs.",
+          " The double set contains two tracks not previously found on Gurus' albums and five totally new songs including the single \"The Real Deal\".",
+          " The albums were also released as separate albums.",
+          " The album was certified gold."
+        ]
+      ],
+      [
+        "James Baker (musician)",
+        [
+          "James Lawrence Baker (born 7 March 1954) is a rock musician from Perth, Western Australia.",
+          " He has drummed with several bands including the Scientists (1978–81, 1995), Le Hoodoo Gurus (1981–84), Beasts of Bourbon (1983–85, 1988–90), and the Dubrovniks (1986–94).",
+          " In 2006 Baker was inducted into the West Australian Music Industry Hall of Fame.",
+          " Hoodoo Gurus were inducted into the 2007 ARIA Hall of Fame."
+        ]
+      ],
+      [
+        "Hoodoo Gurus",
+        [
+          "Hoodoo Gurus (referred to as the Gurus by fans) are an Australian rock band, formed in Sydney in 1981, by the mainstay Dave Faulkner (songwriter, lead singer and guitarist) and later joined by Richard Grossman (bass), Mark Kingsmill (drums), and Brad Shepherd (guitar, vocals, harmonica).",
+          " Their popularity peaked in the mid to late 1980s with albums \"Mars Needs Guitars!",
+          "\", \"Blow Your Cool!",
+          "\" and \"Magnum Cum Louder\"."
+        ]
+      ]
+    ],
+    "type": "comparison",
+    "level": "hard"
+  },
+  {
+    "_id": "5ab3acc9554299753aec5985",
+    "answer": "Crepis",
+    "question": "Which genus's family comes first alphabetically, Crepis or Isatis?",
+    "supporting_facts": [
+      [
+        "Crepis",
+        0
+      ],
+      [
+        "Isatis",
+        0
+      ]
+    ],
+    "context": [
+      [
+        "Viruddh... Family Comes First",
+        [
+          "Virruddh... Family Comes First (English: \"Against\") is an Indian Hindi drama film, released in 2005, directed by Mahesh Manjrekar.",
+          " The film stars Amitabh Bachchan, Sharmila Tagore, Sanjay Dutt and John Abraham.",
+          " \"Viruddh\" is not a musical, instead the soundtrack is primarily used as background.",
+          " Marathi movie 'Kokanastha' also written and directed by Mahesh Manjrekar has a similar plot."
+        ]
+      ],
+      [
+        "Whatever Comes First (song)",
+        [
+          "\"Whatever Comes First\" is the a debut song written by Drew Womack, Walt Aldridge and Brad Crisler, and recorded by American country music group Sons of the Desert.",
+          " It was released in February 1997 as the first single and title track from the album \"Whatever Comes First\".",
+          " The song reached #10 on the \"Billboard\" Hot Country Singles & Tracks chart."
+        ]
+      ],
+      [
+        "Howard Hobbs",
+        [
+          "Howard William Thomas Hobbs (born 22 January 1950) is an Australian politician who represented the seat of Warrego in the Legislative Assembly of Queensland from 1 November 1986 until his retirement at the 31 January 2015 state election.",
+          " He was a member of the National Party of Australia until the Queensland division merged with the Liberal party to form the Liberal National Party of Queensland.",
+          " Hobbs was Shadow Minister for Local Government and Planning and for Communities from 28 September 2005 until the LNP entered government following the 2012 election.",
+          " As the longest-serving member of the Legislative Assembly, he presides at the election of Speakers.",
+          " When he did so in 2009, Dean Wells equaled him in seniority, but Hobbs had taken the oath first because his name comes first alphabetically, so he took the chair as Presiding Member.",
+          " As Wells lost his seat at the 2012 election, Hobbs alone was the longest-serving member until his retirement at the 2015 state election."
+        ]
+      ],
+      [
+        "Panic Attack (The Paddingtons song)",
+        [
+          "\"Panic Attack\" is a song by British rock band The Paddingtons, released on 4 April 2005.",
+          " It is the first single to be taken from their début album \"First Comes First\".",
+          " Overall, it is the band's second single behind \"21\", which was released the previous year, and which was re-recorded for \"First Comes First\"."
+        ]
+      ],
+      [
+        "Mahesh Manjrekar",
+        [
+          "Mahesh Vaman Manjrekar (Marathi: महेश वामन मांजरेकर ) (born 16 August 1958) is an Indian film director, actor, writer and producer.",
+          " He is credited with directing the critically acclaimed films \"\" (1999), \"Astitva\" (2000) and \"Viruddh... Family Comes First\" (2005).",
+          " He has won a National Film Award and two Star Screen Awards.",
+          " Besides direction, he has acted in several films, including some of his own productions.",
+          " He first gained acclaim as an actor for his performance in the 2002 film \"Kaante\", and later played negative roles in the Telugu film \"Okkadunnadu\" (2007) and as the gangster Javed in the film \"Slumdog Millionaire\" (2008).",
+          " He played the role of Shivaji Maharaj in Marathi film \"Me Shivajiraje Bhosale Boltoy\".",
+          " He also played the role of Harpist Dongara in the \"Aakhri Chunauti\" series of episodes in \"C.I.D.\".",
+          " Manjrekar was acclaimed for the negative role as inspector D.R. Talpade in the movie Wanted starring superstar Salman Khan."
+        ]
+      ],
+      [
+        "Isatis",
+        [
+          "Isatis is a genus of about 30 species of flowering plants in the family Brassicaceae, native to the Mediterranean region east to central Asia.",
+          " The genus includes woad (\"Isatis tinctoria\")."
+        ]
+      ],
+      [
+        "Sons of the Desert (band)",
+        [
+          "Sons of the Desert was an American country music band founded in 1989 in Waco, Texas by brothers Drew Womack (lead vocals, rhythm guitar) and Tim Womack (lead guitar, background vocals), along with Scott Saunders (keyboards), Doug Virden (bass guitar, background vocals), and Brian Westrum (drums).",
+          " The band released \"Whatever Comes First\" for Epic Records Nashville in 1997, and recorded a second album for Epic which was not released. \"",
+          "Change\" followed in 2000.",
+          " Counting two singles from the unreleased album, Sons of the Desert charted eight times on the \"Billboard\" Hot Country Songs charts, including the top ten hit \"Whatever Comes First\"; they were also guest vocalists on Lee Ann Womack's 2000 hit \"I Hope You Dance\" and Ty Herndon's \"It Must Be Love\", both of which reached No. 1 on that chart.",
+          " Following the band's disestablishment, Drew Womack became a solo artist."
+        ]
+      ],
+      [
+        "Crepis",
+        [
+          "Crepis, commonly known in some parts of the world as hawksbeard or hawk's-beard (but not to be confused with the related genus \"Hieracium\" with a similar common name), is a genus of annual and perennial flowering plants of the family Asteraceae superficially resembling the dandelion, the most conspicuous difference being that \"Crepis\" usually has branching scapes with multiple heads (though solitary heads can occur).",
+          " The genus name \"Crepis\" derives from the Greek \"krepis\", meaning \"slipper\" or \"sandal\", possibly in reference to the shape of the fruit."
+        ]
+      ],
+      [
+        "Whatever Comes First",
+        [
+          "Whatever Comes First is the debut album of the American country music band Sons of the Desert.",
+          " The album was released in 1997 (see 1997 in country music) on Epic Records.",
+          " It produced three singles for them on the \"Billboard\" country singles charts: the Top Ten \"Whatever Comes First\", as well as \"Leaving October\" and \"Hand of Fate\"."
+        ]
+      ],
+      [
+        "City of Gold (2010 film)",
+        [
+          "City of Gold is a 2010 Bollywood film released in both Hindi and Marathi languages.",
+          " The film was directed by Mahesh Manjrekar, who has directed critically acclaimed films in the past like \"Astitva\" and \"Viruddh... Family Comes First\".",
+          " The film is adapted from the play \"Adhantar\" by Jayant Pawar, who also co-wrote the screenplay, and explores the life of Mumbai's mill workers after they were rendered jobless in the early 1980s, when the Mumbai mills shut down in the post Great Bombay Textile Strike period, and soon made way for skyscrapers and shopping malls.",
+          " The film opened to mixed reviews, though it was commended for its theme, and acting.",
+          " The name of the Marathi version of this film is \"Lalbaug Parel\", while the Hindi version was released as \"City of Gold\"."
+        ]
+      ]
+    ],
+    "type": "comparison",
+    "level": "hard"
+  }
+]

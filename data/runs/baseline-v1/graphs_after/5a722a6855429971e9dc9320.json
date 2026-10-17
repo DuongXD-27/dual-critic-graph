@@ -1,0 +1,816 @@
+{
+  "qid": "5a722a6855429971e9dc9320",
+  "nodes": [
+    {
+      "id": "n0",
+      "name": "Tainy Sledstviya",
+      "type": "MISC",
+      "is_title": true,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n1",
+      "name": "Legal history",
+      "type": null,
+      "is_title": true,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n2",
+      "name": "Gregory Shaffer",
+      "type": "PER",
+      "is_title": true,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n3",
+      "name": "Feminism and Legal Theory Project",
+      "type": "ORG",
+      "is_title": true,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n4",
+      "name": "John Ballem",
+      "type": "PER",
+      "is_title": true,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n5",
+      "name": "The Critical Legal Studies Movement (book)",
+      "type": "MISC",
+      "is_title": true,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n6",
+      "name": "Community Legal Assistance Society",
+      "type": "ORG",
+      "is_title": true,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n7",
+      "name": "Glanville Davies affair",
+      "type": null,
+      "is_title": true,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n8",
+      "name": "Anna Kovalchuk",
+      "type": "PER",
+      "is_title": true,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n9",
+      "name": "Loan modification in the United States",
+      "type": null,
+      "is_title": true,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n10",
+      "name": "Maria Shvetsova",
+      "type": "PER",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n11",
+      "name": "University of California, Irvine School of Law",
+      "type": "ORG",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n12",
+      "name": "University of Minnesota Law School",
+      "type": "ORG",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n13",
+      "name": "Loyola University Chicago School of Law",
+      "type": "ORG",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n14",
+      "name": "University of Wisconsin Law School",
+      "type": "ORG",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n15",
+      "name": "International Centre for Trade and Sustainable Development",
+      "type": "ORG",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n16",
+      "name": "American Society of International Law",
+      "type": "ORG",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n17",
+      "name": "Dartmouth College",
+      "type": "ORG",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n18",
+      "name": "Stanford Law School",
+      "type": "ORG",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n19",
+      "name": "Martha Fineman",
+      "type": "PER",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n20",
+      "name": "1984",
+      "type": "TIME",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n21",
+      "name": "Emory University School of Law",
+      "type": "ORG",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n22",
+      "name": "1925",
+      "type": "TIME",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n23",
+      "name": "2010",
+      "type": "TIME",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n24",
+      "name": "Canada",
+      "type": "LOC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n25",
+      "name": "Petroleum Law Foundation Prize",
+      "type": "MISC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n26",
+      "name": "Crime Writers of Canada",
+      "type": "ORG",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n27",
+      "name": "Probus Club of Calgary",
+      "type": "ORG",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n28",
+      "name": "Air Crew Association of Alberta: Southern Alberta Branch",
+      "type": "ORG",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n29",
+      "name": "Distinguished Service Award for Legal Scholarship",
+      "type": "MISC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n30",
+      "name": "Calgary Herald",
+      "type": "ORG",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n31",
+      "name": "The Oil and Gas Lease in Canada",
+      "type": "MISC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n32",
+      "name": "book",
+      "type": "MISC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n33",
+      "name": "Roberto Mangabeira Unger",
+      "type": "PER",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n34",
+      "name": "1986",
+      "type": "TIME",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n35",
+      "name": "British Columbia",
+      "type": "LOC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n36",
+      "name": "1971",
+      "type": "TIME",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n37",
+      "name": "Glanville Davies",
+      "type": "PER",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n38",
+      "name": "Council of the Law Society of England and Wales",
+      "type": "ORG",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n39",
+      "name": "15 June 1977",
+      "type": "TIME",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n40",
+      "name": "HARP",
+      "type": "MISC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n41",
+      "name": "2009",
+      "type": "TIME",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n42",
+      "name": "HAMP",
+      "type": "MISC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    }
+  ],
+  "edges": [
+    {
+      "id": "e0",
+      "head": "n0",
+      "relation": "P161",
+      "tail": "n8",
+      "provenance": [
+        [
+          "Tainy Sledstviya",
+          2
+        ],
+        [
+          "Anna Kovalchuk",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e1",
+      "head": "n0",
+      "relation": "P674",
+      "tail": "n10",
+      "provenance": [
+        [
+          "Tainy Sledstviya",
+          2
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e2",
+      "head": "n2",
+      "relation": "P108",
+      "tail": "n11",
+      "provenance": [
+        [
+          "Gregory Shaffer",
+          3
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e3",
+      "head": "n2",
+      "relation": "P108",
+      "tail": "n12",
+      "provenance": [
+        [
+          "Gregory Shaffer",
+          4
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e4",
+      "head": "n2",
+      "relation": "P108",
+      "tail": "n13",
+      "provenance": [
+        [
+          "Gregory Shaffer",
+          4
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e5",
+      "head": "n2",
+      "relation": "P108",
+      "tail": "n14",
+      "provenance": [
+        [
+          "Gregory Shaffer",
+          4
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e6",
+      "head": "n2",
+      "relation": "P108",
+      "tail": "n15",
+      "provenance": [
+        [
+          "Gregory Shaffer",
+          5
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e7",
+      "head": "n2",
+      "relation": "P463",
+      "tail": "n16",
+      "provenance": [
+        [
+          "Gregory Shaffer",
+          5
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e8",
+      "head": "n2",
+      "relation": "P69",
+      "tail": "n17",
+      "provenance": [
+        [
+          "Gregory Shaffer",
+          6
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e9",
+      "head": "n2",
+      "relation": "P69",
+      "tail": "n18",
+      "provenance": [
+        [
+          "Gregory Shaffer",
+          6
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e10",
+      "head": "n3",
+      "relation": "P112",
+      "tail": "n19",
+      "provenance": [
+        [
+          "Feminism and Legal Theory Project",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e11",
+      "head": "n3",
+      "relation": "P571",
+      "tail": "n20",
+      "provenance": [
+        [
+          "Feminism and Legal Theory Project",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e12",
+      "head": "n3",
+      "relation": "P361",
+      "tail": "n21",
+      "provenance": [
+        [
+          "Feminism and Legal Theory Project",
+          5
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e13",
+      "head": "n19",
+      "relation": "P108",
+      "tail": "n21",
+      "provenance": [
+        [
+          "Feminism and Legal Theory Project",
+          5
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": true
+    },
+    {
+      "id": "e14",
+      "head": "n4",
+      "relation": "P569",
+      "tail": "n22",
+      "provenance": [
+        [
+          "John Ballem",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e15",
+      "head": "n4",
+      "relation": "P570",
+      "tail": "n23",
+      "provenance": [
+        [
+          "John Ballem",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e16",
+      "head": "n4",
+      "relation": "P27",
+      "tail": "n24",
+      "provenance": [
+        [
+          "John Ballem",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": true
+    },
+    {
+      "id": "e17",
+      "head": "n4",
+      "relation": "P166",
+      "tail": "n25",
+      "provenance": [
+        [
+          "John Ballem",
+          2
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e18",
+      "head": "n4",
+      "relation": "P463",
+      "tail": "n26",
+      "provenance": [
+        [
+          "John Ballem",
+          3
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e19",
+      "head": "n4",
+      "relation": "P463",
+      "tail": "n27",
+      "provenance": [
+        [
+          "John Ballem",
+          3
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e20",
+      "head": "n4",
+      "relation": "P463",
+      "tail": "n28",
+      "provenance": [
+        [
+          "John Ballem",
+          3
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e21",
+      "head": "n4",
+      "relation": "P166",
+      "tail": "n29",
+      "provenance": [
+        [
+          "John Ballem",
+          4
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e22",
+      "head": "n4",
+      "relation": "P108",
+      "tail": "n30",
+      "provenance": [
+        [
+          "John Ballem",
+          5
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e23",
+      "head": "n4",
+      "relation": "P800",
+      "tail": "n31",
+      "provenance": [
+        [
+          "John Ballem",
+          6
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e24",
+      "head": "n31",
+      "relation": "P50",
+      "tail": "n4",
+      "provenance": [
+        [
+          "John Ballem",
+          6
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": true
+    },
+    {
+      "id": "e25",
+      "head": "n5",
+      "relation": "P31",
+      "tail": "n32",
+      "provenance": [
+        [
+          "The Critical Legal Studies Movement (book)",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e26",
+      "head": "n5",
+      "relation": "P50",
+      "tail": "n33",
+      "provenance": [
+        [
+          "The Critical Legal Studies Movement (book)",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e27",
+      "head": "n5",
+      "relation": "P577",
+      "tail": "n34",
+      "provenance": [
+        [
+          "The Critical Legal Studies Movement (book)",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e28",
+      "head": "n6",
+      "relation": "P131",
+      "tail": "n35",
+      "provenance": [
+        [
+          "Community Legal Assistance Society",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e29",
+      "head": "n6",
+      "relation": "P17",
+      "tail": "n24",
+      "provenance": [
+        [
+          "Community Legal Assistance Society",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e30",
+      "head": "n35",
+      "relation": "P17",
+      "tail": "n24",
+      "provenance": [
+        [
+          "Community Legal Assistance Society",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e31",
+      "head": "n6",
+      "relation": "P571",
+      "tail": "n36",
+      "provenance": [
+        [
+          "Community Legal Assistance Society",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e32",
+      "head": "n37",
+      "relation": "P463",
+      "tail": "n38",
+      "provenance": [
+        [
+          "Glanville Davies affair",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e33",
+      "head": "n8",
+      "relation": "P569",
+      "tail": "n39",
+      "provenance": [
+        [
+          "Anna Kovalchuk",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e34",
+      "head": "n40",
+      "relation": "P571",
+      "tail": "n41",
+      "provenance": [
+        [
+          "Loan modification in the United States",
+          28
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e35",
+      "head": "n42",
+      "relation": "P571",
+      "tail": "n41",
+      "provenance": [
+        [
+          "Loan modification in the United States",
+          28
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    }
+  ]
+}

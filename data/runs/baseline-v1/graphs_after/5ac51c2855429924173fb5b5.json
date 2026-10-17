@@ -1,0 +1,991 @@
+{
+  "qid": "5ac51c2855429924173fb5b5",
+  "nodes": [
+    {
+      "id": "n0",
+      "name": "Noah's Ark",
+      "type": "MISC",
+      "is_title": true,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n1",
+      "name": "Hendren v. Campbell",
+      "type": "MISC",
+      "is_title": true,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n2",
+      "name": "John C. Whitcomb",
+      "type": "PER",
+      "is_title": true,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n3",
+      "name": "Frank Lewis Marsh",
+      "type": "PER",
+      "is_title": true,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n4",
+      "name": "RATE project",
+      "type": "MISC",
+      "is_title": true,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n5",
+      "name": "Biblical Creation Society",
+      "type": "ORG",
+      "is_title": true,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n6",
+      "name": "Henry M. Morris",
+      "type": "PER",
+      "is_title": true,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n7",
+      "name": "Institute for Creation Research",
+      "type": "ORG",
+      "is_title": true,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n8",
+      "name": "The Genesis Flood",
+      "type": "MISC",
+      "is_title": true,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n9",
+      "name": "Creation Research Society",
+      "type": "ORG",
+      "is_title": true,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n10",
+      "name": "Genesis flood narrative",
+      "type": "MISC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n11",
+      "name": "Quran",
+      "type": "MISC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n12",
+      "name": "1977",
+      "type": "TIME",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n13",
+      "name": "Biology: A Search For Order In Complexity",
+      "type": "MISC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n14",
+      "name": "Jon Hendren",
+      "type": "PER",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n15",
+      "name": "West Clark Community Schools",
+      "type": "ORG",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n16",
+      "name": "June 22, 1924",
+      "type": "TIME",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n17",
+      "name": "Washington, D.C.",
+      "type": "LOC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n18",
+      "name": "18 October 1899",
+      "type": "TIME",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n19",
+      "name": "14 July 1992",
+      "type": "TIME",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n20",
+      "name": "Aledo",
+      "type": "LOC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n21",
+      "name": "Illinois",
+      "type": "LOC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n22",
+      "name": "Seventh-day Adventist",
+      "type": "ORG",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n23",
+      "name": "1997",
+      "type": "TIME",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n24",
+      "name": "2005",
+      "type": "TIME",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n25",
+      "name": "Larry Vardiman",
+      "type": "PER",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n26",
+      "name": "Steven A. Austin",
+      "type": "PER",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n27",
+      "name": "John Baumgardner",
+      "type": "PER",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n28",
+      "name": "Steven W. Boyd",
+      "type": "PER",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n29",
+      "name": "Eugene F. Chaffin",
+      "type": "PER",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n30",
+      "name": "Donald B. DeYoung",
+      "type": "PER",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n31",
+      "name": "Russell Humphreys",
+      "type": "PER",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n32",
+      "name": "Andrew Snelling",
+      "type": "PER",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n33",
+      "name": "Nigel M. de S. Cameron",
+      "type": "PER",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n34",
+      "name": "United Kingdom",
+      "type": "LOC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n35",
+      "name": "Rugby",
+      "type": "LOC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n36",
+      "name": "Warwickshire",
+      "type": "LOC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n37",
+      "name": "October 6, 1918",
+      "type": "TIME",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n38",
+      "name": "February 25, 2006",
+      "type": "TIME",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n39",
+      "name": "American",
+      "type": "LOC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n40",
+      "name": "1961",
+      "type": "TIME",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n41",
+      "name": "Dallas",
+      "type": "LOC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n42",
+      "name": "Texas",
+      "type": "LOC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n43",
+      "name": "1972",
+      "type": "TIME",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n44",
+      "name": "Creation Science Research Center",
+      "type": "ORG",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n45",
+      "name": "Christian",
+      "type": "MISC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    }
+  ],
+  "edges": [
+    {
+      "id": "e0",
+      "head": "n0",
+      "relation": "P1441",
+      "tail": "n10",
+      "provenance": [
+        [
+          "Noah's Ark",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e1",
+      "head": "n0",
+      "relation": "P1441",
+      "tail": "n11",
+      "provenance": [
+        [
+          "Noah's Ark",
+          4
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e2",
+      "head": "n1",
+      "relation": "P585",
+      "tail": "n12",
+      "provenance": [
+        [
+          "Hendren v. Campbell",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e3",
+      "head": "n13",
+      "relation": "P123",
+      "tail": "n9",
+      "provenance": [
+        [
+          "Hendren v. Campbell",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e4",
+      "head": "n14",
+      "relation": "P69",
+      "tail": "n15",
+      "provenance": [
+        [
+          "Hendren v. Campbell",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e5",
+      "head": "n2",
+      "relation": "P569",
+      "tail": "n16",
+      "provenance": [
+        [
+          "John C. Whitcomb",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e6",
+      "head": "n2",
+      "relation": "P19",
+      "tail": "n17",
+      "provenance": [
+        [
+          "John C. Whitcomb",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e7",
+      "head": "n8",
+      "relation": "P50",
+      "tail": "n2",
+      "provenance": [
+        [
+          "John C. Whitcomb",
+          1
+        ],
+        [
+          "Biblical Creation Society",
+          1
+        ],
+        [
+          "Henry M. Morris",
+          3
+        ],
+        [
+          "The Genesis Flood",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e8",
+      "head": "n8",
+      "relation": "P50",
+      "tail": "n6",
+      "provenance": [
+        [
+          "John C. Whitcomb",
+          1
+        ],
+        [
+          "Biblical Creation Society",
+          1
+        ],
+        [
+          "Henry M. Morris",
+          3
+        ],
+        [
+          "The Genesis Flood",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e9",
+      "head": "n2",
+      "relation": "P800",
+      "tail": "n8",
+      "provenance": [
+        [
+          "John C. Whitcomb",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e10",
+      "head": "n3",
+      "relation": "P569",
+      "tail": "n18",
+      "provenance": [
+        [
+          "Frank Lewis Marsh",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e11",
+      "head": "n3",
+      "relation": "P570",
+      "tail": "n19",
+      "provenance": [
+        [
+          "Frank Lewis Marsh",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e12",
+      "head": "n3",
+      "relation": "P19",
+      "tail": "n20",
+      "provenance": [
+        [
+          "Frank Lewis Marsh",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e13",
+      "head": "n20",
+      "relation": "P131",
+      "tail": "n21",
+      "provenance": [
+        [
+          "Frank Lewis Marsh",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e14",
+      "head": "n3",
+      "relation": "P140",
+      "tail": "n22",
+      "provenance": [
+        [
+          "Frank Lewis Marsh",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e15",
+      "head": "n9",
+      "relation": "P112",
+      "tail": "n3",
+      "provenance": [
+        [
+          "Frank Lewis Marsh",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": true
+    },
+    {
+      "id": "e16",
+      "head": "n4",
+      "relation": "P710",
+      "tail": "n9",
+      "provenance": [
+        [
+          "RATE project",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e17",
+      "head": "n4",
+      "relation": "P710",
+      "tail": "n7",
+      "provenance": [
+        [
+          "RATE project",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e18",
+      "head": "n4",
+      "relation": "P580",
+      "tail": "n23",
+      "provenance": [
+        [
+          "RATE project",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e19",
+      "head": "n4",
+      "relation": "P582",
+      "tail": "n24",
+      "provenance": [
+        [
+          "RATE project",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e20",
+      "head": "n4",
+      "relation": "P488",
+      "tail": "n25",
+      "provenance": [
+        [
+          "RATE project",
+          2
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e21",
+      "head": "n4",
+      "relation": "P710",
+      "tail": "n25",
+      "provenance": [
+        [
+          "RATE project",
+          2
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e22",
+      "head": "n4",
+      "relation": "P710",
+      "tail": "n26",
+      "provenance": [
+        [
+          "RATE project",
+          2
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e23",
+      "head": "n4",
+      "relation": "P710",
+      "tail": "n27",
+      "provenance": [
+        [
+          "RATE project",
+          2
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e24",
+      "head": "n4",
+      "relation": "P710",
+      "tail": "n28",
+      "provenance": [
+        [
+          "RATE project",
+          2
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e25",
+      "head": "n4",
+      "relation": "P710",
+      "tail": "n29",
+      "provenance": [
+        [
+          "RATE project",
+          2
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e26",
+      "head": "n4",
+      "relation": "P710",
+      "tail": "n30",
+      "provenance": [
+        [
+          "RATE project",
+          2
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e27",
+      "head": "n4",
+      "relation": "P710",
+      "tail": "n31",
+      "provenance": [
+        [
+          "RATE project",
+          2
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e28",
+      "head": "n4",
+      "relation": "P710",
+      "tail": "n32",
+      "provenance": [
+        [
+          "RATE project",
+          2
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e29",
+      "head": "n5",
+      "relation": "P571",
+      "tail": "n12",
+      "provenance": [
+        [
+          "Biblical Creation Society",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e30",
+      "head": "n5",
+      "relation": "P112",
+      "tail": "n33",
+      "provenance": [
+        [
+          "Biblical Creation Society",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e31",
+      "head": "n5",
+      "relation": "P17",
+      "tail": "n34",
+      "provenance": [
+        [
+          "Biblical Creation Society",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e32",
+      "head": "n5",
+      "relation": "P159",
+      "tail": "n35",
+      "provenance": [
+        [
+          "Biblical Creation Society",
+          2
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e33",
+      "head": "n35",
+      "relation": "P131",
+      "tail": "n36",
+      "provenance": [
+        [
+          "Biblical Creation Society",
+          2
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e34",
+      "head": "n6",
+      "relation": "P569",
+      "tail": "n37",
+      "provenance": [
+        [
+          "Henry M. Morris",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e35",
+      "head": "n6",
+      "relation": "P570",
+      "tail": "n38",
+      "provenance": [
+        [
+          "Henry M. Morris",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e36",
+      "head": "n6",
+      "relation": "P27",
+      "tail": "n39",
+      "provenance": [
+        [
+          "Henry M. Morris",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e37",
+      "head": "n9",
+      "relation": "P112",
+      "tail": "n6",
+      "provenance": [
+        [
+          "Henry M. Morris",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": true
+    },
+    {
+      "id": "e38",
+      "head": "n7",
+      "relation": "P112",
+      "tail": "n6",
+      "provenance": [
+        [
+          "Henry M. Morris",
+          1
+        ],
+        [
+          "Institute for Creation Research",
+          3
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e39",
+      "head": "n8",
+      "relation": "P577",
+      "tail": "n40",
+      "provenance": [
+        [
+          "Henry M. Morris",
+          3
+        ],
+        [
+          "The Genesis Flood",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e40",
+      "head": "n6",
+      "relation": "P800",
+      "tail": "n8",
+      "provenance": [
+        [
+          "Henry M. Morris",
+          3
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e41",
+      "head": "n41",
+      "relation": "P131",
+      "tail": "n42",
+      "provenance": [
+        [
+          "Institute for Creation Research",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e42",
+      "head": "n7",
+      "relation": "P571",
+      "tail": "n43",
+      "provenance": [
+        [
+          "Institute for Creation Research",
+          3
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e43",
+      "head": "n7",
+      "relation": "P807",
+      "tail": "n44",
+      "provenance": [
+        [
+          "Institute for Creation Research",
+          3
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e44",
+      "head": "n9",
+      "relation": "P140",
+      "tail": "n45",
+      "provenance": [
+        [
+          "Creation Research Society",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    }
+  ]
+}

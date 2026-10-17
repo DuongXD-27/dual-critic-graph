@@ -1,0 +1,1139 @@
+{
+  "qid": "5a88a4e65542997e5c09a671",
+  "nodes": [
+    {
+      "id": "n0",
+      "name": "Shafiq Chitou",
+      "type": "PER",
+      "is_title": true,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n1",
+      "name": "Aliaksandr Buikevich",
+      "type": "PER",
+      "is_title": true,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n2",
+      "name": "Duke Micah",
+      "type": "PER",
+      "is_title": true,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n3",
+      "name": "Belize at the 2012 Summer Olympics",
+      "type": null,
+      "is_title": true,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n4",
+      "name": "Mayelis Caripá",
+      "type": "PER",
+      "is_title": true,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n5",
+      "name": "Ilyas Abbadi",
+      "type": "PER",
+      "is_title": true,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n6",
+      "name": "Yann Siccardi",
+      "type": "PER",
+      "is_title": true,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n7",
+      "name": "Oliver Lavigilante",
+      "type": "PER",
+      "is_title": true,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n8",
+      "name": "Tsedevsürengiin Mönkhzayaa",
+      "type": "PER",
+      "is_title": true,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n9",
+      "name": "Iran at the 2012 Summer Olympics",
+      "type": null,
+      "is_title": true,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n10",
+      "name": "23 May 1985",
+      "type": "TIME",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n11",
+      "name": "2012 Summer Olympics",
+      "type": "MISC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n12",
+      "name": "19 November 1984",
+      "type": "TIME",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n13",
+      "name": "Belarus",
+      "type": "LOC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n14",
+      "name": "2011 World Championships",
+      "type": "MISC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n15",
+      "name": "Catania",
+      "type": "LOC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n16",
+      "name": "2008 Summer Olympics",
+      "type": "MISC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n17",
+      "name": "Mihai Covaliu",
+      "type": "PER",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n18",
+      "name": "Romania",
+      "type": "LOC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n19",
+      "name": "Rareș Dumitrescu",
+      "type": "PER",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n20",
+      "name": "2016 Summer Olympics",
+      "type": "MISC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n21",
+      "name": "Rio de Janeiro",
+      "type": "LOC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n22",
+      "name": "Joseph Polossifakis",
+      "type": "PER",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n23",
+      "name": "Canada",
+      "type": "LOC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n24",
+      "name": "Áron Szilágyi",
+      "type": "PER",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n25",
+      "name": "Hungary",
+      "type": "LOC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n26",
+      "name": "16 September 1991",
+      "type": "TIME",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n27",
+      "name": "Mauritius",
+      "type": "LOC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n28",
+      "name": "Belize",
+      "type": "LOC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n29",
+      "name": "London",
+      "type": "LOC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n30",
+      "name": "1968 Summer Olympics",
+      "type": "MISC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n31",
+      "name": "Miklós Ungvári",
+      "type": "PER",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n32",
+      "name": "16 August 1980",
+      "type": "TIME",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n33",
+      "name": "Valencia",
+      "type": "LOC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n34",
+      "name": "21 October 1992",
+      "type": "TIME",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n35",
+      "name": "Médéa",
+      "type": "LOC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n36",
+      "name": "Algeria",
+      "type": "LOC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n37",
+      "name": "Zhanibek Alimkhanuly",
+      "type": "PER",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n38",
+      "name": "Kazakhstan",
+      "type": "LOC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n39",
+      "name": "April 11, 1984",
+      "type": "TIME",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n40",
+      "name": "La Colle",
+      "type": "LOC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n41",
+      "name": "Monaco",
+      "type": "LOC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n42",
+      "name": "Craig Fallon",
+      "type": "PER",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n43",
+      "name": "Great Britain",
+      "type": "LOC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n44",
+      "name": "Arsen Galstyan",
+      "type": "PER",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n45",
+      "name": "2011 Games of the Small States of Europe",
+      "type": "MISC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n46",
+      "name": "13 June 1986",
+      "type": "TIME",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n47",
+      "name": "Jennifer Anson",
+      "type": "PER",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n48",
+      "name": "Palau",
+      "type": "LOC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n49",
+      "name": "Johanna Ylinen",
+      "type": "PER",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n50",
+      "name": "Finland",
+      "type": "LOC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n51",
+      "name": "Gevrise Emane",
+      "type": "PER",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n52",
+      "name": "France",
+      "type": "LOC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n53",
+      "name": "Urska Zolnir",
+      "type": "PER",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n54",
+      "name": "Slovenia",
+      "type": "LOC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n55",
+      "name": "Yoshie Ueno",
+      "type": "PER",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n56",
+      "name": "Japan",
+      "type": "LOC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n57",
+      "name": "Iran",
+      "type": "LOC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n58",
+      "name": "Ghana",
+      "type": null,
+      "is_title": false,
+      "origin": "AGENT_TEXT"
+    }
+  ],
+  "edges": [
+    {
+      "id": "e0",
+      "head": "n0",
+      "relation": "P569",
+      "tail": "n10",
+      "provenance": [
+        [
+          "Shafiq Chitou",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e1",
+      "head": "n0",
+      "relation": "P1344",
+      "tail": "n11",
+      "provenance": [
+        [
+          "Shafiq Chitou",
+          3
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e2",
+      "head": "n1",
+      "relation": "P569",
+      "tail": "n12",
+      "provenance": [
+        [
+          "Aliaksandr Buikevich",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e3",
+      "head": "n1",
+      "relation": "P27",
+      "tail": "n13",
+      "provenance": [
+        [
+          "Aliaksandr Buikevich",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e4",
+      "head": "n14",
+      "relation": "P276",
+      "tail": "n15",
+      "provenance": [
+        [
+          "Aliaksandr Buikevich",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e5",
+      "head": "n1",
+      "relation": "P1344",
+      "tail": "n16",
+      "provenance": [
+        [
+          "Aliaksandr Buikevich",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e6",
+      "head": "n17",
+      "relation": "P27",
+      "tail": "n18",
+      "provenance": [
+        [
+          "Aliaksandr Buikevich",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e7",
+      "head": "n1",
+      "relation": "P1344",
+      "tail": "n11",
+      "provenance": [
+        [
+          "Aliaksandr Buikevich",
+          2
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e8",
+      "head": "n19",
+      "relation": "P27",
+      "tail": "n18",
+      "provenance": [
+        [
+          "Aliaksandr Buikevich",
+          2
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e9",
+      "head": "n20",
+      "relation": "P276",
+      "tail": "n21",
+      "provenance": [
+        [
+          "Aliaksandr Buikevich",
+          4
+        ],
+        [
+          "Ilyas Abbadi",
+          2
+        ],
+        [
+          "Iran at the 2012 Summer Olympics",
+          4
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e10",
+      "head": "n22",
+      "relation": "P27",
+      "tail": "n23",
+      "provenance": [
+        [
+          "Aliaksandr Buikevich",
+          5
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e11",
+      "head": "n24",
+      "relation": "P27",
+      "tail": "n25",
+      "provenance": [
+        [
+          "Aliaksandr Buikevich",
+          6
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e12",
+      "head": "n2",
+      "relation": "P569",
+      "tail": "n26",
+      "provenance": [
+        [
+          "Duke Micah",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e13",
+      "head": "n2",
+      "relation": "P1344",
+      "tail": "n11",
+      "provenance": [
+        [
+          "Duke Micah",
+          1
+        ],
+        [
+          "Oliver Lavigilante",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e14",
+      "head": "n7",
+      "relation": "P27",
+      "tail": "n27",
+      "provenance": [
+        [
+          "Duke Micah",
+          2
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": true
+    },
+    {
+      "id": "e15",
+      "head": "n28",
+      "relation": "P1344",
+      "tail": "n11",
+      "provenance": [
+        [
+          "Belize at the 2012 Summer Olympics",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e16",
+      "head": "n11",
+      "relation": "P276",
+      "tail": "n29",
+      "provenance": [
+        [
+          "Belize at the 2012 Summer Olympics",
+          0
+        ],
+        [
+          "Iran at the 2012 Summer Olympics",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e17",
+      "head": "n28",
+      "relation": "P1344",
+      "tail": "n30",
+      "provenance": [
+        [
+          "Belize at the 2012 Summer Olympics",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": true
+    },
+    {
+      "id": "e18",
+      "head": "n31",
+      "relation": "P27",
+      "tail": "n25",
+      "provenance": [
+        [
+          "Belize at the 2012 Summer Olympics",
+          6
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e19",
+      "head": "n4",
+      "relation": "P569",
+      "tail": "n32",
+      "provenance": [
+        [
+          "Mayelis Caripá",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e20",
+      "head": "n4",
+      "relation": "P19",
+      "tail": "n33",
+      "provenance": [
+        [
+          "Mayelis Caripá",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e21",
+      "head": "n4",
+      "relation": "P1344",
+      "tail": "n16",
+      "provenance": [
+        [
+          "Mayelis Caripá",
+          1
+        ],
+        [
+          "Mayelis Caripá",
+          3
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e22",
+      "head": "n4",
+      "relation": "P1344",
+      "tail": "n11",
+      "provenance": [
+        [
+          "Mayelis Caripá",
+          1
+        ],
+        [
+          "Mayelis Caripá",
+          4
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e23",
+      "head": "n5",
+      "relation": "P569",
+      "tail": "n34",
+      "provenance": [
+        [
+          "Ilyas Abbadi",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e24",
+      "head": "n5",
+      "relation": "P19",
+      "tail": "n35",
+      "provenance": [
+        [
+          "Ilyas Abbadi",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e25",
+      "head": "n5",
+      "relation": "P27",
+      "tail": "n36",
+      "provenance": [
+        [
+          "Ilyas Abbadi",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e26",
+      "head": "n5",
+      "relation": "P1344",
+      "tail": "n11",
+      "provenance": [
+        [
+          "Ilyas Abbadi",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e27",
+      "head": "n5",
+      "relation": "P1344",
+      "tail": "n20",
+      "provenance": [
+        [
+          "Ilyas Abbadi",
+          2
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e28",
+      "head": "n37",
+      "relation": "P27",
+      "tail": "n38",
+      "provenance": [
+        [
+          "Ilyas Abbadi",
+          3
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e29",
+      "head": "n6",
+      "relation": "P569",
+      "tail": "n39",
+      "provenance": [
+        [
+          "Yann Siccardi",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e30",
+      "head": "n6",
+      "relation": "P19",
+      "tail": "n40",
+      "provenance": [
+        [
+          "Yann Siccardi",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e31",
+      "head": "n40",
+      "relation": "P17",
+      "tail": "n41",
+      "provenance": [
+        [
+          "Yann Siccardi",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e32",
+      "head": "n6",
+      "relation": "P27",
+      "tail": "n41",
+      "provenance": [
+        [
+          "Yann Siccardi",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e33",
+      "head": "n6",
+      "relation": "P1344",
+      "tail": "n16",
+      "provenance": [
+        [
+          "Yann Siccardi",
+          1
+        ],
+        [
+          "Yann Siccardi",
+          2
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e34",
+      "head": "n6",
+      "relation": "P1344",
+      "tail": "n11",
+      "provenance": [
+        [
+          "Yann Siccardi",
+          1
+        ],
+        [
+          "Yann Siccardi",
+          3
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e35",
+      "head": "n42",
+      "relation": "P27",
+      "tail": "n43",
+      "provenance": [
+        [
+          "Yann Siccardi",
+          2
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e36",
+      "head": "n42",
+      "relation": "P1344",
+      "tail": "n16",
+      "provenance": [
+        [
+          "Yann Siccardi",
+          2
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e37",
+      "head": "n44",
+      "relation": "P1344",
+      "tail": "n11",
+      "provenance": [
+        [
+          "Yann Siccardi",
+          3
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e38",
+      "head": "n6",
+      "relation": "P1344",
+      "tail": "n45",
+      "provenance": [
+        [
+          "Yann Siccardi",
+          4
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e39",
+      "head": "n7",
+      "relation": "P1344",
+      "tail": "n11",
+      "provenance": [
+        [
+          "Oliver Lavigilante",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e40",
+      "head": "n8",
+      "relation": "P569",
+      "tail": "n46",
+      "provenance": [
+        [
+          "Tsedevsürengiin Mönkhzayaa",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e41",
+      "head": "n8",
+      "relation": "P1344",
+      "tail": "n11",
+      "provenance": [
+        [
+          "Tsedevsürengiin Mönkhzayaa",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e42",
+      "head": "n47",
+      "relation": "P27",
+      "tail": "n48",
+      "provenance": [
+        [
+          "Tsedevsürengiin Mönkhzayaa",
+          3
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e43",
+      "head": "n49",
+      "relation": "P27",
+      "tail": "n50",
+      "provenance": [
+        [
+          "Tsedevsürengiin Mönkhzayaa",
+          5
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e44",
+      "head": "n51",
+      "relation": "P27",
+      "tail": "n52",
+      "provenance": [
+        [
+          "Tsedevsürengiin Mönkhzayaa",
+          6
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e45",
+      "head": "n53",
+      "relation": "P27",
+      "tail": "n54",
+      "provenance": [
+        [
+          "Tsedevsürengiin Mönkhzayaa",
+          6
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e46",
+      "head": "n55",
+      "relation": "P27",
+      "tail": "n56",
+      "provenance": [
+        [
+          "Tsedevsürengiin Mönkhzayaa",
+          7
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e47",
+      "head": "n57",
+      "relation": "P1344",
+      "tail": "n11",
+      "provenance": [
+        [
+          "Iran at the 2012 Summer Olympics",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e48",
+      "head": "n2",
+      "relation": "P27",
+      "tail": "n58",
+      "provenance": [
+        [
+          "Duke Micah",
+          0
+        ]
+      ],
+      "origin": "AGENT_TEXT",
+      "evidence_edges": [],
+      "created_by": "5a88a4e65542997e5c09a671:main"
+    }
+  ]
+}

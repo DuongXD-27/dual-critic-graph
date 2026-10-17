@@ -1,0 +1,767 @@
+{
+  "qid": "5adbd1d25542994650320bf6",
+  "nodes": [
+    {
+      "id": "n0",
+      "name": "Anjelika Krylova",
+      "type": "PER",
+      "is_title": true,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n1",
+      "name": "Palandöken Ice Skating Hall",
+      "type": "LOC",
+      "is_title": true,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n2",
+      "name": "John Towill",
+      "type": "PER",
+      "is_title": true,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n3",
+      "name": "Vladimir Fedorov",
+      "type": "PER",
+      "is_title": true,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n4",
+      "name": "Canterbury Olympic Ice Rink",
+      "type": "LOC",
+      "is_title": true,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n5",
+      "name": "Ice Skating Institute",
+      "type": "ORG",
+      "is_title": true,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n6",
+      "name": "Ice rink",
+      "type": "LOC",
+      "is_title": true,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n7",
+      "name": "Ice skating in India",
+      "type": null,
+      "is_title": true,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n8",
+      "name": "Adelaide Glaciarium",
+      "type": "LOC",
+      "is_title": true,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n9",
+      "name": "Ice World Boondall",
+      "type": "LOC",
+      "is_title": true,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n10",
+      "name": "4 July 1973",
+      "type": "TIME",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n11",
+      "name": "Russian",
+      "type": "LOC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n12",
+      "name": "Bloomfield Hills",
+      "type": "LOC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n13",
+      "name": "Michigan",
+      "type": "LOC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n14",
+      "name": "Turkey",
+      "type": "LOC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n15",
+      "name": "Erzurum",
+      "type": "LOC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n16",
+      "name": "Palandöken district",
+      "type": "LOC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n17",
+      "name": "2008",
+      "type": "TIME",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n18",
+      "name": "National Ice Skating Association",
+      "type": "ORG",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n19",
+      "name": "U.S. Figure Skating",
+      "type": "ORG",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n20",
+      "name": "PSA",
+      "type": "ORG",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n21",
+      "name": "Great Britain International Team",
+      "type": "ORG",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n22",
+      "name": "Mennen Arena",
+      "type": "LOC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n23",
+      "name": "Morris Plains",
+      "type": "LOC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n24",
+      "name": "New Jersey",
+      "type": "LOC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n25",
+      "name": "United States",
+      "type": "LOC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n26",
+      "name": "22 April 1971",
+      "type": "TIME",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n27",
+      "name": "Canterbury",
+      "type": "LOC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n28",
+      "name": "New South Wales",
+      "type": "LOC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n29",
+      "name": "trade association",
+      "type": "ORG",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n30",
+      "name": "1959",
+      "type": "TIME",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n31",
+      "name": "Ladakh",
+      "type": "LOC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n32",
+      "name": "India",
+      "type": "LOC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n33",
+      "name": "Shimla",
+      "type": "LOC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n34",
+      "name": "Kashmir",
+      "type": "LOC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n35",
+      "name": "Australia",
+      "type": "LOC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n36",
+      "name": "Melbourne Glaciarium",
+      "type": "LOC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n37",
+      "name": "Queensland",
+      "type": "LOC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n38",
+      "name": "Brisbane",
+      "type": "LOC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n39",
+      "name": "Duke Trophy",
+      "type": "MISC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    }
+  ],
+  "edges": [
+    {
+      "id": "e0",
+      "head": "n0",
+      "relation": "P569",
+      "tail": "n10",
+      "provenance": [
+        [
+          "Anjelika Krylova",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e1",
+      "head": "n0",
+      "relation": "P27",
+      "tail": "n11",
+      "provenance": [
+        [
+          "Anjelika Krylova",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e2",
+      "head": "n0",
+      "relation": "P937",
+      "tail": "n12",
+      "provenance": [
+        [
+          "Anjelika Krylova",
+          2
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e3",
+      "head": "n12",
+      "relation": "P131",
+      "tail": "n13",
+      "provenance": [
+        [
+          "Anjelika Krylova",
+          2
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e4",
+      "head": "n1",
+      "relation": "P17",
+      "tail": "n14",
+      "provenance": [
+        [
+          "Palandöken Ice Skating Hall",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e5",
+      "head": "n1",
+      "relation": "P131",
+      "tail": "n15",
+      "provenance": [
+        [
+          "Palandöken Ice Skating Hall",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e6",
+      "head": "n1",
+      "relation": "P131",
+      "tail": "n16",
+      "provenance": [
+        [
+          "Palandöken Ice Skating Hall",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e7",
+      "head": "n15",
+      "relation": "P17",
+      "tail": "n14",
+      "provenance": [
+        [
+          "Palandöken Ice Skating Hall",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e8",
+      "head": "n1",
+      "relation": "P571",
+      "tail": "n17",
+      "provenance": [
+        [
+          "Palandöken Ice Skating Hall",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e9",
+      "head": "n2",
+      "relation": "P463",
+      "tail": "n18",
+      "provenance": [
+        [
+          "John Towill",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e10",
+      "head": "n2",
+      "relation": "P463",
+      "tail": "n19",
+      "provenance": [
+        [
+          "John Towill",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e11",
+      "head": "n2",
+      "relation": "P463",
+      "tail": "n20",
+      "provenance": [
+        [
+          "John Towill",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e12",
+      "head": "n2",
+      "relation": "P463",
+      "tail": "n5",
+      "provenance": [
+        [
+          "John Towill",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e13",
+      "head": "n2",
+      "relation": "P54",
+      "tail": "n21",
+      "provenance": [
+        [
+          "John Towill",
+          2
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e14",
+      "head": "n22",
+      "relation": "P131",
+      "tail": "n23",
+      "provenance": [
+        [
+          "John Towill",
+          3
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e15",
+      "head": "n23",
+      "relation": "P131",
+      "tail": "n24",
+      "provenance": [
+        [
+          "John Towill",
+          3
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e16",
+      "head": "n24",
+      "relation": "P17",
+      "tail": "n25",
+      "provenance": [
+        [
+          "John Towill",
+          3
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e17",
+      "head": "n3",
+      "relation": "P569",
+      "tail": "n26",
+      "provenance": [
+        [
+          "Vladimir Fedorov",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e18",
+      "head": "n3",
+      "relation": "P27",
+      "tail": "n11",
+      "provenance": [
+        [
+          "Vladimir Fedorov",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e19",
+      "head": "n4",
+      "relation": "P131",
+      "tail": "n27",
+      "provenance": [
+        [
+          "Canterbury Olympic Ice Rink",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e20",
+      "head": "n4",
+      "relation": "P131",
+      "tail": "n28",
+      "provenance": [
+        [
+          "Canterbury Olympic Ice Rink",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e21",
+      "head": "n5",
+      "relation": "P31",
+      "tail": "n29",
+      "provenance": [
+        [
+          "Ice Skating Institute",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e22",
+      "head": "n5",
+      "relation": "P571",
+      "tail": "n30",
+      "provenance": [
+        [
+          "Ice Skating Institute",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e23",
+      "head": "n31",
+      "relation": "P17",
+      "tail": "n32",
+      "provenance": [
+        [
+          "Ice skating in India",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e24",
+      "head": "n33",
+      "relation": "P17",
+      "tail": "n32",
+      "provenance": [
+        [
+          "Ice skating in India",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e25",
+      "head": "n34",
+      "relation": "P17",
+      "tail": "n32",
+      "provenance": [
+        [
+          "Ice skating in India",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e26",
+      "head": "n8",
+      "relation": "P17",
+      "tail": "n35",
+      "provenance": [
+        [
+          "Adelaide Glaciarium",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e27",
+      "head": "n8",
+      "relation": "P31",
+      "tail": "n6",
+      "provenance": [
+        [
+          "Adelaide Glaciarium",
+          0
+        ],
+        [
+          "Adelaide Glaciarium",
+          2
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": true
+    },
+    {
+      "id": "e28",
+      "head": "n8",
+      "relation": "P156",
+      "tail": "n36",
+      "provenance": [
+        [
+          "Adelaide Glaciarium",
+          2
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e29",
+      "head": "n9",
+      "relation": "P131",
+      "tail": "n37",
+      "provenance": [
+        [
+          "Ice World Boondall",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e30",
+      "head": "n38",
+      "relation": "P131",
+      "tail": "n37",
+      "provenance": [
+        [
+          "Ice World Boondall",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e31",
+      "head": "n9",
+      "relation": "P131",
+      "tail": "n38",
+      "provenance": [
+        [
+          "Ice World Boondall",
+          3
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e32",
+      "head": "n39",
+      "relation": "P276",
+      "tail": "n9",
+      "provenance": [
+        [
+          "Ice World Boondall",
+          4
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": true
+    },
+    {
+      "id": "e33",
+      "head": "n39",
+      "relation": "P17",
+      "tail": "n35",
+      "provenance": [
+        [
+          "Ice World Boondall",
+          4
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    }
+  ]
+}

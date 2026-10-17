@@ -1,0 +1,1524 @@
+{
+  "qid": "5ab9535a5542996be202047e",
+  "nodes": [
+    {
+      "id": "n0",
+      "name": "Rick Potion No. 9",
+      "type": "MISC",
+      "is_title": true,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n1",
+      "name": "Rick and Morty (season 2)",
+      "type": "MISC",
+      "is_title": true,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n2",
+      "name": "Meeseeks and Destroy",
+      "type": "MISC",
+      "is_title": true,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n3",
+      "name": "Legends of Bikini Bottom",
+      "type": "MISC",
+      "is_title": true,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n4",
+      "name": "Faerie Tale Theatre",
+      "type": "MISC",
+      "is_title": true,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n5",
+      "name": "Rixty Minutes",
+      "type": "MISC",
+      "is_title": true,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n6",
+      "name": "Pilot (Rick and Morty)",
+      "type": "MISC",
+      "is_title": true,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n7",
+      "name": "Lawnmower Dog",
+      "type": "MISC",
+      "is_title": true,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n8",
+      "name": "It's Always Sunny in Philadelphia (season 6)",
+      "type": "MISC",
+      "is_title": true,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n9",
+      "name": "The Ricks Must Be Crazy",
+      "type": "MISC",
+      "is_title": true,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n10",
+      "name": "Rick and Morty",
+      "type": "MISC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n11",
+      "name": "Adult Swim",
+      "type": "ORG",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n12",
+      "name": "January 27, 2014",
+      "type": "TIME",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n13",
+      "name": "Justin Roiland",
+      "type": "PER",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n14",
+      "name": "Stephen Sandoval",
+      "type": "PER",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n15",
+      "name": "Morty",
+      "type": "PER",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n16",
+      "name": "Love Potion No. 9",
+      "type": "MISC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n17",
+      "name": "1959",
+      "type": "TIME",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n18",
+      "name": "the Clovers",
+      "type": "ORG",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n19",
+      "name": "July 26, 2015",
+      "type": "TIME",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n20",
+      "name": "January 20, 2014",
+      "type": "TIME",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n21",
+      "name": "Ryan Ridley",
+      "type": "PER",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n22",
+      "name": "Bryan Newton",
+      "type": "PER",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n23",
+      "name": "Rick",
+      "type": "PER",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n24",
+      "name": "SpongeBob SquarePants",
+      "type": "MISC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n25",
+      "name": "Trenchbillies",
+      "type": "MISC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n26",
+      "name": "Facebook",
+      "type": "ORG",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n27",
+      "name": "Nickelodeon",
+      "type": "ORG",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n28",
+      "name": "January 27, 2011",
+      "type": "TIME",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n29",
+      "name": "Sponge-Cano!",
+      "type": "MISC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n30",
+      "name": "January 28, 2011",
+      "type": "TIME",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n31",
+      "name": "The Main Drain",
+      "type": "MISC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n32",
+      "name": "The Monster Who Came to Bikini Bottom",
+      "type": "MISC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n33",
+      "name": "Welcome to the Bikini Bottom Triangle",
+      "type": "MISC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n34",
+      "name": "Robin Williams",
+      "type": "PER",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n35",
+      "name": "Teri Garr",
+      "type": "PER",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n36",
+      "name": "Shelley Duvall",
+      "type": "PER",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n37",
+      "name": "Showtime",
+      "type": "ORG",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n38",
+      "name": "September 11, 1982",
+      "type": "TIME",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n39",
+      "name": "November 14, 1987",
+      "type": "TIME",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n40",
+      "name": "Fred Fuchs",
+      "type": "PER",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n41",
+      "name": "Tall Tales & Legends",
+      "type": "MISC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n42",
+      "name": "March 17, 2014",
+      "type": "TIME",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n43",
+      "name": "Tom Kauffman",
+      "type": "PER",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n44",
+      "name": "Jerry",
+      "type": "PER",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n45",
+      "name": "Beth",
+      "type": "PER",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n46",
+      "name": "Summer",
+      "type": "PER",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n47",
+      "name": "December 2, 2013",
+      "type": "TIME",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n48",
+      "name": "Dan Harmon",
+      "type": "PER",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n49",
+      "name": "December 9, 2013",
+      "type": "TIME",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n50",
+      "name": "John Rice",
+      "type": "PER",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n51",
+      "name": "FX",
+      "type": "ORG",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n52",
+      "name": "September 16, 2010",
+      "type": "TIME",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n53",
+      "name": "It's Always Sunny in Philadelphia",
+      "type": "MISC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n54",
+      "name": "December 9, 2010",
+      "type": "TIME",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n55",
+      "name": "United States",
+      "type": "LOC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n56",
+      "name": "Dan Guterman",
+      "type": "PER",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n57",
+      "name": "Dominic Polcino",
+      "type": "PER",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n58",
+      "name": "August 30, 2015",
+      "type": "TIME",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    }
+  ],
+  "edges": [
+    {
+      "id": "e0",
+      "head": "n0",
+      "relation": "P179",
+      "tail": "n10",
+      "provenance": [
+        [
+          "Rick Potion No. 9",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e1",
+      "head": "n0",
+      "relation": "P449",
+      "tail": "n11",
+      "provenance": [
+        [
+          "Rick Potion No. 9",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e2",
+      "head": "n0",
+      "relation": "P577",
+      "tail": "n12",
+      "provenance": [
+        [
+          "Rick Potion No. 9",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e3",
+      "head": "n0",
+      "relation": "P58",
+      "tail": "n13",
+      "provenance": [
+        [
+          "Rick Potion No. 9",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e4",
+      "head": "n0",
+      "relation": "P57",
+      "tail": "n14",
+      "provenance": [
+        [
+          "Rick Potion No. 9",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e5",
+      "head": "n0",
+      "relation": "P674",
+      "tail": "n15",
+      "provenance": [
+        [
+          "Rick Potion No. 9",
+          2
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e6",
+      "head": "n16",
+      "relation": "P577",
+      "tail": "n17",
+      "provenance": [
+        [
+          "Rick Potion No. 9",
+          4
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e7",
+      "head": "n16",
+      "relation": "P175",
+      "tail": "n18",
+      "provenance": [
+        [
+          "Rick Potion No. 9",
+          4
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e8",
+      "head": "n1",
+      "relation": "P179",
+      "tail": "n10",
+      "provenance": [
+        [
+          "Rick and Morty (season 2)",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e9",
+      "head": "n1",
+      "relation": "P449",
+      "tail": "n11",
+      "provenance": [
+        [
+          "Rick and Morty (season 2)",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e10",
+      "head": "n1",
+      "relation": "P580",
+      "tail": "n19",
+      "provenance": [
+        [
+          "Rick and Morty (season 2)",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e11",
+      "head": "n2",
+      "relation": "P179",
+      "tail": "n10",
+      "provenance": [
+        [
+          "Meeseeks and Destroy",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e12",
+      "head": "n2",
+      "relation": "P449",
+      "tail": "n11",
+      "provenance": [
+        [
+          "Meeseeks and Destroy",
+          1
+        ],
+        [
+          "Meeseeks and Destroy",
+          4
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e13",
+      "head": "n2",
+      "relation": "P577",
+      "tail": "n20",
+      "provenance": [
+        [
+          "Meeseeks and Destroy",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e14",
+      "head": "n2",
+      "relation": "P58",
+      "tail": "n21",
+      "provenance": [
+        [
+          "Meeseeks and Destroy",
+          2
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e15",
+      "head": "n2",
+      "relation": "P57",
+      "tail": "n22",
+      "provenance": [
+        [
+          "Meeseeks and Destroy",
+          2
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e16",
+      "head": "n2",
+      "relation": "P674",
+      "tail": "n23",
+      "provenance": [
+        [
+          "Meeseeks and Destroy",
+          3
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e17",
+      "head": "n2",
+      "relation": "P674",
+      "tail": "n15",
+      "provenance": [
+        [
+          "Meeseeks and Destroy",
+          3
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e18",
+      "head": "n3",
+      "relation": "P179",
+      "tail": "n24",
+      "provenance": [
+        [
+          "Legends of Bikini Bottom",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e19",
+      "head": "n3",
+      "relation": "P361",
+      "tail": "n24",
+      "provenance": [
+        [
+          "Legends of Bikini Bottom",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e20",
+      "head": "n25",
+      "relation": "P400",
+      "tail": "n26",
+      "provenance": [
+        [
+          "Legends of Bikini Bottom",
+          2
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e21",
+      "head": "n25",
+      "relation": "P449",
+      "tail": "n27",
+      "provenance": [
+        [
+          "Legends of Bikini Bottom",
+          2
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e22",
+      "head": "n25",
+      "relation": "P577",
+      "tail": "n28",
+      "provenance": [
+        [
+          "Legends of Bikini Bottom",
+          2
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e23",
+      "head": "n29",
+      "relation": "P449",
+      "tail": "n27",
+      "provenance": [
+        [
+          "Legends of Bikini Bottom",
+          3
+        ],
+        [
+          "Legends of Bikini Bottom",
+          4
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e24",
+      "head": "n29",
+      "relation": "P577",
+      "tail": "n30",
+      "provenance": [
+        [
+          "Legends of Bikini Bottom",
+          3
+        ],
+        [
+          "Legends of Bikini Bottom",
+          4
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e25",
+      "head": "n31",
+      "relation": "P449",
+      "tail": "n27",
+      "provenance": [
+        [
+          "Legends of Bikini Bottom",
+          3
+        ],
+        [
+          "Legends of Bikini Bottom",
+          4
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e26",
+      "head": "n31",
+      "relation": "P577",
+      "tail": "n30",
+      "provenance": [
+        [
+          "Legends of Bikini Bottom",
+          3
+        ],
+        [
+          "Legends of Bikini Bottom",
+          4
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e27",
+      "head": "n32",
+      "relation": "P449",
+      "tail": "n27",
+      "provenance": [
+        [
+          "Legends of Bikini Bottom",
+          3
+        ],
+        [
+          "Legends of Bikini Bottom",
+          4
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e28",
+      "head": "n32",
+      "relation": "P577",
+      "tail": "n30",
+      "provenance": [
+        [
+          "Legends of Bikini Bottom",
+          3
+        ],
+        [
+          "Legends of Bikini Bottom",
+          4
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e29",
+      "head": "n33",
+      "relation": "P449",
+      "tail": "n27",
+      "provenance": [
+        [
+          "Legends of Bikini Bottom",
+          3
+        ],
+        [
+          "Legends of Bikini Bottom",
+          4
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e30",
+      "head": "n33",
+      "relation": "P577",
+      "tail": "n30",
+      "provenance": [
+        [
+          "Legends of Bikini Bottom",
+          3
+        ],
+        [
+          "Legends of Bikini Bottom",
+          4
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e31",
+      "head": "n4",
+      "relation": "P161",
+      "tail": "n34",
+      "provenance": [
+        [
+          "Faerie Tale Theatre",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e32",
+      "head": "n4",
+      "relation": "P161",
+      "tail": "n35",
+      "provenance": [
+        [
+          "Faerie Tale Theatre",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e33",
+      "head": "n4",
+      "relation": "P161",
+      "tail": "n36",
+      "provenance": [
+        [
+          "Faerie Tale Theatre",
+          0
+        ],
+        [
+          "Faerie Tale Theatre",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e34",
+      "head": "n4",
+      "relation": "P449",
+      "tail": "n37",
+      "provenance": [
+        [
+          "Faerie Tale Theatre",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e35",
+      "head": "n4",
+      "relation": "P580",
+      "tail": "n38",
+      "provenance": [
+        [
+          "Faerie Tale Theatre",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e36",
+      "head": "n4",
+      "relation": "P582",
+      "tail": "n39",
+      "provenance": [
+        [
+          "Faerie Tale Theatre",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e37",
+      "head": "n4",
+      "relation": "P170",
+      "tail": "n36",
+      "provenance": [
+        [
+          "Faerie Tale Theatre",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e38",
+      "head": "n4",
+      "relation": "P162",
+      "tail": "n36",
+      "provenance": [
+        [
+          "Faerie Tale Theatre",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e39",
+      "head": "n4",
+      "relation": "P162",
+      "tail": "n40",
+      "provenance": [
+        [
+          "Faerie Tale Theatre",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e40",
+      "head": "n4",
+      "relation": "P156",
+      "tail": "n41",
+      "provenance": [
+        [
+          "Faerie Tale Theatre",
+          2
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e41",
+      "head": "n5",
+      "relation": "P179",
+      "tail": "n10",
+      "provenance": [
+        [
+          "Rixty Minutes",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e42",
+      "head": "n5",
+      "relation": "P449",
+      "tail": "n11",
+      "provenance": [
+        [
+          "Rixty Minutes",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e43",
+      "head": "n5",
+      "relation": "P577",
+      "tail": "n42",
+      "provenance": [
+        [
+          "Rixty Minutes",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e44",
+      "head": "n5",
+      "relation": "P58",
+      "tail": "n43",
+      "provenance": [
+        [
+          "Rixty Minutes",
+          2
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e45",
+      "head": "n5",
+      "relation": "P58",
+      "tail": "n13",
+      "provenance": [
+        [
+          "Rixty Minutes",
+          2
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e46",
+      "head": "n5",
+      "relation": "P57",
+      "tail": "n22",
+      "provenance": [
+        [
+          "Rixty Minutes",
+          2
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e47",
+      "head": "n5",
+      "relation": "P674",
+      "tail": "n23",
+      "provenance": [
+        [
+          "Rixty Minutes",
+          3
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e48",
+      "head": "n5",
+      "relation": "P674",
+      "tail": "n15",
+      "provenance": [
+        [
+          "Rixty Minutes",
+          3
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e49",
+      "head": "n5",
+      "relation": "P674",
+      "tail": "n44",
+      "provenance": [
+        [
+          "Rixty Minutes",
+          3
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e50",
+      "head": "n5",
+      "relation": "P674",
+      "tail": "n45",
+      "provenance": [
+        [
+          "Rixty Minutes",
+          3
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e51",
+      "head": "n5",
+      "relation": "P674",
+      "tail": "n46",
+      "provenance": [
+        [
+          "Rixty Minutes",
+          3
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e52",
+      "head": "n6",
+      "relation": "P179",
+      "tail": "n10",
+      "provenance": [
+        [
+          "Pilot (Rick and Morty)",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e53",
+      "head": "n6",
+      "relation": "P449",
+      "tail": "n11",
+      "provenance": [
+        [
+          "Pilot (Rick and Morty)",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e54",
+      "head": "n6",
+      "relation": "P577",
+      "tail": "n47",
+      "provenance": [
+        [
+          "Pilot (Rick and Morty)",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e55",
+      "head": "n6",
+      "relation": "P58",
+      "tail": "n48",
+      "provenance": [
+        [
+          "Pilot (Rick and Morty)",
+          2
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e56",
+      "head": "n6",
+      "relation": "P58",
+      "tail": "n13",
+      "provenance": [
+        [
+          "Pilot (Rick and Morty)",
+          2
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e57",
+      "head": "n6",
+      "relation": "P57",
+      "tail": "n13",
+      "provenance": [
+        [
+          "Pilot (Rick and Morty)",
+          2
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e58",
+      "head": "n10",
+      "relation": "P170",
+      "tail": "n48",
+      "provenance": [
+        [
+          "Pilot (Rick and Morty)",
+          2
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": true
+    },
+    {
+      "id": "e59",
+      "head": "n10",
+      "relation": "P170",
+      "tail": "n13",
+      "provenance": [
+        [
+          "Pilot (Rick and Morty)",
+          2
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": true
+    },
+    {
+      "id": "e60",
+      "head": "n7",
+      "relation": "P179",
+      "tail": "n10",
+      "provenance": [
+        [
+          "Lawnmower Dog",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e61",
+      "head": "n7",
+      "relation": "P449",
+      "tail": "n11",
+      "provenance": [
+        [
+          "Lawnmower Dog",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e62",
+      "head": "n7",
+      "relation": "P577",
+      "tail": "n49",
+      "provenance": [
+        [
+          "Lawnmower Dog",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e63",
+      "head": "n7",
+      "relation": "P58",
+      "tail": "n21",
+      "provenance": [
+        [
+          "Lawnmower Dog",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e64",
+      "head": "n7",
+      "relation": "P57",
+      "tail": "n50",
+      "provenance": [
+        [
+          "Lawnmower Dog",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e65",
+      "head": "n8",
+      "relation": "P449",
+      "tail": "n51",
+      "provenance": [
+        [
+          "It's Always Sunny in Philadelphia (season 6)",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e66",
+      "head": "n8",
+      "relation": "P580",
+      "tail": "n52",
+      "provenance": [
+        [
+          "It's Always Sunny in Philadelphia (season 6)",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e67",
+      "head": "n8",
+      "relation": "P179",
+      "tail": "n53",
+      "provenance": [
+        [
+          "It's Always Sunny in Philadelphia (season 6)",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e68",
+      "head": "n8",
+      "relation": "P582",
+      "tail": "n54",
+      "provenance": [
+        [
+          "It's Always Sunny in Philadelphia (season 6)",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e69",
+      "head": "n9",
+      "relation": "P361",
+      "tail": "n1",
+      "provenance": [
+        [
+          "The Ricks Must Be Crazy",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": true
+    },
+    {
+      "id": "e70",
+      "head": "n9",
+      "relation": "P179",
+      "tail": "n10",
+      "provenance": [
+        [
+          "The Ricks Must Be Crazy",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e71",
+      "head": "n10",
+      "relation": "P495",
+      "tail": "n55",
+      "provenance": [
+        [
+          "The Ricks Must Be Crazy",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": true
+    },
+    {
+      "id": "e72",
+      "head": "n9",
+      "relation": "P58",
+      "tail": "n56",
+      "provenance": [
+        [
+          "The Ricks Must Be Crazy",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e73",
+      "head": "n9",
+      "relation": "P57",
+      "tail": "n57",
+      "provenance": [
+        [
+          "The Ricks Must Be Crazy",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e74",
+      "head": "n9",
+      "relation": "P449",
+      "tail": "n11",
+      "provenance": [
+        [
+          "The Ricks Must Be Crazy",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e75",
+      "head": "n9",
+      "relation": "P577",
+      "tail": "n58",
+      "provenance": [
+        [
+          "The Ricks Must Be Crazy",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    }
+  ]
+}

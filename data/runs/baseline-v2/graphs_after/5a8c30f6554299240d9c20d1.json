@@ -1,0 +1,655 @@
+{
+  "qid": "5a8c30f6554299240d9c20d1",
+  "nodes": [
+    {
+      "id": "n0",
+      "name": "The Race (Wiz Khalifa song)",
+      "type": "MISC",
+      "is_title": true,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n1",
+      "name": "The Bomb (film)",
+      "type": "MISC",
+      "is_title": true,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n2",
+      "name": "Smoking (rolling paper)",
+      "type": "MISC",
+      "is_title": true,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n3",
+      "name": "Amber Leaf",
+      "type": "MISC",
+      "is_title": true,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n4",
+      "name": "Rolling Papers (Wiz Khalifa album)",
+      "type": "MISC",
+      "is_title": true,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n5",
+      "name": "Big Bambu",
+      "type": "MISC",
+      "is_title": true,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n6",
+      "name": "Zig-Zag (company)",
+      "type": "ORG",
+      "is_title": true,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n7",
+      "name": "Joint (cannabis)",
+      "type": "MISC",
+      "is_title": true,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n8",
+      "name": "Rolling Papers (film)",
+      "type": "MISC",
+      "is_title": true,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n9",
+      "name": "List of rolling papers",
+      "type": null,
+      "is_title": true,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n10",
+      "name": "Wiz Khalifa",
+      "type": "PER",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n11",
+      "name": "Eric Dan",
+      "type": "PER",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n12",
+      "name": "Jeremy \"Big Jerm\" Kulousek",
+      "type": "PER",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n13",
+      "name": "March 8, 2011",
+      "type": "TIME",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n14",
+      "name": "documentary film",
+      "type": "MISC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n15",
+      "name": "2015",
+      "type": "TIME",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n16",
+      "name": "PBS",
+      "type": "ORG",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n17",
+      "name": "Rushmore DeNooyer",
+      "type": "PER",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n18",
+      "name": "Miquel y Costas",
+      "type": "ORG",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n19",
+      "name": "Barcelona",
+      "type": "LOC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n20",
+      "name": "Spain",
+      "type": "LOC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n21",
+      "name": "Gallagher Group",
+      "type": "ORG",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n22",
+      "name": "Japan Tobacco",
+      "type": "ORG",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n23",
+      "name": "studio album",
+      "type": "MISC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n24",
+      "name": "March 29, 2011",
+      "type": "TIME",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n25",
+      "name": "Atlantic Records",
+      "type": "ORG",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n26",
+      "name": "Rostrum Records",
+      "type": "ORG",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n27",
+      "name": "pop rap",
+      "type": "MISC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n28",
+      "name": "Cheech & Chong",
+      "type": "ORG",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n29",
+      "name": "1972",
+      "type": "TIME",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n30",
+      "name": "France",
+      "type": "LOC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n31",
+      "name": "cigarette",
+      "type": "MISC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n32",
+      "name": "Mitch Dickman",
+      "type": "PER",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n33",
+      "name": "Ricardo Baca",
+      "type": "PER",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    }
+  ],
+  "edges": [
+    {
+      "id": "e0",
+      "head": "n0",
+      "relation": "P175",
+      "tail": "n10",
+      "provenance": [
+        [
+          "The Race (Wiz Khalifa song)",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e1",
+      "head": "n0",
+      "relation": "P361",
+      "tail": "n4",
+      "provenance": [
+        [
+          "The Race (Wiz Khalifa song)",
+          0
+        ],
+        [
+          "The Race (Wiz Khalifa song)",
+          2
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": true
+    },
+    {
+      "id": "e2",
+      "head": "n0",
+      "relation": "P162",
+      "tail": "n11",
+      "provenance": [
+        [
+          "The Race (Wiz Khalifa song)",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e3",
+      "head": "n0",
+      "relation": "P162",
+      "tail": "n12",
+      "provenance": [
+        [
+          "The Race (Wiz Khalifa song)",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e4",
+      "head": "n0",
+      "relation": "P577",
+      "tail": "n13",
+      "provenance": [
+        [
+          "The Race (Wiz Khalifa song)",
+          2
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e5",
+      "head": "n1",
+      "relation": "P31",
+      "tail": "n14",
+      "provenance": [
+        [
+          "The Bomb (film)",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e6",
+      "head": "n1",
+      "relation": "P577",
+      "tail": "n15",
+      "provenance": [
+        [
+          "The Bomb (film)",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e7",
+      "head": "n1",
+      "relation": "P449",
+      "tail": "n16",
+      "provenance": [
+        [
+          "The Bomb (film)",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e8",
+      "head": "n1",
+      "relation": "P57",
+      "tail": "n17",
+      "provenance": [
+        [
+          "The Bomb (film)",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e9",
+      "head": "n1",
+      "relation": "P58",
+      "tail": "n17",
+      "provenance": [
+        [
+          "The Bomb (film)",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e10",
+      "head": "n2",
+      "relation": "P176",
+      "tail": "n18",
+      "provenance": [
+        [
+          "Smoking (rolling paper)",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e11",
+      "head": "n19",
+      "relation": "P17",
+      "tail": "n20",
+      "provenance": [
+        [
+          "Smoking (rolling paper)",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e12",
+      "head": "n3",
+      "relation": "P176",
+      "tail": "n21",
+      "provenance": [
+        [
+          "Amber Leaf",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e13",
+      "head": "n3",
+      "relation": "P176",
+      "tail": "n22",
+      "provenance": [
+        [
+          "Amber Leaf",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e14",
+      "head": "n21",
+      "relation": "P749",
+      "tail": "n22",
+      "provenance": [
+        [
+          "Amber Leaf",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e15",
+      "head": "n4",
+      "relation": "P175",
+      "tail": "n10",
+      "provenance": [
+        [
+          "Rolling Papers (Wiz Khalifa album)",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e16",
+      "head": "n4",
+      "relation": "P31",
+      "tail": "n23",
+      "provenance": [
+        [
+          "Rolling Papers (Wiz Khalifa album)",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e17",
+      "head": "n4",
+      "relation": "P577",
+      "tail": "n24",
+      "provenance": [
+        [
+          "Rolling Papers (Wiz Khalifa album)",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e18",
+      "head": "n4",
+      "relation": "P264",
+      "tail": "n25",
+      "provenance": [
+        [
+          "Rolling Papers (Wiz Khalifa album)",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e19",
+      "head": "n4",
+      "relation": "P264",
+      "tail": "n26",
+      "provenance": [
+        [
+          "Rolling Papers (Wiz Khalifa album)",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e20",
+      "head": "n4",
+      "relation": "P136",
+      "tail": "n27",
+      "provenance": [
+        [
+          "Rolling Papers (Wiz Khalifa album)",
+          5
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e21",
+      "head": "n5",
+      "relation": "P175",
+      "tail": "n28",
+      "provenance": [
+        [
+          "Big Bambu",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e22",
+      "head": "n5",
+      "relation": "P577",
+      "tail": "n29",
+      "provenance": [
+        [
+          "Big Bambu",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e23",
+      "head": "n6",
+      "relation": "P495",
+      "tail": "n30",
+      "provenance": [
+        [
+          "Zig-Zag (company)",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e24",
+      "head": "n7",
+      "relation": "P279",
+      "tail": "n31",
+      "provenance": [
+        [
+          "Joint (cannabis)",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e25",
+      "head": "n8",
+      "relation": "P577",
+      "tail": "n15",
+      "provenance": [
+        [
+          "Rolling Papers (film)",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e26",
+      "head": "n8",
+      "relation": "P136",
+      "tail": "n14",
+      "provenance": [
+        [
+          "Rolling Papers (film)",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e27",
+      "head": "n8",
+      "relation": "P57",
+      "tail": "n32",
+      "provenance": [
+        [
+          "Rolling Papers (film)",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e28",
+      "head": "n8",
+      "relation": "P161",
+      "tail": "n33",
+      "provenance": [
+        [
+          "Rolling Papers (film)",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    }
+  ]
+}
