@@ -1,12 +1,16 @@
-"""Đồ thị tri thức của một câu hỏi (DECISIONS D4–D6).
+"""Đồ thị tri thức (DECISIONS D4–D6, D12).
 
 Nút: {id, name, type, is_title, origin}
 Cạnh: {id, head, relation, tail, provenance, origin, ...}
   provenance = [[tiêu đề đoạn, số câu], ...]  (đúng định dạng supporting_facts của HotpotQA)
   origin     = EXTRACTED | AGENT_TEXT | AGENT_DERIVED
   AGENT_DERIVED còn có evidence_edges = [id cạnh đã dùng]
+
+Có chỉ mục theo tên, theo bộ ba và theo nút kề để chạy được với đồ thị chung hàng chục nghìn cạnh.
 """
 from __future__ import annotations
+
+from collections import defaultdict
 
 from .common import norm
 
@@ -19,6 +23,8 @@ class KG:
         self.nodes: dict[str, dict] = {}
         self.edges: dict[str, dict] = {}
         self._by_name: dict[str, str] = {}
+        self._by_triple: dict[tuple, str] = {}
+        self._adj: dict[str, list[str]] = defaultdict(list)
 
     # ---------- nút ----------
     def find(self, name: str):
@@ -40,10 +46,7 @@ class KG:
 
     # ---------- cạnh ----------
     def find_edge(self, head: str, relation: str, tail: str):
-        for e in self.edges.values():
-            if e["head"] == head and e["relation"] == relation and e["tail"] == tail:
-                return e["id"]
-        return None
+        return self._by_triple.get((head, relation, tail))
 
     def add_edge(self, head: str, relation: str, tail: str, provenance, origin="EXTRACTED", **meta) -> tuple[str, bool]:
         """Trả về (id cạnh, có_phải_cạnh_mới). Cạnh trùng thì gộp provenance."""
@@ -58,10 +61,17 @@ class KG:
         eid = f"e{len(self.edges)}"
         self.edges[eid] = {"id": eid, "head": head, "relation": relation, "tail": tail,
                            "provenance": [list(p) for p in provenance], "origin": origin, **meta}
+        self._index_edge(self.edges[eid])
         return eid, True
 
+    def _index_edge(self, e: dict):
+        self._by_triple[(e["head"], e["relation"], e["tail"])] = e["id"]
+        self._adj[e["head"]].append(e["id"])
+        if e["tail"] != e["head"]:
+            self._adj[e["tail"]].append(e["id"])
+
     def incident(self, nid: str) -> list[dict]:
-        return [e for e in self.edges.values() if e["head"] == nid or e["tail"] == nid]
+        return [self.edges[x] for x in self._adj.get(nid, [])]
 
     def other_end(self, edge: dict, nid: str) -> str:
         return edge["tail"] if edge["head"] == nid else edge["head"]
@@ -81,6 +91,7 @@ class KG:
             kg._by_name[norm(n["name"])] = n["id"]
         for e in d["edges"]:
             kg.edges[e["id"]] = dict(e)
+            kg._index_edge(kg.edges[e["id"]])
         return kg
 
     def to_networkx(self):

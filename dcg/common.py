@@ -43,6 +43,11 @@ def norm(name: str) -> str:
     return s
 
 
+def strip_paren(name: str) -> str:
+    """'Strange Fruit (film)' → 'Strange Fruit' (phần trong ngoặc của tiêu đề Wikipedia chỉ để phân biệt)."""
+    return re.sub(r"\s*\([^)]*\)\s*$", "", str(name)).strip()
+
+
 def load_relations(path=None) -> dict:
     return read_json(path or DATA / "manual" / "relations.json")["relations"]
 

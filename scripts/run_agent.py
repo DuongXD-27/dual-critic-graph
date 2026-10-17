@@ -1,7 +1,9 @@
 """Bước 2: chạy agent trên các đồ thị đã dựng, ghi log đầy đủ.
 
 Chạy (Windows):
-  .venv\\Scripts\\python scripts\\run_agent.py --run-name baseline
+  .venv\\Scripts\\python scripts\\run_agent.py --run-name baseline                    # mỗi câu một đồ thị (bản thử)
+  .venv\\Scripts\\python scripts\\run_agent.py --run-name shared-v1 --graph data\\interim\\shared\\graph.json
+      → đồ thị chung (D12): các câu chạy LẦN LƯỢT trên cùng một đồ thị, phép ghi của câu trước được giữ cho câu sau
 Tuỳ chọn:
   --gates accept_all       bộ cổng (hiện chỉ có baseline luôn ACCEPT)
   --limit N                chỉ chạy N câu đầu
@@ -46,8 +48,8 @@ def answer_grounded(ep, answer):
     return any(a in normalize_answer(x) for x in seen if x)
 
 
-def run_episode(kg, ex, question, gold, llm, gates, rels, run_id, episode_id, out):
-    ep = agent_mod.Episode(kg, ex, question, llm, gates, rels, run_id, episode_id)
+def run_episode(kg, ex, question, gold, llm, gates, rels, run_id, episode_id, out, paragraphs=None):
+    ep = agent_mod.Episode(kg, ex, question, llm, gates, rels, run_id, episode_id, paragraphs=paragraphs)
     res = ep.run()
     res["gold_answer"] = gold
     res["answer_grounded"] = answer_grounded(ep, res["answer"])
@@ -71,14 +73,22 @@ def main(argv=None, llm=None):
     ap.add_argument("--followups", default=str(DATA / "manual" / "followups.json"))
     ap.add_argument("--limit", type=int)
     ap.add_argument("--out-root", default=str(DATA / "runs"))
+    ap.add_argument("--graph", help="đồ thị chung (D12); questions.json và corpus.json lấy cùng thư mục")
     args = ap.parse_args(argv)
 
     out = Path(args.out_root) / args.run_name
     if (out / "episodes.jsonl").exists():
         raise SystemExit(f"{out} đã có kết quả. Đặt --run-name khác hoặc xoá thư mục đó.")
     interim = Path(args.interim)
-    questions = read_json(interim / "questions.json")[: args.limit]
-    followups = read_json(args.followups) if Path(args.followups).exists() else {}
+    shared = None
+    if args.graph:
+        gdir = Path(args.graph).parent
+        questions = read_json(gdir / "questions.json")[: args.limit]
+        shared = {"kg": KG.from_json(read_json(args.graph)), "corpus": read_json(gdir / "corpus.json")}
+        followups = {}
+    else:
+        questions = read_json(interim / "questions.json")[: args.limit]
+        followups = read_json(args.followups) if Path(args.followups).exists() else {}
     rels = load_relations()
     gates = GATES[args.gates]()
     if llm is None:
@@ -90,24 +100,36 @@ def main(argv=None, llm=None):
         "llm": getattr(llm, "info", lambda: {})(), "agent_prompt_version": agent_mod.PROMPT_VERSION,
         "max_follows": agent_mod.MAX_FOLLOWS, "max_tool_calls": agent_mod.MAX_TOOL_CALLS,
         "max_reads": agent_mod.MAX_READS,
-        "gates": gates.name, "n_questions": len(questions), "followups_file": args.followups if followups else None})
+        "gates": gates.name, "n_questions": len(questions), "followups_file": args.followups if followups else None,
+        "mode": "shared" if shared else "per_question", "graph": args.graph})
 
     rows = []
     for k, ex in enumerate(questions, 1):
         qid = ex["_id"]
-        kg = KG.from_json(read_json(interim / "graphs" / f"{qid}.json"))
+        kg = shared["kg"] if shared else KG.from_json(read_json(interim / "graphs" / f"{qid}.json"))
         print(f"[{k}/{len(questions)}] {ex['question'][:80]}")
-        r = run_episode(kg, ex, ex["question"], ex["answer"], llm, gates, rels, args.run_name, f"{qid}:main", out)
-        print(f"    → {r['answer']!r}  (đúng: {ex['answer']!r}, F1={r['f1']:.2f}, ghi {len(r['writes'])} cạnh)")
+        r = run_episode(kg, ex, ex["question"], ex["answer"], llm, gates, rels, args.run_name, f"{qid}:main", out,
+                        paragraphs=shared["corpus"] if shared else None)
+        reused = [d for d in r["agent_edges_used_detail"] if d["created_by"] != r["episode_id"]]
+        print(f"    → {r['answer']!r}  (đúng: {ex['answer']!r}, F1={r['f1']:.2f}, ghi {len(r['writes'])} cạnh"
+              + (f", ĐI QUA {len(reused)} cạnh do câu trước ghi" if reused else "") + ")")
         rows.append(r)
+        if shared:
+            if k % 20 == 0:
+                write_json(out / "graph_after.json", kg.to_json())
+            continue
         for j, fu in enumerate(followups.get(qid, [])):
             r2 = run_episode(kg, ex, fu["question"], fu.get("answer"), llm, gates, rels, args.run_name,
                              f"{qid}:followup{j}", out)
             print(f"    follow-up → {r2['answer']!r}  (dùng {len(r2['agent_edges_used'])} cạnh do agent ghi)")
         write_json(out / "graphs_after" / f"{qid}.json", kg.to_json())
 
+    if shared:
+        write_json(out / "graph_after.json", shared["kg"].to_json())
     n = len(rows)
     writes = [w for r in rows for w in r["writes"]]
+    reuse = [(r["episode_id"], d) for r in rows for d in r["agent_edges_used_detail"]
+             if d["created_by"] != r["episode_id"]]
     summary = {
         "n": n,
         "em": round(sum(r["em"] for r in rows) / n, 3) if n else None,
@@ -123,6 +145,8 @@ def main(argv=None, llm=None):
         "writes_by_origin": {o: sum(w.get("origin") == o for w in writes) for o in ("AGENT_TEXT", "AGENT_DERIVED")},
         "writes_by_phase": {p: sum(w.get("phase") == p for w in writes) for p in ("answer", "memory")},
         "writes_invalid_relation": sum(w["status"] == "invalid_relation" for w in writes),
+        "episodes_using_earlier_agent_edges": len({e for e, _ in reuse}),
+        "earlier_agent_edges_reused": len({d["edge_id"] for _, d in reuse}),
         "llm_stats": getattr(llm, "stats", None),
     }
     run_meta = read_json(out / "run.json")

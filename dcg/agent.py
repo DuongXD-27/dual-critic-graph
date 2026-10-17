@@ -15,9 +15,8 @@ Mọi lần gọi cổng được ghi thành một bản ghi theo định dạng
 from __future__ import annotations
 
 import json
-import re
 
-from .common import norm, relation_list_text
+from .common import norm, relation_list_text, strip_paren
 from .graph import KG
 
 PROMPT_VERSION = "agent-v4"
@@ -88,19 +87,17 @@ TOOLS = [
 ]
 
 
-def strip_paren(name: str) -> str:
-    """'Strange Fruit (film)' → 'Strange Fruit' (phần trong ngoặc của tiêu đề Wikipedia chỉ để phân biệt)."""
-    return re.sub(r"\s*\([^)]*\)\s*$", "", name).strip()
-
-
 class Episode:
     """Một lần agent trả lời một câu hỏi trên một đồ thị (đồ thị bị thay đổi tại chỗ nếu agent ghi)."""
 
-    def __init__(self, kg: KG, example: dict, question: str, llm, gates, rels: dict, run_id: str, episode_id: str):
+    def __init__(self, kg: KG, example: dict, question: str, llm, gates, rels: dict, run_id: str, episode_id: str,
+                 paragraphs: dict | None = None):
+        """paragraphs: kho đoạn văn agent có thể tới được. Mặc định = 10 đoạn của câu hỏi;
+        với đồ thị chung (D12) là toàn bộ kho."""
         self.kg, self.example, self.question = kg, example, question
         self.llm, self.gates, self.rels = llm, gates, rels
         self.run_id, self.episode_id = run_id, episode_id
-        self.paragraphs = {t: s for t, s in example["context"]}
+        self.paragraphs = paragraphs if paragraphs is not None else {t: s for t, s in example["context"]}
         self.current = None
         self.path: list[dict] = []          # các hành động duyệt đã được chấp nhận (start + follow)
         self.events: list[dict] = []        # mọi lần gọi công cụ
@@ -144,8 +141,24 @@ class Episode:
     # ---------- công cụ ----------
     def t_search_nodes(self, query):
         q = norm(query)
-        hits = [n for n in self.kg.nodes.values() if q in norm(n["name"]) or norm(n["name"]) in q]
-        return [{"node": n["id"], "name": n["name"]} for n in hits[:10]] or "no match"
+        if not q:
+            return "no match"
+        hits = []
+        for n in self.kg.nodes.values():
+            name = norm(n["name"])
+            if name == q or norm(strip_paren(n["name"])) == q:
+                rank = 0
+            elif name.startswith(q):
+                rank = 1
+            elif q in name:
+                rank = 2
+            elif len(name) >= 4 and name in q:
+                rank = 3
+            else:
+                continue
+            hits.append((rank, len(name), n))
+        hits.sort(key=lambda x: (x[0], x[1]))
+        return [{"node": n["id"], "name": n["name"]} for _, _, n in hits[:10]] or "no match"
 
     def t_start_at(self, node):
         if node not in self.kg.nodes:
@@ -348,6 +361,10 @@ class Episode:
             "path": self.path, "paragraphs_read": self.paragraphs_read, "reads_refused": self.reads_refused,
             "writes": self.writes,
             "agent_edges_used": [s["edge_id"] for s in steps if s.get("origin", "").startswith("AGENT")],
+            "agent_edges_used_detail": [
+                {"edge_id": s["edge_id"], "origin": s["origin"],
+                 "created_by": self.kg.edges[s["edge_id"]].get("created_by")}
+                for s in steps if s.get("origin", "").startswith("AGENT")],
             "path_provenance": sorted({tuple(p) for s in steps for p in s.get("provenance", [])}),
             "events": self.events,
         }

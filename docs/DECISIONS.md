@@ -36,7 +36,7 @@ Chọn câu hỏi HotpotQA: chủ yếu loại *bridge* (có đường đi qua t
 ## D4. Dạng đồ thị
 - Cạnh = bộ ba **(đầu, quan hệ, đuôi)** + nguồn gốc.
 - **Quan hệ: chỉ dùng 96 mã quan hệ Wikidata (PID) của Re²-DocRED** (đã kiểm tra: 96 PID trong train/dev/test). Không có quan hệ tự do. LLM trả quan hệ ngoài danh sách → bỏ cạnh, ghi log.
-- Phạm vi đồ thị: **mỗi câu hỏi một đồ thị** (10 đoạn của câu đó). Không gộp thực thể giữa các câu hỏi.
+- ~~Phạm vi đồ thị: mỗi câu hỏi một đồ thị (10 đoạn của câu đó).~~ Chỉ dùng cho bản thử baseline-v1/v2. **Thay bằng D12 (2026-10-17): một đồ thị chung.**
 - Phép ghi của agent: chỉ `ADD_EDGE`.
 - **Agent có hai nguồn thông tin:** đồ thị + văn bản gốc (10 đoạn của câu hỏi). Đồ thị trích xuất luôn thiếu cạnh; khi thiếu, agent đọc đoạn văn rồi ghi cạnh mới.
   Lý do (2026-10-16): nếu agent chỉ đọc đồ thị thì mọi phép ghi chỉ là cạnh tắt, không thêm thông tin mới → không có lý do để ghi, và không sinh ra loại lỗi "diễn giải sai văn bản" mà Construction Critic nhắm tới.
@@ -78,6 +78,7 @@ construction_gate(write, evidence, provenance)  -> {verdict: ACCEPT|REJECT, reas
 - RQ0a trả lời bằng: quy tắc gán ~100 tình huống, người gán tay độc lập cùng 100 tình huống, tính κ. Không thể dùng LLM làm người gán thứ hai (vòng lặp tự chấm).
 
 ## D9. Quan sát lỗi bền vững
+*(2026-10-17: với đồ thị chung D12, câu hỏi tiếp theo không còn cần thiết — câu sau tự đi qua cạnh câu trước ghi. Giữ mục này cho chế độ mỗi câu một đồ thị.)*
 Mỗi câu hỏi một đồ thị → cạnh ghi ở câu này không ảnh hưởng câu khác. Vì vậy mỗi câu hỏi có thêm **một câu hỏi tiếp theo** chạy trên đồ thị đã bị agent sửa, đi qua cạnh vừa ghi.
 
 ## D10. Truy cập văn bản của agent (2026-10-16)
@@ -96,6 +97,16 @@ Agent chỉ nhận **hướng dẫn + câu hỏi**. Đồ thị và văn bản c
    Nút xuất phát hợp lệ = thực thể được nhắc trong câu hỏi (topic entity). Hợp lệ ≠ tối ưu: vd. xuất phát từ CBS ra đúng đáp án chỉ vì đồ thị nhỏ, bỏ qua điều kiện "diễn viên trong Strange Fruit".
 4. **Bước cập nhật bộ nhớ sau khi trả lời:** agent được hỏi ghi các sự kiện đã dùng mà đồ thị chưa có; chỉ được gọi `add_edge` (tối đa 8 lần). Phép ghi lưu `phase = answer | memory`.
    Lý do: baseline-v1 có 0/20 phép ghi khi việc ghi chỉ là tuỳ chọn. Hệ agent có bộ nhớ thường có bước này.
+
+## D12. Một đồ thị chung cho 200 câu hỏi (2026-10-17)
+**Lý do:** với mỗi câu một đồ thị, đồ thị bị bỏ sau mỗi câu → cạnh sai không bao giờ được câu khác dùng → lỗi bền vững *không thể xảy ra về mặt cấu trúc*, trong khi đó là câu hỏi tổng thể của đề tài. Ngoài ra 10 đoạn được chọn sẵn (luôn chứa đủ đoạn đáp án) làm bài toán dễ hơn thực tế nhiều; thực tế là một đồ thị lớn có trước, phục vụ nhiều câu hỏi.
+- **Kho văn bản** = hợp các đoạn của 200 câu HotpotQA dev (distractor), bỏ trùng theo tiêu đề. Đồ thị dựng **một lần** từ kho, độc lập với câu hỏi.
+- **Chọn câu theo cụm** (`--select cluster`): xen kẽ 1 câu ngẫu nhiên với 1 câu có đoạn bằng chứng đã nằm trong kho. Đo trước: chọn ngẫu nhiên 200 câu → chỉ 2/1.990 tiêu đề dùng chung, 1/200 câu có đoạn bằng chứng ở câu khác (đồ thị = 200 đảo rời); theo cụm → 185 tiêu đề dùng chung, 65/200 câu. Bản cài đặt cuối (ưu tiên câu có *đoạn bằng chứng* đã nằm trong kho), seed 0: 149 bridge + 51 comparison, 1.994 đoạn → **1.839 đoạn duy nhất**, 137 tiêu đề dùng chung, **98/200 câu** có đoạn bằng chứng xuất hiện ở câu khác, 0 xung đột tiêu đề. **Cái giá:** tập câu thiên về thực thể phổ biến → ghi vào threats to validity.
+- **Thứ tự trả lời** = thứ tự trong `data/interim/shared/questions.json`. Agent chạy lần lượt trên cùng đồ thị; phép ghi được giữ. Log ghi `agent_edges_used_detail.created_by` → biết câu nào đi qua cạnh do câu trước ghi.
+- **Trích xuất `extract-v2`:** prompt không còn danh sách tiêu đề (không có "câu hỏi" khi dựng đồ thị). Liên kết tên → tiêu đề bằng code (`TitleLinker`): khớp đúng tiêu đề → tiêu đề đoạn đang đọc khi bỏ phần trong ngoặc → khớp duy nhất một tiêu đề khi bỏ ngoặc. Nhiều tiêu đề cùng khớp (vd. "Strange Fruit" ~ film/song) → giữ nút riêng, ghi `ambiguous`. Không cố đoán: đây là lỗi hợp nhất thực thể có thật, cần đo.
+- Agent đọc được mọi đoạn trong kho, nhưng vẫn chỉ đoạn **đã tới được** (D10). `search_nodes` xếp hạng: trùng tên → bắt đầu bằng → chứa.
+- Tiêu đề trùng nhưng nội dung khác giữa hai câu (2 trường hợp khi đo thử): giữ bản đầu, ghi `title_conflicts`.
+- Benchmark Traversal (D8) sẽ sinh trên đồ thị chung: nút có nhiều cạnh hơn → tình huống chọn cạnh khó và thật hơn.
 
 ## Quan sát từ baseline-v1 (2026-10-17)
 - Lỗi code đã sửa: tham số `title` của `read_paragraph` bị proxy/Gemini làm rơi (đổi thành `paragraph`); câu trả lời rỗng bị coi là đáp án (giờ nhắc tối đa 2 lần); cờ nghi ngờ nguồn báo nhầm khi đại từ ở đuôi bộ ba.
@@ -134,7 +145,9 @@ Agent chỉ nhận **hướng dẫn + câu hỏi**. Đồ thị và văn bản c
 - [x] Gemini API key trong `.env` (đã gitignore; `dcg/llm.py` tự nạp)
 - [x] Cài thư viện, `smoke_llm.py`, tải HotpotQA, `build_graphs.py`
 - [x] `run_agent.py --run-name baseline-v1` (agent-v3) → phát hiện lỗi + lối tắt, dẫn tới D11
-- [ ] `build_graphs.py --force` (tính lại cờ nghi ngờ; lấy từ cache, không gọi LLM)
-- [ ] `run_agent.py --run-name baseline-v2` (agent-v4)
-- [ ] (O1) viết `data/manual/followups.json`: `{"<qid>": [{"question": "...", "answer": "..."}]}` rồi chạy lại với run-name mới
-- [ ] Đọc, gán nhãn tay ~20 trace (`data/runs/<run>/episodes.jsonl`, `gates.jsonl`)
+- [x] `build_graphs.py --force`, `run_agent.py --run-name baseline-v2` (agent-v4) → PR `probe/per-question-agent`
+- [x] Code đồ thị chung (D12): `scripts/build_shared_kg.py`, `run_agent.py --graph`; kiểm thử offline đạt
+- [ ] `build_shared_kg.py --select-only` (xem thống kê kho, chưa gọi LLM)
+- [ ] `build_shared_kg.py` (~1.700 lần gọi LLM) → xem `data/interim/shared/summary.json`
+- [ ] `run_agent.py --run-name shared-v1 --graph data/interim/shared/graph.json`
+- [ ] Đọc trace: lỗi tự nhiên trong duyệt/ghi; câu nào đi qua cạnh do câu trước ghi, cạnh đó đúng hay sai

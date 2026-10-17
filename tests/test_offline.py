@@ -14,6 +14,7 @@ sys.path.insert(0, str(ROOT))
 sys.path.insert(0, str(ROOT / "scripts"))
 
 import build_graphs  # noqa: E402
+import build_shared_kg  # noqa: E402
 import run_agent  # noqa: E402
 from dcg.common import read_json, read_jsonl, write_json  # noqa: E402
 
@@ -163,6 +164,7 @@ def main():
         assert eps2[1]["agent_edges_used"] == [e_new], eps2[1]["agent_edges_used"]
         print("Câu hỏi tiếp theo OK: dùng cạnh do agent ghi", eps2[1]["agent_edges_used"])
     check_tools()
+    check_shared()
     print("TẤT CẢ OK")
 
 
@@ -197,6 +199,73 @@ def check_tools():
     assert ep.paragraphs_read == titles[:2] and ep.reads_refused == 3
     assert ep.summary()["starts_not_in_question"] == 1
     print("Quy tắc công cụ OK")
+
+
+Q2 = {
+    "_id": "q_at", "question": "Where is Adriana Trigiani based?", "answer": "Greenwich Village",
+    "type": "bridge", "level": "easy", "supporting_facts": [["Adriana Trigiani", 0]],
+    "context": [
+        EXAMPLE["context"][1],  # cùng đoạn "Adriana Trigiani" với câu 1 → dùng chung trong đồ thị chung
+        ["Strange Fruit (film)", ["Strange Fruit is a 2004 film directed by Kyle Schickner."]],
+        ["Strange Fruit (song)", ["\"Strange Fruit\" is a song recorded by Billie Holiday in 1939."]],
+        ["Billie Holiday", ["Billie Holiday was an American jazz singer known for Strange Fruit."]],
+    ],
+}
+EXTRACTION.update({
+    "Strange Fruit (film)": [{"head": "Strange Fruit (film)", "relation": "P57", "tail": "Kyle Schickner", "sentences": [0]}],
+    "Strange Fruit (song)": [{"head": "Strange Fruit", "relation": "P175", "tail": "Billie Holiday", "sentences": [0]}],
+    # "Strange Fruit" từ đoạn khác khớp 2 tiêu đề (film, song) → mơ hồ, giữ nút riêng
+    "Billie Holiday": [{"head": "Billie Holiday", "relation": "P800", "tail": "Strange Fruit", "sentences": [0]}],
+})
+
+
+def check_shared():
+    """Đồ thị chung (D12): gộp kho theo tiêu đề, liên kết tên→tiêu đề, câu sau đi qua cạnh câu trước ghi."""
+    with tempfile.TemporaryDirectory() as tmp:
+        tmp = Path(tmp)
+        sdir = tmp / "shared"
+        write_json(sdir / "questions.json", [EXAMPLE, Q2])          # thứ tự trả lời cố định
+        summ = build_shared_kg.main(["--out", str(sdir)], llm=FakeLLM({}))
+        c = summ["corpus"]
+        assert c["paragraphs_total"] == 7 and c["paragraphs_unique"] == 6, c
+        assert c["questions_whose_evidence_paragraph_is_in_another_question"] == 2
+        assert summ["linking"]["ambiguous"] == 1, summ["linking"]
+        assert summ["linking"]["current_title"] >= 1      # "Strange Fruit" trong đoạn của chính nó → (song)
+        g = read_json(sdir / "graph.json")
+        names = {n["name"] for n in g["nodes"]}
+        assert {"Strange Fruit", "Strange Fruit (song)", "Strange Fruit (film)"} <= names
+        assert edge_id(g, "Strange Fruit (song)", "P175", "Billie Holiday")
+        assert edge_id(g, "Billie Holiday", "P800", "Strange Fruit")    # nút mơ hồ, không gán bừa
+        nodes = {n["name"]: n["id"] for n in g["nodes"]}
+        e_dir = edge_id(g, "Big Stone Gap (film)", "P57", "Adriana Trigiani")
+        e_new = f"e{len(g['edges'])}"                                   # id của cạnh đầu tiên agent sẽ ghi
+        s1 = [
+            ("search_nodes", {"query": "Big Stone Gap"}),
+            ("start_at", {"node": nodes["Big Stone Gap (film)"]}),
+            ("follow_edge", {"edge_id": e_dir}),
+            ("read_paragraph", {"paragraph": "Adriana Trigiani"}),
+            ("answer", {"answer": "Greenwich Village, New York City"}),
+            ("add_edge", {"head": "Adriana Trigiani", "relation": "P551", "tail": "Greenwich Village",
+                          "evidence_sentences": [{"paragraph": "Adriana Trigiani", "sentence": 0}]}),
+            None,
+        ]
+        s2 = [
+            ("search_nodes", {"query": "Adriana Trigiani"}),
+            ("start_at", {"node": nodes["Adriana Trigiani"]}),
+            ("follow_edge", {"edge_id": e_new}),
+            ("answer", {"answer": "Greenwich Village"}),
+            None,
+        ]
+        summ2 = run_agent.main(["--run-name", "s", "--graph", str(sdir / "graph.json"), "--out-root", str(tmp / "runs")],
+                               llm=FakeLLM({EXAMPLE["question"]: s1, Q2["question"]: s2}))
+        eps = read_jsonl(tmp / "runs" / "s" / "episodes.jsonl")
+        assert eps[0]["writes"][0]["phase"] == "memory" and eps[0]["writes"][0]["edge_id"] == e_new
+        assert eps[1]["agent_edges_used_detail"] == [{"edge_id": e_new, "origin": "AGENT_TEXT", "created_by": "q_bsg:main"}]
+        assert summ2["episodes_using_earlier_agent_edges"] == 1 and summ2["earlier_agent_edges_reused"] == 1
+        after = read_json(tmp / "runs" / "s" / "graph_after.json")
+        assert len(after["edges"]) == len(g["edges"]) + 1
+        assert read_json(tmp / "runs" / "s" / "run.json")["mode"] == "shared"
+        print("Đồ thị chung OK")
 
 
 if __name__ == "__main__":

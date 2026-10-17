@@ -1,0 +1,16 @@
+{
+  "corpus": {
+    "questions": 200,
+    "types": {
+      "bridge": 149,
+      "comparison": 51
+    },
+    "paragraphs_total": 1994,
+    "paragraphs_unique": 1839,
+    "titles_shared_by_2plus_questions": 137,
+    "questions_whose_evidence_paragraph_is_in_another_question": 98,
+    "selection": "cluster",
+    "seed": 0,
+    "title_conflicts": []
+  }
+}
