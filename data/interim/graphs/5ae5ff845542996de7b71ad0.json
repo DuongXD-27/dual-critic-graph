@@ -1,0 +1,1311 @@
+{
+  "qid": "5ae5ff845542996de7b71ad0",
+  "nodes": [
+    {
+      "id": "n0",
+      "name": "Berlinda Tolbert",
+      "type": "PER",
+      "is_title": true,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n1",
+      "name": "Lillian Smith (author)",
+      "type": "PER",
+      "is_title": true,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n2",
+      "name": "The Seat Filler",
+      "type": "MISC",
+      "is_title": true,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n3",
+      "name": "Strange Fruit Project",
+      "type": "ORG",
+      "is_title": true,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n4",
+      "name": "Strange Fruit (film)",
+      "type": "MISC",
+      "is_title": true,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n5",
+      "name": "Joe Overstreet",
+      "type": "PER",
+      "is_title": true,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n6",
+      "name": "Symbolyc One",
+      "type": "PER",
+      "is_title": true,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n7",
+      "name": "The Janice Long Session EP",
+      "type": "MISC",
+      "is_title": true,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n8",
+      "name": "The Peel Sessions (Bonzo Dog Band album)",
+      "type": "MISC",
+      "is_title": true,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n9",
+      "name": "Commodore Records",
+      "type": "ORG",
+      "is_title": true,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n10",
+      "name": "November 4, 1949",
+      "type": "TIME",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n11",
+      "name": "The Jeffersons",
+      "type": "MISC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n12",
+      "name": "Jenny Willis Jefferson",
+      "type": "PER",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n13",
+      "name": "CBS",
+      "type": "ORG",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n14",
+      "name": "1975",
+      "type": "TIME",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n15",
+      "name": "1985",
+      "type": "TIME",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n16",
+      "name": "December 12, 1897",
+      "type": "TIME",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n17",
+      "name": "September 28, 1966",
+      "type": "TIME",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n18",
+      "name": "Strange Fruit",
+      "type": "MISC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n19",
+      "name": "1944",
+      "type": "TIME",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n20",
+      "name": "Magnolia Home Entertainment",
+      "type": "ORG",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n21",
+      "name": "Seat Filler Productions",
+      "type": "ORG",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n22",
+      "name": "Shake Martin Films",
+      "type": "ORG",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n23",
+      "name": "Strange Fruit Films",
+      "type": "ORG",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n24",
+      "name": "2004",
+      "type": "TIME",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n25",
+      "name": "Kelly Rowland",
+      "type": "PER",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n26",
+      "name": "Duane Martin",
+      "type": "PER",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n27",
+      "name": "Mel B",
+      "type": "PER",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n28",
+      "name": "Kyla Pratt",
+      "type": "PER",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n29",
+      "name": "Shemar Moore",
+      "type": "PER",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n30",
+      "name": "underground hip hop",
+      "type": "MISC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n31",
+      "name": "Waco",
+      "type": "LOC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n32",
+      "name": "Texas",
+      "type": "LOC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n33",
+      "name": "Myth",
+      "type": "PER",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n34",
+      "name": "Myone",
+      "type": "PER",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n35",
+      "name": "The Healing",
+      "type": "MISC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n36",
+      "name": "2006",
+      "type": "TIME",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n37",
+      "name": "Billie Holiday",
+      "type": "PER",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n38",
+      "name": "Kyle Schickner",
+      "type": "PER",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n39",
+      "name": "FenceSitter Films",
+      "type": "ORG",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n40",
+      "name": "Kent Faulcon",
+      "type": "PER",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n41",
+      "name": "William Boyals",
+      "type": "PER",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n42",
+      "name": "Emma Ayers",
+      "type": "PER",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n43",
+      "name": "1933",
+      "type": "TIME",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n44",
+      "name": "New York City",
+      "type": "LOC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n45",
+      "name": "The New Jemima",
+      "type": "MISC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n46",
+      "name": "Kenkeleba House",
+      "type": "ORG",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n47",
+      "name": "1974",
+      "type": "TIME",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n48",
+      "name": "East Village",
+      "type": "LOC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n49",
+      "name": "African-American",
+      "type": "MISC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n50",
+      "name": "Native American",
+      "type": "MISC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n51",
+      "name": "Danielle Dax",
+      "type": "PER",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n52",
+      "name": "The Lemon Kittens",
+      "type": "ORG",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n53",
+      "name": "1988",
+      "type": "TIME",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n54",
+      "name": "Strange Fruit Records",
+      "type": "ORG",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n55",
+      "name": "The Bonzo Dog Band",
+      "type": "ORG",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n56",
+      "name": "Peel Sessions",
+      "type": "MISC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n57",
+      "name": "1990",
+      "type": "TIME",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n58",
+      "name": "Dixieland jazz",
+      "type": "MISC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n59",
+      "name": "swing",
+      "type": "MISC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    }
+  ],
+  "edges": [
+    {
+      "id": "e0",
+      "head": "n0",
+      "relation": "P569",
+      "tail": "n10",
+      "provenance": [
+        [
+          "Berlinda Tolbert",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e1",
+      "head": "n0",
+      "relation": "P800",
+      "tail": "n11",
+      "provenance": [
+        [
+          "Berlinda Tolbert",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e2",
+      "head": "n11",
+      "relation": "P161",
+      "tail": "n0",
+      "provenance": [
+        [
+          "Berlinda Tolbert",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e3",
+      "head": "n11",
+      "relation": "P674",
+      "tail": "n12",
+      "provenance": [
+        [
+          "Berlinda Tolbert",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e4",
+      "head": "n11",
+      "relation": "P449",
+      "tail": "n13",
+      "provenance": [
+        [
+          "Berlinda Tolbert",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e5",
+      "head": "n11",
+      "relation": "P580",
+      "tail": "n14",
+      "provenance": [
+        [
+          "Berlinda Tolbert",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e6",
+      "head": "n11",
+      "relation": "P582",
+      "tail": "n15",
+      "provenance": [
+        [
+          "Berlinda Tolbert",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e7",
+      "head": "n1",
+      "relation": "P569",
+      "tail": "n16",
+      "provenance": [
+        [
+          "Lillian Smith (author)",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e8",
+      "head": "n1",
+      "relation": "P570",
+      "tail": "n17",
+      "provenance": [
+        [
+          "Lillian Smith (author)",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e9",
+      "head": "n1",
+      "relation": "P800",
+      "tail": "n18",
+      "provenance": [
+        [
+          "Lillian Smith (author)",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e10",
+      "head": "n18",
+      "relation": "P50",
+      "tail": "n1",
+      "provenance": [
+        [
+          "Lillian Smith (author)",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e11",
+      "head": "n18",
+      "relation": "P577",
+      "tail": "n19",
+      "provenance": [
+        [
+          "Lillian Smith (author)",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e12",
+      "head": "n2",
+      "relation": "P272",
+      "tail": "n20",
+      "provenance": [
+        [
+          "The Seat Filler",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e13",
+      "head": "n2",
+      "relation": "P272",
+      "tail": "n21",
+      "provenance": [
+        [
+          "The Seat Filler",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e14",
+      "head": "n2",
+      "relation": "P272",
+      "tail": "n22",
+      "provenance": [
+        [
+          "The Seat Filler",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e15",
+      "head": "n2",
+      "relation": "P272",
+      "tail": "n23",
+      "provenance": [
+        [
+          "The Seat Filler",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e16",
+      "head": "n2",
+      "relation": "P577",
+      "tail": "n24",
+      "provenance": [
+        [
+          "The Seat Filler",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e17",
+      "head": "n2",
+      "relation": "P161",
+      "tail": "n25",
+      "provenance": [
+        [
+          "The Seat Filler",
+          1
+        ],
+        [
+          "The Seat Filler",
+          3
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e18",
+      "head": "n2",
+      "relation": "P161",
+      "tail": "n26",
+      "provenance": [
+        [
+          "The Seat Filler",
+          1
+        ],
+        [
+          "The Seat Filler",
+          3
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e19",
+      "head": "n2",
+      "relation": "P161",
+      "tail": "n27",
+      "provenance": [
+        [
+          "The Seat Filler",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e20",
+      "head": "n2",
+      "relation": "P161",
+      "tail": "n28",
+      "provenance": [
+        [
+          "The Seat Filler",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e21",
+      "head": "n2",
+      "relation": "P161",
+      "tail": "n29",
+      "provenance": [
+        [
+          "The Seat Filler",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e22",
+      "head": "n3",
+      "relation": "P136",
+      "tail": "n30",
+      "provenance": [
+        [
+          "Strange Fruit Project",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e23",
+      "head": "n3",
+      "relation": "P740",
+      "tail": "n31",
+      "provenance": [
+        [
+          "Strange Fruit Project",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e24",
+      "head": "n31",
+      "relation": "P131",
+      "tail": "n32",
+      "provenance": [
+        [
+          "Strange Fruit Project",
+          0
+        ],
+        [
+          "Symbolyc One",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e25",
+      "head": "n3",
+      "relation": "P527",
+      "tail": "n6",
+      "provenance": [
+        [
+          "Strange Fruit Project",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e26",
+      "head": "n6",
+      "relation": "P463",
+      "tail": "n3",
+      "provenance": [
+        [
+          "Strange Fruit Project",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e27",
+      "head": "n33",
+      "relation": "P463",
+      "tail": "n3",
+      "provenance": [
+        [
+          "Strange Fruit Project",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e28",
+      "head": "n34",
+      "relation": "P463",
+      "tail": "n3",
+      "provenance": [
+        [
+          "Strange Fruit Project",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e29",
+      "head": "n35",
+      "relation": "P175",
+      "tail": "n3",
+      "provenance": [
+        [
+          "Strange Fruit Project",
+          2
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e30",
+      "head": "n35",
+      "relation": "P577",
+      "tail": "n36",
+      "provenance": [
+        [
+          "Strange Fruit Project",
+          2
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e31",
+      "head": "n18",
+      "relation": "P175",
+      "tail": "n37",
+      "provenance": [
+        [
+          "Strange Fruit Project",
+          3
+        ],
+        [
+          "Commodore Records",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e32",
+      "head": "n4",
+      "relation": "P577",
+      "tail": "n24",
+      "provenance": [
+        [
+          "Strange Fruit (film)",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e33",
+      "head": "n4",
+      "relation": "P57",
+      "tail": "n38",
+      "provenance": [
+        [
+          "Strange Fruit (film)",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e34",
+      "head": "n4",
+      "relation": "P58",
+      "tail": "n38",
+      "provenance": [
+        [
+          "Strange Fruit (film)",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e35",
+      "head": "n4",
+      "relation": "P272",
+      "tail": "n39",
+      "provenance": [
+        [
+          "Strange Fruit (film)",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e36",
+      "head": "n4",
+      "relation": "P161",
+      "tail": "n40",
+      "provenance": [
+        [
+          "Strange Fruit (film)",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e37",
+      "head": "n4",
+      "relation": "P161",
+      "tail": "n0",
+      "provenance": [
+        [
+          "Strange Fruit (film)",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e38",
+      "head": "n4",
+      "relation": "P674",
+      "tail": "n41",
+      "provenance": [
+        [
+          "Strange Fruit (film)",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e39",
+      "head": "n4",
+      "relation": "P674",
+      "tail": "n42",
+      "provenance": [
+        [
+          "Strange Fruit (film)",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e40",
+      "head": "n5",
+      "relation": "P569",
+      "tail": "n43",
+      "provenance": [
+        [
+          "Joe Overstreet",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e41",
+      "head": "n5",
+      "relation": "P551",
+      "tail": "n44",
+      "provenance": [
+        [
+          "Joe Overstreet",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e42",
+      "head": "n5",
+      "relation": "P937",
+      "tail": "n44",
+      "provenance": [
+        [
+          "Joe Overstreet",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e43",
+      "head": "n5",
+      "relation": "P800",
+      "tail": "n18",
+      "provenance": [
+        [
+          "Joe Overstreet",
+          2
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e44",
+      "head": "n5",
+      "relation": "P800",
+      "tail": "n45",
+      "provenance": [
+        [
+          "Joe Overstreet",
+          2
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e45",
+      "head": "n46",
+      "relation": "P112",
+      "tail": "n5",
+      "provenance": [
+        [
+          "Joe Overstreet",
+          3
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e46",
+      "head": "n46",
+      "relation": "P571",
+      "tail": "n47",
+      "provenance": [
+        [
+          "Joe Overstreet",
+          3
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e47",
+      "head": "n46",
+      "relation": "P276",
+      "tail": "n48",
+      "provenance": [
+        [
+          "Joe Overstreet",
+          3
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e48",
+      "head": "n5",
+      "relation": "P172",
+      "tail": "n49",
+      "provenance": [
+        [
+          "Joe Overstreet",
+          5
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e49",
+      "head": "n5",
+      "relation": "P172",
+      "tail": "n50",
+      "provenance": [
+        [
+          "Joe Overstreet",
+          5
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e50",
+      "head": "n3",
+      "relation": "P112",
+      "tail": "n6",
+      "provenance": [
+        [
+          "Symbolyc One",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e51",
+      "head": "n7",
+      "relation": "P175",
+      "tail": "n51",
+      "provenance": [
+        [
+          "The Janice Long Session EP",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e52",
+      "head": "n51",
+      "relation": "P463",
+      "tail": "n52",
+      "provenance": [
+        [
+          "The Janice Long Session EP",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e53",
+      "head": "n7",
+      "relation": "P577",
+      "tail": "n53",
+      "provenance": [
+        [
+          "The Janice Long Session EP",
+          2
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e54",
+      "head": "n7",
+      "relation": "P264",
+      "tail": "n54",
+      "provenance": [
+        [
+          "The Janice Long Session EP",
+          2
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e55",
+      "head": "n8",
+      "relation": "P175",
+      "tail": "n55",
+      "provenance": [
+        [
+          "The Peel Sessions (Bonzo Dog Band album)",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e56",
+      "head": "n8",
+      "relation": "P179",
+      "tail": "n56",
+      "provenance": [
+        [
+          "The Peel Sessions (Bonzo Dog Band album)",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e57",
+      "head": "n8",
+      "relation": "P577",
+      "tail": "n57",
+      "provenance": [
+        [
+          "The Peel Sessions (Bonzo Dog Band album)",
+          2
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e58",
+      "head": "n8",
+      "relation": "P264",
+      "tail": "n54",
+      "provenance": [
+        [
+          "The Peel Sessions (Bonzo Dog Band album)",
+          2
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e59",
+      "head": "n9",
+      "relation": "P136",
+      "tail": "n58",
+      "provenance": [
+        [
+          "Commodore Records",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e60",
+      "head": "n9",
+      "relation": "P136",
+      "tail": "n59",
+      "provenance": [
+        [
+          "Commodore Records",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e61",
+      "head": "n18",
+      "relation": "P264",
+      "tail": "n9",
+      "provenance": [
+        [
+          "Commodore Records",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    }
+  ]
+}

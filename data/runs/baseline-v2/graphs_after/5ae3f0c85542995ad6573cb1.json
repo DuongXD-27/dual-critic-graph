@@ -1,0 +1,1670 @@
+{
+  "qid": "5ae3f0c85542995ad6573cb1",
+  "nodes": [
+    {
+      "id": "n0",
+      "name": "Super Bowl XLVII halftime show",
+      "type": "MISC",
+      "is_title": true,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n1",
+      "name": "Super Bowl XXXVIII halftime-show controversy",
+      "type": "MISC",
+      "is_title": true,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n2",
+      "name": "Super Bowl 50 halftime show",
+      "type": "MISC",
+      "is_title": true,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n3",
+      "name": "Super Bowl XLVIII halftime show",
+      "type": "MISC",
+      "is_title": true,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n4",
+      "name": "Joanne (album)",
+      "type": "MISC",
+      "is_title": true,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n5",
+      "name": "Lady Gaga: Queen of Pop",
+      "type": "MISC",
+      "is_title": true,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n6",
+      "name": "Gaga: Five Foot Two",
+      "type": "MISC",
+      "is_title": true,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n7",
+      "name": "List of Super Bowl halftime shows",
+      "type": null,
+      "is_title": true,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n8",
+      "name": "Super Bowl LI halftime show",
+      "type": "MISC",
+      "is_title": true,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n9",
+      "name": "Super Bowl XLIX halftime show",
+      "type": "MISC",
+      "is_title": true,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n10",
+      "name": "February 3, 2013",
+      "type": "TIME",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n11",
+      "name": "Mercedes-Benz Superdome",
+      "type": "LOC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n12",
+      "name": "New Orleans",
+      "type": "LOC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n13",
+      "name": "Super Bowl XLVII",
+      "type": "MISC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n14",
+      "name": "Beyoncé",
+      "type": "PER",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n15",
+      "name": "Kelly Rowland",
+      "type": "PER",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n16",
+      "name": "Destiny's Child",
+      "type": "ORG",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n17",
+      "name": "Michelle Williams",
+      "type": "PER",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n18",
+      "name": "Ricky Kirshner",
+      "type": "PER",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n19",
+      "name": "Hamish Hamilton",
+      "type": "PER",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n20",
+      "name": "Super Bowl XXXVIII",
+      "type": "MISC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n21",
+      "name": "February 1, 2004",
+      "type": "TIME",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n22",
+      "name": "Houston",
+      "type": "LOC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n23",
+      "name": "CBS",
+      "type": "ORG",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n24",
+      "name": "Texas",
+      "type": "LOC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n25",
+      "name": "Janet Jackson",
+      "type": "PER",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n26",
+      "name": "Justin Timberlake",
+      "type": "PER",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n27",
+      "name": "February 7, 2016",
+      "type": "TIME",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n28",
+      "name": "Levi's Stadium",
+      "type": "LOC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n29",
+      "name": "Santa Clara",
+      "type": "LOC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n30",
+      "name": "Super Bowl 50",
+      "type": "MISC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n31",
+      "name": "Coldplay",
+      "type": "ORG",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n32",
+      "name": "Bruno Mars",
+      "type": "PER",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n33",
+      "name": "February 2, 2014",
+      "type": "TIME",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n34",
+      "name": "MetLife Stadium",
+      "type": "LOC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n35",
+      "name": "New Jersey",
+      "type": "LOC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n36",
+      "name": "Super Bowl XLVIII",
+      "type": "MISC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n37",
+      "name": "The Hooligans",
+      "type": "ORG",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n38",
+      "name": "The Red Hot Chili Peppers",
+      "type": "ORG",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n39",
+      "name": "Katy Perry",
+      "type": "PER",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n40",
+      "name": "Lady Gaga",
+      "type": "PER",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n41",
+      "name": "October 21, 2016",
+      "type": "TIME",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n42",
+      "name": "Streamline",
+      "type": "ORG",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n43",
+      "name": "Interscope Records",
+      "type": "ORG",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n44",
+      "name": "Mark Ronson",
+      "type": "PER",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n45",
+      "name": "Jeff Bhasker",
+      "type": "PER",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n46",
+      "name": "BloodPop",
+      "type": "PER",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n47",
+      "name": "RedOne",
+      "type": "PER",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n48",
+      "name": "soft rock",
+      "type": "MISC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n49",
+      "name": "dance-pop",
+      "type": "MISC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n50",
+      "name": "Emily Herbert",
+      "type": "PER",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n51",
+      "name": "Virginia Blackburn",
+      "type": "PER",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n52",
+      "name": "John Blake Publishing Ltd",
+      "type": "ORG",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n53",
+      "name": "Overlook Press",
+      "type": "ORG",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n54",
+      "name": "2010",
+      "type": "TIME",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n55",
+      "name": "Wilkinson Publishing",
+      "type": "ORG",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n56",
+      "name": "Melbourne",
+      "type": "LOC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n57",
+      "name": "Australia",
+      "type": "LOC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n58",
+      "name": "Gardners Books",
+      "type": "ORG",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n59",
+      "name": "1986",
+      "type": "TIME",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n60",
+      "name": "Convent of the Sacred Heart",
+      "type": "ORG",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n61",
+      "name": "New York",
+      "type": "LOC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n62",
+      "name": "Tisch School of the Arts",
+      "type": "ORG",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n63",
+      "name": "Radio Ga Ga",
+      "type": "MISC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n64",
+      "name": "Queen",
+      "type": "ORG",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n65",
+      "name": "The Fame",
+      "type": "MISC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n66",
+      "name": "2008",
+      "type": "TIME",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n67",
+      "name": "Chris Moukarbel",
+      "type": "PER",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n68",
+      "name": "Netflix",
+      "type": "ORG",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n69",
+      "name": "September 22, 2017",
+      "type": "TIME",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n70",
+      "name": "February 5, 2017",
+      "type": "TIME",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n71",
+      "name": "NRG Stadium",
+      "type": "LOC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n72",
+      "name": "Super Bowl LI",
+      "type": "MISC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n73",
+      "name": "February 1, 2015",
+      "type": "TIME",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n74",
+      "name": "University of Phoenix Stadium",
+      "type": "LOC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n75",
+      "name": "Glendale",
+      "type": "LOC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n76",
+      "name": "Arizona",
+      "type": "LOC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n77",
+      "name": "Super Bowl XLIX",
+      "type": "MISC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n78",
+      "name": "Lenny Kravitz",
+      "type": "PER",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n79",
+      "name": "Missy Elliott",
+      "type": "PER",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n80",
+      "name": "Emmy Awards",
+      "type": "MISC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    }
+  ],
+  "edges": [
+    {
+      "id": "e0",
+      "head": "n0",
+      "relation": "P585",
+      "tail": "n10",
+      "provenance": [
+        [
+          "Super Bowl XLVII halftime show",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e1",
+      "head": "n0",
+      "relation": "P276",
+      "tail": "n11",
+      "provenance": [
+        [
+          "Super Bowl XLVII halftime show",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e2",
+      "head": "n11",
+      "relation": "P131",
+      "tail": "n12",
+      "provenance": [
+        [
+          "Super Bowl XLVII halftime show",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e3",
+      "head": "n0",
+      "relation": "P361",
+      "tail": "n13",
+      "provenance": [
+        [
+          "Super Bowl XLVII halftime show",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e4",
+      "head": "n0",
+      "relation": "P175",
+      "tail": "n14",
+      "provenance": [
+        [
+          "Super Bowl XLVII halftime show",
+          0
+        ],
+        [
+          "Super Bowl 50 halftime show",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e5",
+      "head": "n15",
+      "relation": "P463",
+      "tail": "n16",
+      "provenance": [
+        [
+          "Super Bowl XLVII halftime show",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e6",
+      "head": "n17",
+      "relation": "P463",
+      "tail": "n16",
+      "provenance": [
+        [
+          "Super Bowl XLVII halftime show",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e7",
+      "head": "n0",
+      "relation": "P162",
+      "tail": "n18",
+      "provenance": [
+        [
+          "Super Bowl XLVII halftime show",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e8",
+      "head": "n0",
+      "relation": "P57",
+      "tail": "n19",
+      "provenance": [
+        [
+          "Super Bowl XLVII halftime show",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e9",
+      "head": "n20",
+      "relation": "P585",
+      "tail": "n21",
+      "provenance": [
+        [
+          "Super Bowl XXXVIII halftime-show controversy",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e10",
+      "head": "n20",
+      "relation": "P276",
+      "tail": "n22",
+      "provenance": [
+        [
+          "Super Bowl XXXVIII halftime-show controversy",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e11",
+      "head": "n20",
+      "relation": "P449",
+      "tail": "n23",
+      "provenance": [
+        [
+          "Super Bowl XXXVIII halftime-show controversy",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e12",
+      "head": "n22",
+      "relation": "P131",
+      "tail": "n24",
+      "provenance": [
+        [
+          "Super Bowl XXXVIII halftime-show controversy",
+          0
+        ],
+        [
+          "Super Bowl LI halftime show",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e13",
+      "head": "n1",
+      "relation": "P710",
+      "tail": "n25",
+      "provenance": [
+        [
+          "Super Bowl XXXVIII halftime-show controversy",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e14",
+      "head": "n1",
+      "relation": "P710",
+      "tail": "n26",
+      "provenance": [
+        [
+          "Super Bowl XXXVIII halftime-show controversy",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e15",
+      "head": "n2",
+      "relation": "P585",
+      "tail": "n27",
+      "provenance": [
+        [
+          "Super Bowl 50 halftime show",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e16",
+      "head": "n2",
+      "relation": "P276",
+      "tail": "n28",
+      "provenance": [
+        [
+          "Super Bowl 50 halftime show",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e17",
+      "head": "n28",
+      "relation": "P131",
+      "tail": "n29",
+      "provenance": [
+        [
+          "Super Bowl 50 halftime show",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e18",
+      "head": "n2",
+      "relation": "P361",
+      "tail": "n30",
+      "provenance": [
+        [
+          "Super Bowl 50 halftime show",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e19",
+      "head": "n2",
+      "relation": "P175",
+      "tail": "n31",
+      "provenance": [
+        [
+          "Super Bowl 50 halftime show",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e20",
+      "head": "n2",
+      "relation": "P175",
+      "tail": "n14",
+      "provenance": [
+        [
+          "Super Bowl 50 halftime show",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e21",
+      "head": "n2",
+      "relation": "P175",
+      "tail": "n32",
+      "provenance": [
+        [
+          "Super Bowl 50 halftime show",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e22",
+      "head": "n3",
+      "relation": "P175",
+      "tail": "n32",
+      "provenance": [
+        [
+          "Super Bowl 50 halftime show",
+          1
+        ],
+        [
+          "Super Bowl XLVIII halftime show",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e23",
+      "head": "n3",
+      "relation": "P585",
+      "tail": "n33",
+      "provenance": [
+        [
+          "Super Bowl XLVIII halftime show",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e24",
+      "head": "n3",
+      "relation": "P276",
+      "tail": "n34",
+      "provenance": [
+        [
+          "Super Bowl XLVIII halftime show",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e25",
+      "head": "n34",
+      "relation": "P131",
+      "tail": "n35",
+      "provenance": [
+        [
+          "Super Bowl XLVIII halftime show",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e26",
+      "head": "n3",
+      "relation": "P361",
+      "tail": "n36",
+      "provenance": [
+        [
+          "Super Bowl XLVIII halftime show",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e27",
+      "head": "n3",
+      "relation": "P175",
+      "tail": "n37",
+      "provenance": [
+        [
+          "Super Bowl XLVIII halftime show",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e28",
+      "head": "n3",
+      "relation": "P175",
+      "tail": "n38",
+      "provenance": [
+        [
+          "Super Bowl XLVIII halftime show",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e29",
+      "head": "n3",
+      "relation": "P162",
+      "tail": "n18",
+      "provenance": [
+        [
+          "Super Bowl XLVIII halftime show",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e30",
+      "head": "n3",
+      "relation": "P57",
+      "tail": "n19",
+      "provenance": [
+        [
+          "Super Bowl XLVIII halftime show",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e31",
+      "head": "n3",
+      "relation": "P156",
+      "tail": "n9",
+      "provenance": [
+        [
+          "Super Bowl XLVIII halftime show",
+          3
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e32",
+      "head": "n9",
+      "relation": "P155",
+      "tail": "n3",
+      "provenance": [
+        [
+          "Super Bowl XLVIII halftime show",
+          3
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e33",
+      "head": "n9",
+      "relation": "P175",
+      "tail": "n39",
+      "provenance": [
+        [
+          "Super Bowl XLVIII halftime show",
+          3
+        ],
+        [
+          "List of Super Bowl halftime shows",
+          2
+        ],
+        [
+          "Super Bowl XLIX halftime show",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e34",
+      "head": "n4",
+      "relation": "P175",
+      "tail": "n40",
+      "provenance": [
+        [
+          "Joanne (album)",
+          0
+        ],
+        [
+          "Gaga: Five Foot Two",
+          1
+        ],
+        [
+          "Super Bowl LI halftime show",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e35",
+      "head": "n4",
+      "relation": "P577",
+      "tail": "n41",
+      "provenance": [
+        [
+          "Joanne (album)",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e36",
+      "head": "n4",
+      "relation": "P264",
+      "tail": "n42",
+      "provenance": [
+        [
+          "Joanne (album)",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e37",
+      "head": "n4",
+      "relation": "P264",
+      "tail": "n43",
+      "provenance": [
+        [
+          "Joanne (album)",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e38",
+      "head": "n4",
+      "relation": "P162",
+      "tail": "n44",
+      "provenance": [
+        [
+          "Joanne (album)",
+          2
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e39",
+      "head": "n4",
+      "relation": "P162",
+      "tail": "n45",
+      "provenance": [
+        [
+          "Joanne (album)",
+          2
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e40",
+      "head": "n4",
+      "relation": "P162",
+      "tail": "n46",
+      "provenance": [
+        [
+          "Joanne (album)",
+          2
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e41",
+      "head": "n4",
+      "relation": "P162",
+      "tail": "n47",
+      "provenance": [
+        [
+          "Joanne (album)",
+          2
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e42",
+      "head": "n4",
+      "relation": "P162",
+      "tail": "n40",
+      "provenance": [
+        [
+          "Joanne (album)",
+          2
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": true
+    },
+    {
+      "id": "e43",
+      "head": "n4",
+      "relation": "P136",
+      "tail": "n48",
+      "provenance": [
+        [
+          "Joanne (album)",
+          3
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e44",
+      "head": "n4",
+      "relation": "P136",
+      "tail": "n49",
+      "provenance": [
+        [
+          "Joanne (album)",
+          3
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e45",
+      "head": "n5",
+      "relation": "P50",
+      "tail": "n50",
+      "provenance": [
+        [
+          "Lady Gaga: Queen of Pop",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e46",
+      "head": "n5",
+      "relation": "P50",
+      "tail": "n51",
+      "provenance": [
+        [
+          "Lady Gaga: Queen of Pop",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e47",
+      "head": "n5",
+      "relation": "P123",
+      "tail": "n52",
+      "provenance": [
+        [
+          "Lady Gaga: Queen of Pop",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e48",
+      "head": "n5",
+      "relation": "P123",
+      "tail": "n53",
+      "provenance": [
+        [
+          "Lady Gaga: Queen of Pop",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e49",
+      "head": "n5",
+      "relation": "P577",
+      "tail": "n54",
+      "provenance": [
+        [
+          "Lady Gaga: Queen of Pop",
+          2
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e50",
+      "head": "n5",
+      "relation": "P123",
+      "tail": "n55",
+      "provenance": [
+        [
+          "Lady Gaga: Queen of Pop",
+          2
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e51",
+      "head": "n56",
+      "relation": "P17",
+      "tail": "n57",
+      "provenance": [
+        [
+          "Lady Gaga: Queen of Pop",
+          2
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e52",
+      "head": "n5",
+      "relation": "P123",
+      "tail": "n58",
+      "provenance": [
+        [
+          "Lady Gaga: Queen of Pop",
+          2
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e53",
+      "head": "n40",
+      "relation": "P569",
+      "tail": "n59",
+      "provenance": [
+        [
+          "Lady Gaga: Queen of Pop",
+          3
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": true
+    },
+    {
+      "id": "e54",
+      "head": "n40",
+      "relation": "P69",
+      "tail": "n60",
+      "provenance": [
+        [
+          "Lady Gaga: Queen of Pop",
+          3
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": true
+    },
+    {
+      "id": "e55",
+      "head": "n60",
+      "relation": "P131",
+      "tail": "n61",
+      "provenance": [
+        [
+          "Lady Gaga: Queen of Pop",
+          3
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e56",
+      "head": "n40",
+      "relation": "P69",
+      "tail": "n62",
+      "provenance": [
+        [
+          "Lady Gaga: Queen of Pop",
+          3
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": true
+    },
+    {
+      "id": "e57",
+      "head": "n63",
+      "relation": "P175",
+      "tail": "n64",
+      "provenance": [
+        [
+          "Lady Gaga: Queen of Pop",
+          4
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e58",
+      "head": "n65",
+      "relation": "P175",
+      "tail": "n40",
+      "provenance": [
+        [
+          "Lady Gaga: Queen of Pop",
+          4
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e59",
+      "head": "n65",
+      "relation": "P577",
+      "tail": "n66",
+      "provenance": [
+        [
+          "Lady Gaga: Queen of Pop",
+          4
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e60",
+      "head": "n6",
+      "relation": "P57",
+      "tail": "n67",
+      "provenance": [
+        [
+          "Gaga: Five Foot Two",
+          2
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e61",
+      "head": "n6",
+      "relation": "P400",
+      "tail": "n68",
+      "provenance": [
+        [
+          "Gaga: Five Foot Two",
+          2
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e62",
+      "head": "n6",
+      "relation": "P577",
+      "tail": "n69",
+      "provenance": [
+        [
+          "Gaga: Five Foot Two",
+          2
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e63",
+      "head": "n8",
+      "relation": "P175",
+      "tail": "n40",
+      "provenance": [
+        [
+          "List of Super Bowl halftime shows",
+          3
+        ],
+        [
+          "Super Bowl LI halftime show",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e64",
+      "head": "n8",
+      "relation": "P585",
+      "tail": "n70",
+      "provenance": [
+        [
+          "Super Bowl LI halftime show",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e65",
+      "head": "n8",
+      "relation": "P276",
+      "tail": "n71",
+      "provenance": [
+        [
+          "Super Bowl LI halftime show",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e66",
+      "head": "n8",
+      "relation": "P361",
+      "tail": "n72",
+      "provenance": [
+        [
+          "Super Bowl LI halftime show",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e67",
+      "head": "n71",
+      "relation": "P131",
+      "tail": "n22",
+      "provenance": [
+        [
+          "Super Bowl LI halftime show",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e68",
+      "head": "n9",
+      "relation": "P585",
+      "tail": "n73",
+      "provenance": [
+        [
+          "Super Bowl XLIX halftime show",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e69",
+      "head": "n9",
+      "relation": "P276",
+      "tail": "n74",
+      "provenance": [
+        [
+          "Super Bowl XLIX halftime show",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e70",
+      "head": "n74",
+      "relation": "P131",
+      "tail": "n75",
+      "provenance": [
+        [
+          "Super Bowl XLIX halftime show",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e71",
+      "head": "n75",
+      "relation": "P131",
+      "tail": "n76",
+      "provenance": [
+        [
+          "Super Bowl XLIX halftime show",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e72",
+      "head": "n9",
+      "relation": "P361",
+      "tail": "n77",
+      "provenance": [
+        [
+          "Super Bowl XLIX halftime show",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e73",
+      "head": "n9",
+      "relation": "P175",
+      "tail": "n78",
+      "provenance": [
+        [
+          "Super Bowl XLIX halftime show",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e74",
+      "head": "n9",
+      "relation": "P175",
+      "tail": "n79",
+      "provenance": [
+        [
+          "Super Bowl XLIX halftime show",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e75",
+      "head": "n9",
+      "relation": "P166",
+      "tail": "n80",
+      "provenance": [
+        [
+          "Super Bowl XLIX halftime show",
+          3
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+# Raw datasets
+data/raw/
+# Cache phản hồi LLM
+data/cache/
+__pycache__/
+
+.venv/
+
+.env

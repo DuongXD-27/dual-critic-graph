@@ -1,0 +1,9 @@
+{
+  "qid": "5a8c30f6554299240d9c20d1",
+  "prompt_version": "extract-v1",
+  "raw_triples": 29,
+  "kept": 29,
+  "dropped": [],
+  "suspect": 1,
+  "parse_errors": []
+}

@@ -1,0 +1,1132 @@
+{
+  "qid": "5a7d26fd554299452d57bb2a",
+  "nodes": [
+    {
+      "id": "n0",
+      "name": "Jammers Minde",
+      "type": "MISC",
+      "is_title": true,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n1",
+      "name": "Field of Chaos",
+      "type": "MISC",
+      "is_title": true,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n2",
+      "name": "The Invention of Everything Else",
+      "type": "MISC",
+      "is_title": true,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n3",
+      "name": "Cheque guarantee card",
+      "type": null,
+      "is_title": true,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n4",
+      "name": "Shadowland (Arnold novel)",
+      "type": "MISC",
+      "is_title": true,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n5",
+      "name": "The Ghost and the Darkness",
+      "type": "MISC",
+      "is_title": true,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n6",
+      "name": "Pride of Baghdad",
+      "type": "MISC",
+      "is_title": true,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n7",
+      "name": "Charles de Batz de Castelmore d'Artagnan",
+      "type": "PER",
+      "is_title": true,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n8",
+      "name": "TV Everywhere",
+      "type": "MISC",
+      "is_title": true,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n9",
+      "name": "Tsavo Man-Eaters",
+      "type": "MISC",
+      "is_title": true,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n10",
+      "name": "Leonora Christina",
+      "type": "PER",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n11",
+      "name": "autobiography",
+      "type": "MISC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n12",
+      "name": "Christian IV of Denmark",
+      "type": "PER",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n13",
+      "name": "Kirsten Munk",
+      "type": "PER",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n14",
+      "name": "1869",
+      "type": "TIME",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n15",
+      "name": "Danish Culture Canon",
+      "type": "MISC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n16",
+      "name": "Tom Barbalet",
+      "type": "PER",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n17",
+      "name": "1993",
+      "type": "TIME",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n18",
+      "name": "Elands",
+      "type": "LOC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n19",
+      "name": "New South Wales",
+      "type": "LOC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n20",
+      "name": "Samantha Hunt",
+      "type": "PER",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n21",
+      "name": "2008",
+      "type": "TIME",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n22",
+      "name": "Nikola Tesla",
+      "type": "PER",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n23",
+      "name": "Thomas Edison",
+      "type": "PER",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n24",
+      "name": "George Westinghouse",
+      "type": "PER",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n25",
+      "name": "Mark Twain",
+      "type": "PER",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n26",
+      "name": "New Yorker Hotel",
+      "type": "LOC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n27",
+      "name": "science fiction",
+      "type": "MISC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n28",
+      "name": "William Arnold",
+      "type": "PER",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n29",
+      "name": "1978",
+      "type": "TIME",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n30",
+      "name": "Frances",
+      "type": "MISC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n31",
+      "name": "1982",
+      "type": "TIME",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n32",
+      "name": "1996",
+      "type": "TIME",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n33",
+      "name": "Stephen Hopkins",
+      "type": "PER",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n34",
+      "name": "Val Kilmer",
+      "type": "PER",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n35",
+      "name": "Michael Douglas",
+      "type": "PER",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n36",
+      "name": "William Goldman",
+      "type": "PER",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n37",
+      "name": "Tsavo",
+      "type": "LOC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n38",
+      "name": "Kenya",
+      "type": "LOC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n39",
+      "name": "graphic novel",
+      "type": "MISC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n40",
+      "name": "Brian K. Vaughan",
+      "type": "PER",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n41",
+      "name": "Vertigo",
+      "type": "ORG",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n42",
+      "name": "September 13, 2006",
+      "type": "TIME",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n43",
+      "name": "Baghdad Zoo",
+      "type": "LOC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n44",
+      "name": "IGN award for best original graphic novel",
+      "type": "MISC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n45",
+      "name": "1611",
+      "type": "TIME",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n46",
+      "name": "25 June 1673",
+      "type": "TIME",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n47",
+      "name": "Musketeers of the Guard",
+      "type": "ORG",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n48",
+      "name": "Siege of Maastricht",
+      "type": "MISC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n49",
+      "name": "Franco-Dutch War",
+      "type": "MISC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n50",
+      "name": "d'Artagnan Romances",
+      "type": "MISC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n51",
+      "name": "Alexandre Dumas",
+      "type": "PER",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n52",
+      "name": "The Three Musketeers",
+      "type": "MISC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n53",
+      "name": "1844",
+      "type": "TIME",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n54",
+      "name": "business model",
+      "type": "MISC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n55",
+      "name": "Kenya-Uganda Railway",
+      "type": "LOC",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n56",
+      "name": "March 1898",
+      "type": "TIME",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    },
+    {
+      "id": "n57",
+      "name": "December 1898",
+      "type": "TIME",
+      "is_title": false,
+      "origin": "EXTRACTED"
+    }
+  ],
+  "edges": [
+    {
+      "id": "e0",
+      "head": "n0",
+      "relation": "P50",
+      "tail": "n10",
+      "provenance": [
+        [
+          "Jammers Minde",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e1",
+      "head": "n0",
+      "relation": "P136",
+      "tail": "n11",
+      "provenance": [
+        [
+          "Jammers Minde",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e2",
+      "head": "n10",
+      "relation": "P22",
+      "tail": "n12",
+      "provenance": [
+        [
+          "Jammers Minde",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e3",
+      "head": "n10",
+      "relation": "P25",
+      "tail": "n13",
+      "provenance": [
+        [
+          "Jammers Minde",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e4",
+      "head": "n12",
+      "relation": "P40",
+      "tail": "n10",
+      "provenance": [
+        [
+          "Jammers Minde",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e5",
+      "head": "n13",
+      "relation": "P40",
+      "tail": "n10",
+      "provenance": [
+        [
+          "Jammers Minde",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e6",
+      "head": "n0",
+      "relation": "P577",
+      "tail": "n14",
+      "provenance": [
+        [
+          "Jammers Minde",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e7",
+      "head": "n0",
+      "relation": "P361",
+      "tail": "n15",
+      "provenance": [
+        [
+          "Jammers Minde",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e8",
+      "head": "n1",
+      "relation": "P50",
+      "tail": "n16",
+      "provenance": [
+        [
+          "Field of Chaos",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e9",
+      "head": "n1",
+      "relation": "P577",
+      "tail": "n17",
+      "provenance": [
+        [
+          "Field of Chaos",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e10",
+      "head": "n18",
+      "relation": "P131",
+      "tail": "n19",
+      "provenance": [
+        [
+          "Field of Chaos",
+          3
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e11",
+      "head": "n2",
+      "relation": "P50",
+      "tail": "n20",
+      "provenance": [
+        [
+          "The Invention of Everything Else",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e12",
+      "head": "n2",
+      "relation": "P577",
+      "tail": "n21",
+      "provenance": [
+        [
+          "The Invention of Everything Else",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e13",
+      "head": "n2",
+      "relation": "P674",
+      "tail": "n22",
+      "provenance": [
+        [
+          "The Invention of Everything Else",
+          1
+        ],
+        [
+          "The Invention of Everything Else",
+          3
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e14",
+      "head": "n2",
+      "relation": "P674",
+      "tail": "n23",
+      "provenance": [
+        [
+          "The Invention of Everything Else",
+          2
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e15",
+      "head": "n2",
+      "relation": "P674",
+      "tail": "n24",
+      "provenance": [
+        [
+          "The Invention of Everything Else",
+          2
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e16",
+      "head": "n2",
+      "relation": "P674",
+      "tail": "n25",
+      "provenance": [
+        [
+          "The Invention of Everything Else",
+          2
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e17",
+      "head": "n2",
+      "relation": "P840",
+      "tail": "n26",
+      "provenance": [
+        [
+          "The Invention of Everything Else",
+          4
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e18",
+      "head": "n2",
+      "relation": "P136",
+      "tail": "n27",
+      "provenance": [
+        [
+          "The Invention of Everything Else",
+          5
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e19",
+      "head": "n4",
+      "relation": "P50",
+      "tail": "n28",
+      "provenance": [
+        [
+          "Shadowland (Arnold novel)",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e20",
+      "head": "n4",
+      "relation": "P577",
+      "tail": "n29",
+      "provenance": [
+        [
+          "Shadowland (Arnold novel)",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e21",
+      "head": "n30",
+      "relation": "P577",
+      "tail": "n31",
+      "provenance": [
+        [
+          "Shadowland (Arnold novel)",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e22",
+      "head": "n5",
+      "relation": "P577",
+      "tail": "n32",
+      "provenance": [
+        [
+          "The Ghost and the Darkness",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e23",
+      "head": "n5",
+      "relation": "P57",
+      "tail": "n33",
+      "provenance": [
+        [
+          "The Ghost and the Darkness",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e24",
+      "head": "n5",
+      "relation": "P161",
+      "tail": "n34",
+      "provenance": [
+        [
+          "The Ghost and the Darkness",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e25",
+      "head": "n5",
+      "relation": "P161",
+      "tail": "n35",
+      "provenance": [
+        [
+          "The Ghost and the Darkness",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e26",
+      "head": "n5",
+      "relation": "P58",
+      "tail": "n36",
+      "provenance": [
+        [
+          "The Ghost and the Darkness",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e27",
+      "head": "n5",
+      "relation": "P840",
+      "tail": "n37",
+      "provenance": [
+        [
+          "The Ghost and the Darkness",
+          2
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e28",
+      "head": "n5",
+      "relation": "P840",
+      "tail": "n38",
+      "provenance": [
+        [
+          "The Ghost and the Darkness",
+          2
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e29",
+      "head": "n37",
+      "relation": "P17",
+      "tail": "n38",
+      "provenance": [
+        [
+          "The Ghost and the Darkness",
+          2
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e30",
+      "head": "n6",
+      "relation": "P31",
+      "tail": "n39",
+      "provenance": [
+        [
+          "Pride of Baghdad",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e31",
+      "head": "n6",
+      "relation": "P50",
+      "tail": "n40",
+      "provenance": [
+        [
+          "Pride of Baghdad",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e32",
+      "head": "n6",
+      "relation": "P123",
+      "tail": "n41",
+      "provenance": [
+        [
+          "Pride of Baghdad",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e33",
+      "head": "n6",
+      "relation": "P577",
+      "tail": "n42",
+      "provenance": [
+        [
+          "Pride of Baghdad",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e34",
+      "head": "n6",
+      "relation": "P840",
+      "tail": "n43",
+      "provenance": [
+        [
+          "Pride of Baghdad",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e35",
+      "head": "n6",
+      "relation": "P166",
+      "tail": "n44",
+      "provenance": [
+        [
+          "Pride of Baghdad",
+          2
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e36",
+      "head": "n7",
+      "relation": "P569",
+      "tail": "n45",
+      "provenance": [
+        [
+          "Charles de Batz de Castelmore d'Artagnan",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e37",
+      "head": "n7",
+      "relation": "P570",
+      "tail": "n46",
+      "provenance": [
+        [
+          "Charles de Batz de Castelmore d'Artagnan",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e38",
+      "head": "n7",
+      "relation": "P241",
+      "tail": "n47",
+      "provenance": [
+        [
+          "Charles de Batz de Castelmore d'Artagnan",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e39",
+      "head": "n7",
+      "relation": "P607",
+      "tail": "n48",
+      "provenance": [
+        [
+          "Charles de Batz de Castelmore d'Artagnan",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e40",
+      "head": "n7",
+      "relation": "P607",
+      "tail": "n49",
+      "provenance": [
+        [
+          "Charles de Batz de Castelmore d'Artagnan",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e41",
+      "head": "n48",
+      "relation": "P361",
+      "tail": "n49",
+      "provenance": [
+        [
+          "Charles de Batz de Castelmore d'Artagnan",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e42",
+      "head": "n50",
+      "relation": "P50",
+      "tail": "n51",
+      "provenance": [
+        [
+          "Charles de Batz de Castelmore d'Artagnan",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e43",
+      "head": "n52",
+      "relation": "P50",
+      "tail": "n51",
+      "provenance": [
+        [
+          "Charles de Batz de Castelmore d'Artagnan",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e44",
+      "head": "n52",
+      "relation": "P577",
+      "tail": "n53",
+      "provenance": [
+        [
+          "Charles de Batz de Castelmore d'Artagnan",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e45",
+      "head": "n52",
+      "relation": "P179",
+      "tail": "n50",
+      "provenance": [
+        [
+          "Charles de Batz de Castelmore d'Artagnan",
+          1
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e46",
+      "head": "n8",
+      "relation": "P31",
+      "tail": "n54",
+      "provenance": [
+        [
+          "TV Everywhere",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e47",
+      "head": "n9",
+      "relation": "P276",
+      "tail": "n55",
+      "provenance": [
+        [
+          "Tsavo Man-Eaters",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e48",
+      "head": "n9",
+      "relation": "P580",
+      "tail": "n56",
+      "provenance": [
+        [
+          "Tsavo Man-Eaters",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": true
+    },
+    {
+      "id": "e49",
+      "head": "n9",
+      "relation": "P582",
+      "tail": "n57",
+      "provenance": [
+        [
+          "Tsavo Man-Eaters",
+          0
+        ]
+      ],
+      "origin": "EXTRACTED",
+      "provenance_suspect": false
+    },
+    {
+      "id": "e50",
+      "head": "n9",
+      "relation": "P1441",
+      "tail": "n5",
+      "provenance": [
+        [
+          "The Ghost and the Darkness",
+          2
+        ]
+      ],
+      "origin": "AGENT_TEXT",
+      "evidence_edges": [],
+      "created_by": "5a7d26fd554299452d57bb2a:main"
+    }
+  ]
+}

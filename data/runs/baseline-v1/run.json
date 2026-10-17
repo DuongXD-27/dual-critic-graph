@@ -1,0 +1,38 @@
+{
+  "run_id": "baseline-v1",
+  "started": "2026-10-17T12:10:47",
+  "llm": {
+    "model": "ag/gemini-3.8-flash",
+    "base_url": "https://rwtb5dt.abc-tunnel.us/v1",
+    "temperature": 0.0
+  },
+  "agent_prompt_version": "agent-v2",
+  "max_follows": 6,
+  "max_tool_calls": 20,
+  "max_reads": 2,
+  "gates": "accept_all",
+  "n_questions": 20,
+  "followups_file": null,
+  "finished": "2026-10-17T12:22:28",
+  "summary": {
+    "n": 20,
+    "em": 0.5,
+    "f1": 0.67,
+    "mean_follows": 0.35,
+    "episodes_reading_text": 2,
+    "mean_paragraphs_read": 0.2,
+    "episodes_hit_read_limit": 0,
+    "writes_total": 0,
+    "writes_by_origin": {
+      "AGENT_TEXT": 0,
+      "AGENT_DERIVED": 0
+    },
+    "writes_invalid_relation": 0,
+    "llm_stats": {
+      "calls": 143,
+      "cache_hits": 0,
+      "prompt_tokens": 625146,
+      "completion_tokens": 2647
+    }
+  }
+}
