@@ -308,7 +308,7 @@ class Episode:
             forced = calls >= MAX_TOOL_CALLS
             if forced:
                 messages.append({"role": "user", "content": "Tool limit reached. Reply with the final answer only."})
-            resp = self.llm.chat(messages, tools=None if forced else TOOLS)
+            resp = self.llm.chat(messages, tools=None if forced else TOOLS, session_id=f"{self.run_id}:{self.episode_id}")
             if not forced and not resp["tool_calls"] and not (resp["content"] or "").strip() and nudges < 2:
                 nudges += 1
                 self.events.append({"phase": "answer", "tool": None, "content": resp["content"], "nudge": nudges})
@@ -331,7 +331,7 @@ class Episode:
         messages.append({"role": "user", "content": MEMORY_PROMPT})
         calls = 0
         while calls < MAX_MEMORY_CALLS:
-            resp = self.llm.chat(messages, tools=[ADD_EDGE_TOOL])
+            resp = self.llm.chat(messages, tools=[ADD_EDGE_TOOL], session_id=f"{self.run_id}:{self.episode_id}")
             if not resp["tool_calls"]:
                 self.events.append({"phase": "memory", "tool": None, "content": resp["content"]})
                 return

@@ -60,7 +60,7 @@ class FakeLLM:
     def info(self):
         return {"model": "fake"}
 
-    def chat(self, messages, tools=None, json_mode=False):
+    def chat(self, messages, tools=None, json_mode=False, session_id=None):
         self.stats["calls"] += 1
         if json_mode:  # trích xuất
             user = messages[-1]["content"]

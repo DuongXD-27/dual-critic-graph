@@ -5,6 +5,8 @@
   DCG_BASE_URL     endpoint tương thích OpenAI (mặc định Gemini)
   DCG_MODEL        tên model               (mặc định gemini-3.8-flash)
   DCG_TEMPERATURE  nhiệt độ                (mặc định 0)
+  DCG_USER_AGENT   tên client gửi kèm      (mặc định dual-critic-graph/0.1)
+  DCG_SESSION_HEADER tên header mã phiên, vd. x-opencode-session (OpenCode Go yêu cầu); để trống = không gửi
   DCG_MIN_INTERVAL số giây tối thiểu giữa 2 lần gọi (mặc định 4, hợp gói miễn phí)
 
 Biến có thể đặt trong file .env ở gốc repo (KEY=VALUE mỗi dòng); biến môi trường thật được ưu tiên hơn.
@@ -56,7 +58,9 @@ class LLM:
         self.min_interval = float(os.environ.get("DCG_MIN_INTERVAL", "4"))
         self.use_cache = use_cache
         self.cache_dir = cache_dir or DATA / "cache" / "llm"
-        self.client = OpenAI(api_key=key, base_url=self.base_url)
+        self.user_agent = os.environ.get("DCG_USER_AGENT", "dual-critic-graph/0.1")
+        self.session_header = os.environ.get("DCG_SESSION_HEADER", "").strip()
+        self.client = OpenAI(api_key=key, base_url=self.base_url, default_headers={"User-Agent": self.user_agent})
         self._last_call = 0.0
         self.stats = {"calls": 0, "cache_hits": 0, "prompt_tokens": 0, "completion_tokens": 0}
 
@@ -67,7 +71,9 @@ class LLM:
         raw = json.dumps(payload, ensure_ascii=False, sort_keys=True)
         return hashlib.sha256(raw.encode("utf-8")).hexdigest()
 
-    def chat(self, messages, tools=None, json_mode=False) -> dict:
+    def chat(self, messages, tools=None, json_mode=False, session_id=None) -> dict:
+        """session_id: mã ổn định cho một cuộc hội thoại (một lượt agent, một đoạn trích xuất).
+        Chỉ gửi trong header, không ảnh hưởng cache."""
         """Trả về {"content": str|None, "tool_calls": [{"id","name","arguments"}]}."""
         payload = {"base_url": self.base_url, "model": self.model, "temperature": self.temperature, "messages": messages,
                    "tools": tools, "json_mode": json_mode}
@@ -78,6 +84,8 @@ class LLM:
                 return json.load(f)
 
         kwargs = {"model": self.model, "messages": messages, "temperature": self.temperature}
+        if self.session_header and session_id:
+            kwargs["extra_headers"] = {self.session_header: str(session_id)}
         if tools:
             kwargs["tools"] = tools
         if json_mode:

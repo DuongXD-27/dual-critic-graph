@@ -22,6 +22,7 @@ Lý do: thiết kế benchmark từ hành vi thật thay vì suy đoán. Bước
 - API key `GEMINI_API_KEY` đặt trong `.env` ở gốc repo (đã gitignore) hoặc biến môi trường. Không bao giờ commit key.
 - Mỗi lần chạy lưu: model, prompt version, temperature, thời điểm.
 - 2026-10-16: Gemini trực tiếp quá tải (503) → gọi `gemini-3.8-flash` qua proxy tương thích OpenAI (cấu hình trong `.env`). Proxy là bên thứ ba: không đảm bảo model thật phía sau → mọi lần chạy đều lưu `base_url` + `model`; cache tách theo `base_url`.
+- 2026-10-20: chuyển sang **OpenCode Go**, model `deepseek-v4.1-flash` (endpoint chat/completions; OpenCode xác nhận cho phép dùng cho nghiên cứu). Client gửi `User-Agent: dual-critic-graph/0.1` và header `x-opencode-session` = một mã cho mỗi cuộc hội thoại (mỗi lượt agent, mỗi đoạn trích xuất), theo yêu cầu của OpenCode. Đồ thị chung dựng lại toàn bộ bằng model này (không trộn với ~1.100 phản hồi Gemini-proxy đã có).
 - Về sau: critic LLM nên khác họ model với agent (tránh cùng mù một kiểu lỗi). Nếu critic chính thức dùng Gemini thì sửa lại báo cáo (đề xuất ghi DeepSeek/OpenAI).
 
 ## D3. Dữ liệu

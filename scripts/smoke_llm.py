@@ -12,7 +12,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from dcg.llm import LLM, parse_json  # noqa: E402
 
 llm = LLM(use_cache=False)
-print("Cấu hình:", llm.info())
+print("Cấu hình:", llm.info(), "| User-Agent:", llm.user_agent, "| header phiên:", llm.session_header or "(không)")
 
 try:
     names = sorted(m.id for m in llm.client.models.list())

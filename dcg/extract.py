@@ -167,7 +167,8 @@ def build_graph(example: dict, llm, rels: dict):
         kg.add_node(t, is_title=True)
     log = {"qid": example["_id"], **_new_log(PROMPT_VERSION)}
     for title, sentences in example["context"]:
-        resp = llm.chat(build_messages(title, sentences, titles, rels), json_mode=True)
+        resp = llm.chat(build_messages(title, sentences, titles, rels), json_mode=True,
+                        session_id=f"extract:{example['_id']}:{title}")
         _process(kg, title, sentences, resp, rels, log)
     return kg, log
 
@@ -182,7 +183,7 @@ def build_shared_graph(corpus: dict, llm, rels: dict, progress=None):
     for k, (title, sentences) in enumerate(corpus.items(), 1):
         if progress:
             progress(k, len(corpus), title)
-        resp = llm.chat(build_messages_shared(title, sentences, rels), json_mode=True)
+        resp = llm.chat(build_messages_shared(title, sentences, rels), json_mode=True, session_id=f"extract:{title}")
         _process(kg, title, sentences, resp, rels, log, resolve=linker.resolve)
     log["linking"] = dict(linker.stats)
     log["ambiguous_names"] = linker.ambiguous.most_common(50)
