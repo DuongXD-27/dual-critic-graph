@@ -109,13 +109,27 @@ Agent chỉ nhận **hướng dẫn + câu hỏi**. Đồ thị và văn bản c
 - Tiêu đề trùng nhưng nội dung khác giữa hai câu (2 trường hợp khi đo thử): giữ bản đầu, ghi `title_conflicts`.
 - Benchmark Traversal (D8) sẽ sinh trên đồ thị chung: nút có nhiều cạnh hơn → tình huống chọn cạnh khó và thật hơn.
 
-## D13. Gộp đoạn khi trích xuất + gọi song song (2026-10-24, chờ thử nghiệm)
+## D13. Gộp đoạn khi trích xuất + gọi song song (2026-10-24) → **KHÔNG gộp; 1 đoạn/lần + song song**
 **Lý do:** 1.839 request gọi lần lượt mất ~2–3 giờ. Hệ thật không gọi theo từng đoạn ngắn: Microsoft GraphRAG mặc định mẩu ~1.200 token/lần gọi, gọi song song, và thêm lượt "gleaning" để bù phần sót. Chính bài GraphRAG đo trên HotpotQA: mẩu 600 token trích được gần gấp đôi số thực thể so với mẩu 2.400 token → gộp có thể làm sót, phải đo.
 - `--workers N`: gọi song song. Kết quả luôn ghép vào đồ thị theo thứ tự kho → đồ thị (kể cả id nút/cạnh) không phụ thuộc thời gian chạy.
 - `--per-call K` (`extract-v3-batch`): trộn **thứ tự đoạn** (không trộn câu) với seed cố định, xếp lô ≤ K đoạn và ≤ `--batch-tokens` (1.200) token văn bản. Không gom theo câu hỏi (đồ thị độc lập với câu hỏi, D12; tránh ghép thông tin giữa các đoạn liên quan). Prompt yêu cầu xử lý từng đoạn độc lập, kết quả tách theo đoạn, số câu tính riêng trong từng đoạn → nguồn vẫn `[tiêu đề, số câu]` (D6, D8 không đổi).
 - Tiêu đề trả về không thuộc lô → bỏ, ghi `unknown_paragraph`. Đoạn không có trong kết quả → `paragraph_skipped`, **gọi lại riêng** đoạn đó bằng prompt `extract-v2`.
 - **Thử nghiệm trước khi dùng** (`--pilot 100 --per-call 8`): 100 đoạn ngẫu nhiên, trích bằng cả hai cách. **Quy tắc chốt trước:** dùng cách gộp nếu bộ ba/đoạn ≥ 90% cách đơn **và** tỷ lệ nghi ngờ không cao hơn quá 2 điểm %. Nếu không đạt: giữ 1 đoạn/lần + `--workers`. Kết quả ghi `data/interim/shared/pilot.json` và vào mục này.
 - Model: `deepseek-v4.1-flash` qua OpenCode Go (D2). Một đồ thị chỉ dựng bằng một model và một chế độ trích xuất.
+- **Kết quả thử nghiệm** (`pilot.json`, 100 đoạn, gộp 8 đoạn/≤1.200 token, 4 luồng):
+
+  | | 1 đoạn/lần | gộp 8 đoạn |
+  |---|---|---|
+  | request | 100 | 23 (+8 đoạn bị bỏ sót, gọi lại) |
+  | bộ ba/đoạn | **6,86** | 5,43 (= **79%**) |
+  | đoạn có ≥1 cạnh | 99% | 95% |
+  | tỷ lệ nghi ngờ nguồn | 6,0% | 4,1% |
+  | token đầu ra | 246.619 | 166.801 |
+  | trùng cạnh giữa hai cách (Jaccard) | 0,60 | |
+
+  Gộp sót ~21% bộ ba (< ngưỡng 90%) → theo quy tắc chốt trước: **`per_call=1` + `--workers`**. Khớp với quan sát của bài GraphRAG (mẩu lớn → trích ít hơn). Không đổi quy tắc sau khi xem kết quả.
+- Quan sát phụ: `deepseek-v4.1-flash` là model suy luận — ~2.470 token đầu ra/lần gọi trong khi nội dung trả về chỉ ~200 token → ~90% token đầu ra là suy luận ẩn. Đây là nguyên nhân chính của thời gian (~7,5 giây/đoạn với 4 luồng) và chi phí. Ước tính dựng toàn bộ 1.839 đoạn: ~4,5 triệu token đầu ra ≈ 2,7–5,4 USD (trong hạn mức gói Go).
+- 2026-10-24: phản hồi không đọc được JSON → **gọi lại đúng 1 lần** với tin nhắn nhắc "chỉ trả JSON" (thử nghiệm có 1/100 đoạn hỏng JSON). Ghi `parse_retries`.
 
 ## Quan sát từ baseline-v1 (2026-10-17)
 - Lỗi code đã sửa: tham số `title` của `read_paragraph` bị proxy/Gemini làm rơi (đổi thành `paragraph`); câu trả lời rỗng bị coi là đáp án (giờ nhắc tối đa 2 lần); cờ nghi ngờ nguồn báo nhầm khi đại từ ở đuôi bộ ba.
@@ -159,7 +173,7 @@ Agent chỉ nhận **hướng dẫn + câu hỏi**. Đồ thị và văn bản c
 - [x] `build_shared_kg.py --select-only` (1.839 đoạn, 98/200 câu có đoạn bằng chứng ở câu khác)
 - [x] Dán key OpenCode vào `.env`
 - [ ] `smoke_llm.py`
-- [ ] `build_shared_kg.py --pilot 100 --per-call 8 --workers 4` → quyết định D13
-- [ ] `build_shared_kg.py --force --workers 4 [--per-call 8]` → xem `data/interim/shared/summary.json`
+- [x] `build_shared_kg.py --pilot 100 --per-call 8 --workers 4` → D13: không gộp
+- [ ] `build_shared_kg.py --force --workers 8` → xem `data/interim/shared/summary.json`
 - [ ] `run_agent.py --run-name shared-v1 --graph data/interim/shared/graph.json`
 - [ ] Đọc trace: lỗi tự nhiên trong duyệt/ghi; câu nào đi qua cạnh do câu trước ghi, cạnh đó đúng hay sai

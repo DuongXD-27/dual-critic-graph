@@ -1,0 +1,40 @@
+{
+  "paragraphs": 100,
+  "per_call": 8,
+  "batch_tokens": 1200,
+  "single": {
+    "prompt_version": "extract-v2",
+    "requests": 100,
+    "triples_kept": 686,
+    "triples_per_paragraph": 6.86,
+    "paragraphs_with_edges": 0.99,
+    "suspect_rate": 0.06,
+    "dropped": 0,
+    "parse_errors": 1,
+    "paragraph_skipped_then_retried": 0,
+    "tokens": {
+      "prompt_tokens": 77960,
+      "completion_tokens": 246619
+    }
+  },
+  "batch": {
+    "prompt_version": "extract-v3-batch",
+    "requests": 23,
+    "triples_kept": 543,
+    "triples_per_paragraph": 5.43,
+    "paragraphs_with_edges": 0.95,
+    "suspect_rate": 0.041,
+    "dropped": 0,
+    "parse_errors": 2,
+    "paragraph_skipped_then_retried": 8,
+    "tokens": {
+      "prompt_tokens": 30438,
+      "completion_tokens": 166801
+    }
+  },
+  "edge_jaccard": 0.602,
+  "rule": "dùng cách gộp nếu bộ ba/đoạn ≥ 90% cách đơn VÀ tỷ lệ nghi ngờ không cao hơn quá 2 điểm %",
+  "recall_ok": false,
+  "suspect_ok": true,
+  "decision": "per_call=1 (+ --workers)"
+}

@@ -30,6 +30,15 @@ USER_AGENT = "dual-critic-graph/0.1"
 SESSION_HEADER = "x-opencode-session"
 
 
+def header_safe(value: str) -> str:
+    """Header HTTP chỉ nhận ASCII. Mã phiên chứa ký tự khác (vd. tiêu đề có dấu '–', 'é') hoặc quá dài
+    → thay bằng băm ASCII ổn định (cùng đầu vào luôn ra cùng mã)."""
+    value = str(value)
+    if value.isascii() and value.isprintable() and len(value) <= 200:
+        return value
+    return "s-" + hashlib.sha256(value.encode("utf-8")).hexdigest()[:32]
+
+
 def load_dotenv(path=None):
     """Nạp .env ở gốc repo vào os.environ (không ghi đè biến đã có). Không cần thư viện ngoài."""
     path = path or ROOT / ".env"
@@ -91,7 +100,7 @@ class LLM:
                 return json.load(f)
 
         kwargs = {"model": self.model, "messages": messages, "temperature": self.temperature}
-        kwargs["extra_headers"] = {SESSION_HEADER: str(session_id or self.default_session)}
+        kwargs["extra_headers"] = {SESSION_HEADER: header_safe(session_id or self.default_session)}
         if tools:
             kwargs["tools"] = tools
         if json_mode:

@@ -250,9 +250,11 @@ def _parse_batch(resp, titles, log):
 def build_shared_graph(corpus: dict, llm, rels: dict, progress=None, workers: int = 1, per_call: int = 1,
                        batch_tokens: int = 1200, seed: int = 0):
     """corpus: {tiêu đề: [câu]}. Trả về (KG, log)."""
-    def single(title):
-        return llm.chat(build_messages_shared(title, corpus[title], rels), json_mode=True,
-                        session_id=f"extract:{title}")
+    def single(title, retry=False):
+        msgs = build_messages_shared(title, corpus[title], rels)
+        if retry:  # tin nhắn khác → khoá cache khác → gọi mới thật
+            msgs.append({"role": "user", "content": "Reply with ONLY the JSON object described above."})
+        return llm.chat(msgs, json_mode=True, session_id=f"extract:{title}")
 
     lock, done = threading.Lock(), [0]
 
@@ -270,18 +272,29 @@ def build_shared_graph(corpus: dict, llm, rels: dict, progress=None, workers: in
         with ThreadPoolExecutor(max_workers=workers) as ex:
             return list(ex.map(wrapped, jobs))  # giữ đúng thứ tự jobs
 
+    def singles(titles, label):
+        """Mỗi đoạn một lần gọi; phản hồi không đọc được JSON → gọi lại đúng 1 lần."""
+        bad = []
+        for t, resp in zip(titles, run_all(single, titles, label)):
+            try:
+                per_par[t] = parse_json(resp["content"]).get("triples", [])
+            except Exception:  # noqa: BLE001
+                bad.append(t)
+        log["parse_retries"] = log.get("parse_retries", 0) + len(bad)
+        for t, resp in zip(bad, run_all(lambda x: single(x, retry=True), bad, label + " (gọi lại vì JSON hỏng)")):
+            try:
+                per_par[t] = parse_json(resp["content"]).get("triples", [])
+            except Exception as e:  # noqa: BLE001
+                log["parse_errors"].append({"title": t, "error": str(e), "content": resp["content"]})
+        return len(bad)
+
     log = _new_log(SHARED_PROMPT_VERSION if per_call <= 1 else BATCH_PROMPT_VERSION)
     log.update({"per_call": per_call, "workers": workers, "batch_tokens": batch_tokens, "batch_seed": seed})
     per_par = {}  # tiêu đề → [bộ ba] (None = phản hồi hỏng)
 
     if per_call <= 1:
         titles = list(corpus)
-        for t, resp in zip(titles, run_all(single, titles, "đoạn")):
-            try:
-                per_par[t] = parse_json(resp["content"]).get("triples", [])
-            except Exception as e:  # noqa: BLE001
-                log["parse_errors"].append({"title": t, "error": str(e), "content": resp["content"]})
-        log["requests"] = len(titles)
+        log["requests"] = len(titles) + singles(titles, "đoạn")
     else:
         batches = make_batches(corpus, per_call, batch_tokens, seed)
         log["batches"] = batches
@@ -295,12 +308,7 @@ def build_shared_graph(corpus: dict, llm, rels: dict, progress=None, workers: in
             skipped.extend(miss)
         log["paragraph_skipped"] = skipped
         # đoạn bị bỏ sót → gọi lại riêng từng đoạn (prompt extract-v2)
-        for t, resp in zip(skipped, run_all(single, skipped, "đoạn gọi lại")):
-            try:
-                per_par[t] = parse_json(resp["content"]).get("triples", [])
-            except Exception as e:  # noqa: BLE001
-                log["parse_errors"].append({"title": t, "error": str(e), "content": resp["content"]})
-        log["requests"] = len(batches) + len(skipped)
+        log["requests"] = len(batches) + len(skipped) + singles(skipped, "đoạn gọi lại")
 
     kg = KG("shared")
     for t in corpus:

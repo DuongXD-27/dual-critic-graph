@@ -54,9 +54,10 @@ EXTRACTION = {
 
 
 class FakeLLM:
-    def __init__(self, agent_scripts, drop_in_batch=()):
+    def __init__(self, agent_scripts, drop_in_batch=(), broken=()):
         self.agent_scripts = agent_scripts  # {câu hỏi: [bước...]}
         self.drop_in_batch = set(drop_in_batch)  # giả lập model bỏ sót đoạn khi gộp
+        self.broken = set(broken)                # giả lập JSON hỏng ở lần gọi đầu
         self.stats = {"calls": 0, "prompt_tokens": 0, "completion_tokens": 0}
 
     def info(self):
@@ -65,12 +66,14 @@ class FakeLLM:
     def chat(self, messages, tools=None, json_mode=False, session_id=None):
         self.stats["calls"] += 1
         if json_mode:  # trích xuất
-            user = messages[-1]["content"]
+            user = messages[1]["content"]
             batch = re.findall(r"^PARAGRAPH \d+ — TITLE: (.*)$", user, flags=re.M)
             if batch:
                 paras = [{"title": t, "triples": EXTRACTION[t]} for t in batch if t not in self.drop_in_batch]
                 return {"content": json.dumps({"paragraphs": paras}), "tool_calls": []}
             title = user.split("PARAGRAPH TITLE: ", 1)[1].split("\n", 1)[0]
+            if title in self.broken and len(messages) == 2:
+                return {"content": "{not json", "tool_calls": []}
             return {"content": "```json\n" + json.dumps({"triples": EXTRACTION[title]}) + "\n```", "tool_calls": []}
         question = messages[1]["content"].split("Question: ", 1)[1].split("\n", 1)[0]
         turn = sum(m["role"] == "assistant" for m in messages)
@@ -172,6 +175,7 @@ def main():
     check_tools()
     check_shared()
     check_batch()
+    check_header_safe()
     print("TẤT CẢ OK")
 
 
@@ -275,6 +279,16 @@ def check_shared():
         print("Đồ thị chung OK")
 
 
+def check_header_safe():
+    """Mã phiên gửi trong header phải là ASCII (tiêu đề Wikipedia có thể chứa '–', 'é'...)."""
+    from dcg.llm import header_safe
+    assert header_safe("extract:Big Stone Gap (film)") == "extract:Big Stone Gap (film)"
+    h = header_safe("extract:Rolling Papers – Wiz Khalifa")
+    assert h.isascii() and h.startswith("s-") and h == header_safe("extract:Rolling Papers – Wiz Khalifa")
+    assert header_safe("extract:Beyoncé") != h
+    print("Mã phiên ASCII OK")
+
+
 def check_batch():
     """D13: gộp đoạn + song song cho ra đúng đồ thị như từng đoạn; đoạn bị bỏ sót được gọi lại; thử nghiệm chạy được."""
     from dcg.common import load_relations
@@ -298,6 +312,9 @@ def check_batch():
     assert [n["name"] for n in kg1.nodes.values()] == [n["name"] for n in kg2.nodes.values()]  # cùng id
     assert log1["requests"] == 6 and log2["requests"] == len(batches) + 1
     assert log2["paragraph_skipped"] == ["Billie Holiday"] and log2["prompt_version"] == "extract-v3-batch"
+    kg3, log3 = build_shared_graph(corpus, FakeLLM({}, broken={"Billie Holiday"}), rels, workers=2)
+    assert triples(kg3) == triples(kg1) and log3["parse_retries"] == 1 and log3["requests"] == 7
+    assert log3["parse_errors"] == []
 
     with tempfile.TemporaryDirectory() as tmp:
         sdir = Path(tmp) / "shared"
