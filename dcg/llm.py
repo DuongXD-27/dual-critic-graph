@@ -18,10 +18,12 @@ import json
 import os
 import threading
 import time
+import uuid
 
 from .common import DATA, ROOT
 
 BASE_URL = "https://opencode.ai/inference/go/openai/v1"
+MODELS_URL = "https://opencode.ai/inference/go/v1"   # danh sách model (GET /models) nằm ở đây, không ở BASE_URL
 API_KEY_ENV = "OPENCODE_API_KEY"
 DEFAULT_MODEL = "deepseek-v4.1-flash"
 USER_AGENT = "dual-critic-graph/0.1"
@@ -59,9 +61,14 @@ class LLM:
         self.use_cache = use_cache
         self.cache_dir = cache_dir or DATA / "cache" / "llm"
         self.client = OpenAI(api_key=key, base_url=self.base_url, default_headers={"User-Agent": USER_AGENT})
+        # OpenCode Go từ chối request thiếu x-opencode-session → lời gọi không có session_id dùng mã của lần chạy này
+        self.default_session = f"dcg-{uuid.uuid4().hex[:12]}"
         self._last_call = 0.0
         self._lock = threading.Lock()  # an toàn khi gọi song song (--workers): giãn cách + thống kê
         self.stats = {"calls": 0, "cache_hits": 0, "prompt_tokens": 0, "completion_tokens": 0}
+
+    def list_models(self) -> list:
+        return sorted(m.id for m in self.client.with_options(base_url=MODELS_URL).models.list())
 
     def info(self) -> dict:
         return {"model": self.model, "base_url": self.base_url, "temperature": self.temperature}
@@ -84,8 +91,7 @@ class LLM:
                 return json.load(f)
 
         kwargs = {"model": self.model, "messages": messages, "temperature": self.temperature}
-        if session_id:
-            kwargs["extra_headers"] = {SESSION_HEADER: str(session_id)}
+        kwargs["extra_headers"] = {SESSION_HEADER: str(session_id or self.default_session)}
         if tools:
             kwargs["tools"] = tools
         if json_mode:

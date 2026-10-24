@@ -16,7 +16,7 @@ data/       manual/ (relations.json), interim/ (câu hỏi + đồ thị), runs/
 ## Chạy
 ```
 pip install -r requirements.txt
-# .env ở gốc repo: OPENCODE_API_KEY=...   (DeepSeek V4.1 Flash qua OpenCode Go; tuỳ chọn khác xem dcg/llm.py)
+# sao chép .env.example thành .env rồi điền OPENCODE_API_KEY (DeepSeek V4.1 Flash qua OpenCode Go)
 python tests/test_offline.py
 python scripts/smoke_llm.py
 python scripts/build_graphs.py                    # cần data/raw/hotpotqa/hotpot_dev_distractor_v1.json

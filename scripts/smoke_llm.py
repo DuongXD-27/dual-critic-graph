@@ -15,8 +15,9 @@ llm = LLM(use_cache=False)
 print("Cấu hình:", llm.info())
 
 try:
-    names = sorted(m.id for m in llm.client.models.list())
-    print("Model có thể dùng (lọc 'flash'):", [n for n in names if "flash" in n] or names)
+    names = llm.list_models()
+    print(f"Model trên OpenCode Go ({len(names)}):", ", ".join(names))
+    print("  → model đang dùng", "CÓ" if llm.model in names else "KHÔNG", "trong danh sách")
 except Exception as e:  # noqa: BLE001
     print("Không liệt kê được model:", e)
 
