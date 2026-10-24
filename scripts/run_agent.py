@@ -45,7 +45,11 @@ def answer_grounded(ep, answer):
         r = ev.get("result")
         edges = r.get("edges", []) if isinstance(r, dict) else (r if isinstance(r, list) else [])
         seen += [x.get(k, "") for x in edges if isinstance(x, dict) for k in ("head", "tail")]
-    return any(a in normalize_answer(x) for x in seen if x)
+    # so theo TỪ (2026-10-24): câu trả lời ghép từ nhiều thứ đã thấy ("Hey Pa! ..." + "1966") vẫn là có căn cứ;
+    # từ nào chưa từng thấy (vd. "Bahamas" trong "Great Exuma, Bahamas") → False, liệt kê trong answer_unseen_words
+    seen_words = {w for x in seen if x for w in normalize_answer(x).split()}
+    ep.answer_unseen_words = [w for w in a.split() if w not in seen_words]
+    return not ep.answer_unseen_words
 
 
 def run_episode(kg, ex, question, gold, llm, gates, rels, run_id, episode_id, out, paragraphs=None):
@@ -53,6 +57,7 @@ def run_episode(kg, ex, question, gold, llm, gates, rels, run_id, episode_id, ou
     res = ep.run()
     res["gold_answer"] = gold
     res["answer_grounded"] = answer_grounded(ep, res["answer"])
+    res["answer_unseen_words"] = getattr(ep, "answer_unseen_words", [])
     res["em"] = exact_match(res["answer"], gold) if gold is not None else None
     res["f1"] = f1(res["answer"], gold) if gold is not None else None
     if episode_id.endswith(":main"):

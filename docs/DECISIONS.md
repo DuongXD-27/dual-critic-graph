@@ -143,6 +143,15 @@ Lý do: `shared-v1-try` (5 câu, agent-v4) có 10 `start_at`, **0 `follow_edge`*
 - 79 giây, 37 lần gọi, 3.608 token đầu ra → 200 câu ≈ 55 phút. 0 `follow_edge`, 10 `start_at` → D14.
 - #4 trả lời "Pablo Aimar" thay vì "Claudio Javier López" (lỗi duyệt). Phép ghi (Fyre Festival, P112 founded by, Billy McFarland): câu chỉ nói "organization of the Fyre Festival" → đúng ngoài đời nhưng **bằng chứng chưa đủ** — đúng loại lỗi Construction Critic cần bắt.
 
+## Quan sát: `shared-v2-try` (2026-10-24, agent-v5, 5 câu)
+- **D14 có tác dụng:** 6 `follow_edge` (trước: 0); 2 lần nhảy bị chặn (Fyre Festival; Mario Kempes — tên lấy từ trí nhớ model). 1 lần *ghi rồi đi tiếp* (#3: ghi McFarland → Fyre Festival từ câu văn, đi theo cạnh đó tới Great Exuma).
+- **Lỗi tự nhiên quan sát được:**
+  - #1 bước bộ nhớ ghi `AGENT_DERIVED` (Kerensky, P607 conflict, Russian Civil War) từ 2 cạnh **không nối nhau** (Kerensky–Russian Revolution 1917; Bolsheviks–Russian Civil War) → bằng chứng không chứng minh được sự kiện. Cạnh này đã vào đồ thị chung.
+  - #4 sai (Pablo Aimar thay vì Claudio López): đồ thị không có cạnh từ *Valencia CF* tới đoạn *1998–99 Valencia CF season* hay tới Claudio López (câu "lethal striker Claudio López" không được trích) → ngõ cụt thật. Agent trả lời theo đoạn 2002–03 mà không kiểm điều kiện "chơi tiền đạo".
+  - #5 ghi (My Cousin Rachel, P272, Free Range Films) từ 2 câu: "công ty của họ là Free Range Films" + "phim gần nhất là My Cousin Rachel" → suy ra, chưa nói thẳng.
+- Câu comparison (#2) và #5 trả lời không cần `follow_edge` (đọc đoạn của 2 nút xuất phát / đáp án hiện ngay trong cạnh của nút xuất phát).
+- Sửa chỉ số `answer_grounded`: so theo **từ** thay vì cả chuỗi (#2 bị báo nhầm vì ghép tên + năm). Từ chưa thấy ghi vào `answer_unseen_words` (#3: "bahamas" do model tự thêm).
+
 ## Quan sát: đồ thị chung `extract-v2` (2026-10-24)
 - `deepseek-v4.1-flash`, 1 đoạn/lần, 8 luồng, ~1,3 giờ; 1.841 request (2 gọi lại vì JSON hỏng; 2 đoạn vẫn hỏng: *Frank Vennes*, *Bambi Hall*); 5,5 triệu token đầu ra (≈3,5 USD giờ thấp điểm).
 - **10.530 nút, 12.361 cạnh**; thành phần liên thông lớn nhất 80% số nút; 591 thành phần; 89 nút cô lập. Cờ nghi ngờ nguồn 6,5%. Độ phủ câu bằng chứng 87,4%.
@@ -198,6 +207,6 @@ Lý do: `shared-v1-try` (5 câu, agent-v4) có 10 `start_at`, **0 `follow_edge`*
 - [x] `build_shared_kg.py --force --workers 8` → đồ thị chung (xem mục Quan sát: đồ thị chung)
 - [x] `run_agent.py --run-name shared-v1-try --graph data/interim/shared/graph.json --limit 5` (agent-v4) → 0 `follow_edge`, dẫn tới D14
 - [x] Code D14 (agent-v5); kiểm thử offline đạt
-- [ ] `run_agent.py --run-name shared-v2-try --graph data/interim/shared/graph.json --limit 5` → kiểm tra có `follow_edge`
+- [x] `run_agent.py --run-name shared-v2-try --graph data/interim/shared/graph.json --limit 5` → 6 `follow_edge`, D14 đạt
 - [ ] `run_agent.py --run-name shared-v2 --graph data/interim/shared/graph.json`
 - [ ] Đọc trace: lỗi tự nhiên trong duyệt/ghi; câu nào đi qua cạnh do câu trước ghi, cạnh đó đúng hay sai
