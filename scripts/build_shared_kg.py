@@ -7,6 +7,11 @@ Tuỳ chọn:
   --select cluster|random   cluster (mặc định): xen kẽ 1 câu ngẫu nhiên với 1 câu dùng chung đoạn văn với tập đã chọn
   --select-only             chỉ chọn câu + gộp kho đoạn văn, chưa gọi LLM (xem thống kê trước)
   --force                   chọn lại câu và dựng lại đồ thị
+  --workers 4               số request gửi song song (mặc định 1)
+  --per-call 8              gộp tối đa 8 đoạn mỗi lần gọi (mặc định 1 = mỗi đoạn một lần gọi)
+  --batch-tokens 1200       giới hạn token văn bản mỗi lô khi gộp
+  --pilot 100               THỬ NGHIỆM (D13): lấy ngẫu nhiên 100 đoạn, trích bằng cả hai cách (1 đoạn/lần và
+                            --per-call đoạn/lần), so sánh, ghi pilot.json; không dựng đồ thị đầy đủ
 
 Đầu ra trong data/interim/shared/ :
   questions.json    các câu đã chọn, theo đúng THỨ TỰ agent sẽ trả lời
@@ -26,7 +31,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 from dcg.common import DATA, load_relations, read_json, write_json  # noqa: E402
-from dcg.extract import SHARED_PROMPT_VERSION, build_shared_graph, sf_coverage  # noqa: E402
+from dcg.extract import build_shared_graph, sf_coverage  # noqa: E402
 
 
 def sf_titles(q):
@@ -87,6 +92,57 @@ def overlap_stats(questions, corpus):
     }
 
 
+def mode_metrics(kg, log, n_paragraphs):
+    by_par = Counter(t for e in kg.edges.values() for t in {p[0] for p in e["provenance"]})
+    return {
+        "prompt_version": log["prompt_version"], "requests": log["requests"],
+        "triples_kept": log["kept"], "triples_per_paragraph": round(log["kept"] / n_paragraphs, 2),
+        "paragraphs_with_edges": round(sum(1 for c in by_par.values() if c) / n_paragraphs, 3),
+        "suspect_rate": round(log["suspect"] / log["kept"], 3) if log["kept"] else None,
+        "dropped": len(log["dropped"]), "parse_errors": len(log["parse_errors"]),
+        "paragraph_skipped_then_retried": len(log.get("paragraph_skipped", [])),
+    }
+
+
+def run_pilot(corpus, args, out, llm):
+    """D13: so sánh 1 đoạn/lần với --per-call đoạn/lần trên cùng các đoạn lấy ngẫu nhiên."""
+    if args.per_call <= 1:
+        raise SystemExit("--pilot cần --per-call > 1 để có cách gộp mà so sánh.")
+    rels = load_relations()
+    if llm is None:
+        from dcg.llm import LLM
+        llm = LLM()
+    pick = set(random.Random(args.seed + 1).sample(list(corpus), min(args.pilot, len(corpus))))
+    sub = {t: s for t, s in corpus.items() if t in pick}
+    res, triples = {}, {}
+    for name, per_call in (("single", 1), ("batch", args.per_call)):
+        before = dict(getattr(llm, "stats", {}) or {})
+        kg, log = build_shared_graph(sub, llm, rels, workers=args.workers, per_call=per_call,
+                                     batch_tokens=args.batch_tokens, seed=args.seed)
+        res[name] = mode_metrics(kg, log, len(sub))
+        after = getattr(llm, "stats", {}) or {}
+        res[name]["tokens"] = {k: after.get(k, 0) - before.get(k, 0) for k in ("prompt_tokens", "completion_tokens")}
+        triples[name] = {(kg.name(e["head"]), e["relation"], kg.name(e["tail"])) for e in kg.edges.values()}
+    a, b = res["single"], res["batch"]
+    inter = len(triples["single"] & triples["batch"])
+    union = len(triples["single"] | triples["batch"]) or 1
+    ok_recall = b["triples_per_paragraph"] >= 0.9 * a["triples_per_paragraph"]
+    ok_suspect = (b["suspect_rate"] or 0) <= (a["suspect_rate"] or 0) + 0.02
+    report = {"paragraphs": len(sub), "per_call": args.per_call, "batch_tokens": args.batch_tokens,
+              "single": a, "batch": b, "edge_jaccard": round(inter / union, 3),
+              "rule": "dùng cách gộp nếu bộ ba/đoạn ≥ 90% cách đơn VÀ tỷ lệ nghi ngờ không cao hơn quá 2 điểm %",
+              "recall_ok": ok_recall, "suspect_ok": ok_suspect,
+              "decision": f"per_call={args.per_call}" if ok_recall and ok_suspect else "per_call=1 (+ --workers)"}
+    write_json(out / "pilot.json", report)
+    print(f"Thử nghiệm trên {len(sub)} đoạn:")
+    for k in ("requests", "triples_per_paragraph", "paragraphs_with_edges", "suspect_rate", "dropped",
+              "paragraph_skipped_then_retried", "tokens"):
+        print(f"  {k:32s} đơn: {a[k]!s:28s} gộp: {b[k]!s}")
+    print(f"  trùng cạnh (Jaccard)             {report['edge_jaccard']}")
+    print(f"→ Kết luận theo quy tắc chốt trước: {report['decision']}")
+    return report
+
+
 def main(argv=None, llm=None):
     ap = argparse.ArgumentParser()
     ap.add_argument("--hotpot", default=str(DATA / "raw" / "hotpotqa" / "hotpot_dev_distractor_v1.json"))
@@ -96,6 +152,10 @@ def main(argv=None, llm=None):
     ap.add_argument("--out", default=str(DATA / "interim" / "shared"))
     ap.add_argument("--select-only", action="store_true")
     ap.add_argument("--force", action="store_true")
+    ap.add_argument("--workers", type=int, default=1)
+    ap.add_argument("--per-call", type=int, default=1)
+    ap.add_argument("--batch-tokens", type=int, default=1200)
+    ap.add_argument("--pilot", type=int, default=0)
     args = ap.parse_args(argv)
     out = Path(args.out)
 
@@ -118,6 +178,8 @@ def main(argv=None, llm=None):
         write_json(out / "summary.json", {"corpus": stats})
         return stats
 
+    if args.pilot:
+        return run_pilot(corpus, args, out, llm)
     if (out / "graph.json").exists() and not args.force:
         raise SystemExit(f"{out / 'graph.json'} đã có. Dùng --force để dựng lại (phản hồi đã có lấy từ cache).")
     rels = load_relations()
@@ -129,7 +191,8 @@ def main(argv=None, llm=None):
         if k == 1 or k % 25 == 0 or k == total:
             print(f"  [{k}/{total}] {title[:60]}")
 
-    kg, log = build_shared_graph(corpus, llm, rels, progress=progress)
+    kg, log = build_shared_graph(corpus, llm, rels, progress=progress, workers=args.workers,
+                                 per_call=args.per_call, batch_tokens=args.batch_tokens, seed=args.seed)
     write_json(out / "graph.json", kg.to_json())
     write_json(out / "extract_log.json", log)
 
@@ -138,7 +201,10 @@ def main(argv=None, llm=None):
     degrees = sorted((len(kg.incident(n)) for n in kg.nodes), reverse=True)
     summary = {
         "corpus": stats,
-        "prompt_version": SHARED_PROMPT_VERSION, "llm": getattr(llm, "info", lambda: {})(),
+        "prompt_version": log["prompt_version"], "llm": getattr(llm, "info", lambda: {})(),
+        "per_call": args.per_call, "workers": args.workers, "requests": log["requests"],
+        "paragraph_skipped_then_retried": len(log.get("paragraph_skipped", [])),
+        "llm_stats": getattr(llm, "stats", None),
         "nodes": len(kg.nodes), "edges": len(kg.edges),
         "raw_triples": log["raw_triples"], "dropped": len(log["dropped"]), "suspect": log["suspect"],
         "parse_errors": len(log["parse_errors"]), "linking": log["linking"],

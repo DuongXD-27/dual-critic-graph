@@ -5,6 +5,7 @@
 from __future__ import annotations
 
 import json
+import re
 import sys
 import tempfile
 from pathlib import Path
@@ -53,9 +54,10 @@ EXTRACTION = {
 
 
 class FakeLLM:
-    def __init__(self, agent_scripts):
+    def __init__(self, agent_scripts, drop_in_batch=()):
         self.agent_scripts = agent_scripts  # {câu hỏi: [bước...]}
-        self.stats = {"calls": 0}
+        self.drop_in_batch = set(drop_in_batch)  # giả lập model bỏ sót đoạn khi gộp
+        self.stats = {"calls": 0, "prompt_tokens": 0, "completion_tokens": 0}
 
     def info(self):
         return {"model": "fake"}
@@ -64,6 +66,10 @@ class FakeLLM:
         self.stats["calls"] += 1
         if json_mode:  # trích xuất
             user = messages[-1]["content"]
+            batch = re.findall(r"^PARAGRAPH \d+ — TITLE: (.*)$", user, flags=re.M)
+            if batch:
+                paras = [{"title": t, "triples": EXTRACTION[t]} for t in batch if t not in self.drop_in_batch]
+                return {"content": json.dumps({"paragraphs": paras}), "tool_calls": []}
             title = user.split("PARAGRAPH TITLE: ", 1)[1].split("\n", 1)[0]
             return {"content": "```json\n" + json.dumps({"triples": EXTRACTION[title]}) + "\n```", "tool_calls": []}
         question = messages[1]["content"].split("Question: ", 1)[1].split("\n", 1)[0]
@@ -165,6 +171,7 @@ def main():
         print("Câu hỏi tiếp theo OK: dùng cạnh do agent ghi", eps2[1]["agent_edges_used"])
     check_tools()
     check_shared()
+    check_batch()
     print("TẤT CẢ OK")
 
 
@@ -266,6 +273,40 @@ def check_shared():
         assert len(after["edges"]) == len(g["edges"]) + 1
         assert read_json(tmp / "runs" / "s" / "run.json")["mode"] == "shared"
         print("Đồ thị chung OK")
+
+
+def check_batch():
+    """D13: gộp đoạn + song song cho ra đúng đồ thị như từng đoạn; đoạn bị bỏ sót được gọi lại; thử nghiệm chạy được."""
+    from dcg.common import load_relations
+    from dcg.extract import build_shared_graph, make_batches
+
+    corpus = {}
+    for q in (EXAMPLE, Q2):
+        for t, sents in q["context"]:
+            corpus.setdefault(t, sents)
+    rels = load_relations()
+
+    def triples(kg):
+        return sorted((kg.name(e["head"]), e["relation"], kg.name(e["tail"]), str(e["provenance"])) for e in kg.edges.values())
+
+    batches = make_batches(corpus, 3, 1200, seed=0)
+    assert sorted(t for b in batches for t in b) == sorted(corpus) and all(len(b) <= 3 for b in batches)
+    kg1, log1 = build_shared_graph(corpus, FakeLLM({}), rels)
+    kg2, log2 = build_shared_graph(corpus, FakeLLM({}, drop_in_batch={"Billie Holiday"}), rels,
+                                   workers=3, per_call=3)
+    assert triples(kg1) == triples(kg2)
+    assert [n["name"] for n in kg1.nodes.values()] == [n["name"] for n in kg2.nodes.values()]  # cùng id
+    assert log1["requests"] == 6 and log2["requests"] == len(batches) + 1
+    assert log2["paragraph_skipped"] == ["Billie Holiday"] and log2["prompt_version"] == "extract-v3-batch"
+
+    with tempfile.TemporaryDirectory() as tmp:
+        sdir = Path(tmp) / "shared"
+        write_json(sdir / "questions.json", [EXAMPLE, Q2])
+        rep = build_shared_kg.main(["--out", str(sdir), "--pilot", "5", "--per-call", "3", "--workers", "2"],
+                                   llm=FakeLLM({}))
+        assert rep["paragraphs"] == 5 and rep["edge_jaccard"] == 1.0 and rep["decision"] == "per_call=3"
+        assert (sdir / "pilot.json").exists() and not (sdir / "graph.json").exists()
+    print("Gộp đoạn + song song + thử nghiệm OK")
 
 
 if __name__ == "__main__":

@@ -16,7 +16,7 @@ data/       manual/ (relations.json), interim/ (câu hỏi + đồ thị), runs/
 ## Chạy
 ```
 pip install -r requirements.txt
-# .env ở gốc repo: GEMINI_API_KEY=... (hoặc DCG_API_KEY_ENV / DCG_BASE_URL / DCG_MODEL, xem dcg/llm.py)
+# .env ở gốc repo: OPENCODE_API_KEY=...   (DeepSeek V4.1 Flash qua OpenCode Go; tuỳ chọn khác xem dcg/llm.py)
 python tests/test_offline.py
 python scripts/smoke_llm.py
 python scripts/build_graphs.py                    # cần data/raw/hotpotqa/hotpot_dev_distractor_v1.json

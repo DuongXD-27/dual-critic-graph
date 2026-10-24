@@ -18,12 +18,12 @@ Lý do: thiết kế benchmark từ hành vi thật thay vì suy đoán. Bước
 
 ## D2. Công nghệ
 - Python 3.11, NetworkX, JSON/JSONL. **Không** Neo4j, **không** LangGraph (không có giá trị nghiên cứu, thêm chỗ hỏng).
-- LLM: Gemini qua endpoint tương thích OpenAI, dùng thư viện `openai` → đổi sang DeepSeek/OpenAI chỉ cần sửa `base_url` + tên model.
-- API key `GEMINI_API_KEY` đặt trong `.env` ở gốc repo (đã gitignore) hoặc biến môi trường. Không bao giờ commit key.
+- **LLM (từ 2026-10-20): `deepseek-v4.1-flash` qua OpenCode Go**, endpoint chat/completions tương thích OpenAI, thư viện `openai`. Endpoint, tên header và User-Agent cố định trong `dcg/llm.py`; `.env` chỉ cần `OPENCODE_API_KEY` (đã gitignore, không bao giờ commit). `DCG_MODEL` để chọn model khác trên OpenCode Go (dùng cho critic khác họ model).
+- 2026-10-24: xoá code của các nhà cung cấp cũ (Gemini, proxy) khỏi `dcg/llm.py`, `.env`, README. Lịch sử bên dưới giữ để giải thích baseline-v1/v2.
 - Mỗi lần chạy lưu: model, prompt version, temperature, thời điểm.
 - 2026-10-16: Gemini trực tiếp quá tải (503) → gọi `gemini-3.8-flash` qua proxy tương thích OpenAI (cấu hình trong `.env`). Proxy là bên thứ ba: không đảm bảo model thật phía sau → mọi lần chạy đều lưu `base_url` + `model`; cache tách theo `base_url`.
 - 2026-10-20: chuyển sang **OpenCode Go**, model `deepseek-v4.1-flash` (endpoint chat/completions; OpenCode xác nhận cho phép dùng cho nghiên cứu). Client gửi `User-Agent: dual-critic-graph/0.1` và header `x-opencode-session` = một mã cho mỗi cuộc hội thoại (mỗi lượt agent, mỗi đoạn trích xuất), theo yêu cầu của OpenCode. Đồ thị chung dựng lại toàn bộ bằng model này (không trộn với ~1.100 phản hồi Gemini-proxy đã có).
-- Về sau: critic LLM nên khác họ model với agent (tránh cùng mù một kiểu lỗi). Nếu critic chính thức dùng Gemini thì sửa lại báo cáo (đề xuất ghi DeepSeek/OpenAI).
+- Về sau: critic LLM nên khác họ model với agent (tránh cùng mù một kiểu lỗi) → chọn model họ khác trên OpenCode Go qua `DCG_MODEL`.
 
 ## D3. Dữ liệu
 | Bộ | Vai trò | Ghi chú |
@@ -109,6 +109,14 @@ Agent chỉ nhận **hướng dẫn + câu hỏi**. Đồ thị và văn bản c
 - Tiêu đề trùng nhưng nội dung khác giữa hai câu (2 trường hợp khi đo thử): giữ bản đầu, ghi `title_conflicts`.
 - Benchmark Traversal (D8) sẽ sinh trên đồ thị chung: nút có nhiều cạnh hơn → tình huống chọn cạnh khó và thật hơn.
 
+## D13. Gộp đoạn khi trích xuất + gọi song song (2026-10-24, chờ thử nghiệm)
+**Lý do:** 1.839 request gọi lần lượt mất ~2–3 giờ. Hệ thật không gọi theo từng đoạn ngắn: Microsoft GraphRAG mặc định mẩu ~1.200 token/lần gọi, gọi song song, và thêm lượt "gleaning" để bù phần sót. Chính bài GraphRAG đo trên HotpotQA: mẩu 600 token trích được gần gấp đôi số thực thể so với mẩu 2.400 token → gộp có thể làm sót, phải đo.
+- `--workers N`: gọi song song. Kết quả luôn ghép vào đồ thị theo thứ tự kho → đồ thị (kể cả id nút/cạnh) không phụ thuộc thời gian chạy.
+- `--per-call K` (`extract-v3-batch`): trộn **thứ tự đoạn** (không trộn câu) với seed cố định, xếp lô ≤ K đoạn và ≤ `--batch-tokens` (1.200) token văn bản. Không gom theo câu hỏi (đồ thị độc lập với câu hỏi, D12; tránh ghép thông tin giữa các đoạn liên quan). Prompt yêu cầu xử lý từng đoạn độc lập, kết quả tách theo đoạn, số câu tính riêng trong từng đoạn → nguồn vẫn `[tiêu đề, số câu]` (D6, D8 không đổi).
+- Tiêu đề trả về không thuộc lô → bỏ, ghi `unknown_paragraph`. Đoạn không có trong kết quả → `paragraph_skipped`, **gọi lại riêng** đoạn đó bằng prompt `extract-v2`.
+- **Thử nghiệm trước khi dùng** (`--pilot 100 --per-call 8`): 100 đoạn ngẫu nhiên, trích bằng cả hai cách. **Quy tắc chốt trước:** dùng cách gộp nếu bộ ba/đoạn ≥ 90% cách đơn **và** tỷ lệ nghi ngờ không cao hơn quá 2 điểm %. Nếu không đạt: giữ 1 đoạn/lần + `--workers`. Kết quả ghi `data/interim/shared/pilot.json` và vào mục này.
+- Model: `deepseek-v4.1-flash` qua OpenCode Go (D2). Một đồ thị chỉ dựng bằng một model và một chế độ trích xuất.
+
 ## Quan sát từ baseline-v1 (2026-10-17)
 - Lỗi code đã sửa: tham số `title` của `read_paragraph` bị proxy/Gemini làm rơi (đổi thành `paragraph`); câu trả lời rỗng bị coi là đáp án (giờ nhắc tối đa 2 lần); cờ nghi ngờ nguồn báo nhầm khi đại từ ở đuôi bộ ba.
 - 96 quan hệ không biểu diễn được một số đáp án (khoảng cách, số lượng, mô tả) → giới hạn của schema, ghi vào threats to validity.
@@ -130,25 +138,28 @@ Agent chỉ nhận **hướng dẫn + câu hỏi**. Đồ thị và văn bản c
 |---|---|---|
 | O1 | Câu hỏi tiếp theo (D9) tạo bằng tay hay LLM | Tự viết tay cho 20 câu đầu |
 | O2 | Bộ công cụ của agent + giới hạn | `search_nodes`, `start_at` + `follow_edge` (qua traversal_gate), `get_edges` (nút hiện tại), `read_paragraph`, `add_edge` (qua construction_gate), `answer`; tối đa 6 `follow_edge`, 2 đoạn văn (D10), 20 lần gọi công cụ, 8 `add_edge` ở bước bộ nhớ (D11) |
-| O3 | Tên model Gemini | `gemini-3.8-flash` (2026-10-16: `gemini-2.5-flash` không còn cấp cho người dùng mới). Đổi qua `DCG_MODEL` trong `.env` |
+| O3 | Model | **Đã chốt** (D2): `deepseek-v4.1-flash` qua OpenCode Go. baseline-v1/v2 đã chạy bằng `gemini-3.8-flash` qua proxy (ghi trong `run.json`) |
 | O4 | Agent được ghi những suy diễn nào (vd. cạnh tắt 2 bước) | Cho ghi tự do để quan sát; có bước cập nhật bộ nhớ bắt buộc hỏi (D11.4) |
 | O6 | Có chủ động xoá bớt cạnh để buộc agent đọc văn bản không | Không; dùng độ thiếu tự nhiên của trích xuất, xem lại sau khi đọc trace |
 | O5 | Bảng tên tiếng Anh cho 96 PID (để đưa vào prompt) | Lấy nhãn Wikidata, lưu `data/manual/relations.json` |
 
 ## Môi trường và dữ liệu thô
-- Script chạy bằng `.venv` (Python 3.11) trên Windows. Môi trường của Claude không gọi được Gemini và không tải được HotpotQA → chạy LLM do người dùng thực hiện.
+- Script chạy bằng `.venv` (Python 3.11) trên Windows. Môi trường của Claude không gọi được API LLM và không tải được HotpotQA → chạy LLM do người dùng thực hiện.
 - `data/` đã xoá (2026-10-16). HotpotQA: tải tay `hotpot_dev_distractor_v1.json`. Re²-DocRED: clone lại khi làm benchmark Construction.
 - `data/manual/relations.json` lập từ danh sách 96 quan hệ của DocRED (Re²-DocRED dùng cùng bộ); khi có lại Re²-DocRED phải chạy đối chiếu (`scripts/check_relations.py`).
 
 ## Việc tiếp theo
 - [x] Code bước 1–2: `dcg/` (đồ thị, trích xuất, agent, cổng, LLM), `scripts/build_graphs.py`, `scripts/run_agent.py`; kiểm thử offline `tests/test_offline.py` đạt
 - [x] `data/manual/relations.json` (96 PID + tên)
-- [x] Gemini API key trong `.env` (đã gitignore; `dcg/llm.py` tự nạp)
+- [x] API key trong `.env` (đã gitignore; `dcg/llm.py` tự nạp) — hiện là `OPENCODE_API_KEY`
 - [x] Cài thư viện, `smoke_llm.py`, tải HotpotQA, `build_graphs.py`
 - [x] `run_agent.py --run-name baseline-v1` (agent-v3) → phát hiện lỗi + lối tắt, dẫn tới D11
 - [x] `build_graphs.py --force`, `run_agent.py --run-name baseline-v2` (agent-v4) → PR `probe/per-question-agent`
 - [x] Code đồ thị chung (D12): `scripts/build_shared_kg.py`, `run_agent.py --graph`; kiểm thử offline đạt
-- [ ] `build_shared_kg.py --select-only` (xem thống kê kho, chưa gọi LLM)
-- [ ] `build_shared_kg.py` (~1.700 lần gọi LLM) → xem `data/interim/shared/summary.json`
+- [x] `build_shared_kg.py --select-only` (1.839 đoạn, 98/200 câu có đoạn bằng chứng ở câu khác)
+- [x] Dán key OpenCode vào `.env`
+- [ ] `smoke_llm.py`
+- [ ] `build_shared_kg.py --pilot 100 --per-call 8 --workers 4` → quyết định D13
+- [ ] `build_shared_kg.py --force --workers 4 [--per-call 8]` → xem `data/interim/shared/summary.json`
 - [ ] `run_agent.py --run-name shared-v1 --graph data/interim/shared/graph.json`
 - [ ] Đọc trace: lỗi tự nhiên trong duyệt/ghi; câu nào đi qua cạnh do câu trước ghi, cạnh đó đúng hay sai

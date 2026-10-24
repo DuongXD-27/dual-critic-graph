@@ -202,9 +202,8 @@ class Episode:
         self.path.append({**action, "origin": e["origin"], "provenance": e["provenance"]})
         return self._arrive(nxt)
 
-    def t_read_paragraph(self, paragraph=None, **kw):
-        # chấp nhận tên tham số biến thể (proxy/Gemini từng làm rơi tham số "title")
-        title = paragraph or kw.get("title") or kw.get("name")
+    def t_read_paragraph(self, paragraph):
+        title = paragraph
         if not title:
             return {"error": "missing argument 'paragraph'", "reachable": sorted(self.reachable)}
         if title not in self.paragraphs:
@@ -234,8 +233,7 @@ class Episode:
         evidence, prov_sents = [], []
         for item in evidence_sentences:
             try:
-                t, i = ((item.get("paragraph") or item["title"]), int(item["sentence"])) if isinstance(item, dict) \
-                    else (item[0], int(item[1]))
+                t, i = (item["paragraph"], int(item["sentence"])) if isinstance(item, dict) else (item[0], int(item[1]))
                 text = self.paragraphs[t][i].strip()
             except (KeyError, IndexError, TypeError, ValueError):
                 evidence.append({"type": "sentence", "ref": item, "text": None, "invalid": True})

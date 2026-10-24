@@ -1,18 +1,25 @@
 """Dựng đồ thị từ đoạn văn HotpotQA (DECISIONS D4–D6, D12).
 
-Hai chế độ:
+Các chế độ:
   build_graph(example)        extract-v1: mỗi câu hỏi một đồ thị (bản thử baseline-v1/v2; giữ để tái lập)
-  build_shared_graph(corpus)  extract-v2: MỘT đồ thị chung cho cả kho đoạn văn; prompt không có danh sách tiêu đề,
+  build_shared_graph(corpus)  MỘT đồ thị chung cho cả kho đoạn văn; prompt không có danh sách tiêu đề,
                               tên thực thể được liên kết với tiêu đề bằng code (TitleLinker)
+      per_call=1  extract-v2        : mỗi đoạn một lần gọi
+      per_call>1  extract-v3-batch  : gộp nhiều đoạn (≤ batch_tokens token văn bản) mỗi lần gọi, kết quả tách theo
+                                      từng đoạn; đoạn bị bỏ sót được gọi lại riêng (D13)
+      workers>1   gọi song song; kết quả luôn được ghép vào đồ thị theo thứ tự kho → đồ thị không phụ thuộc thời gian chạy
 
-Mỗi đoạn một lần gọi LLM. LLM trả bộ ba + số câu nguồn; code kiểm tra:
+LLM trả bộ ba + số câu nguồn; code kiểm tra:
   - quan hệ phải thuộc 96 PID, nếu không → bỏ, ghi log;
   - số câu phải hợp lệ, nếu không → bỏ;
   - tên đầu/đuôi có xuất hiện trong câu được trích không → nếu không, gắn cờ provenance_suspect.
 """
 from __future__ import annotations
 
+import random
+import threading
 from collections import Counter, defaultdict
+from concurrent.futures import ThreadPoolExecutor
 
 from .common import ENTITY_TYPES, norm, relation_list_text, strip_paren
 from .graph import KG
@@ -20,6 +27,7 @@ from .llm import parse_json
 
 PROMPT_VERSION = "extract-v1"
 SHARED_PROMPT_VERSION = "extract-v2"
+BATCH_PROMPT_VERSION = "extract-v3-batch"
 
 _RULES = """Return JSON: {"triples": [{"head": str, "head_type": str, "relation": str, "tail": str, "tail_type": str, "sentences": [int]}]}
 
@@ -51,6 +59,15 @@ USER_SHARED = """PARAGRAPH TITLE: {title}
 SENTENCES:
 {sentences}"""
 
+SYSTEM_BATCH = ("You extract a knowledge graph from several independent Wikipedia paragraphs.\n\n" + _RULES.replace(
+    "{naming}", "Entity names: for the subject of each paragraph, write that paragraph's TITLE exactly as given.")
+    .replace('Return JSON: {"triples": [', 'Return JSON: {"paragraphs": [{"title": str, "triples": [')
+    .replace('"sentences": [int]}]}', '"sentences": [int]}]}]}')
+    .replace("in THIS paragraph", "of that same paragraph (indices restart at 0 in every paragraph)")
+    .replace("explicitly stated in the paragraph.", "explicitly stated in the paragraph.\n"
+             "- Treat every paragraph INDEPENDENTLY. Never combine facts from different paragraphs.\n"
+             "- Output one entry per paragraph, using its exact TITLE, even if its triples list is empty."))
+
 
 def _sent_text(sentences):
     return "\n".join(f"[{i}] {s.strip()}" for i, s in enumerate(sentences))
@@ -69,6 +86,32 @@ def build_messages_shared(title, sentences, rels):
         {"role": "system", "content": SYSTEM_SHARED.replace("{relations}", relation_list_text(rels))},
         {"role": "user", "content": USER_SHARED.format(title=title, sentences=_sent_text(sentences))},
     ]
+
+
+def build_messages_batch(titles, corpus, rels):
+    blocks = [f"PARAGRAPH {k} — TITLE: {t}\nSENTENCES:\n{_sent_text(corpus[t])}" for k, t in enumerate(titles, 1)]
+    return [
+        {"role": "system", "content": SYSTEM_BATCH.replace("{relations}", relation_list_text(rels))},
+        {"role": "user", "content": "\n\n".join(blocks)},
+    ]
+
+
+def make_batches(corpus: dict, per_call: int, batch_tokens: int, seed: int):
+    """Trộn THỨ TỰ ĐOẠN (không trộn câu) với seed cố định rồi xếp vào lô ≤ per_call đoạn và ≤ batch_tokens token
+    văn bản (ước lượng 4 ký tự ≈ 1 token). Không gom theo câu hỏi: đồ thị dựng độc lập với câu hỏi (D12)."""
+    titles = list(corpus)
+    random.Random(seed).shuffle(titles)
+    batches, cur, cur_tok = [], [], 0
+    for t in titles:
+        tok = len(" ".join(corpus[t])) // 4 + 10
+        if cur and (len(cur) >= per_call or cur_tok + tok > batch_tokens):
+            batches.append(cur)
+            cur, cur_tok = [], 0
+        cur.append(t)
+        cur_tok += tok
+    if cur:
+        batches.append(cur)
+    return batches
 
 
 def _mentions(name: str, text: str) -> bool:
@@ -116,13 +159,23 @@ def _new_log(prompt_version):
 
 
 def _process(kg, title, sentences, resp, rels, log, resolve=lambda name, title: name):
-    """Kiểm tra và thêm các bộ ba của một đoạn vào kg."""
+    """Đọc phản hồi của một đoạn rồi thêm các bộ ba vào kg."""
     try:
         triples = parse_json(resp["content"]).get("triples", [])
     except Exception as e:  # noqa: BLE001 - ghi lại mọi lỗi định dạng
         log["parse_errors"].append({"title": title, "error": str(e), "content": resp["content"]})
         return
+    _add(kg, title, sentences, triples, rels, log, resolve)
+
+
+def _add(kg, title, sentences, triples, rels, log, resolve=lambda name, title: name):
+    """Kiểm tra và thêm các bộ ba của một đoạn vào kg."""
+    if not isinstance(triples, list):
+        triples = []
     for t in triples:
+        if not isinstance(t, dict):
+            log["dropped"].append({"title": title, "triple": t, "reason": "not_an_object"})
+            continue
         log["raw_triples"] += 1
         head, tail, rel = str(t.get("head", "")).strip(), str(t.get("tail", "")).strip(), t.get("relation")
         sids = [i for i in t.get("sentences", []) if isinstance(i, int) and 0 <= i < len(sentences)]
@@ -173,18 +226,89 @@ def build_graph(example: dict, llm, rels: dict):
     return kg, log
 
 
-def build_shared_graph(corpus: dict, llm, rels: dict, progress=None):
-    """extract-v2. corpus: {tiêu đề: [câu]}. Trả về (KG, log)."""
+def _parse_batch(resp, titles, log):
+    """→ ({tiêu đề: [bộ ba]}, [tiêu đề bị bỏ sót]). Tiêu đề lạ → bỏ, ghi 'unknown_paragraph'."""
+    try:
+        items = parse_json(resp["content"]).get("paragraphs", [])
+    except Exception as e:  # noqa: BLE001
+        log["parse_errors"].append({"batch": titles, "error": str(e), "content": resp["content"]})
+        return {}, list(titles)
+    by_norm = {norm(t): t for t in titles}
+    got = {}
+    for it in items if isinstance(items, list) else []:
+        if not isinstance(it, dict):
+            continue
+        t = by_norm.get(norm(it.get("title", "")))
+        if t is None:
+            log["dropped"].append({"title": it.get("title"), "reason": "unknown_paragraph",
+                                   "n_triples": len(it.get("triples") or []), "batch": titles})
+            continue
+        got.setdefault(t, []).extend(it.get("triples") or [])
+    return got, [t for t in titles if t not in got]
+
+
+def build_shared_graph(corpus: dict, llm, rels: dict, progress=None, workers: int = 1, per_call: int = 1,
+                       batch_tokens: int = 1200, seed: int = 0):
+    """corpus: {tiêu đề: [câu]}. Trả về (KG, log)."""
+    def single(title):
+        return llm.chat(build_messages_shared(title, corpus[title], rels), json_mode=True,
+                        session_id=f"extract:{title}")
+
+    lock, done = threading.Lock(), [0]
+
+    def run_all(fn, jobs, label):
+        def wrapped(job):
+            out = fn(job)
+            if progress:
+                with lock:
+                    done[0] += 1
+                    progress(done[0], len(jobs), label)
+            return out
+        done[0] = 0
+        if workers <= 1:
+            return [wrapped(j) for j in jobs]
+        with ThreadPoolExecutor(max_workers=workers) as ex:
+            return list(ex.map(wrapped, jobs))  # giữ đúng thứ tự jobs
+
+    log = _new_log(SHARED_PROMPT_VERSION if per_call <= 1 else BATCH_PROMPT_VERSION)
+    log.update({"per_call": per_call, "workers": workers, "batch_tokens": batch_tokens, "batch_seed": seed})
+    per_par = {}  # tiêu đề → [bộ ba] (None = phản hồi hỏng)
+
+    if per_call <= 1:
+        titles = list(corpus)
+        for t, resp in zip(titles, run_all(single, titles, "đoạn")):
+            try:
+                per_par[t] = parse_json(resp["content"]).get("triples", [])
+            except Exception as e:  # noqa: BLE001
+                log["parse_errors"].append({"title": t, "error": str(e), "content": resp["content"]})
+        log["requests"] = len(titles)
+    else:
+        batches = make_batches(corpus, per_call, batch_tokens, seed)
+        log["batches"] = batches
+        jobs = list(enumerate(batches))
+        resps = run_all(lambda job: llm.chat(build_messages_batch(job[1], corpus, rels), json_mode=True,
+                                             session_id=f"extract-batch:{seed}:{job[0]}"), jobs, "lô")
+        skipped = []
+        for (_, titles), resp in zip(jobs, resps):
+            got, miss = _parse_batch(resp, titles, log)
+            per_par.update(got)
+            skipped.extend(miss)
+        log["paragraph_skipped"] = skipped
+        # đoạn bị bỏ sót → gọi lại riêng từng đoạn (prompt extract-v2)
+        for t, resp in zip(skipped, run_all(single, skipped, "đoạn gọi lại")):
+            try:
+                per_par[t] = parse_json(resp["content"]).get("triples", [])
+            except Exception as e:  # noqa: BLE001
+                log["parse_errors"].append({"title": t, "error": str(e), "content": resp["content"]})
+        log["requests"] = len(batches) + len(skipped)
+
     kg = KG("shared")
     for t in corpus:
         kg.add_node(t, is_title=True)
     linker = TitleLinker(list(corpus))
-    log = _new_log(SHARED_PROMPT_VERSION)
-    for k, (title, sentences) in enumerate(corpus.items(), 1):
-        if progress:
-            progress(k, len(corpus), title)
-        resp = llm.chat(build_messages_shared(title, sentences, rels), json_mode=True, session_id=f"extract:{title}")
-        _process(kg, title, sentences, resp, rels, log, resolve=linker.resolve)
+    for t in corpus:  # luôn theo thứ tự kho → id nút/cạnh không phụ thuộc thứ tự luồng
+        if t in per_par:
+            _add(kg, t, corpus[t], per_par[t], rels, log, resolve=linker.resolve)
     log["linking"] = dict(linker.stats)
     log["ambiguous_names"] = linker.ambiguous.most_common(50)
     return kg, log
