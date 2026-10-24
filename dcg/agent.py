@@ -105,6 +105,8 @@ class Episode:
         self.writes: list[dict] = []
         self.paragraphs_read: list[str] = []
         self.reachable: set[str] = set()    # đoạn văn agent đã "tới được" (D10)
+        self.seen_names: set[str] = set()   # tên hai đầu các cạnh đã hiện cho agent (để phân loại cú nhảy)
+        self.seen_text: list[str] = []      # câu văn agent đã đọc
         self.follows = 0
         self.reads_refused = 0
         self.phase = "answer"
@@ -114,6 +116,7 @@ class Episode:
     def _edge_view(self, e: dict) -> dict:
         sources = sorted({t for t, _ in e["provenance"]})
         self.reachable.update(s for s in sources if s in self.paragraphs)
+        self.seen_names.update((norm(self.kg.name(e["head"])), norm(self.kg.name(e["tail"]))))
         return {"edge_id": e["id"], "head": self.kg.name(e["head"]), "relation": e["relation"],
                 "relation_name": self.rels.get(e["relation"], "?"), "tail": self.kg.name(e["tail"]),
                 "source_paragraphs": sources}
@@ -126,7 +129,8 @@ class Episode:
                 "edges": [self._edge_view(e) for e in self.kg.incident(nid)][:40]}
 
     def _path_view(self) -> list:
-        keys = ("type", "from", "edge_id", "relation", "relation_name", "to", "direction", "start_in_question")
+        keys = ("type", "from", "edge_id", "relation", "relation_name", "to", "direction", "start_in_question",
+                "start_grounded_by")
         return [{k: s[k] for k in keys if k in s} for s in self.path]
 
     def _gate_traversal(self, action: dict, extra: dict) -> dict:
@@ -165,7 +169,8 @@ class Episode:
             return f"error: unknown node {node}"
         name = self.kg.name(node)
         action = {"type": "start", "from": self.kg.name(self.current) if self.current else None, "to": name,
-                  "start_in_question": norm(strip_paren(name)) in norm(self.question)}
+                  "start_in_question": norm(strip_paren(name)) in norm(self.question),
+                  "start_grounded_by": self._jump_grounding(name)}
         verdict = self._gate_traversal(action, {})
         if verdict["verdict"] == "REJECT":
             return {"rejected": verdict.get("reason")}
@@ -202,6 +207,18 @@ class Episode:
         self.path.append({**action, "origin": e["origin"], "provenance": e["provenance"]})
         return self._arrive(nxt)
 
+    def _jump_grounding(self, name: str):
+        """Tên nút nhảy tới có căn cứ từ đâu (D11.3): 'question' | 'edges_seen' | 'text_read' | None.
+        None = tên chưa từng xuất hiện trong những gì agent đã thấy → nhảy nhờ trí nhớ của model."""
+        n = norm(strip_paren(name))
+        if n in norm(self.question):
+            return "question"
+        if norm(name) in self.seen_names or n in self.seen_names:
+            return "edges_seen"
+        if any(n in norm(s) for s in self.seen_text):
+            return "text_read"
+        return None
+
     def t_read_paragraph(self, paragraph):
         title = paragraph
         if not title:
@@ -219,6 +236,7 @@ class Episode:
                 self.reads_refused += 1
                 return {"error": f"read limit reached ({MAX_READS} paragraphs)", "already_read": self.paragraphs_read}
             self.paragraphs_read.append(title)
+            self.seen_text.extend(self.paragraphs[title])
         return {"paragraph": title, "sentences": [f"[{i}] {s.strip()}" for i, s in enumerate(self.paragraphs[title])]}
 
     def t_add_edge(self, head, relation, tail, evidence_sentences=None, evidence_edges=None):
@@ -356,6 +374,7 @@ class Episode:
             "run_id": self.run_id, "episode_id": self.episode_id, "qid": self.kg.qid, "question": self.question,
             "answer": self.final_answer, "follows": self.follows, "starts": len(starts),
             "starts_not_in_question": sum(not s["start_in_question"] for s in starts),
+            "starts_ungrounded": sum(s["start_grounded_by"] is None for s in starts),
             "path": self.path, "paragraphs_read": self.paragraphs_read, "reads_refused": self.reads_refused,
             "writes": self.writes,
             "agent_edges_used": [s["edge_id"] for s in steps if s.get("origin", "").startswith("AGENT")],

@@ -1,0 +1,247 @@
+{
+  "prompt_version": "extract-v2",
+  "raw_triples": 12676,
+  "kept": 12662,
+  "dropped": [
+    {
+      "title": "Camille (1926 feature film)",
+      "triple": {
+        "head": "Camille (1926 feature film)",
+        "head_type": "MISC",
+        "relation": "P674",
+        "tail": "Camille",
+        "tail_type": "MISC",
+        "sentences": [
+          1
+        ]
+      },
+      "reason": "self_loop_after_linking"
+    },
+    {
+      "title": "Rock Bottom (SpongeBob SquarePants)",
+      "triple": {
+        "head": "Rock Bottom (SpongeBob SquarePants)",
+        "head_type": "MISC",
+        "relation": "P840",
+        "tail": "Rock Bottom",
+        "tail_type": "LOC",
+        "sentences": [
+          3
+        ]
+      },
+      "reason": "self_loop_after_linking"
+    },
+    {
+      "title": "I'm on Drugs",
+      "triple": {
+        "head": "I'm on Drugs",
+        "head_type": "MISC",
+        "relation": "P527",
+        "tail": "I'm On Drugs",
+        "tail_type": "MISC",
+        "sentences": [
+          1
+        ]
+      },
+      "reason": "self_loop"
+    },
+    {
+      "title": "Super Star (S.H.E album)",
+      "triple": {
+        "head": "Super Star",
+        "head_type": "MISC",
+        "relation": "P361",
+        "tail": "Super Star (S.H.E album)",
+        "tail_type": "MISC",
+        "sentences": [
+          4
+        ]
+      },
+      "reason": "self_loop_after_linking"
+    },
+    {
+      "title": "Papa John Creach (album)",
+      "triple": {
+        "head": "Papa John Creach (album)",
+        "head_type": "MISC",
+        "relation": "P175",
+        "tail": "Papa John Creach",
+        "tail_type": "PER",
+        "sentences": [
+          0
+        ]
+      },
+      "reason": "self_loop_after_linking"
+    },
+    {
+      "title": "Brooklyn (film)",
+      "triple": {
+        "head": "Brooklyn (film)",
+        "head_type": "MISC",
+        "relation": "P840",
+        "tail": "Brooklyn",
+        "tail_type": "LOC",
+        "sentences": [
+          2
+        ]
+      },
+      "reason": "self_loop_after_linking"
+    },
+    {
+      "title": "Queen (Queen album)",
+      "triple": {
+        "head": "Queen (Queen album)",
+        "head_type": "MISC",
+        "relation": "P175",
+        "tail": "Queen",
+        "tail_type": "ORG",
+        "sentences": [
+          0
+        ]
+      },
+      "reason": "self_loop_after_linking"
+    },
+    {
+      "title": "Queen (Queen album)",
+      "triple": {
+        "head": "Queen (Queen album)",
+        "head_type": "MISC",
+        "relation": "P162",
+        "tail": "Queen",
+        "tail_type": "ORG",
+        "sentences": [
+          1
+        ]
+      },
+      "reason": "self_loop_after_linking"
+    },
+    {
+      "title": "Mack 10 discography",
+      "triple": {
+        "head": "Mack 10",
+        "head_type": "MISC",
+        "relation": "P175",
+        "tail": "Mack 10",
+        "tail_type": "PER",
+        "sentences": [
+          2
+        ]
+      },
+      "reason": "self_loop"
+    },
+    {
+      "title": "Cervantes (film)",
+      "triple": {
+        "head": "Cervantes (film)",
+        "head_type": "MISC",
+        "relation": "P674",
+        "tail": "Cervantes",
+        "tail_type": "MISC",
+        "sentences": [
+          2
+        ]
+      },
+      "reason": "self_loop_after_linking"
+    },
+    {
+      "title": "Thérèse Raquin (1928 film)",
+      "triple": {
+        "head": "Thérèse Raquin (1928 film)",
+        "head_type": "MISC",
+        "relation": "P674",
+        "tail": "Thérèse Raquin",
+        "tail_type": "MISC",
+        "sentences": [
+          2
+        ]
+      },
+      "reason": "self_loop_after_linking"
+    },
+    {
+      "title": "The Dingoes",
+      "triple": {
+        "head": "The Dingoes",
+        "head_type": "MISC",
+        "relation": "P175",
+        "tail": "The Dingoes",
+        "tail_type": "ORG",
+        "sentences": [
+          5
+        ]
+      },
+      "reason": "self_loop"
+    },
+    {
+      "title": "So You Think You Can Dance (U.S. season 14)",
+      "triple": {
+        "head": "So You Think You Can Dance (U.S. season 14)",
+        "head_type": "MISC",
+        "relation": "P179",
+        "tail": "So You Think You Can Dance",
+        "tail_type": "MISC",
+        "sentences": [
+          0
+        ]
+      },
+      "reason": "self_loop_after_linking"
+    },
+    {
+      "title": "George Gould (businessman)",
+      "triple": {
+        "head": "George Gould (businessman)",
+        "head_type": "PER",
+        "relation": "P22",
+        "tail": "George Gould",
+        "tail_type": "PER",
+        "sentences": [
+          2
+        ]
+      },
+      "reason": "self_loop_after_linking"
+    }
+  ],
+  "suspect": 798,
+  "parse_errors": [
+    {
+      "title": "Frank Vennes",
+      "error": "Expecting value: line 1 column 1 (char 0)",
+      "content": ""
+    },
+    {
+      "title": "Bambi Hall",
+      "error": "Expecting value: line 1 column 1 (char 0)",
+      "content": ""
+    }
+  ],
+  "per_call": 1,
+  "workers": 8,
+  "batch_tokens": 1200,
+  "batch_seed": 0,
+  "parse_retries": 2,
+  "requests": 1841,
+  "linking": {
+    "exact_title": 10682,
+    "not_a_title": 14387,
+    "unique_stripped_title": 212,
+    "ambiguous": 31,
+    "current_title": 34
+  },
+  "ambiguous_names": [
+    [
+      "Casino Royale",
+      19
+    ],
+    [
+      "Bob Johnson",
+      5
+    ],
+    [
+      "Treasure Island",
+      4
+    ],
+    [
+      "Jimmy Butler",
+      3
+    ]
+  ]
+}

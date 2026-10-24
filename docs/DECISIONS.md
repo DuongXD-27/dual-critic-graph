@@ -131,6 +131,15 @@ Agent chỉ nhận **hướng dẫn + câu hỏi**. Đồ thị và văn bản c
 - Quan sát phụ: `deepseek-v4.1-flash` là model suy luận — ~2.470 token đầu ra/lần gọi trong khi nội dung trả về chỉ ~200 token → ~90% token đầu ra là suy luận ẩn. Đây là nguyên nhân chính của thời gian (~7,5 giây/đoạn với 4 luồng) và chi phí. Ước tính dựng toàn bộ 1.839 đoạn: ~4,5 triệu token đầu ra ≈ 2,7–5,4 USD (trong hạn mức gói Go).
 - 2026-10-24: phản hồi không đọc được JSON → **gọi lại đúng 1 lần** với tin nhắn nhắc "chỉ trả JSON" (thử nghiệm có 1/100 đoạn hỏng JSON). Ghi `parse_retries`.
 
+## Quan sát: đồ thị chung `extract-v2` (2026-10-24)
+- `deepseek-v4.1-flash`, 1 đoạn/lần, 8 luồng, ~1,3 giờ; 1.841 request (2 gọi lại vì JSON hỏng; 2 đoạn vẫn hỏng: *Frank Vennes*, *Bambi Hall*); 5,5 triệu token đầu ra (≈3,5 USD giờ thấp điểm).
+- **10.530 nút, 12.361 cạnh**; thành phần liên thông lớn nhất 80% số nút; 591 thành phần; 89 nút cô lập. Cờ nghi ngờ nguồn 6,5%. Độ phủ câu bằng chứng 87,4%.
+- Liên kết tên → tiêu đề: 10.682 khớp đúng tiêu đề, 212 khớp sau khi bỏ ngoặc, 34 chủ thể đoạn, **31 mơ hồ**, 14.387 không phải tiêu đề.
+- Nút trung tâm: *film* (121, toàn `instance of`), *United States* (105), *studio album*, *song* → nút "lớp" nối các thực thể không liên quan; là nhiễu thật khi duyệt.
+- **58/149 câu bridge (39%) có 2 đoạn bằng chứng KHÔNG nối nhau trong ≤3 bước** (57 nối trực tiếp, 25 qua 2 bước, 9 qua 3 bước). Nguyên nhân (đọc tự động): 26 — câu có nhắc thực thể cầu nối nhưng không trích được cạnh tới nó; 20 — câu không nhắc đúng tên (bí danh, cách gọi khác, nối qua thực thể thứ ba); 12 — có trích thực thể nhưng cạnh không chạm nút chủ thể của đoạn.
+  → Với ~39% câu bridge, agent **không thể** trả lời chỉ bằng duyệt đồ thị: phải đọc văn bản rồi nhảy tới thực thể cầu nối. Đây cũng là chỗ tự nhiên để agent **ghi cạnh còn thiếu** (`AGENT_TEXT`) — điều kiện để quan sát lỗi bền vững. Nhãn Traversal (D8) cho các câu này chỉ có một phần đường đi.
+- Hệ quả cho log (D11.3, 2026-10-24): mỗi `start_at` ghi thêm `start_grounded_by` = `question` | `edges_seen` | `text_read` | `null`. Chỉ `null` (tên chưa từng xuất hiện trong những gì agent đã thấy) mới là nhảy nhờ trí nhớ model; nhảy theo tên vừa đọc trong văn bản là hợp lệ khi đồ thị thiếu cạnh. Tổng kết có `starts_ungrounded`.
+
 ## Quan sát từ baseline-v1 (2026-10-17)
 - Lỗi code đã sửa: tham số `title` của `read_paragraph` bị proxy/Gemini làm rơi (đổi thành `paragraph`); câu trả lời rỗng bị coi là đáp án (giờ nhắc tối đa 2 lần); cờ nghi ngờ nguồn báo nhầm khi đại từ ở đuôi bộ ba.
 - 96 quan hệ không biểu diễn được một số đáp án (khoảng cách, số lượng, mô tả) → giới hạn của schema, ghi vào threats to validity.
@@ -174,6 +183,7 @@ Agent chỉ nhận **hướng dẫn + câu hỏi**. Đồ thị và văn bản c
 - [x] Dán key OpenCode vào `.env`
 - [ ] `smoke_llm.py`
 - [x] `build_shared_kg.py --pilot 100 --per-call 8 --workers 4` → D13: không gộp
-- [ ] `build_shared_kg.py --force --workers 8` → xem `data/interim/shared/summary.json`
+- [x] `build_shared_kg.py --force --workers 8` → đồ thị chung (xem mục Quan sát: đồ thị chung)
+- [ ] `run_agent.py --run-name shared-v1-try --graph data/interim/shared/graph.json --limit 5` (đo thời gian/câu)
 - [ ] `run_agent.py --run-name shared-v1 --graph data/interim/shared/graph.json`
 - [ ] Đọc trace: lỗi tự nhiên trong duyệt/ghi; câu nào đi qua cạnh do câu trước ghi, cạnh đó đúng hay sai

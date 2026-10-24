@@ -138,6 +138,7 @@ def main(argv=None, llm=None):
         "correct_but_ungrounded": sum(r["f1"] >= 0.8 and r["answer_grounded"] is False for r in rows),
         "starts_total": sum(r["starts"] for r in rows),
         "starts_not_in_question": sum(r["starts_not_in_question"] for r in rows),
+        "starts_ungrounded": sum(r["starts_ungrounded"] for r in rows),
         "episodes_reading_text": sum(bool(r["paragraphs_read"]) for r in rows),
         "mean_paragraphs_read": round(sum(len(r["paragraphs_read"]) for r in rows) / n, 2) if n else None,
         "episodes_hit_read_limit": sum(r["reads_refused"] > 0 for r in rows),

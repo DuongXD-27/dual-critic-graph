@@ -206,6 +206,9 @@ def check_tools():
     assert "sentences" in ep.t_read_paragraph(titles[0])                 # đọc lại: không tính
     ep.t_start_at(v)                                                      # nhảy tới nút không có trong câu hỏi
     assert ep.path[-1]["start_in_question"] is False
+    assert ep.path[-1]["start_grounded_by"] == "text_read"                # đoạn phim đã đọc nhắc "Big Stone Gap, Virginia"
+    assert ep.path[0]["start_grounded_by"] == "question"
+    assert ep._jump_grounding("Kyle Schickner") is None                   # tên chưa từng thấy → nhờ trí nhớ
     assert "limit" in ep.t_read_paragraph(titles[2])["error"]            # đoạn thứ 3: quá giới hạn
     assert ep.paragraphs_read == titles[:2] and ep.reads_refused == 3
     assert ep.summary()["starts_not_in_question"] == 1
