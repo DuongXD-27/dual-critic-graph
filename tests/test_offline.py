@@ -112,13 +112,16 @@ def main():
 
         # ---- bước 2: agent ----
         nodes = {n["name"]: n["id"] for n in g["nodes"]}
+        e_own = f"e{len(g['edges'])}"                                    # cạnh agent sắp ghi ở ngõ cụt
         script = [
             ("search_nodes", {"query": "Big Stone Gap"}),
+            ("start_at", {"node": nodes["Big Stone Gap, Virginia"]}),    # không có trong câu hỏi → bị từ chối (D14)
             ("start_at", {"node": nodes["Big Stone Gap (film)"]}),
             ("follow_edge", {"edge_id": e_dir}),
-            ("read_paragraph", {"paragraph": "Adriana Trigiani"}),
+            ("read_paragraph", {"paragraph": "Adriana Trigiani"}),       # ngõ cụt: thiếu cạnh nơi sống
             ("add_edge", {"head": "Adriana Trigiani", "relation": "P551", "tail": "Greenwich Village",
                           "evidence_sentences": [{"paragraph": "Adriana Trigiani", "sentence": 0}]}),
+            ("follow_edge", {"edge_id": e_own}),                         # ghi rồi đi tiếp theo cạnh vừa ghi
             ("add_edge", {"head": "Big Stone Gap (film)", "relation": "P999", "tail": "Greenwich Village"}),
             ("answer", {"answer": "Greenwich Village, New York City"}),
             # bước cập nhật bộ nhớ
@@ -134,24 +137,29 @@ def main():
         gates = read_jsonl(run / "gates.jsonl")
         after = read_json(run / "graphs_after" / "q_bsg.json")
         ep = eps[0]
-        assert ep["em"] == 1.0 and ep["follows"] == 1
+        assert ep["em"] == 1.0 and ep["follows"] == 2
+        assert ep["starts_refused"] == 1 and ep["follows_on_own_edges"] == 1
+        assert ep["path"][-1]["to"] == "Greenwich Village" and ep["path"][-1]["origin"] == "AGENT_TEXT"
+        assert summ["starts_refused"] == 1 and summ["episodes_following_own_write"] == 1
+        assert summ["episodes_using_earlier_agent_edges"] == 0        # cạnh tự ghi trong cùng lượt không tính là "dùng lại"
         assert ep["answer_grounded"] is True and summ["correct_but_ungrounded"] == 0
         assert ep["paragraphs_read"] == ["Adriana Trigiani"]
         assert [w["status"] for w in ep["writes"]] == ["added", "invalid_relation", "added"]
         assert [w["phase"] for w in ep["writes"]] == ["answer", "answer", "memory"]
         assert ep["writes"][0]["origin"] == "AGENT_TEXT" and ep["writes"][0]["new_tail_node"] is True
         assert ep["writes"][2]["origin"] == "AGENT_DERIVED"
-        assert [r["kind"] for r in gates] == ["traversal", "traversal", "construction", "construction"]
+        assert [r["kind"] for r in gates] == ["traversal", "traversal", "construction", "traversal", "construction"]
         assert gates[0]["action"]["type"] == "start" and gates[0]["action"]["start_in_question"] is True
         assert gates[1]["action"]["to"] == "Adriana Trigiani" and [p["type"] for p in gates[1]["path"]] == ["start"]
         assert gates[2]["evidence"][0]["text"].startswith("Adriana Trigiani is")
-        assert gates[3]["phase"] == "memory" and gates[3]["evidence"][0]["type"] == "edge"
+        assert gates[3]["action_edge"]["origin"] == "AGENT_TEXT"
+        assert gates[4]["phase"] == "memory" and gates[4]["evidence"][0]["type"] == "edge"
         assert ep["starts"] == 1 and ep["starts_not_in_question"] == 0
         new = [e for e in after["edges"] if e["origin"] == "AGENT_TEXT"]
         assert len(new) == 1 and new[0]["provenance"] == [["Adriana Trigiani", 0]]
         assert summ["writes_by_origin"] == {"AGENT_TEXT": 1, "AGENT_DERIVED": 1}
         assert summ["writes_by_phase"] == {"answer": 2, "memory": 1}
-        assert ep["path_sf_coverage"] == 0.5
+        assert ep["path_sf_coverage"] == 1.0
         print("Bước 2 OK:", summ)
 
         # ---- câu hỏi tiếp theo dùng cạnh agent vừa ghi ----
@@ -180,8 +188,9 @@ def main():
 
 
 def check_tools():
-    """Quy tắc công cụ (D10, D11): get_edges chỉ nút hiện tại; chỉ đọc đoạn đã tới được; giới hạn 2 đoạn; ghi nhận nhảy."""
-    from dcg.agent import MAX_READS, Episode
+    """Quy tắc công cụ (D10, D11, D14): chỉ xuất phát ở thực thể trong câu hỏi; get_edges chỉ nút hiện tại;
+    chỉ đọc đoạn đã tới được; giới hạn 2 đoạn; nối tên khi ghi; chặn cạnh tự nối."""
+    from dcg.agent import MAX_READS, Episode, in_question
     from dcg.common import load_relations
     from dcg.gates import AcceptAllGates
     from dcg.graph import KG
@@ -195,23 +204,44 @@ def check_tools():
     assert MAX_READS == 2
     assert "error" in ep.t_get_edges()                                   # chưa xuất phát
     assert "not reached" in ep.t_read_paragraph(titles[0])["error"]      # chưa tới được
+    assert "only accepts entities named in the question" in ep.t_start_at(a)["error"]   # D14: không nhảy cóc
+    assert "only accepts" in ep.t_start_at(v)["error"] and ep.current is None
     r = ep.t_start_at(f)
     assert r["edges"][0]["source_paragraphs"] == ["Big Stone Gap (film)"]
-    assert ep.path[0]["start_in_question"] is True
+    assert ep.path[0]["start_in_question"] is True and ep.path[0]["start_grounded_by"] == "question"
     assert "only list edges of the current node" in ep.t_get_edges(a)  # không nhìn nút khác
     assert "not reached" in ep.t_read_paragraph(titles[1])["error"]      # đoạn Trigiani chưa tới
     assert "sentences" in ep.t_read_paragraph(titles[0])
     ep.t_follow_edge(e)                                                   # tới Trigiani → đọc được đoạn đó
     assert "sentences" in ep.t_read_paragraph(titles[1])
     assert "sentences" in ep.t_read_paragraph(titles[0])                 # đọc lại: không tính
-    ep.t_start_at(v)                                                      # nhảy tới nút không có trong câu hỏi
-    assert ep.path[-1]["start_in_question"] is False
-    assert ep.path[-1]["start_grounded_by"] == "text_read"                # đoạn phim đã đọc nhắc "Big Stone Gap, Virginia"
-    assert ep.path[0]["start_grounded_by"] == "question"
-    assert ep._jump_grounding("Kyle Schickner") is None                   # tên chưa từng thấy → nhờ trí nhớ
+    assert ep._jump_grounding("Big Stone Gap, Virginia") == "text_read"   # đoạn phim đã đọc nhắc tên này
+    assert ep._jump_grounding("Kyle Schickner") is None
+    ep.reachable.add(titles[2])
     assert "limit" in ep.t_read_paragraph(titles[2])["error"]            # đoạn thứ 3: quá giới hạn
     assert ep.paragraphs_read == titles[:2] and ep.reads_refused == 3
-    assert ep.summary()["starts_not_in_question"] == 1
+    sm = ep.summary()
+    assert sm["starts"] == 1 and sm["starts_refused"] == 2 and sm["starts_not_in_question"] == 0
+
+    # ghi ở ngõ cụt: tên được nối với nút có sẵn; cạnh tự nối bị chặn; kết quả gợi ý follow_edge
+    r = ep.t_add_edge("adriana trigiani", "P551", "Greenwich Village",
+                      evidence_sentences=[{"paragraph": "Adriana Trigiani", "sentence": 0}])
+    assert r["head"] == "Adriana Trigiani" and r["next"] == f"you can now follow_edge {r['edge_id']}"
+    assert "same entity" in ep.t_add_edge("Adriana Trigiani", "P57", "adriana trigiani")
+    assert ep.writes[-1]["status"] == "self_loop"
+    ep2 = Episode(KG("x"), EXAMPLE, "Which club did Claudio López join in 1998?", None, AcceptAllGates(),
+                  load_relations(), "t", "x", paragraphs={"Claudio López (footballer)": ["."], "Valencia CF": ["."],
+                                                          "Mercury (planet)": ["."], "Mercury (element)": ["."]})
+    assert ep2._resolve("Claudio López") == "Claudio López (footballer)"
+    assert ep2._resolve("Mercury") == "Mercury"                           # mơ hồ → giữ nút riêng
+    assert ep2._resolve("Valencia CF") == "Valencia CF"
+
+    # so khớp tên với câu hỏi
+    assert in_question("Thomas Boutflower Bennett (cricketer)", "Which team did Thomas Boutflower Bennet play for?")
+    assert not in_question("Pablo Aimar", "Which player joined Valencia in 1998?")
+    assert not in_question("Big Stone Gap, Virginia", EXAMPLE["question"])
+    assert in_question("Big Stone Gap (film)", EXAMPLE["question"])
+    assert not in_question("US", "Which famous musician was born first?")   # tên ngắn: chỉ khớp nguyên từ
     print("Quy tắc công cụ OK")
 
 

@@ -139,6 +139,8 @@ def main(argv=None, llm=None):
         "starts_total": sum(r["starts"] for r in rows),
         "starts_not_in_question": sum(r["starts_not_in_question"] for r in rows),
         "starts_ungrounded": sum(r["starts_ungrounded"] for r in rows),
+        "starts_refused": sum(r.get("starts_refused", 0) for r in rows),
+        "episodes_following_own_write": sum(r.get("follows_on_own_edges", 0) > 0 for r in rows),
         "episodes_reading_text": sum(bool(r["paragraphs_read"]) for r in rows),
         "mean_paragraphs_read": round(sum(len(r["paragraphs_read"]) for r in rows) / n, 2) if n else None,
         "episodes_hit_read_limit": sum(r["reads_refused"] > 0 for r in rows),

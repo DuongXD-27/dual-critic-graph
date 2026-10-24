@@ -25,5 +25,5 @@ python scripts/run_agent.py --run-name <tên>    # bản thử: mỗi câu một
 # đồ thị chung (D12): một đồ thị cho 200 câu, agent chạy lần lượt, phép ghi được giữ
 python scripts/build_shared_kg.py --select-only    # chọn câu + gộp kho, chưa gọi LLM
 python scripts/build_shared_kg.py
-python scripts/run_agent.py --run-name shared-v1 --graph data/interim/shared/graph.json
+python scripts/run_agent.py --run-name shared-v2 --graph data/interim/shared/graph.json
 ```

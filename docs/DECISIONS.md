@@ -68,7 +68,7 @@ construction_gate(write, evidence, provenance)  -> {verdict: ACCEPT|REJECT, reas
 - `evidence` = nội dung câu văn được nộp kèm phép ghi (chưa chắc đã hỗ trợ — việc của critic là kiểm tra).
 - Bước 2: cả hai cổng luôn trả ACCEPT (= baseline không critic).
 - Mỗi lần gọi cổng ghi một dòng JSONL, chính là định dạng mẫu benchmark → critic chạy offline và chạy trong agent dùng cùng giao diện.
-- `action.type` = `follow` (đi theo một cạnh) hoặc `start` (xuất phát / nhảy tới một nút, D11). Cả hai đều qua `traversal_gate`.
+- `action.type` = `follow` (đi theo một cạnh) hoặc `start` (xuất phát tại thực thể trong câu hỏi, D14). Cả hai đều qua `traversal_gate`.
 
 ## D8. Nhãn đúng
 - **Không bao giờ** lấy hành vi agent làm nhãn đúng. Nhãn đến từ: dữ liệu gốc, quy tắc xác định từ dữ liệu gốc, hoặc gán tay.
@@ -94,7 +94,7 @@ Mỗi câu hỏi một đồ thị → cạnh ghi ở câu này không ảnh hư
 Agent chỉ nhận **hướng dẫn + câu hỏi**. Đồ thị và văn bản chỉ truy cập qua công cụ; mọi lần thu thông tin phải để lại một hành động nhìn thấy được.
 1. **Bỏ danh sách 10 tiêu đề khỏi prompt.** Lý do: danh sách lộ tên thực thể cầu nối → agent nhảy thẳng tới đó (#13 baseline-v1); hệ thật không có danh sách này.
 2. **`get_edges` chỉ trả cạnh của nút hiện tại.** Lý do: trước đó gọi được cho mọi nút → agent "nhìn từ xa" lấy đáp án, không đi bước nào (#19, #20: 0 bước). Muốn xem nút khác phải `follow_edge` hoặc `start_at`.
-3. **`start_at` vẫn cho tới mọi nút nhưng qua `traversal_gate`** (`action.type = start`), log ghi `start_in_question` = tên nút (bỏ phần trong ngoặc) có trong câu hỏi không. Không cấm nhảy: nhảy nhờ trí nhớ model là hành vi thật, là một loại lỗi duyệt cần critic chấm.
+3. ~~**`start_at` vẫn cho tới mọi nút nhưng qua `traversal_gate`**~~ → **thay bằng D14** (không còn nhảy). (`action.type = start`), log ghi `start_in_question` = tên nút (bỏ phần trong ngoặc) có trong câu hỏi không. Không cấm nhảy: nhảy nhờ trí nhớ model là hành vi thật, là một loại lỗi duyệt cần critic chấm.
    Nút xuất phát hợp lệ = thực thể được nhắc trong câu hỏi (topic entity). Hợp lệ ≠ tối ưu: vd. xuất phát từ CBS ra đúng đáp án chỉ vì đồ thị nhỏ, bỏ qua điều kiện "diễn viên trong Strange Fruit".
 4. **Bước cập nhật bộ nhớ sau khi trả lời:** agent được hỏi ghi các sự kiện đã dùng mà đồ thị chưa có; chỉ được gọi `add_edge` (tối đa 8 lần). Phép ghi lưu `phase = answer | memory`.
    Lý do: baseline-v1 có 0/20 phép ghi khi việc ghi chỉ là tuỳ chọn. Hệ agent có bộ nhớ thường có bước này.
@@ -131,6 +131,18 @@ Agent chỉ nhận **hướng dẫn + câu hỏi**. Đồ thị và văn bản c
 - Quan sát phụ: `deepseek-v4.1-flash` là model suy luận — ~2.470 token đầu ra/lần gọi trong khi nội dung trả về chỉ ~200 token → ~90% token đầu ra là suy luận ẩn. Đây là nguyên nhân chính của thời gian (~7,5 giây/đoạn với 4 luồng) và chi phí. Ước tính dựng toàn bộ 1.839 đoạn: ~4,5 triệu token đầu ra ≈ 2,7–5,4 USD (trong hạn mức gói Go).
 - 2026-10-24: phản hồi không đọc được JSON → **gọi lại đúng 1 lần** với tin nhắn nhắc "chỉ trả JSON" (thử nghiệm có 1/100 đoạn hỏng JSON). Ghi `parse_retries`.
 
+## D14. Agent chỉ đi theo cạnh; ghi rồi đi tiếp ở ngõ cụt (2026-10-24, agent-v5, thay D11.3)
+Lý do: `shared-v1-try` (5 câu, agent-v4) có 10 `start_at`, **0 `follow_edge`** → agent không duyệt đồ thị mà tìm tên + nhảy; không có đường đi thì không có gì cho Traversal Critic chấm.
+1. **Xuất phát:** `start_at` chỉ nhận nút có tên trong câu hỏi (bỏ phần ngoặc, so theo từ; chấp nhận sai chính tả nhẹ: tỉ lệ giống ≥ 0,85 trên cửa sổ từ, tên ≥ 5 ký tự; vd. "Bennett"/"Bennet"). Câu comparison xuất phát lần lượt ở từng thực thể. Nút khác → trả lỗi, đếm `starts_refused`.
+2. **Di chuyển:** chỉ bằng `follow_edge`. Tăng giới hạn: 8 `follow_edge`, 25 lần gọi công cụ.
+3. **Ngõ cụt:** cạnh cần đi bị thiếu → đọc đoạn đã tới được (D10). Câu văn nói sự kiện đó → `add_edge` (qua cổng Construction, `phase = answer`) rồi `follow_edge` theo cạnh vừa ghi. Đây là nơi tự nhiên của chuỗi *ghi sai → đi sai*. Khi ghi, tên được nối với nút có sẵn (trùng tên, hoặc khớp **duy nhất** một tiêu đề sau khi bỏ ngoặc); chặn cạnh tự nối.
+4. **Dừng:** tới nút đáp án, hoặc ngõ cụt thật (không cạnh, không câu văn) → trả lời tốt nhất có thể. Bước cập nhật bộ nhớ (D11.4) giữ nguyên.
+5. Log: `starts_refused`, `follows_on_own_edges` (đi qua cạnh chính lượt đó ghi); tổng kết có `episodes_following_own_write`. Cạnh tự ghi trong cùng lượt không tính là "dùng lại cạnh của câu trước".
+
+## Quan sát: `shared-v1-try` (2026-10-24, agent-v4, 5 câu)
+- 79 giây, 37 lần gọi, 3.608 token đầu ra → 200 câu ≈ 55 phút. 0 `follow_edge`, 10 `start_at` → D14.
+- #4 trả lời "Pablo Aimar" thay vì "Claudio Javier López" (lỗi duyệt). Phép ghi (Fyre Festival, P112 founded by, Billy McFarland): câu chỉ nói "organization of the Fyre Festival" → đúng ngoài đời nhưng **bằng chứng chưa đủ** — đúng loại lỗi Construction Critic cần bắt.
+
 ## Quan sát: đồ thị chung `extract-v2` (2026-10-24)
 - `deepseek-v4.1-flash`, 1 đoạn/lần, 8 luồng, ~1,3 giờ; 1.841 request (2 gọi lại vì JSON hỏng; 2 đoạn vẫn hỏng: *Frank Vennes*, *Bambi Hall*); 5,5 triệu token đầu ra (≈3,5 USD giờ thấp điểm).
 - **10.530 nút, 12.361 cạnh**; thành phần liên thông lớn nhất 80% số nút; 591 thành phần; 89 nút cô lập. Cờ nghi ngờ nguồn 6,5%. Độ phủ câu bằng chứng 87,4%.
@@ -138,7 +150,7 @@ Agent chỉ nhận **hướng dẫn + câu hỏi**. Đồ thị và văn bản c
 - Nút trung tâm: *film* (121, toàn `instance of`), *United States* (105), *studio album*, *song* → nút "lớp" nối các thực thể không liên quan; là nhiễu thật khi duyệt.
 - **58/149 câu bridge (39%) có 2 đoạn bằng chứng KHÔNG nối nhau trong ≤3 bước** (57 nối trực tiếp, 25 qua 2 bước, 9 qua 3 bước). Nguyên nhân (đọc tự động): 26 — câu có nhắc thực thể cầu nối nhưng không trích được cạnh tới nó; 20 — câu không nhắc đúng tên (bí danh, cách gọi khác, nối qua thực thể thứ ba); 12 — có trích thực thể nhưng cạnh không chạm nút chủ thể của đoạn.
   → Với ~39% câu bridge, agent **không thể** trả lời chỉ bằng duyệt đồ thị: phải đọc văn bản rồi nhảy tới thực thể cầu nối. Đây cũng là chỗ tự nhiên để agent **ghi cạnh còn thiếu** (`AGENT_TEXT`) — điều kiện để quan sát lỗi bền vững. Nhãn Traversal (D8) cho các câu này chỉ có một phần đường đi.
-- Hệ quả cho log (D11.3, 2026-10-24): mỗi `start_at` ghi thêm `start_grounded_by` = `question` | `edges_seen` | `text_read` | `null`. Chỉ `null` (tên chưa từng xuất hiện trong những gì agent đã thấy) mới là nhảy nhờ trí nhớ model; nhảy theo tên vừa đọc trong văn bản là hợp lệ khi đồ thị thiếu cạnh. Tổng kết có `starts_ungrounded`.
+- Hệ quả cho log (D11.3, 2026-10-24; từ D14 luôn = `question`): mỗi `start_at` ghi thêm `start_grounded_by` = `question` | `edges_seen` | `text_read` | `null`. Chỉ `null` (tên chưa từng xuất hiện trong những gì agent đã thấy) mới là nhảy nhờ trí nhớ model; nhảy theo tên vừa đọc trong văn bản là hợp lệ khi đồ thị thiếu cạnh. Tổng kết có `starts_ungrounded`.
 
 ## Quan sát từ baseline-v1 (2026-10-17)
 - Lỗi code đã sửa: tham số `title` của `read_paragraph` bị proxy/Gemini làm rơi (đổi thành `paragraph`); câu trả lời rỗng bị coi là đáp án (giờ nhắc tối đa 2 lần); cờ nghi ngờ nguồn báo nhầm khi đại từ ở đuôi bộ ba.
@@ -160,7 +172,7 @@ Agent chỉ nhận **hướng dẫn + câu hỏi**. Đồ thị và văn bản c
 | # | Vấn đề | Mặc định tạm |
 |---|---|---|
 | O1 | Câu hỏi tiếp theo (D9) tạo bằng tay hay LLM | Tự viết tay cho 20 câu đầu |
-| O2 | Bộ công cụ của agent + giới hạn | `search_nodes`, `start_at` + `follow_edge` (qua traversal_gate), `get_edges` (nút hiện tại), `read_paragraph`, `add_edge` (qua construction_gate), `answer`; tối đa 6 `follow_edge`, 2 đoạn văn (D10), 20 lần gọi công cụ, 8 `add_edge` ở bước bộ nhớ (D11) |
+| O2 | Bộ công cụ của agent + giới hạn | `search_nodes`, `start_at` (chỉ thực thể trong câu hỏi) + `follow_edge` (qua traversal_gate), `get_edges` (nút hiện tại), `read_paragraph`, `add_edge` (qua construction_gate), `answer`; tối đa 8 `follow_edge`, 2 đoạn văn (D10), 25 lần gọi công cụ, 8 `add_edge` ở bước bộ nhớ (D11, D14) |
 | O3 | Model | **Đã chốt** (D2): `deepseek-v4.1-flash` qua OpenCode Go. baseline-v1/v2 đã chạy bằng `gemini-3.8-flash` qua proxy (ghi trong `run.json`) |
 | O4 | Agent được ghi những suy diễn nào (vd. cạnh tắt 2 bước) | Cho ghi tự do để quan sát; có bước cập nhật bộ nhớ bắt buộc hỏi (D11.4) |
 | O6 | Có chủ động xoá bớt cạnh để buộc agent đọc văn bản không | Không; dùng độ thiếu tự nhiên của trích xuất, xem lại sau khi đọc trace |
@@ -184,6 +196,8 @@ Agent chỉ nhận **hướng dẫn + câu hỏi**. Đồ thị và văn bản c
 - [ ] `smoke_llm.py`
 - [x] `build_shared_kg.py --pilot 100 --per-call 8 --workers 4` → D13: không gộp
 - [x] `build_shared_kg.py --force --workers 8` → đồ thị chung (xem mục Quan sát: đồ thị chung)
-- [ ] `run_agent.py --run-name shared-v1-try --graph data/interim/shared/graph.json --limit 5` (đo thời gian/câu)
-- [ ] `run_agent.py --run-name shared-v1 --graph data/interim/shared/graph.json`
+- [x] `run_agent.py --run-name shared-v1-try --graph data/interim/shared/graph.json --limit 5` (agent-v4) → 0 `follow_edge`, dẫn tới D14
+- [x] Code D14 (agent-v5); kiểm thử offline đạt
+- [ ] `run_agent.py --run-name shared-v2-try --graph data/interim/shared/graph.json --limit 5` → kiểm tra có `follow_edge`
+- [ ] `run_agent.py --run-name shared-v2 --graph data/interim/shared/graph.json`
 - [ ] Đọc trace: lỗi tự nhiên trong duyệt/ghi; câu nào đi qua cạnh do câu trước ghi, cạnh đó đúng hay sai
