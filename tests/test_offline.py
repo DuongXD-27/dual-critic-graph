@@ -322,12 +322,14 @@ def check_shared():
                                   ("start_at", {"node": nodes["Adriana Trigiani"]}),
                                   ("follow_edge", {"edge_id": e_new}),
                                   ("answer", {"answer": "Greenwich Village"})]},
-                            probes={"Adriana Trigiani": {"answerable": True, "question": pq, "answer": "Greenwich Village"}})
+                            probes={"Adriana Trigiani": {"answerable": True, "question": pq, "answer": "Greenwich Village",
+                                                 "same_as_T": True}})
         rdir = tmp / "runs" / "s"
         st = probe_writes.main(["gen", "--run", str(rdir), "--graph", str(sdir / "graph.json")], llm=probe_llm)
         assert st == {"ok": 1}, st
         pr = read_json(rdir / "probes.json")["probes"][0]
         assert pr["edge_id"] == e_new and pr["source_sentences"][0]["title"] == "Adriana Trigiani"
+        assert pr["answers"] == ["Greenwich Village"]
         sm = probe_writes.main(["run", "--run", str(rdir), "--graph", str(sdir / "graph.json"), "--workers", "2"],
                                llm=probe_llm)
         assert sm["n_probes"] == 1 and sm["after_used_probe_edge"] == 1 and sm["correct_after"] == 1
@@ -345,6 +347,11 @@ def check_shared():
         assert probe_writes.check({"answerable": True, "question": pq, "answer": "Manhattan"},
                                   "Adriana Trigiani", txt) == "answer_not_in_text"
         assert probe_writes.check({"answerable": False}, "Adriana Trigiani", txt) == "not_answerable"
+        assert probe_writes.check({"answerable": True, "question": "What city is she based in, Adriana Trigiani?",
+                                   "answer": "New York City"}, "Adriana Trigiani", txt) == "pronoun_before_head"
+        assert probe_writes.check({"answerable": True, "question": "Where does Adriana Trigiani live?",
+                                   "answer": "is based in Greenwich Village, New York City"},
+                                  "Adriana Trigiani", txt) == "answer_too_long"
         print("Câu hỏi dò OK")
 
 

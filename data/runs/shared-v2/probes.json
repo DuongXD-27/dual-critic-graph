@@ -1,0 +1,2765 @@
+{
+  "probe_version": "probe-v1",
+  "llm": {
+    "model": "deepseek-v4.1-flash",
+    "base_url": "https://opencode.ai/inference/go/openai/v1",
+    "temperature": 0.0
+  },
+  "created": "2026-10-25T13:12:38",
+  "stats": {
+    "not_answerable": 9,
+    "ok": 94,
+    "answer_in_question": 1,
+    "no_source_text": 1
+  },
+  "probes": [
+    {
+      "probe_id": "p_e12361",
+      "edge_id": "e12361",
+      "created_by": "5abf63f15542997ec76fd3ea:main",
+      "phase": "memory",
+      "write": {
+        "operation": "ADD_EDGE",
+        "head": "Alexander Kerensky",
+        "relation": "P607",
+        "relation_name": "conflict",
+        "tail": "Russian Civil War",
+        "origin": "AGENT_DERIVED"
+      },
+      "source_sentences": [
+        {
+          "title": "Alexander Kerensky",
+          "sid": 0,
+          "text": "Alexander Fyodorovich Kerensky (Russian: Алекса́ндр Фёдорович Ке́ренский , ] ; 4 May 1881 – 11 June 1970) was a Russian lawyer and key political figure in the Russian Revolution of 1917."
+        },
+        {
+          "title": "Russian Civil War",
+          "sid": 2,
+          "text": "In addition, rival militant socialists and nonideological Green armies fought against both the Bolsheviks and the Whites."
+        }
+      ],
+      "question": null,
+      "answer": null,
+      "status": "not_answerable"
+    },
+    {
+      "probe_id": "p_e12362",
+      "edge_id": "e12362",
+      "created_by": "5a8595a85542992a431d1b48:main",
+      "phase": "answer",
+      "write": {
+        "operation": "ADD_EDGE",
+        "head": "Billy McFarland (entrepreneur)",
+        "relation": "P800",
+        "relation_name": "notable work",
+        "tail": "Fyre Festival",
+        "origin": "AGENT_TEXT"
+      },
+      "source_sentences": [
+        {
+          "title": "Billy McFarland (entrepreneur)",
+          "sid": 1,
+          "text": "McFarland was placed under arrest on June 30, 2017, and charged with wire fraud in Manhattan federal court related to the organization of the Fyre Festival to promote the Fyre music booking app."
+        },
+        {
+          "title": "Billy McFarland (entrepreneur)",
+          "sid": 0,
+          "text": "William Z. McFarland (born 1991) is an American entrepreneur who was the founder and CEO of three companies: Spling, Magnises, and Fyre Media."
+        }
+      ],
+      "question": "What festival was Billy McFarland charged with wire fraud in connection with organizing?",
+      "answer": "Fyre Festival",
+      "status": "ok",
+      "attempts": 1
+    },
+    {
+      "probe_id": "p_e12363",
+      "edge_id": "e12363",
+      "created_by": "5ae73d235542991e8301cc29:main",
+      "phase": "memory",
+      "write": {
+        "operation": "ADD_EDGE",
+        "head": "My Cousin Rachel (2017 film)",
+        "relation": "P272",
+        "relation_name": "production company",
+        "tail": "Free Range Films",
+        "origin": "AGENT_TEXT"
+      },
+      "source_sentences": [
+        {
+          "title": "Kevin Loader",
+          "sid": 1,
+          "text": "Since 1996, he and co-owner Roger Michell have run a London-based production company, Free Range Films, through which the pair have made several feature films directed by Michell, including \"The Mother\", \"Enduring Love\", \"Venus\", \"Hyde Park on Hudson\", and \"Le Week-end\"."
+        },
+        {
+          "title": "Kevin Loader",
+          "sid": 2,
+          "text": "Their most recent film is an adaptation by Michell of Daphne Du Maurier's \"My Cousin Rachel\"."
+        }
+      ],
+      "question": "Which London-based production company co-owned by Roger Michell made an adaptation of My Cousin Rachel as its most recent film?",
+      "answer": "Free Range Films",
+      "status": "ok",
+      "attempts": 1
+    },
+    {
+      "probe_id": "p_e12364",
+      "edge_id": "e12364",
+      "created_by": "5ab42d6055429942dd415eb0:main",
+      "phase": "memory",
+      "write": {
+        "operation": "ADD_EDGE",
+        "head": "2012 Cleveland Browns season",
+        "relation": "P488",
+        "relation_name": "chairperson",
+        "tail": "Mike Holmgren",
+        "origin": "AGENT_TEXT"
+      },
+      "source_sentences": [
+        {
+          "title": "2012 Cleveland Browns season",
+          "sid": 3,
+          "text": "The 2012 season was the third season under the leadership of team president Mike Holmgren and general manager Tom Heckert and the second season under head coach Pat Shurmur."
+        }
+      ],
+      "question": "Who was the team president during the 2012 Cleveland Browns season?",
+      "answer": "Mike Holmgren",
+      "status": "ok",
+      "attempts": 1
+    },
+    {
+      "probe_id": "p_e12365",
+      "edge_id": "e12365",
+      "created_by": "5a7b88b45542997c3ec97201:main",
+      "phase": "answer",
+      "write": {
+        "operation": "ADD_EDGE",
+        "head": "Damon Stoudamire",
+        "relation": "P3373",
+        "relation_name": "sibling",
+        "tail": "Terrence Jones",
+        "origin": "AGENT_TEXT"
+      },
+      "source_sentences": [
+        {
+          "title": "Damon Stoudamire",
+          "sid": 3,
+          "text": "He is the cousin of former Arizona Wildcats standout Salim Stoudamire and current NBA player Terrence Jones."
+        }
+      ],
+      "question": "Damon Stoudamire is the cousin of which current NBA player?",
+      "answer": "Terrence Jones",
+      "status": "ok",
+      "attempts": 1
+    },
+    {
+      "probe_id": "p_e12366",
+      "edge_id": "e12366",
+      "created_by": "5ac07327554299012d1db5f2:main",
+      "phase": "memory",
+      "write": {
+        "operation": "ADD_EDGE",
+        "head": "Colin Kaepernick",
+        "relation": "P31",
+        "relation_name": "instance of",
+        "tail": "American football quarterback",
+        "origin": "AGENT_TEXT"
+      },
+      "source_sentences": [
+        {
+          "title": "Colin Kaepernick",
+          "sid": 0,
+          "text": "Colin Rand Kaepernick ( ; born November 3, 1987) is an American football quarterback who is currently a free agent."
+        }
+      ],
+      "question": "What is Colin Kaepernick?",
+      "answer": "American football quarterback",
+      "status": "ok",
+      "attempts": 1
+    },
+    {
+      "probe_id": "p_e12367",
+      "edge_id": "e12367",
+      "created_by": "5abe765a55429976d4830b1f:main",
+      "phase": "memory",
+      "write": {
+        "operation": "ADD_EDGE",
+        "head": "2016 Rio de Janeiro Olympics",
+        "relation": "P166",
+        "relation_name": "award received",
+        "tail": "silver medal",
+        "origin": "AGENT_TEXT"
+      },
+      "source_sentences": [
+        {
+          "title": "Angelique Kerber career statistics",
+          "sid": 2,
+          "text": "She was also the runner-up at the 2016 Wimbledon Championships and a Silver medalist at the 2016 Rio de Janeiro Olympics."
+        }
+      ],
+      "question": "What color of medal did she win at the 2016 Rio de Janeiro Olympics?",
+      "answer": "Silver",
+      "status": "ok",
+      "attempts": 1
+    },
+    {
+      "probe_id": "p_e12368",
+      "edge_id": "e12368",
+      "created_by": "5abe765a55429976d4830b1f:main",
+      "phase": "memory",
+      "write": {
+        "operation": "ADD_EDGE",
+        "head": "2004 Summer Olympics",
+        "relation": "P166",
+        "relation_name": "award received",
+        "tail": "silver medal",
+        "origin": "AGENT_TEXT"
+      },
+      "source_sentences": [
+        {
+          "title": "Amélie Mauresmo",
+          "sid": 1,
+          "text": "Mauresmo won two Grand Slam singles titles at the Australian Open and at Wimbledon, and also won a Silver Medal at the 2004 Summer Olympics."
+        }
+      ],
+      "question": "What did Mauresmo win at the 2004 Summer Olympics?",
+      "answer": "Silver Medal",
+      "status": "ok",
+      "attempts": 1
+    },
+    {
+      "probe_id": "p_e12369",
+      "edge_id": "e12369",
+      "created_by": "5ac289ff5542996366519a02:main",
+      "phase": "memory",
+      "write": {
+        "operation": "ADD_EDGE",
+        "head": "Marsilea",
+        "relation": "P31",
+        "relation_name": "instance of",
+        "tail": "genus",
+        "origin": "AGENT_TEXT"
+      },
+      "source_sentences": [
+        {
+          "title": "Marsilea",
+          "sid": 0,
+          "text": "Marsilea is a genus of approximately 65 species of aquatic ferns of the family Marsileaceae."
+        }
+      ],
+      "question": "What taxonomic rank does Marsilea have?",
+      "answer": "genus",
+      "status": "ok",
+      "attempts": 1
+    },
+    {
+      "probe_id": "p_e12370",
+      "edge_id": "e12370",
+      "created_by": "5ae40b2b55429970de88d8b3:main",
+      "phase": "memory",
+      "write": {
+        "operation": "ADD_EDGE",
+        "head": "California Polytechnic State University",
+        "relation": "P31",
+        "relation_name": "instance of",
+        "tail": "vocational high school",
+        "origin": "AGENT_TEXT"
+      },
+      "source_sentences": [
+        {
+          "title": "California Polytechnic State University",
+          "sid": 1,
+          "text": "Founded in 1901 as a vocational high school, it is currently one of only two polytechnic universities in the 23-member California State University system."
+        }
+      ],
+      "question": "What was California Polytechnic State University founded as in 1901?",
+      "answer": "a vocational high school",
+      "status": "ok",
+      "attempts": 1
+    },
+    {
+      "probe_id": "p_e12371",
+      "edge_id": "e12371",
+      "created_by": "5a8dfae55542995085b3736b:main",
+      "phase": "memory",
+      "write": {
+        "operation": "ADD_EDGE",
+        "head": "Cranium (board game)",
+        "relation": "P31",
+        "relation_name": "instance of",
+        "tail": "board game",
+        "origin": "AGENT_DERIVED"
+      },
+      "source_sentences": [
+        {
+          "title": "Cranium (board game)",
+          "sid": 0,
+          "text": "Cranium is a party game created by Whit Alexander and Richard Tait in 1998, after Richard spent a weekend playing games with another family and recognized the need for a game involving a variety of skills."
+        },
+        {
+          "title": "Twin Tin Bots",
+          "sid": 0,
+          "text": "Twin Tin Bots is a 2014 board game designed by Philippe Keyaerts and published by Flatlined Games."
+        }
+      ],
+      "question": null,
+      "answer": null,
+      "status": "not_answerable"
+    },
+    {
+      "probe_id": "p_e12372",
+      "edge_id": "e12372",
+      "created_by": "5a8dfae55542995085b3736b:main",
+      "phase": "memory",
+      "write": {
+        "operation": "ADD_EDGE",
+        "head": "party game",
+        "relation": "P279",
+        "relation_name": "subclass of",
+        "tail": "board game",
+        "origin": "AGENT_DERIVED"
+      },
+      "source_sentences": [
+        {
+          "title": "Cranium (board game)",
+          "sid": 0,
+          "text": "Cranium is a party game created by Whit Alexander and Richard Tait in 1998, after Richard spent a weekend playing games with another family and recognized the need for a game involving a variety of skills."
+        },
+        {
+          "title": "Twin Tin Bots",
+          "sid": 0,
+          "text": "Twin Tin Bots is a 2014 board game designed by Philippe Keyaerts and published by Flatlined Games."
+        }
+      ],
+      "question": null,
+      "answer": null,
+      "status": "not_answerable"
+    },
+    {
+      "probe_id": "p_e12373",
+      "edge_id": "e12373",
+      "created_by": "5a8b515e55429971feec46bb:main",
+      "phase": "answer",
+      "write": {
+        "operation": "ADD_EDGE",
+        "head": "Tyler Bunch",
+        "relation": "P161",
+        "relation_name": "cast member",
+        "tail": "Red Dead Redemption",
+        "origin": "AGENT_TEXT"
+      },
+      "source_sentences": [
+        {
+          "title": "Tyler Bunch",
+          "sid": 2,
+          "text": "He has acted in a few Off Broadway productions and has made appearances on American television shows such as \"\", \"Person of Interest\" and \"\" and video games such as \"Grand Theft Auto V\", \"Red Dead Redemption\", \"\" and \"Red Dead Revolver\"."
+        }
+      ],
+      "question": "Tyler Bunch has appeared in video games such as Grand Theft Auto and Red Dead Revolver; what other game title is listed among those appearances?",
+      "answer": "Red Dead Redemption",
+      "status": "ok",
+      "attempts": 1
+    },
+    {
+      "probe_id": "p_e12374",
+      "edge_id": "e12374",
+      "created_by": "5abd920e55429924427fd05d:main",
+      "phase": "memory",
+      "write": {
+        "operation": "ADD_EDGE",
+        "head": "Fred Niblo",
+        "relation": "P27",
+        "relation_name": "country of citizenship",
+        "tail": "American",
+        "origin": "AGENT_TEXT"
+      },
+      "source_sentences": [
+        {
+          "title": "Fred Niblo",
+          "sid": 0,
+          "text": "Fred Niblo (January 6, 1874 – November 11, 1948) was an American pioneer film actor, director and producer."
+        }
+      ],
+      "question": "What was Fred Niblo's nationality?",
+      "answer": "American",
+      "status": "ok",
+      "attempts": 1
+    },
+    {
+      "probe_id": "p_e12375",
+      "edge_id": "e12375",
+      "created_by": "5ab295eb554299194fa93412:main",
+      "phase": "memory",
+      "write": {
+        "operation": "ADD_EDGE",
+        "head": "Reinhold Ewald",
+        "relation": "P27",
+        "relation_name": "country of citizenship",
+        "tail": "Germany",
+        "origin": "AGENT_TEXT"
+      },
+      "source_sentences": [
+        {
+          "title": "Reinhold Ewald",
+          "sid": 0,
+          "text": "Dr. Reinhold Ewald (born December 18, 1956) is a German physicist and ESA astronaut."
+        }
+      ],
+      "question": "What nationality is Reinhold Ewald?",
+      "answer": "German",
+      "status": "ok",
+      "attempts": 1
+    },
+    {
+      "probe_id": "p_e12376",
+      "edge_id": "e12376",
+      "created_by": "5ab295eb554299194fa93412:main",
+      "phase": "memory",
+      "write": {
+        "operation": "ADD_EDGE",
+        "head": "Ernst Messerschmid",
+        "relation": "P27",
+        "relation_name": "country of citizenship",
+        "tail": "Germany",
+        "origin": "AGENT_TEXT"
+      },
+      "source_sentences": [
+        {
+          "title": "Ernst Messerschmid",
+          "sid": 0,
+          "text": "Prof. Dr. Ernst Willi Messerschmid (born May 21, 1945) is a German physicist and former astronaut."
+        }
+      ],
+      "question": "What nationality is Ernst Messerschmid?",
+      "answer": "German",
+      "status": "ok",
+      "attempts": 1
+    },
+    {
+      "probe_id": "p_e12377",
+      "edge_id": "e12377",
+      "created_by": "5ae5db98554299546bf82fa6:main",
+      "phase": "answer",
+      "write": {
+        "operation": "ADD_EDGE",
+        "head": "Shane and Friends",
+        "relation": "P161",
+        "relation_name": "cast member",
+        "tail": "Joey Graceffa",
+        "origin": "AGENT_TEXT"
+      },
+      "source_sentences": [
+        {
+          "title": "Shane and Friends",
+          "sid": 3,
+          "text": "They also interview various celebrities such as Jennette McCurdy, Jamie Kennedy, Eugenia Cooney, Joey Graceffa, CupcakKe, Aislinn Paul, Chris Crocker, Dita von Teese, and Farrah Abraham."
+        }
+      ],
+      "question": "Which celebrity does Shane and Friends interview immediately after Eugenia Cooney in its list of interviewees?",
+      "answer": "Joey Graceffa",
+      "status": "ok",
+      "attempts": 1
+    },
+    {
+      "probe_id": "p_e12378",
+      "edge_id": "e12378",
+      "created_by": "5ae5db98554299546bf82fa6:main",
+      "phase": "memory",
+      "write": {
+        "operation": "ADD_EDGE",
+        "head": "Joey Graceffa",
+        "relation": "P31",
+        "relation_name": "instance of",
+        "tail": "YouTube personality",
+        "origin": "AGENT_TEXT"
+      },
+      "source_sentences": [
+        {
+          "title": "Joey Graceffa",
+          "sid": 0,
+          "text": "Joseph Michael Graceffa ( ; born May 16, 1991) is an American YouTube personality, actor, author, producer, and singer."
+        }
+      ],
+      "question": "What is Joey Graceffa's occupation?",
+      "answer": "YouTube personality",
+      "status": "ok",
+      "attempts": 1
+    },
+    {
+      "probe_id": "p_e12379",
+      "edge_id": "e12379",
+      "created_by": "5ae5db98554299546bf82fa6:main",
+      "phase": "memory",
+      "write": {
+        "operation": "ADD_EDGE",
+        "head": "Joey Graceffa",
+        "relation": "P27",
+        "relation_name": "country of citizenship",
+        "tail": "United States",
+        "origin": "AGENT_TEXT"
+      },
+      "source_sentences": [
+        {
+          "title": "Joey Graceffa",
+          "sid": 0,
+          "text": "Joseph Michael Graceffa ( ; born May 16, 1991) is an American YouTube personality, actor, author, producer, and singer."
+        }
+      ],
+      "question": "What nationality is Joey Graceffa?",
+      "answer": "American",
+      "status": "ok",
+      "attempts": 1
+    },
+    {
+      "probe_id": "p_e12380",
+      "edge_id": "e12380",
+      "created_by": "5ae6233c5542992ae0d1623e:main",
+      "phase": "memory",
+      "write": {
+        "operation": "ADD_EDGE",
+        "head": "Thomas Boutflower Bennett",
+        "relation": "P39",
+        "relation_name": "position held",
+        "tail": "schoolmaster",
+        "origin": "AGENT_TEXT"
+      },
+      "source_sentences": [
+        {
+          "title": "Thomas Boutflower Bennett",
+          "sid": 0,
+          "text": "Thomas Boutflower Bennett (1808- 14 September 1894) was an early colonist of South Australia, remembered as a schoolmaster at J. L. Young's Adelaide Educational Institution and at Saint Peter's College."
+        }
+      ],
+      "question": "What role is Thomas Boutflower Bennett remembered for at J. L. Young's Adelaide Educational Institution and Saint Peter's College?",
+      "answer": "schoolmaster",
+      "status": "ok",
+      "attempts": 1
+    },
+    {
+      "probe_id": "p_e12381",
+      "edge_id": "e12381",
+      "created_by": "5a8ba3ff55429971feec4744:main",
+      "phase": "answer",
+      "write": {
+        "operation": "ADD_EDGE",
+        "head": "Stokely Webster",
+        "relation": "P276",
+        "relation_name": "location",
+        "tail": "Gracie Mansion",
+        "origin": "AGENT_TEXT"
+      },
+      "source_sentences": [
+        {
+          "title": "Stokely Webster",
+          "sid": 1,
+          "text": "His paintings can be found in the permanent collections of many museums, including the Metropolitan Museum of Art in New York, the National Museum of American Art, the Smithsonian Institution, the White House, Gracie Mansion in New York, the Senate Office Building, and the Museum of the City of New York."
+        }
+      ],
+      "question": "In what New York residence are Stokely Webster's paintings included in the permanent collection?",
+      "answer": "Gracie Mansion",
+      "status": "ok",
+      "attempts": 1
+    },
+    {
+      "probe_id": "p_e12382",
+      "edge_id": "e12382",
+      "created_by": "5a8ba3ff55429971feec4744:main",
+      "phase": "memory",
+      "write": {
+        "operation": "ADD_EDGE",
+        "head": "Mayor of New York City",
+        "relation": "P551",
+        "relation_name": "residence",
+        "tail": "Gracie Mansion",
+        "origin": "AGENT_TEXT"
+      },
+      "source_sentences": [
+        {
+          "title": "Gracie Mansion",
+          "sid": 0,
+          "text": "Archibald Gracie Mansion (commonly called Gracie Mansion) is the official residence of the Mayor of the City of New York."
+        }
+      ],
+      "question": "What is the official residence of the Mayor of New York City?",
+      "answer": "Archibald Gracie Mansion",
+      "status": "ok",
+      "attempts": 1
+    },
+    {
+      "probe_id": "p_e12383",
+      "edge_id": "e12383",
+      "created_by": "5a7319e755429901807daf86:main",
+      "phase": "memory",
+      "write": {
+        "operation": "ADD_EDGE",
+        "head": "Case Keenum",
+        "relation": "P39",
+        "relation_name": "position held",
+        "tail": "quarterback",
+        "origin": "AGENT_TEXT"
+      },
+      "source_sentences": [
+        {
+          "title": "Case Keenum",
+          "sid": 0,
+          "text": "Casey Austin Keenum (born February 17, 1988) is an American football quarterback for the Minnesota Vikings of the National Football League (NFL)."
+        }
+      ],
+      "question": "What position does Case Keenum play?",
+      "answer": "quarterback",
+      "status": "ok",
+      "attempts": 1
+    },
+    {
+      "probe_id": "p_e12384",
+      "edge_id": "e12384",
+      "created_by": "5a7d61775542991319bc93b9:main",
+      "phase": "answer",
+      "write": {
+        "operation": "ADD_EDGE",
+        "head": "Siege of Bharatpur",
+        "relation": "P710",
+        "relation_name": "participant",
+        "tail": "Lord Combermere",
+        "origin": "AGENT_TEXT"
+      },
+      "source_sentences": [
+        {
+          "title": "Siege of Bharatpur",
+          "sid": 1,
+          "text": "British troops under Lord Combermere initially surrounded the state's capital until on 18January 1826 its fortress was stormed and captured."
+        }
+      ],
+      "question": "Who commanded the British troops during the Siege of Bharatpur?",
+      "answer": "Lord Combermere",
+      "status": "ok",
+      "attempts": 1
+    },
+    {
+      "probe_id": "p_e12385",
+      "edge_id": "e12385",
+      "created_by": "5a89f68f5542992e4fca84b6:main",
+      "phase": "memory",
+      "write": {
+        "operation": "ADD_EDGE",
+        "head": "Stapleton Cotton, 1st Viscount Combermere",
+        "relation": "P39",
+        "relation_name": "position held",
+        "tail": "Governor of Sheerness",
+        "origin": "AGENT_TEXT"
+      },
+      "source_sentences": [
+        {
+          "title": "Governor of Sheerness",
+          "sid": 3,
+          "text": "The post of Governor was abolished in 1852, when the last governor, Lord Combermere, accepted office as the Constable of the Tower."
+        },
+        {
+          "title": "Stapleton Cotton, 1st Viscount Combermere",
+          "sid": 0,
+          "text": "Field Marshal Stapleton Cotton, 1st Viscount Combermere {'1': \", '2': \", '3': \", '4': \"} (14 November 1773 – 21 February 1865), was a British Army officer, diplomat and politician."
+        }
+      ],
+      "question": "What was abolished in 1852 when Stapleton Cotton, 1st Viscount Combermere accepted office as the Constable of the Tower?",
+      "answer": "The post of Governor",
+      "status": "ok",
+      "attempts": 1
+    },
+    {
+      "probe_id": "p_e12386",
+      "edge_id": "e12386",
+      "created_by": "5a89f68f5542992e4fca84b6:main",
+      "phase": "memory",
+      "write": {
+        "operation": "ADD_EDGE",
+        "head": "Stapleton Cotton, 1st Viscount Combermere",
+        "relation": "P241",
+        "relation_name": "military branch",
+        "tail": "British Army",
+        "origin": "AGENT_TEXT"
+      },
+      "source_sentences": [
+        {
+          "title": "Stapleton Cotton, 1st Viscount Combermere",
+          "sid": 0,
+          "text": "Field Marshal Stapleton Cotton, 1st Viscount Combermere {'1': \", '2': \", '3': \", '4': \"} (14 November 1773 – 21 February 1865), was a British Army officer, diplomat and politician."
+        }
+      ],
+      "question": "What military position did Stapleton Cotton, 1st Viscount Combermere hold?",
+      "answer": "British Army officer",
+      "status": "ok",
+      "attempts": 1
+    },
+    {
+      "probe_id": "p_e12387",
+      "edge_id": "e12387",
+      "created_by": "5a89f68f5542992e4fca84b6:main",
+      "phase": "memory",
+      "write": {
+        "operation": "ADD_EDGE",
+        "head": "Governor of Sheerness",
+        "relation": "P31",
+        "relation_name": "instance of",
+        "tail": "military officer",
+        "origin": "AGENT_TEXT"
+      },
+      "source_sentences": [
+        {
+          "title": "Governor of Sheerness",
+          "sid": 0,
+          "text": "The Governor of Sheerness Fort and the Isle of Sheppey was a military officer who commanded the fortifications at Sheerness, on the Isle of Sheppey, part of the defences of the Medway estuary."
+        }
+      ],
+      "question": "What was the Governor of Sheerness?",
+      "answer": "a military officer",
+      "status": "ok",
+      "attempts": 1
+    },
+    {
+      "probe_id": "p_e12388",
+      "edge_id": "e12388",
+      "created_by": "5ac2583b55429951e9e68565:main",
+      "phase": "memory",
+      "write": {
+        "operation": "ADD_EDGE",
+        "head": "Brian G. Hutton",
+        "relation": "P27",
+        "relation_name": "country of citizenship",
+        "tail": "United States",
+        "origin": "AGENT_TEXT"
+      },
+      "source_sentences": [
+        {
+          "title": "Brian G. Hutton",
+          "sid": 0,
+          "text": "Brian Geoffrey Hutton (January 1, 1935 – August 19, 2014) was an American actor and film director whose most notable credits are for the action films \"Where Eagles Dare\" (1968) and \"Kelly's Heroes\" (1970)."
+        }
+      ],
+      "question": "What nationality is Brian G. Hutton?",
+      "answer": "American",
+      "status": "ok",
+      "attempts": 1
+    },
+    {
+      "probe_id": "p_e12389",
+      "edge_id": "e12389",
+      "created_by": "5ab4147a5542996a3a969f1e:main",
+      "phase": "memory",
+      "write": {
+        "operation": "ADD_EDGE",
+        "head": "Stephen Curry",
+        "relation": "P463",
+        "relation_name": "member of",
+        "tail": "50–40–90 club",
+        "origin": "AGENT_TEXT"
+      },
+      "source_sentences": [
+        {
+          "title": "Stephen Curry",
+          "sid": 3,
+          "text": "The following season, he became the first player in NBA history to be elected MVP by a unanimous vote and to lead the league in scoring while shooting above 50–40–90."
+        }
+      ],
+      "question": "While leading the league in scoring, Stephen Curry shot above what three-category shooting marks?",
+      "answer": "50–40–90",
+      "status": "ok",
+      "attempts": 1
+    },
+    {
+      "probe_id": "p_e12390",
+      "edge_id": "e12390",
+      "created_by": "5ac41b9e5542995c82c4acc4:main",
+      "phase": "memory",
+      "write": {
+        "operation": "ADD_EDGE",
+        "head": "flat-leaved vanilla",
+        "relation": "P1056",
+        "relation_name": "product or material produced",
+        "tail": "commercial vanilla flavoring",
+        "origin": "AGENT_TEXT"
+      },
+      "source_sentences": [
+        {
+          "title": "Vanilla",
+          "sid": 0,
+          "text": "Vanilla is a flavoring derived from orchids of the genus \"Vanilla\", primarily from the Mexican species, flat-leaved vanilla (\"V. planifolia\")."
+        }
+      ],
+      "question": "What is primarily obtained from the Mexican species flat-leaved vanilla?",
+      "answer": "a flavoring",
+      "status": "ok",
+      "attempts": 1
+    },
+    {
+      "probe_id": "p_e12391",
+      "edge_id": "e12391",
+      "created_by": "5ac41b9e5542995c82c4acc4:main",
+      "phase": "memory",
+      "write": {
+        "operation": "ADD_EDGE",
+        "head": "Chamelaucium uncinatum",
+        "relation": "P171",
+        "relation_name": "parent taxon",
+        "tail": "Chamelaucium",
+        "origin": "AGENT_TEXT"
+      },
+      "source_sentences": [
+        {
+          "title": "Chamelaucium",
+          "sid": 2,
+          "text": "The most well-known species is the Geraldton Wax, \"Chamelaucium uncinatum\", which is cultivated widely for its large attractive flowers."
+        }
+      ],
+      "question": "What is Chamelaucium uncinatum described as being the most well-known example of?",
+      "answer": "species",
+      "status": "ok",
+      "attempts": 1
+    },
+    {
+      "probe_id": "p_e12392",
+      "edge_id": "e12392",
+      "created_by": "5ac41b9e5542995c82c4acc4:main",
+      "phase": "memory",
+      "write": {
+        "operation": "ADD_EDGE",
+        "head": "commercial vanilla flavoring",
+        "relation": "P171",
+        "relation_name": "parent taxon",
+        "tail": "Vanilla (genus)",
+        "origin": "AGENT_TEXT"
+      },
+      "source_sentences": [
+        {
+          "title": "Vanilla",
+          "sid": 0,
+          "text": "Vanilla is a flavoring derived from orchids of the genus \"Vanilla\", primarily from the Mexican species, flat-leaved vanilla (\"V. planifolia\")."
+        }
+      ],
+      "question": null,
+      "answer": null,
+      "status": "answer_in_question"
+    },
+    {
+      "probe_id": "p_e12393",
+      "edge_id": "e12393",
+      "created_by": "5a75b7bd5542992d0ec05fec:main",
+      "phase": "memory",
+      "write": {
+        "operation": "ADD_EDGE",
+        "head": "Hal B. Wallis",
+        "relation": "P800",
+        "relation_name": "notable work",
+        "tail": "Casablanca",
+        "origin": "AGENT_TEXT"
+      },
+      "source_sentences": [
+        {
+          "title": "Hal B. Wallis",
+          "sid": 1,
+          "text": "He is best remembered for producing \"Casablanca\" (1942) and \"True Grit\" (1969), along with many other major films for Warner Bros. featuring such film stars as Humphrey Bogart, Bette Davis, and Errol Flynn."
+        }
+      ],
+      "question": "For producing which 1942 film is Hal B. Wallis best remembered?",
+      "answer": "Casablanca",
+      "status": "ok",
+      "attempts": 1
+    },
+    {
+      "probe_id": "p_e12394",
+      "edge_id": "e12394",
+      "created_by": "5adc8c545542994734353734:main",
+      "phase": "memory",
+      "write": {
+        "operation": "ADD_EDGE",
+        "head": "Wilco Melissant",
+        "relation": "P39",
+        "relation_name": "position held",
+        "tail": "chairman of Witchhunt Productions",
+        "origin": "AGENT_TEXT"
+      },
+      "source_sentences": [
+        {
+          "title": "Wilco Melissant",
+          "sid": 0,
+          "text": "Wilco Melissant (born December 8, 1968) is a Dutch director who directed various arthouse video productions for Witchhunt Productions, of which he himself is the chairman."
+        }
+      ],
+      "question": "What title does Wilco Melissant hold in the organization for which he directed various arthouse video productions?",
+      "answer": "chairman",
+      "status": "ok",
+      "attempts": 1
+    },
+    {
+      "probe_id": "p_e12395",
+      "edge_id": "e12395",
+      "created_by": "5add433b5542997545bbbd02:main",
+      "phase": "memory",
+      "write": {
+        "operation": "ADD_EDGE",
+        "head": "Thomas Blankenship",
+        "relation": "P1441",
+        "relation_name": "present in work",
+        "tail": "Shohola Falls",
+        "origin": "AGENT_TEXT"
+      },
+      "source_sentences": [
+        {
+          "title": "Shohola Falls",
+          "sid": 1,
+          "text": "The novel imagines the true story of Thomas Blankenship, the young man that Mark Twain reputedly based the character of Huck Finn upon in his novel Adventures of Huckleberry Finn."
+        }
+      ],
+      "question": null,
+      "answer": null,
+      "status": "not_answerable"
+    },
+    {
+      "probe_id": "p_e12396",
+      "edge_id": "e12396",
+      "created_by": "5ade881f5542992fa25da7af:main",
+      "phase": "memory",
+      "write": {
+        "operation": "ADD_EDGE",
+        "head": "Heinrich Scholz",
+        "relation": "P737",
+        "relation_name": "influenced by",
+        "tail": "Alan Turing",
+        "origin": "AGENT_TEXT"
+      },
+      "source_sentences": [
+        {
+          "title": "Heinrich Scholz",
+          "sid": 0,
+          "text": "Heinrich Scholz (] ; December 17, 1884 – December 30, 1956) was a German logician, philosopher, and Protestant theologian who was a peer of Alan Turing, who wrote in his memoirs that he on the inclusion of his essay from 1936 \"On Computable Numbers, with an Application to the Entscheidungsproblem\" [was disappointed that only] two people could have understood it, and would have responded [had he been asked] – Heinrich Scholz and Richard Bevan Braithwaite."
+        }
+      ],
+      "question": "Who was Heinrich Scholz a peer of?",
+      "answer": "Alan Turing",
+      "status": "ok",
+      "attempts": 1
+    },
+    {
+      "probe_id": "p_e12397",
+      "edge_id": "e12397",
+      "created_by": "5ae5a8435542992663a4f208:main",
+      "phase": "answer",
+      "write": {
+        "operation": "ADD_EDGE",
+        "head": "Musschenbroek",
+        "relation": "P27",
+        "relation_name": "country of citizenship",
+        "tail": "Netherlands",
+        "origin": "AGENT_TEXT"
+      },
+      "source_sentences": [
+        {
+          "title": "Tribometer",
+          "sid": 1,
+          "text": "It was invented by the 18th century Dutch scientist Musschenbroek"
+        }
+      ],
+      "question": "What nationality is Musschenbroek described as having?",
+      "answer": "Dutch",
+      "status": "ok",
+      "attempts": 1
+    },
+    {
+      "probe_id": "p_e12398",
+      "edge_id": "e12398",
+      "created_by": "5a729fe55542991f9a20c53b:main",
+      "phase": "memory",
+      "write": {
+        "operation": "ADD_EDGE",
+        "head": "Musschenbroek",
+        "relation": "P170",
+        "relation_name": "creator",
+        "tail": "Leyden jar",
+        "origin": "AGENT_DERIVED"
+      },
+      "source_sentences": [
+        {
+          "title": "Pieter van Musschenbroek",
+          "sid": 2,
+          "text": "He is credited with the invention of the first capacitor in 1746: the Leyden jar."
+        },
+        {
+          "title": "Tribometer",
+          "sid": 1,
+          "text": "It was invented by the 18th century Dutch scientist Musschenbroek"
+        }
+      ],
+      "question": "What is Musschenbroek credited with inventing in 1746?",
+      "answer": "the Leyden jar",
+      "status": "ok",
+      "attempts": 1
+    },
+    {
+      "probe_id": "p_e12399",
+      "edge_id": "e12399",
+      "created_by": "5a729fe55542991f9a20c53b:main",
+      "phase": "memory",
+      "write": {
+        "operation": "ADD_EDGE",
+        "head": "Pieter van Musschenbroek",
+        "relation": "P170",
+        "relation_name": "creator",
+        "tail": "Tribometer",
+        "origin": "AGENT_DERIVED"
+      },
+      "source_sentences": [
+        {
+          "title": "Pieter van Musschenbroek",
+          "sid": 2,
+          "text": "He is credited with the invention of the first capacitor in 1746: the Leyden jar."
+        },
+        {
+          "title": "Tribometer",
+          "sid": 1,
+          "text": "It was invented by the 18th century Dutch scientist Musschenbroek"
+        }
+      ],
+      "question": null,
+      "answer": null,
+      "status": "not_answerable"
+    },
+    {
+      "probe_id": "p_e12400",
+      "edge_id": "e12400",
+      "created_by": "5a84995d5542997b5ce3fee4:main",
+      "phase": "answer",
+      "write": {
+        "operation": "ADD_EDGE",
+        "head": "Gainesville",
+        "relation": "P1376",
+        "relation_name": "capital of",
+        "tail": "Alachua County",
+        "origin": "AGENT_DERIVED"
+      },
+      "source_sentences": [],
+      "question": null,
+      "answer": null,
+      "status": "no_source_text"
+    },
+    {
+      "probe_id": "p_e12401",
+      "edge_id": "e12401",
+      "created_by": "5ae7c5ef5542993210983f44:main",
+      "phase": "memory",
+      "write": {
+        "operation": "ADD_EDGE",
+        "head": "Against Me!",
+        "relation": "P740",
+        "relation_name": "location of formation",
+        "tail": "Gainesville, Florida",
+        "origin": "AGENT_TEXT"
+      },
+      "source_sentences": [
+        {
+          "title": "Don't Lose Touch",
+          "sid": 0,
+          "text": "\"Don't Lose Touch\" is a song by the Gainesville, Florida-based punk rock band Against Me!"
+        }
+      ],
+      "question": "Against Me! is described as a punk rock band based in which city?",
+      "answer": "Gainesville, Florida",
+      "status": "ok",
+      "attempts": 1
+    },
+    {
+      "probe_id": "p_e12402",
+      "edge_id": "e12402",
+      "created_by": "5a78ce5d55429974737f78ac:main",
+      "phase": "memory",
+      "write": {
+        "operation": "ADD_EDGE",
+        "head": "Faxe Bryggeri",
+        "relation": "P1056",
+        "relation_name": "product or material produced",
+        "tail": "soft drink",
+        "origin": "AGENT_TEXT"
+      },
+      "source_sentences": [
+        {
+          "title": "Faxe",
+          "sid": 2,
+          "text": "The town is most known for Faxe Bryggeri, a relatively large brewery producing a range of beer and soft drinks."
+        },
+        {
+          "title": "Faxe",
+          "sid": 1,
+          "text": "It is located in Faxe Municipality in Region Zealand."
+        }
+      ],
+      "question": "What does Faxe Bryggeri produce a range of in addition to beer?",
+      "answer": "soft drinks",
+      "status": "ok",
+      "attempts": 1
+    },
+    {
+      "probe_id": "p_e12403",
+      "edge_id": "e12403",
+      "created_by": "5a78ce5d55429974737f78ac:main",
+      "phase": "memory",
+      "write": {
+        "operation": "ADD_EDGE",
+        "head": "Region Zealand",
+        "relation": "P150",
+        "relation_name": "contains administrative territorial entity",
+        "tail": "Faxe",
+        "origin": "AGENT_DERIVED"
+      },
+      "source_sentences": [
+        {
+          "title": "Faxe",
+          "sid": 1,
+          "text": "It is located in Faxe Municipality in Region Zealand."
+        },
+        {
+          "title": "Faxe",
+          "sid": 0,
+          "text": "Faxe or Fakse is a town on the island of Zealand in eastern Denmark."
+        }
+      ],
+      "question": "Which town is located in a municipality in Region Zealand?",
+      "answer": "Faxe",
+      "status": "ok",
+      "attempts": 1
+    },
+    {
+      "probe_id": "p_e12404",
+      "edge_id": "e12404",
+      "created_by": "5a7d7deb5542995f4f402282:main",
+      "phase": "memory",
+      "write": {
+        "operation": "ADD_EDGE",
+        "head": "Darkhorse",
+        "relation": "P175",
+        "relation_name": "performer",
+        "tail": "Shifty Shellshock",
+        "origin": "AGENT_DERIVED"
+      },
+      "source_sentences": [
+        {
+          "title": "Crazy Town",
+          "sid": 2,
+          "text": "Their follow-up album, \"Darkhorse\" (2002) failed to achieve the same level of success, contributing to the band's break-up in 2003."
+        },
+        {
+          "title": "Shifty Shellshock",
+          "sid": 0,
+          "text": "Seth Brooks Binzer (born August 23, 1974), better known by his stage name Shifty Shellshock, is an American music artist, best known for being a co-founder and front man of the rap rock band Crazy Town, and their hit song \"Butterfly\"."
+        },
+        {
+          "title": "Starry Eyed Surprise",
+          "sid": 2,
+          "text": "It features vocals by Shifty Shellshock of Crazy Town."
+        },
+        {
+          "title": "Happy Love Sick",
+          "sid": 0,
+          "text": "Happy Love Sick is the debut solo album by Shifty Shellshock who is best known as frontman of rap rock band Crazy Town."
+        }
+      ],
+      "question": null,
+      "answer": null,
+      "status": "not_answerable"
+    },
+    {
+      "probe_id": "p_e12405",
+      "edge_id": "e12405",
+      "created_by": "5ab615cf554299488d4d9aa3:main",
+      "phase": "memory",
+      "write": {
+        "operation": "ADD_EDGE",
+        "head": "Dawn Lake",
+        "relation": "P737",
+        "relation_name": "influenced by",
+        "tail": "Lucille Ball",
+        "origin": "AGENT_TEXT"
+      },
+      "source_sentences": [
+        {
+          "title": "Dawn Lake",
+          "sid": 1,
+          "text": "Bert Newton described her as \"our greatest comedienne - Australia's Lucille Ball\"."
+        }
+      ],
+      "question": "Bert Newton described Dawn Lake as Australia's version of whom?",
+      "answer": "Lucille Ball",
+      "status": "ok",
+      "attempts": 1
+    },
+    {
+      "probe_id": "p_e12406",
+      "edge_id": "e12406",
+      "created_by": "5ae61bfd5542992663a4f261:main",
+      "phase": "answer",
+      "write": {
+        "operation": "ADD_EDGE",
+        "head": "Jimmy Butler (basketball)",
+        "relation": "P54",
+        "relation_name": "member of sports team",
+        "tail": "Chicago Bulls",
+        "origin": "AGENT_TEXT"
+      },
+      "source_sentences": [
+        {
+          "title": "Jimmy Butler (basketball)",
+          "sid": 2,
+          "text": "He was drafted with the 30th overall pick in the 2011 NBA draft by the Chicago Bulls."
+        }
+      ],
+      "question": "Which team drafted Jimmy Butler with the 30th overall pick in the 2011 NBA draft?",
+      "answer": "Chicago Bulls",
+      "status": "ok",
+      "attempts": 1
+    },
+    {
+      "probe_id": "p_e12407",
+      "edge_id": "e12407",
+      "created_by": "5a7b59115542995eb53be923:main",
+      "phase": "memory",
+      "write": {
+        "operation": "ADD_EDGE",
+        "head": "Pekka Markkanen",
+        "relation": "P40",
+        "relation_name": "child",
+        "tail": "Miikka Markkanen",
+        "origin": "AGENT_TEXT"
+      },
+      "source_sentences": [
+        {
+          "title": "Pekka Markkanen",
+          "sid": 3,
+          "text": "His third son Miikka played also basketball before retiring early due to injuries."
+        }
+      ],
+      "question": "Who is the third son of Pekka Markkanen who played basketball before retiring early due to injuries?",
+      "answer": "Miikka",
+      "status": "ok",
+      "attempts": 1
+    },
+    {
+      "probe_id": "p_e12408",
+      "edge_id": "e12408",
+      "created_by": "5a7b59115542995eb53be923:main",
+      "phase": "memory",
+      "write": {
+        "operation": "ADD_EDGE",
+        "head": "Pekka Markkanen",
+        "relation": "P26",
+        "relation_name": "spouse",
+        "tail": "Riikka Markkanen",
+        "origin": "AGENT_TEXT"
+      },
+      "source_sentences": [
+        {
+          "title": "Pekka Markkanen",
+          "sid": 4,
+          "text": "Markkanen's wife Riikka (née Ellonen) was also a basketball player."
+        }
+      ],
+      "question": "Who was the wife of Pekka Markkanen?",
+      "answer": "Riikka (née Ellonen)",
+      "status": "ok",
+      "attempts": 1
+    },
+    {
+      "probe_id": "p_e12409",
+      "edge_id": "e12409",
+      "created_by": "5a7b59115542995eb53be923:main",
+      "phase": "memory",
+      "write": {
+        "operation": "ADD_EDGE",
+        "head": "Eero Markkanen",
+        "relation": "P3373",
+        "relation_name": "sibling",
+        "tail": "Miikka Markkanen",
+        "origin": "AGENT_DERIVED"
+      },
+      "source_sentences": [
+        {
+          "title": "Pekka Markkanen",
+          "sid": 3,
+          "text": "His third son Miikka played also basketball before retiring early due to injuries."
+        },
+        {
+          "title": "Pekka Markkanen",
+          "sid": 2,
+          "text": "Markkanen is the father of Chicago Bulls basketball player Lauri Markkanen and the AIK football player Eero Markkanen."
+        }
+      ],
+      "question": "Who is the third son of Eero Markkanen's father?",
+      "answer": "Miikka",
+      "status": "ok",
+      "attempts": 1
+    },
+    {
+      "probe_id": "p_e12410",
+      "edge_id": "e12410",
+      "created_by": "5a7b59115542995eb53be923:main",
+      "phase": "memory",
+      "write": {
+        "operation": "ADD_EDGE",
+        "head": "Lauri Markkanen",
+        "relation": "P3373",
+        "relation_name": "sibling",
+        "tail": "Miikka Markkanen",
+        "origin": "AGENT_DERIVED"
+      },
+      "source_sentences": [
+        {
+          "title": "Pekka Markkanen",
+          "sid": 3,
+          "text": "His third son Miikka played also basketball before retiring early due to injuries."
+        },
+        {
+          "title": "Pekka Markkanen",
+          "sid": 2,
+          "text": "Markkanen is the father of Chicago Bulls basketball player Lauri Markkanen and the AIK football player Eero Markkanen."
+        }
+      ],
+      "question": "Who is the third son of the father of Lauri Markkanen?",
+      "answer": "Miikka",
+      "status": "ok",
+      "attempts": 1
+    },
+    {
+      "probe_id": "p_e12411",
+      "edge_id": "e12411",
+      "created_by": "5ab430f655429942dd415eca:main",
+      "phase": "memory",
+      "write": {
+        "operation": "ADD_EDGE",
+        "head": "The Chance of a Lunchtime",
+        "relation": "P58",
+        "relation_name": "screenwriter",
+        "tail": "John Sullivan",
+        "origin": "AGENT_DERIVED"
+      },
+      "source_sentences": [
+        {
+          "title": "The Chance of a Lunchtime",
+          "sid": 0,
+          "text": "\"The Chance of a Lunchtime\" is an episode of the BBC sitcom \"Only Fools and Horses\"."
+        },
+        {
+          "title": "Only Fools and Horses",
+          "sid": 0,
+          "text": "Only Fools and Horses is a British television sitcom created and written by John Sullivan."
+        }
+      ],
+      "question": "Who created and wrote Only Fools and Horses, the British television sitcom that The Chance of a Lunchtime is an episode of?",
+      "answer": "John Sullivan",
+      "status": "ok",
+      "attempts": 1
+    },
+    {
+      "probe_id": "p_e12412",
+      "edge_id": "e12412",
+      "created_by": "5ab430f655429942dd415eca:main",
+      "phase": "memory",
+      "write": {
+        "operation": "ADD_EDGE",
+        "head": "The Chance of a Lunchtime",
+        "relation": "P170",
+        "relation_name": "creator",
+        "tail": "John Sullivan",
+        "origin": "AGENT_DERIVED"
+      },
+      "source_sentences": [
+        {
+          "title": "The Chance of a Lunchtime",
+          "sid": 0,
+          "text": "\"The Chance of a Lunchtime\" is an episode of the BBC sitcom \"Only Fools and Horses\"."
+        },
+        {
+          "title": "Only Fools and Horses",
+          "sid": 0,
+          "text": "Only Fools and Horses is a British television sitcom created and written by John Sullivan."
+        }
+      ],
+      "question": "Who created and wrote Only Fools and Horses, the British television sitcom that The Chance of a Lunchtime is an episode of?",
+      "answer": "John Sullivan",
+      "status": "ok",
+      "attempts": 1
+    },
+    {
+      "probe_id": "p_e12413",
+      "edge_id": "e12413",
+      "created_by": "5a78ed6855429970f5fffdd9:main",
+      "phase": "answer",
+      "write": {
+        "operation": "ADD_EDGE",
+        "head": "Canobie Lake",
+        "relation": "P131",
+        "relation_name": "located in the administrative territorial entity",
+        "tail": "Salem, New Hampshire",
+        "origin": "AGENT_TEXT"
+      },
+      "source_sentences": [
+        {
+          "title": "Canobie Lake",
+          "sid": 3,
+          "text": "The lake is the water supply for the town of Salem, New Hampshire."
+        },
+        {
+          "title": "Canobie Lake",
+          "sid": 0,
+          "text": "Canobie Lake is a 375 acre body of water located in Rockingham County in southern New Hampshire, United States, in the towns of Salem and Windham."
+        }
+      ],
+      "question": "What town is Canobie Lake the water supply for?",
+      "answer": "Salem, New Hampshire",
+      "status": "ok",
+      "attempts": 1
+    },
+    {
+      "probe_id": "p_e12414",
+      "edge_id": "e12414",
+      "created_by": "5a81a2e25542990a1d231e32:main",
+      "phase": "memory",
+      "write": {
+        "operation": "ADD_EDGE",
+        "head": "Roseanne Barr",
+        "relation": "P800",
+        "relation_name": "notable work",
+        "tail": "Roseanne",
+        "origin": "AGENT_TEXT"
+      },
+      "source_sentences": [
+        {
+          "title": "Roseanne Barr",
+          "sid": 2,
+          "text": "Barr began her career in stand-up comedy at clubs before gaining fame for her role in the hit television sitcom \"Roseanne\"."
+        },
+        {
+          "title": "Roseanne Barr",
+          "sid": 3,
+          "text": "The show ran for nine seasons, from 1988 to 1997."
+        }
+      ],
+      "question": "Roseanne Barr gained fame for her role in what kind of television program?",
+      "answer": "hit television sitcom",
+      "status": "ok",
+      "attempts": 2
+    },
+    {
+      "probe_id": "p_e12415",
+      "edge_id": "e12415",
+      "created_by": "5a81a2e25542990a1d231e32:main",
+      "phase": "memory",
+      "write": {
+        "operation": "ADD_EDGE",
+        "head": "Roseanne Barr",
+        "relation": "P170",
+        "relation_name": "creator",
+        "tail": "The Jackie Thomas Show",
+        "origin": "AGENT_DERIVED"
+      },
+      "source_sentences": [
+        {
+          "title": "The Jackie Thomas Show",
+          "sid": 1,
+          "text": "The series received widespread attention due to its creators Roseanne Arnold, then starring in the fifth season of her comedy \"Roseanne\", and her husband and \"Roseanne\" co-producer Tom Arnold."
+        }
+      ],
+      "question": "Roseanne Barr is identified as one of what for the series that received widespread attention?",
+      "answer": "creators",
+      "status": "ok",
+      "attempts": 1
+    },
+    {
+      "probe_id": "p_e12416",
+      "edge_id": "e12416",
+      "created_by": "5a7e96f655429934daa2fc39:main",
+      "phase": "memory",
+      "write": {
+        "operation": "ADD_EDGE",
+        "head": "Eve Donovan",
+        "relation": "P175",
+        "relation_name": "performer",
+        "tail": "Kassie DePaiva",
+        "origin": "AGENT_TEXT"
+      },
+      "source_sentences": [
+        {
+          "title": "Kassie DePaiva",
+          "sid": 3,
+          "text": "Other roles included Chelsea Reardon on \"Guiding Light\", and her current role as Eve Donovan on NBC's \"Days of Our Lives\"."
+        },
+        {
+          "title": "Charlotte Ross",
+          "sid": 1,
+          "text": "She is best known for her roles as Eve Donovan on the NBC Daytime soap opera \"Days of Our Lives\" from 1987 to 1991, and as Det. Connie McDowell on the ABC police procedural drama \"NYPD Blue\" from 2001 to 2004."
+        }
+      ],
+      "question": null,
+      "answer": null,
+      "status": "not_answerable"
+    },
+    {
+      "probe_id": "p_e12417",
+      "edge_id": "e12417",
+      "created_by": "5adf37955542993a75d2642e:main",
+      "phase": "memory",
+      "write": {
+        "operation": "ADD_EDGE",
+        "head": "Roger Howarth",
+        "relation": "P585",
+        "relation_name": "point in time",
+        "tail": "1994",
+        "origin": "AGENT_TEXT"
+      },
+      "source_sentences": [
+        {
+          "title": "Roger Howarth",
+          "sid": 1,
+          "text": "He played character Todd Manning on the daytime drama \"One Life to Live\" (\"OLTL\"); the character earned Howarth a Daytime Emmy Award in 1994, and is cited as an icon in the soap opera genre."
+        }
+      ],
+      "question": "In what year did Roger Howarth's portrayal of Todd Manning earn him a Daytime Emmy Award?",
+      "answer": "1994",
+      "status": "ok",
+      "attempts": 1
+    },
+    {
+      "probe_id": "p_e12418",
+      "edge_id": "e12418",
+      "created_by": "5a843de75542992ef85e23b4:main",
+      "phase": "answer",
+      "write": {
+        "operation": "ADD_EDGE",
+        "head": "Treasure Island Hotel and Casino",
+        "relation": "P112",
+        "relation_name": "founded by",
+        "tail": "Steve Wynn",
+        "origin": "AGENT_TEXT"
+      },
+      "source_sentences": [
+        {
+          "title": "Steve Wynn",
+          "sid": 2,
+          "text": "Early in his career he oversaw the construction and operation of several notable Las Vegas and Atlantic City hotels, including the Golden Nugget, the Golden Nugget Atlantic City, The Mirage, Treasure Island, the Bellagio, and Beau Rivage in Mississippi, and he played a pivotal role in the resurgence and expansion of the Las Vegas Strip in the 1990s."
+        }
+      ],
+      "question": "What did the person associated with the Golden Nugget, The Mirage, and Bellagio do regarding Treasure Island Hotel and Casino?",
+      "answer": "oversaw the construction and operation",
+      "status": "ok",
+      "attempts": 1
+    },
+    {
+      "probe_id": "p_e12419",
+      "edge_id": "e12419",
+      "created_by": "5a843de75542992ef85e23b4:main",
+      "phase": "memory",
+      "write": {
+        "operation": "ADD_EDGE",
+        "head": "Treasure Island Hotel and Casino",
+        "relation": "P178",
+        "relation_name": "developer",
+        "tail": "Steve Wynn",
+        "origin": "AGENT_TEXT"
+      },
+      "source_sentences": [
+        {
+          "title": "Steve Wynn",
+          "sid": 2,
+          "text": "Early in his career he oversaw the construction and operation of several notable Las Vegas and Atlantic City hotels, including the Golden Nugget, the Golden Nugget Atlantic City, The Mirage, Treasure Island, the Bellagio, and Beau Rivage in Mississippi, and he played a pivotal role in the resurgence and expansion of the Las Vegas Strip in the 1990s."
+        }
+      ],
+      "question": null,
+      "answer": null,
+      "status": "not_answerable"
+    },
+    {
+      "probe_id": "p_e12420",
+      "edge_id": "e12420",
+      "created_by": "5ab2b6fb5542992953946848:main",
+      "phase": "memory",
+      "write": {
+        "operation": "ADD_EDGE",
+        "head": "Ice Arena (Adelaide)",
+        "relation": "P527",
+        "relation_name": "has part",
+        "tail": "indoor ski slope",
+        "origin": "AGENT_TEXT"
+      },
+      "source_sentences": [
+        {
+          "title": "Ice Arena (Adelaide)",
+          "sid": 1,
+          "text": "In late 1986, the centre closed for the construction of the world's first indoor ski slope and reopened in 1987 as Mt Thebarton Snow and Ice, featuring what was reported to be the world's first indoor ski slope on artificial snow."
+        }
+      ],
+      "question": "What did Ice Arena close for construction of in late 1986?",
+      "answer": "world's first indoor ski slope",
+      "status": "ok",
+      "attempts": 1
+    },
+    {
+      "probe_id": "p_e12421",
+      "edge_id": "e12421",
+      "created_by": "5a8fb0be5542997ba9cb32ed:main",
+      "phase": "memory",
+      "write": {
+        "operation": "ADD_EDGE",
+        "head": "International Hotel",
+        "relation": "P156",
+        "relation_name": "followed by",
+        "tail": "Westgate Las Vegas Resort & Casino",
+        "origin": "AGENT_TEXT"
+      },
+      "source_sentences": [
+        {
+          "title": "For Adults Only",
+          "sid": 1,
+          "text": "It was recorded at the Westgate Las Vegas Resort & Casino, then known as the International Hotel."
+        }
+      ],
+      "question": "What is the International Hotel now known as?",
+      "answer": "Westgate Las Vegas Resort & Casino",
+      "status": "ok",
+      "attempts": 1
+    },
+    {
+      "probe_id": "p_e12422",
+      "edge_id": "e12422",
+      "created_by": "5a8bd49d5542997f31a41dd7:main",
+      "phase": "memory",
+      "write": {
+        "operation": "ADD_EDGE",
+        "head": "Bongo Comics",
+        "relation": "P112",
+        "relation_name": "founded by",
+        "tail": "Matt Groening",
+        "origin": "AGENT_TEXT"
+      },
+      "source_sentences": [
+        {
+          "title": "Ian Boothby",
+          "sid": 0,
+          "text": "Ian Boothby is a multiple Shuster Award, Harvey Award and Eisner Award nominee and an Eisner Award–winning comic book creator best known for his work as the lead writer on \"Simpsons Comics\" and \"Futurama Comics\" for Matt Groening's Bongo Comics."
+        }
+      ],
+      "question": "Whose comics company is Bongo Comics?",
+      "answer": "Matt Groening's",
+      "status": "ok",
+      "attempts": 1
+    },
+    {
+      "probe_id": "p_e12423",
+      "edge_id": "e12423",
+      "created_by": "5ab84dea55429934fafe6d4f:main",
+      "phase": "answer",
+      "write": {
+        "operation": "ADD_EDGE",
+        "head": "H. G. Wells",
+        "relation": "P27",
+        "relation_name": "country of citizenship",
+        "tail": "English",
+        "origin": "AGENT_TEXT"
+      },
+      "source_sentences": [
+        {
+          "title": "H. G. Wells",
+          "sid": 0,
+          "text": "Herbert George Wells (21 September 1866 – 13 August 1946), usually referred to as H. G. Wells, was an English writer."
+        }
+      ],
+      "question": "What nationality was H. G. Wells?",
+      "answer": "English",
+      "status": "ok",
+      "attempts": 1
+    },
+    {
+      "probe_id": "p_e12424",
+      "edge_id": "e12424",
+      "created_by": "5ab7484c5542992aa3b8c80d:main",
+      "phase": "memory",
+      "write": {
+        "operation": "ADD_EDGE",
+        "head": "James Schuyler",
+        "relation": "P27",
+        "relation_name": "country of citizenship",
+        "tail": "United States",
+        "origin": "AGENT_TEXT"
+      },
+      "source_sentences": [
+        {
+          "title": "James Schuyler",
+          "sid": 0,
+          "text": "James Marcus Schuyler (November 9, 1923 – April 12, 1991) was an American poet."
+        }
+      ],
+      "question": "What nationality was James Schuyler?",
+      "answer": "American",
+      "status": "ok",
+      "attempts": 1
+    },
+    {
+      "probe_id": "p_e12425",
+      "edge_id": "e12425",
+      "created_by": "5ab7484c5542992aa3b8c80d:main",
+      "phase": "memory",
+      "write": {
+        "operation": "ADD_EDGE",
+        "head": "A. E. Housman",
+        "relation": "P27",
+        "relation_name": "country of citizenship",
+        "tail": "United Kingdom",
+        "origin": "AGENT_TEXT"
+      },
+      "source_sentences": [
+        {
+          "title": "A. E. Housman",
+          "sid": 0,
+          "text": "Alfred Edward Housman ( ; 26 March 1859 – 30 April 1936), usually known as A. E. Housman, was an English classical scholar and poet, best known to the general public for his cycle of poems \"A Shropshire Lad\"."
+        }
+      ],
+      "question": "What nationality was A. E. Housman?",
+      "answer": "English",
+      "status": "ok",
+      "attempts": 1
+    },
+    {
+      "probe_id": "p_e12426",
+      "edge_id": "e12426",
+      "created_by": "5a80a654554299485f598679:main",
+      "phase": "answer",
+      "write": {
+        "operation": "ADD_EDGE",
+        "head": "A. E. Housman",
+        "relation": "P1441",
+        "relation_name": "present in work",
+        "tail": "The Invention of Love",
+        "origin": "AGENT_TEXT"
+      },
+      "source_sentences": [
+        {
+          "title": "The Invention of Love",
+          "sid": 0,
+          "text": "The Invention of Love is a 1997 play by Tom Stoppard portraying the life of poet A. E. Housman, focusing specifically on his personal life and love for a college classmate."
+        }
+      ],
+      "question": "What 1997 play by Tom Stoppard portrays the life of poet A. E. Housman?",
+      "answer": "The Invention of Love",
+      "status": "ok",
+      "attempts": 1
+    },
+    {
+      "probe_id": "p_e12427",
+      "edge_id": "e12427",
+      "created_by": "5ae058e855429945ae959331:main",
+      "phase": "memory",
+      "write": {
+        "operation": "ADD_EDGE",
+        "head": "Chrysalis (magazine)",
+        "relation": "P136",
+        "relation_name": "genre",
+        "tail": "women's magazine",
+        "origin": "AGENT_TEXT"
+      },
+      "source_sentences": [
+        {
+          "title": "Chrysalis (magazine)",
+          "sid": 0,
+          "text": "Chrysalis: A Magazine of Women's Culture was a feminist publication produced from 1977 to 1980."
+        }
+      ],
+      "question": "What was Chrysalis subtitled?",
+      "answer": "A Magazine of Women's Culture",
+      "status": "ok",
+      "attempts": 1
+    },
+    {
+      "probe_id": "p_e12428",
+      "edge_id": "e12428",
+      "created_by": "5ae058e855429945ae959331:main",
+      "phase": "memory",
+      "write": {
+        "operation": "ADD_EDGE",
+        "head": "Look (UK magazine)",
+        "relation": "P136",
+        "relation_name": "genre",
+        "tail": "women's magazine",
+        "origin": "AGENT_TEXT"
+      },
+      "source_sentences": [
+        {
+          "title": "Look (UK magazine)",
+          "sid": 0,
+          "text": "Look is a glossy high street fashion and celebrity weekly magazine for young women."
+        }
+      ],
+      "question": "What kind of publication is Look?",
+      "answer": "magazine for young women",
+      "status": "ok",
+      "attempts": 1
+    },
+    {
+      "probe_id": "p_e12429",
+      "edge_id": "e12429",
+      "created_by": "5a7cd8da55429909bec76845:main",
+      "phase": "answer",
+      "write": {
+        "operation": "ADD_EDGE",
+        "head": "The Wind's Twelve Quarters",
+        "relation": "P527",
+        "relation_name": "has part",
+        "tail": "The Ones Who Walk Away from Omelas",
+        "origin": "AGENT_TEXT"
+      },
+      "source_sentences": [
+        {
+          "title": "The Wind's Twelve Quarters",
+          "sid": 3,
+          "text": "The story \"The Ones Who Walk Away from Omelas\" won the Hugo Award in 1974, while \"The Day Before the Revolution\" won the Locus and Nebula Awards in 1975."
+        }
+      ],
+      "question": null,
+      "answer": null,
+      "status": "not_answerable"
+    },
+    {
+      "probe_id": "p_e12430",
+      "edge_id": "e12430",
+      "created_by": "5ab98e2b5542996be202054e:main",
+      "phase": "memory",
+      "write": {
+        "operation": "ADD_EDGE",
+        "head": "William Randolph Hearst",
+        "relation": "P39",
+        "relation_name": "position held",
+        "tail": "publisher",
+        "origin": "AGENT_TEXT"
+      },
+      "source_sentences": [
+        {
+          "title": "William Randolph Hearst",
+          "sid": 1,
+          "text": "Hearst entered the publishing business in 1887 after being given control of \"The San Francisco Examiner\" by his wealthy father."
+        }
+      ],
+      "question": "What field did William Randolph Hearst enter in 1887?",
+      "answer": "publishing",
+      "status": "ok",
+      "attempts": 1
+    },
+    {
+      "probe_id": "p_e12431",
+      "edge_id": "e12431",
+      "created_by": "5ab98e2b5542996be202054e:main",
+      "phase": "memory",
+      "write": {
+        "operation": "ADD_EDGE",
+        "head": "William Randolph Hearst",
+        "relation": "P585",
+        "relation_name": "point in time",
+        "tail": "1887",
+        "origin": "AGENT_TEXT"
+      },
+      "source_sentences": [
+        {
+          "title": "William Randolph Hearst",
+          "sid": 1,
+          "text": "Hearst entered the publishing business in 1887 after being given control of \"The San Francisco Examiner\" by his wealthy father."
+        }
+      ],
+      "question": "In what year did William Randolph Hearst enter the publishing business?",
+      "answer": "1887",
+      "status": "ok",
+      "attempts": 1
+    },
+    {
+      "probe_id": "p_e12432",
+      "edge_id": "e12432",
+      "created_by": "5ab3c18b55429969a97a81b0:main",
+      "phase": "memory",
+      "write": {
+        "operation": "ADD_EDGE",
+        "head": "Ted Kennedy",
+        "relation": "P585",
+        "relation_name": "point in time",
+        "tail": "1988",
+        "origin": "AGENT_TEXT"
+      },
+      "source_sentences": [
+        {
+          "title": "Doyle's Cafe",
+          "sid": 5,
+          "text": "On St. Patrick's Day in 1988, Senator Ted Kennedy helped dedicate a new room at the location to his maternal grandfather, John F. Fitzgerald."
+        }
+      ],
+      "question": "On what holiday in what year did Ted Kennedy help dedicate a new room to his maternal grandfather, John F. Fitzgerald?",
+      "answer": "St. Patrick's Day in 1988",
+      "status": "ok",
+      "attempts": 1
+    },
+    {
+      "probe_id": "p_e12433",
+      "edge_id": "e12433",
+      "created_by": "5a8e4e7855429917b4a5bd92:main",
+      "phase": "answer",
+      "write": {
+        "operation": "ADD_EDGE",
+        "head": "Papa John's Pizza",
+        "relation": "P1056",
+        "relation_name": "product or material produced",
+        "tail": "pizza",
+        "origin": "AGENT_TEXT"
+      },
+      "source_sentences": [
+        {
+          "title": "Papa John's Pizza",
+          "sid": 1,
+          "text": "It runs the third largest take-out and pizza delivery restaurant chain in the United States, with headquarters in Jeffersontown, Kentucky, a suburb of Louisville."
+        },
+        {
+          "title": "Papa John's Pizza",
+          "sid": 0,
+          "text": "Papa John's Pizza is an American restaurant franchise company."
+        }
+      ],
+      "question": "What kind of business is Papa John's Pizza?",
+      "answer": "take-out and pizza delivery restaurant chain",
+      "status": "ok",
+      "attempts": 2
+    },
+    {
+      "probe_id": "p_e12434",
+      "edge_id": "e12434",
+      "created_by": "5a8e4e7855429917b4a5bd92:main",
+      "phase": "memory",
+      "write": {
+        "operation": "ADD_EDGE",
+        "head": "Papa Gino's",
+        "relation": "P1056",
+        "relation_name": "product or material produced",
+        "tail": "pizza",
+        "origin": "AGENT_TEXT"
+      },
+      "source_sentences": [
+        {
+          "title": "Papa Gino's",
+          "sid": 0,
+          "text": "Papa Gino's, Inc. is a restaurant chain based in Dedham, Massachusetts specializing in American-style pizza along with pasta, subs, salads, and a variety of appetizers."
+        }
+      ],
+      "question": "What kind of food does Papa Gino's specialize in?",
+      "answer": "American-style pizza",
+      "status": "ok",
+      "attempts": 1
+    },
+    {
+      "probe_id": "p_e12435",
+      "edge_id": "e12435",
+      "created_by": "5ae4843455429970de88d997:main",
+      "phase": "memory",
+      "write": {
+        "operation": "ADD_EDGE",
+        "head": "Bob Johnson (footballer, born 1905)",
+        "relation": "P54",
+        "relation_name": "member of sports team",
+        "tail": "Derry City F.C.",
+        "origin": "AGENT_TEXT"
+      },
+      "source_sentences": [
+        {
+          "title": "Bob Johnson (footballer, born 1905)",
+          "sid": 1,
+          "text": "He also played in Ireland for Derry City, was on the books of Barnsley, without playing for them in the League, and played non-league football for clubs including Ushaw Moor, Moor Ends Thorne, Firbeck Colliery, Spennymoor United, Thorne Colliery, Eden Colliery and Walker Celtic."
+        }
+      ],
+      "question": "For which Irish club did Bob Johnson also play?",
+      "answer": "Derry City",
+      "status": "ok",
+      "attempts": 1
+    },
+    {
+      "probe_id": "p_e12436",
+      "edge_id": "e12436",
+      "created_by": "5ae2e61455429928c423953e:main",
+      "phase": "memory",
+      "write": {
+        "operation": "ADD_EDGE",
+        "head": "A Night at the Opera (Queen album)",
+        "relation": "P737",
+        "relation_name": "influenced by",
+        "tail": "A Night at the Opera by the Marx Brothers",
+        "origin": "AGENT_TEXT"
+      },
+      "source_sentences": [
+        {
+          "title": "A Night at the Opera (Queen album)",
+          "sid": 2,
+          "text": "The album takes its name from the Marx Brothers film of the same name, which the band watched one night at the studio complex when recording."
+        }
+      ],
+      "question": "Which film did the album A Night at the Opera take its name from?",
+      "answer": "the Marx Brothers film of the same name",
+      "status": "ok",
+      "attempts": 1
+    },
+    {
+      "probe_id": "p_e12437",
+      "edge_id": "e12437",
+      "created_by": "5a864d9e5542994775f6073d:main",
+      "phase": "answer",
+      "write": {
+        "operation": "ADD_EDGE",
+        "head": "Ulrich Walter",
+        "relation": "P27",
+        "relation_name": "country of citizenship",
+        "tail": "Germany",
+        "origin": "AGENT_TEXT"
+      },
+      "source_sentences": [
+        {
+          "title": "Ulrich Walter",
+          "sid": 0,
+          "text": "Prof. Dr. Ulrich Hans Walter (born February 9, 1954) is a German physicist/engineer and a former DFVLR astronaut."
+        }
+      ],
+      "question": "What nationality is Ulrich Walter?",
+      "answer": "German",
+      "status": "ok",
+      "attempts": 1
+    },
+    {
+      "probe_id": "p_e12438",
+      "edge_id": "e12438",
+      "created_by": "5a864d9e5542994775f6073d:main",
+      "phase": "answer",
+      "write": {
+        "operation": "ADD_EDGE",
+        "head": "Léopold Eyharts",
+        "relation": "P27",
+        "relation_name": "country of citizenship",
+        "tail": "France",
+        "origin": "AGENT_TEXT"
+      },
+      "source_sentences": [
+        {
+          "title": "Léopold Eyharts",
+          "sid": 0,
+          "text": "Léopold Eyharts (born April 28, 1957) is a Brigadier General in the French Air Force, an engineer and ESA astronaut."
+        }
+      ],
+      "question": "In which air force is Léopold Eyharts a Brigadier General?",
+      "answer": "French Air Force",
+      "status": "ok",
+      "attempts": 1
+    },
+    {
+      "probe_id": "p_e12439",
+      "edge_id": "e12439",
+      "created_by": "5a83093c55429966c78a6b01:main",
+      "phase": "memory",
+      "write": {
+        "operation": "ADD_EDGE",
+        "head": "Léopold Eyharts",
+        "relation": "P39",
+        "relation_name": "position held",
+        "tail": "Brigadier General in the French Air Force",
+        "origin": "AGENT_TEXT"
+      },
+      "source_sentences": [
+        {
+          "title": "Léopold Eyharts",
+          "sid": 0,
+          "text": "Léopold Eyharts (born April 28, 1957) is a Brigadier General in the French Air Force, an engineer and ESA astronaut."
+        }
+      ],
+      "question": "What rank does Léopold Eyharts hold?",
+      "answer": "Brigadier General",
+      "status": "ok",
+      "attempts": 1
+    },
+    {
+      "probe_id": "p_e12440",
+      "edge_id": "e12440",
+      "created_by": "5a7631cd5542994ccc91870c:main",
+      "phase": "answer",
+      "write": {
+        "operation": "ADD_EDGE",
+        "head": "Director of The Frost Place Advanced Seminar",
+        "relation": "P276",
+        "relation_name": "location",
+        "tail": "The Frost Place",
+        "origin": "AGENT_TEXT"
+      },
+      "source_sentences": [
+        {
+          "title": "Jeanne Marie Beaumont",
+          "sid": 9,
+          "text": "She served as the Director of The Frost Place Advanced Seminar from 2007–2010, and serves on the faculty for the Stonecoast MFA Program in Creative Writing."
+        }
+      ],
+      "question": "From what years did she serve as Director of The Frost Place Advanced Seminar?",
+      "answer": "2007–2010",
+      "status": "ok",
+      "attempts": 1
+    },
+    {
+      "probe_id": "p_e12441",
+      "edge_id": "e12441",
+      "created_by": "5ac195455542991316484b40:main",
+      "phase": "answer",
+      "write": {
+        "operation": "ADD_EDGE",
+        "head": "Chris Stockley",
+        "relation": "P1344",
+        "relation_name": "participant of",
+        "tail": "Dennis Allen (criminal)",
+        "origin": "AGENT_TEXT"
+      },
+      "source_sentences": [
+        {
+          "title": "The Dingoes",
+          "sid": 2,
+          "text": "Mal Logan (who provided keyboards the first LP) on keyboards joined after Stockley was hospitalised when shot in the stomach by Melbourne drug-dealer, Dennis Allen, who was attempting to gate crash a party."
+        }
+      ],
+      "question": "Who shot Chris Stockley in the stomach while attempting to crash a party?",
+      "answer": "Dennis Allen",
+      "status": "ok",
+      "attempts": 1
+    },
+    {
+      "probe_id": "p_e12442",
+      "edge_id": "e12442",
+      "created_by": "5a89e20a5542992e4fca8438:main",
+      "phase": "memory",
+      "write": {
+        "operation": "ADD_EDGE",
+        "head": "Love the Way You Lie",
+        "relation": "P577",
+        "relation_name": "publication date",
+        "tail": "2010",
+        "origin": "AGENT_TEXT"
+      },
+      "source_sentences": [
+        {
+          "title": "Love the Way You Lie",
+          "sid": 0,
+          "text": "\"Love the Way You Lie\" is a song recorded by the American rapper Eminem, featuring the Barbadian singer Rihanna, from Eminem's seventh studio album \"Recovery\" (2010)."
+        },
+        {
+          "title": "Love the Way You Lie",
+          "sid": 1,
+          "text": "The singer and songwriter Skylar Grey wrote and recorded a demo of the song alongside the producer Alex da Kid when she felt she was in an abusive romantic relationship with the music industry."
+        },
+        {
+          "title": "Alex da Kid",
+          "sid": 1,
+          "text": "He has gained recognition for producing several hit singles for a plethora of artists in various music genres, such as Dr. Dre (\"I Need a Doctor\"), Nicki Minaj (\"Massive Attack\"), B.o.B (\"Airplanes\" featuring Hayley Williams), Eminem (\"Love the Way You Lie\" featuring Rihanna), Diddy (\"Coming Home\" with Dirty Money featuring Skylar Grey), Imagine Dragons (\"Radioactive\") and Cheryl (\"Under The Sun\")."
+        }
+      ],
+      "question": "In what year was Eminem's seventh studio album Recovery, which includes the song \"Love the Way You Lie\", released?",
+      "answer": "2010",
+      "status": "ok",
+      "attempts": 1
+    },
+    {
+      "probe_id": "p_e12443",
+      "edge_id": "e12443",
+      "created_by": "5a89e20a5542992e4fca8438:main",
+      "phase": "memory",
+      "write": {
+        "operation": "ADD_EDGE",
+        "head": "Recovery",
+        "relation": "P577",
+        "relation_name": "publication date",
+        "tail": "2010",
+        "origin": "AGENT_TEXT"
+      },
+      "source_sentences": [
+        {
+          "title": "Love the Way You Lie",
+          "sid": 0,
+          "text": "\"Love the Way You Lie\" is a song recorded by the American rapper Eminem, featuring the Barbadian singer Rihanna, from Eminem's seventh studio album \"Recovery\" (2010)."
+        },
+        {
+          "title": "Love the Way You Lie (Part II)",
+          "sid": 2,
+          "text": "It is the sequel to the 2010 hit single \"Love the Way You Lie\", which appears on Eminem's seventh studio album \"Recovery\"."
+        }
+      ],
+      "question": "In what year was Eminem's seventh studio album Recovery released?",
+      "answer": "2010",
+      "status": "ok",
+      "attempts": 1
+    },
+    {
+      "probe_id": "p_e12444",
+      "edge_id": "e12444",
+      "created_by": "5ab5f75e554299637185c64b:main",
+      "phase": "memory",
+      "write": {
+        "operation": "ADD_EDGE",
+        "head": "Grimaldi's Pizzeria",
+        "relation": "P1056",
+        "relation_name": "product or material produced",
+        "tail": "pizza",
+        "origin": "AGENT_TEXT"
+      },
+      "source_sentences": [
+        {
+          "title": "Grimaldi's Pizzeria",
+          "sid": 0,
+          "text": "Grimaldi's Pizzeria is an American pizzeria chain from the New York City area with several restaurants throughout the United States."
+        },
+        {
+          "title": "Grimaldi's Pizzeria",
+          "sid": 1,
+          "text": "It does not sell slices, only whole pies."
+        }
+      ],
+      "question": "What type of eating establishment is Grimaldi's Pizzeria?",
+      "answer": "American pizzeria chain",
+      "status": "ok",
+      "attempts": 1
+    },
+    {
+      "probe_id": "p_e12445",
+      "edge_id": "e12445",
+      "created_by": "5ab2af1655429929539467eb:main",
+      "phase": "answer",
+      "write": {
+        "operation": "ADD_EDGE",
+        "head": "The Peak Galleria",
+        "relation": "P276",
+        "relation_name": "location",
+        "tail": "Victoria Peak",
+        "origin": "AGENT_TEXT"
+      },
+      "source_sentences": [
+        {
+          "title": "The Peak Galleria",
+          "sid": 0,
+          "text": "The Peak Galleria (Chinese: 山頂廣場) is a leisure and shopping complex and tourist attraction located at Victoria Gap, near the summit of Victoria Peak on Hong Kong Island, Hong Kong."
+        }
+      ],
+      "question": "Near the summit of what peak is The Peak Galleria located?",
+      "answer": "Victoria Peak",
+      "status": "ok",
+      "attempts": 1
+    },
+    {
+      "probe_id": "p_e12446",
+      "edge_id": "e12446",
+      "created_by": "5a77e9c055429949eeb29fa6:main",
+      "phase": "memory",
+      "write": {
+        "operation": "ADD_EDGE",
+        "head": "Hazel Keech",
+        "relation": "P31",
+        "relation_name": "instance of",
+        "tail": "model",
+        "origin": "AGENT_TEXT"
+      },
+      "source_sentences": [
+        {
+          "title": "Hazel Keech",
+          "sid": 0,
+          "text": "Hazel Keech (born 28 February 1987) is a British−Mauritian model who has appeared in Indian television programs and films."
+        }
+      ],
+      "question": "What is Hazel Keech's occupation?",
+      "answer": "model",
+      "status": "ok",
+      "attempts": 1
+    },
+    {
+      "probe_id": "p_e12447",
+      "edge_id": "e12447",
+      "created_by": "5a89382655429951533612e8:main",
+      "phase": "memory",
+      "write": {
+        "operation": "ADD_EDGE",
+        "head": "Simón Bolívar",
+        "relation": "P6",
+        "relation_name": "head of government",
+        "tail": "Colombia",
+        "origin": "AGENT_TEXT"
+      },
+      "source_sentences": [
+        {
+          "title": "Francisco Antonio Zea",
+          "sid": 0,
+          "text": "Juan Francisco Antonio Hilarión Zea Díaz (born 23 November 1766 – 28 November 1822) was a Colombian journalist, botanist, diplomat, politician, and statesman who served as the 1st Vice President of Colombia under then President Simón Bolívar."
+        }
+      ],
+      "question": "Juan Francisco Antonio Hilarión Zea Díaz served as the 1st Vice President of which country under President Simón Bolívar?",
+      "answer": "Colombia",
+      "status": "ok",
+      "attempts": 1
+    },
+    {
+      "probe_id": "p_e12448",
+      "edge_id": "e12448",
+      "created_by": "5adcf20f5542994ed6169c2c:main",
+      "phase": "answer",
+      "write": {
+        "operation": "ADD_EDGE",
+        "head": "Montage (2013 film)",
+        "relation": "P1366",
+        "relation_name": "replaced by",
+        "tail": "Te3n",
+        "origin": "AGENT_TEXT"
+      },
+      "source_sentences": [
+        {
+          "title": "Montage (2013 film)",
+          "sid": 1,
+          "text": "The movie was officially remade in Hindi as \"Te3n\" in 2016."
+        }
+      ],
+      "question": "What was Montage officially remade in Hindi as in 2016?",
+      "answer": "Te3n",
+      "status": "ok",
+      "attempts": 1
+    },
+    {
+      "probe_id": "p_e12449",
+      "edge_id": "e12449",
+      "created_by": "5ae48aff5542996836b02cce:main",
+      "phase": "memory",
+      "write": {
+        "operation": "ADD_EDGE",
+        "head": "Teardrops (George Harrison song)",
+        "relation": "P155",
+        "relation_name": "follows",
+        "tail": "All Those Years Ago",
+        "origin": "AGENT_TEXT"
+      },
+      "source_sentences": [
+        {
+          "title": "Teardrops (George Harrison song)",
+          "sid": 1,
+          "text": "It was the second single from the album \"Somewhere in England\" and reached number 51 on the US \"Billboard\" Top Tracks chart and number 102 on the \"Billboard\" Bubbling Under the Hot 100 chart."
+        },
+        {
+          "title": "Somewhere in England",
+          "sid": 4,
+          "text": "\"Somewhere in England\" was the first Harrison album to be released after the death of his former Beatles bandmate John Lennon; the lyrics of its first single, \"All Those Years Ago\", pay tribute to Lennon."
+        }
+      ],
+      "question": "What was the first single from the album that Teardrops was the second single from?",
+      "answer": "All Those Years Ago",
+      "status": "ok",
+      "attempts": 1
+    },
+    {
+      "probe_id": "p_e12450",
+      "edge_id": "e12450",
+      "created_by": "5a7793275542992a6e59df04:main",
+      "phase": "memory",
+      "write": {
+        "operation": "ADD_EDGE",
+        "head": "Accolade Wines",
+        "relation": "P17",
+        "relation_name": "country",
+        "tail": "Australia",
+        "origin": "AGENT_DERIVED"
+      },
+      "source_sentences": [
+        {
+          "title": "Babycham",
+          "sid": 0,
+          "text": "Babycham is the trade name of a light, sparkling perry invented by Francis Showering, a brewer in Shepton Mallet in Somerset, England; the name is now owned by Accolade Wines."
+        },
+        {
+          "title": "Accolade Wines",
+          "sid": 0,
+          "text": "Accolade Wines is a major global wine business with headquarters in South Australia."
+        }
+      ],
+      "question": "Where is Accolade Wines headquartered?",
+      "answer": "South Australia",
+      "status": "ok",
+      "attempts": 1
+    },
+    {
+      "probe_id": "p_e12451",
+      "edge_id": "e12451",
+      "created_by": "5ae70369554299572ea54683:main",
+      "phase": "memory",
+      "write": {
+        "operation": "ADD_EDGE",
+        "head": "Nagyvárad",
+        "relation": "P17",
+        "relation_name": "country",
+        "tail": "Austria-Hungary",
+        "origin": "AGENT_TEXT"
+      },
+      "source_sentences": [
+        {
+          "title": "George Molnar",
+          "sid": 0,
+          "text": "George Molnar (1910–1998) was born in Nagyvárad, Austria-Hungary but came to Australia in the late 1930s, where he practiced as a cartoonist."
+        }
+      ],
+      "question": "In which country was George Molnar born in Nagyvárad?",
+      "answer": "Austria-Hungary",
+      "status": "ok",
+      "attempts": 1
+    },
+    {
+      "probe_id": "p_e12452",
+      "edge_id": "e12452",
+      "created_by": "5a875b755542996e4f308796:main",
+      "phase": "answer",
+      "write": {
+        "operation": "ADD_EDGE",
+        "head": "Medicine (The 1975 song)",
+        "relation": "P1441",
+        "relation_name": "present in work",
+        "tail": "Drive (2011 film)",
+        "origin": "AGENT_TEXT"
+      },
+      "source_sentences": [
+        {
+          "title": "Medicine (The 1975 song)",
+          "sid": 0,
+          "text": "\"Medicine\" is a standalone song by the English rock band The 1975, released on 31 October 2014 for the 2014 \"Drive\" re-release."
+        }
+      ],
+      "question": "What 2014 re-release was Medicine released for?",
+      "answer": "Drive",
+      "status": "ok",
+      "attempts": 1
+    },
+    {
+      "probe_id": "p_e12453",
+      "edge_id": "e12453",
+      "created_by": "5a8b120755429949d91db4a4:main",
+      "phase": "answer",
+      "write": {
+        "operation": "ADD_EDGE",
+        "head": "42 (film)",
+        "relation": "P495",
+        "relation_name": "country of origin",
+        "tail": "United States",
+        "origin": "AGENT_TEXT"
+      },
+      "source_sentences": [
+        {
+          "title": "42 (film)",
+          "sid": 0,
+          "text": "42 is a 2013 American biographical sports film written and directed by Brian Helgeland about the racial integration of American professional baseball by player Jackie Robinson, who wore jersey number 42 through his Major League career."
+        }
+      ],
+      "question": "What nationality is the 2013 biographical sports film 42?",
+      "answer": "American",
+      "status": "ok",
+      "attempts": 1
+    },
+    {
+      "probe_id": "p_e12454",
+      "edge_id": "e12454",
+      "created_by": "5a8b120755429949d91db4a4:main",
+      "phase": "answer",
+      "write": {
+        "operation": "ADD_EDGE",
+        "head": "André Holland",
+        "relation": "P27",
+        "relation_name": "country of citizenship",
+        "tail": "United States",
+        "origin": "AGENT_TEXT"
+      },
+      "source_sentences": [
+        {
+          "title": "André Holland",
+          "sid": 0,
+          "text": "André Holland (born December 28, 1979) is an American actor, known for his roles as Dr. Algernon Edwards on the Cinemax drama series \"The Knick\", and as Matt Miller on the FX series \"\"."
+        }
+      ],
+      "question": "What nationality is André Holland?",
+      "answer": "American",
+      "status": "ok",
+      "attempts": 1
+    },
+    {
+      "probe_id": "p_e12455",
+      "edge_id": "e12455",
+      "created_by": "5add23d05542994734353871:main",
+      "phase": "memory",
+      "write": {
+        "operation": "ADD_EDGE",
+        "head": "Austrian Pinscher",
+        "relation": "P31",
+        "relation_name": "instance of",
+        "tail": "farm dog",
+        "origin": "AGENT_TEXT"
+      },
+      "source_sentences": [
+        {
+          "title": "Austrian Pinscher",
+          "sid": 0,
+          "text": "The Austrian Pinscher (Österreichischer Pinscher, FCI No. 64) is a medium-sized breed of pinscher-type dog from Austria, where dogs of the type were originally farm dogs, keeping barns free of rats and acting as home guards, livestock guardians, and drovers."
+        }
+      ],
+      "question": "What were dogs of the Austrian Pinscher type originally?",
+      "answer": "farm dogs",
+      "status": "ok",
+      "attempts": 1
+    },
+    {
+      "probe_id": "p_e12456",
+      "edge_id": "e12456",
+      "created_by": "5abe2b0155429976d4830a83:main",
+      "phase": "answer",
+      "write": {
+        "operation": "ADD_EDGE",
+        "head": "Max Hoffmann",
+        "relation": "P1344",
+        "relation_name": "participant of",
+        "tail": "Battle of Tannenberg",
+        "origin": "AGENT_TEXT"
+      },
+      "source_sentences": [
+        {
+          "title": "Max Hoffmann",
+          "sid": 2,
+          "text": "Hoffmann, along with Hindenburg and Ludendorff, masterminded the devastating defeat of the Russian armies at Tannenberg and the Masurian Lakes."
+        }
+      ],
+      "question": "What battle did Max Hoffmann, along with Hindenburg and Ludendorff, mastermind as a devastating defeat of the Russian armies?",
+      "answer": "Tannenberg",
+      "status": "ok",
+      "attempts": 1
+    },
+    {
+      "probe_id": "p_e12457",
+      "edge_id": "e12457",
+      "created_by": "5ae760415542997b22f6a708:main",
+      "phase": "answer",
+      "write": {
+        "operation": "ADD_EDGE",
+        "head": "Max Hoffmann",
+        "relation": "P710",
+        "relation_name": "participant",
+        "tail": "Erich Ludendorff",
+        "origin": "AGENT_TEXT"
+      },
+      "source_sentences": [
+        {
+          "title": "Max Hoffmann",
+          "sid": 2,
+          "text": "Hoffmann, along with Hindenburg and Ludendorff, masterminded the devastating defeat of the Russian armies at Tannenberg and the Masurian Lakes."
+        }
+      ],
+      "question": "Along with Hindenburg and which other military leader did Max Hoffmann mastermind the devastating defeat of the Russian armies at Tannenberg and the Masurian Lakes?",
+      "answer": "Ludendorff",
+      "status": "ok",
+      "attempts": 1
+    },
+    {
+      "probe_id": "p_e12458",
+      "edge_id": "e12458",
+      "created_by": "5ae760415542997b22f6a708:main",
+      "phase": "memory",
+      "write": {
+        "operation": "ADD_EDGE",
+        "head": "Max Hoffmann",
+        "relation": "P710",
+        "relation_name": "participant",
+        "tail": "Paul von Hindenburg",
+        "origin": "AGENT_TEXT"
+      },
+      "source_sentences": [
+        {
+          "title": "Max Hoffmann",
+          "sid": 2,
+          "text": "Hoffmann, along with Hindenburg and Ludendorff, masterminded the devastating defeat of the Russian armies at Tannenberg and the Masurian Lakes."
+        }
+      ],
+      "question": "Along with Ludendorff, who helped Max Hoffmann mastermind the devastating defeat of the Russian armies at Tannenberg and the Masurian Lakes?",
+      "answer": "Hindenburg",
+      "status": "ok",
+      "attempts": 1
+    },
+    {
+      "probe_id": "p_e12459",
+      "edge_id": "e12459",
+      "created_by": "5ade02d05542997545bbbe0d:main",
+      "phase": "answer",
+      "write": {
+        "operation": "ADD_EDGE",
+        "head": "Shirley Breeden",
+        "relation": "P155",
+        "relation_name": "follows",
+        "tail": "Joe Heck",
+        "origin": "AGENT_TEXT"
+      },
+      "source_sentences": [
+        {
+          "title": "Shirley Breeden",
+          "sid": 1,
+          "text": "She won her first term in 2008, when she narrowly upset incumbent Republican Joe Heck."
+        }
+      ],
+      "question": "Whom did Shirley Breeden narrowly upset when she won her first term in 2008?",
+      "answer": "Joe Heck",
+      "status": "ok",
+      "attempts": 1
+    },
+    {
+      "probe_id": "p_e12460",
+      "edge_id": "e12460",
+      "created_by": "5ae82c3d55429952e35eaa75:main",
+      "phase": "answer",
+      "write": {
+        "operation": "ADD_EDGE",
+        "head": "DuSable High School",
+        "relation": "P1441",
+        "relation_name": "present in work",
+        "tail": "Jean Baptiste Point du Sable",
+        "origin": "AGENT_TEXT"
+      },
+      "source_sentences": [
+        {
+          "title": "DuSable High School",
+          "sid": 2,
+          "text": "The school was named after Chicago's first permanent non-native settler, Jean Baptiste Point Du Sable."
+        }
+      ],
+      "question": "Who was DuSable High School named after?",
+      "answer": "Jean Baptiste Point Du Sable",
+      "status": "ok",
+      "attempts": 1
+    },
+    {
+      "probe_id": "p_e12461",
+      "edge_id": "e12461",
+      "created_by": "5a7bb52355429927d897c01a:main",
+      "phase": "answer",
+      "write": {
+        "operation": "ADD_EDGE",
+        "head": "What the Water Gave Me (song)",
+        "relation": "P737",
+        "relation_name": "influenced by",
+        "tail": "What the Water Gave Me (painting)",
+        "origin": "AGENT_TEXT"
+      },
+      "source_sentences": [
+        {
+          "title": "What the Water Gave Me (song)",
+          "sid": 4,
+          "text": "Welch decided to name the song \"What the Water Gave Me\" after seeing a Frida Kahlo painting of the same name."
+        }
+      ],
+      "question": "After seeing what did Welch decide to name the song \"What the Water Gave Me\"?",
+      "answer": "a Frida Kahlo painting of the same name",
+      "status": "ok",
+      "attempts": 1
+    },
+    {
+      "probe_id": "p_e12462",
+      "edge_id": "e12462",
+      "created_by": "5a8fb3af5542997ba9cb32ee:main",
+      "phase": "memory",
+      "write": {
+        "operation": "ADD_EDGE",
+        "head": "Out Traveler",
+        "relation": "P31",
+        "relation_name": "instance of",
+        "tail": "magazine",
+        "origin": "AGENT_TEXT"
+      },
+      "source_sentences": [
+        {
+          "title": "Out Traveler",
+          "sid": 0,
+          "text": "Out Traveler is a gay and lesbian travel magazine from the publishers of \"Out\" and \"The Advocate\", combining photography with coverage of LGBT travel topics."
+        }
+      ],
+      "question": "What kind of publication is Out Traveler?",
+      "answer": "gay and lesbian travel magazine",
+      "status": "ok",
+      "attempts": 1
+    },
+    {
+      "probe_id": "p_e12463",
+      "edge_id": "e12463",
+      "created_by": "5ab808b85542991d3222380d:main",
+      "phase": "memory",
+      "write": {
+        "operation": "ADD_EDGE",
+        "head": "Umi-a-Liloa",
+        "relation": "P140",
+        "relation_name": "religion",
+        "tail": "Hawaiian religion",
+        "origin": "AGENT_TEXT"
+      },
+      "source_sentences": [
+        {
+          "title": "Umi-a-Liloa",
+          "sid": 0,
+          "text": "ʻUmi-a-Līloa (fifteenth century) was a ruling ali'i-ai-moku (district high chief of Hawai'i) who inherited religious authority of Hawai'i from his father, High Chief Liloa, whose line is traced, unbroken to Hawaiian \"creation\"."
+        },
+        {
+          "title": "Umi-a-Liloa",
+          "sid": 4,
+          "text": "Umi-a-Liloa was considered a just ruler, religious and the first to unite almost all of the Big Island."
+        }
+      ],
+      "question": "What did Umi-a-Liloa inherit from his father, High Chief Liloa?",
+      "answer": "religious authority of Hawai'i",
+      "status": "ok",
+      "attempts": 1
+    },
+    {
+      "probe_id": "p_e12464",
+      "edge_id": "e12464",
+      "created_by": "5ab808b85542991d3222380d:main",
+      "phase": "memory",
+      "write": {
+        "operation": "ADD_EDGE",
+        "head": "Liloa",
+        "relation": "P39",
+        "relation_name": "position held",
+        "tail": "Chief",
+        "origin": "AGENT_TEXT"
+      },
+      "source_sentences": [
+        {
+          "title": "Umi-a-Liloa",
+          "sid": 0,
+          "text": "ʻUmi-a-Līloa (fifteenth century) was a ruling ali'i-ai-moku (district high chief of Hawai'i) who inherited religious authority of Hawai'i from his father, High Chief Liloa, whose line is traced, unbroken to Hawaiian \"creation\"."
+        }
+      ],
+      "question": "What position did Liloa hold?",
+      "answer": "High Chief",
+      "status": "ok",
+      "attempts": 1
+    },
+    {
+      "probe_id": "p_e12465",
+      "edge_id": "e12465",
+      "created_by": "5a7b3fc155429931da12ca3a:main",
+      "phase": "memory",
+      "write": {
+        "operation": "ADD_EDGE",
+        "head": "Wexner Graduate Fellowship",
+        "relation": "P31",
+        "relation_name": "instance of",
+        "tail": "fellowship",
+        "origin": "AGENT_TEXT"
+      },
+      "source_sentences": [
+        {
+          "title": "Wexner Graduate Fellowship",
+          "sid": 1,
+          "text": "The program selects 20 students preparing for careers in the rabbinate, the cantorate, academic Jewish studies, and Jewish communal service."
+        }
+      ],
+      "question": "How many students does the Wexner Graduate Fellowship select?",
+      "answer": "20 students",
+      "status": "ok",
+      "attempts": 1
+    }
+  ]
+}

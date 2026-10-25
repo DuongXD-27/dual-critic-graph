@@ -16,6 +16,7 @@ from __future__ import annotations
 
 import argparse
 import random
+import re
 import sys
 from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime
@@ -29,7 +30,7 @@ from dcg.gates import GATES  # noqa: E402
 from dcg.graph import KG  # noqa: E402
 from dcg.metrics import contains_gold, f1, normalize_answer  # noqa: E402
 
-PROBE_VERSION = "probe-v1"
+PROBE_VERSION = "probe-v2"
 PROMPT = """PROBE QUESTION WRITING.
 Entity H: {head}
 Entity T: {tail}
@@ -38,13 +39,18 @@ Source text:
 
 Write ONE question for a question-answering test such that:
 - it names H exactly as written above ("{head}");
-- its answer is a short span copied word for word from the source text;
-- it asks about the fact in the source text that links H and T. Usually the answer is T; if the text gives a different
-  correct value, use the text's value;
+- it asks for the thing that the source text links to H, i.e. normally T itself (not a type, description,
+  year or other detail of it). If the text gives a different correct value than T, ask for the text's value;
 - it does not contain the answer and does not mention T;
+- it uses no pronoun (he, she, it, they, his, her...) for anyone or anything not named in the question;
 - it is self-contained (never say "the text", "the sentence", "the passage").
+The answer is the SHORTEST span copied word for word from the source text that names that thing:
+an entity name, date or number, at most 5 words, without "'s" and without descriptive words.
+Set "same_as_T" to true if your answer and T name the same thing (e.g. "American" and "United States",
+"Wes Unseld" and "Westley Unseld"); otherwise false.
 If the source text states no fact linking H and T, set "answerable" to false.
-Reply with JSON only: {{"answerable": true, "question": "...", "answer": "..."}}"""
+Reply with JSON only: {{"answerable": true, "question": "...", "answer": "...", "same_as_T": true}}"""
+PRONOUN = re.compile(r"\b(he|she|his|her|him|they|their|them|it|its)\b", re.I)
 
 
 def collect_writes(run_dir: Path):
@@ -91,6 +97,13 @@ def check(p, head, text):
         return "head_not_in_question"
     if f" {normalize_answer(a)} " in f" {normalize_answer(q)} ":
         return "answer_in_question"
+    if len(normalize_answer(a).split()) > 6:
+        return "answer_too_long"
+    if a.strip().endswith(("'s", "’s")):
+        return "answer_possessive"
+    m = PRONOUN.search(q)
+    if m and m.start() < q.lower().find(head.lower().split()[0]):
+        return "pronoun_before_head"
     if normalize_answer(a) not in normalize_answer(text):
         return "answer_not_in_text"
     return None
@@ -118,7 +131,11 @@ def gen_one(item, corpus, llm):
         else:
             reason = check(p, head, text)
         if reason is None:
-            rec.update(question=p["question"].strip(), answer=p["answer"].strip(), status="ok", attempts=attempt + 1)
+            answers = [p["answer"].strip()]
+            if p.get("same_as_T") is True and normalize_answer(tail) != normalize_answer(answers[0]):
+                answers.append(tail)  # cách viết khác của cùng đáp án (vd. "American" / "United States")
+            rec.update(question=p["question"].strip(), answer=p["answer"].strip(), answers=answers,
+                       same_as_T=p.get("same_as_T"), status="ok", attempts=attempt + 1)
             return rec
         if reason == "not_answerable":
             break
@@ -144,7 +161,7 @@ def cmd_gen(args, llm):
     print("\n20 câu mẫu để bạn kiểm tra (cạnh agent ghi | câu hỏi dò | đáp án theo văn bản):")
     for p in random.Random(0).sample(ok, min(20, len(ok))):
         w = p["write"]
-        print(f"- [{p['edge_id']}] {w['head']} —{w['relation_name']}→ {w['tail']}\n    Q: {p['question']}\n    A: {p['answer']}")
+        print(f"- [{p['edge_id']}] {w['head']} —{w['relation_name']}→ {w['tail']}\n    Q: {p['question']}\n    A: {' | '.join(p['answers'])}")
     return stats
 
 
@@ -156,7 +173,8 @@ def run_probe(p, cond, graph, corpus, llm, gates, rels, run_id):
     res = ep.run()
     followed = [s["edge_id"] for s in ep.path if s["type"] == "follow"]
     res.update({"probe_id": p["probe_id"], "condition": cond, "probe_edge": p["edge_id"], "write": p["write"],
-                "gold_answer": p["answer"], "correct": contains_gold(res["answer"], p["answer"]),
+                "gold_answer": p["answer"], "gold_answers": p["answers"],
+                "correct": any(contains_gold(res["answer"], g) for g in p["answers"]),
                 "f1": f1(res["answer"], p["answer"]), "used_probe_edge": p["edge_id"] in followed,
                 "saw_probe_edge": any(isinstance(e.get("result"), dict) and any(
                     x.get("edge_id") == p["edge_id"] for x in e["result"].get("edges", []) if isinstance(x, dict))
