@@ -28,7 +28,7 @@ from dcg import agent as agent_mod  # noqa: E402
 from dcg.common import DATA, append_jsonl, load_relations, read_json, write_json  # noqa: E402
 from dcg.gates import GATES  # noqa: E402
 from dcg.graph import KG  # noqa: E402
-from dcg.metrics import exact_match, f1, normalize_answer  # noqa: E402
+from dcg.metrics import contains_gold, exact_match, f1, normalize_answer  # noqa: E402
 
 
 def answer_grounded(ep, answer):
@@ -60,6 +60,7 @@ def run_episode(kg, ex, question, gold, llm, gates, rels, run_id, episode_id, ou
     res["answer_unseen_words"] = getattr(ep, "answer_unseen_words", [])
     res["em"] = exact_match(res["answer"], gold) if gold is not None else None
     res["f1"] = f1(res["answer"], gold) if gold is not None else None
+    res["gold_in_answer"] = contains_gold(res["answer"], gold) if gold is not None else None
     if episode_id.endswith(":main"):
         sf = {tuple(x) for x in ex["supporting_facts"]}
         res["supporting_facts"] = sorted(sf)
@@ -139,6 +140,7 @@ def main(argv=None, llm=None):
         "n": n,
         "em": round(sum(r["em"] for r in rows) / n, 3) if n else None,
         "f1": round(sum(r["f1"] for r in rows) / n, 3) if n else None,
+        "gold_in_answer": sum(bool(r.get("gold_in_answer")) for r in rows),
         "mean_follows": round(sum(r["follows"] for r in rows) / n, 2) if n else None,
         "correct_but_ungrounded": sum(r["f1"] >= 0.8 and r["answer_grounded"] is False for r in rows),
         "starts_total": sum(r["starts"] for r in rows),

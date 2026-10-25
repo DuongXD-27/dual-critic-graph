@@ -141,6 +141,7 @@ class Episode:
         self.starts_refused = 0             # start_at tại nút không có tên trong câu hỏi (D14)
         self.phase = "answer"
         self.final_answer = None
+        self.memory = True                  # False: bỏ bước cập nhật bộ nhớ (chạy câu hỏi dò, D15)
 
     # ---------- mô tả cho agent ----------
     def _edge_view(self, e: dict) -> dict:
@@ -389,7 +390,8 @@ class Episode:
                 break
             calls += len(resp["tool_calls"])
             self._call_tools(messages, resp)
-        self.memory_update(messages)
+        if self.memory:
+            self.memory_update(messages)
         return self.summary()
 
     def memory_update(self, messages):

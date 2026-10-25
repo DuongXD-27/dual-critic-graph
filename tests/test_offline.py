@@ -16,6 +16,7 @@ sys.path.insert(0, str(ROOT / "scripts"))
 
 import build_graphs  # noqa: E402
 import build_shared_kg  # noqa: E402
+import probe_writes  # noqa: E402
 import run_agent  # noqa: E402
 from dcg.common import read_json, read_jsonl, write_json  # noqa: E402
 
@@ -54,8 +55,9 @@ EXTRACTION = {
 
 
 class FakeLLM:
-    def __init__(self, agent_scripts, drop_in_batch=(), broken=()):
+    def __init__(self, agent_scripts, drop_in_batch=(), broken=(), probes=None):
         self.agent_scripts = agent_scripts  # {câu hỏi: [bước...]}
+        self.probes = probes or {}          # {tên đầu cạnh: JSON câu hỏi dò}
         self.drop_in_batch = set(drop_in_batch)  # giả lập model bỏ sót đoạn khi gộp
         self.broken = set(broken)                # giả lập JSON hỏng ở lần gọi đầu
         self.stats = {"calls": 0, "prompt_tokens": 0, "completion_tokens": 0}
@@ -65,6 +67,9 @@ class FakeLLM:
 
     def chat(self, messages, tools=None, json_mode=False, session_id=None):
         self.stats["calls"] += 1
+        if json_mode and "PROBE QUESTION WRITING" in messages[1]["content"]:
+            head = re.search(r"^Entity H: (.*)$", messages[1]["content"], flags=re.M).group(1)
+            return {"content": json.dumps(self.probes[head]), "tool_calls": []}
         if json_mode:  # trích xuất
             user = messages[1]["content"]
             batch = re.findall(r"^PARAGRAPH \d+ — TITLE: (.*)$", user, flags=re.M)
@@ -137,7 +142,7 @@ def main():
         gates = read_jsonl(run / "gates.jsonl")
         after = read_json(run / "graphs_after" / "q_bsg.json")
         ep = eps[0]
-        assert ep["em"] == 1.0 and ep["follows"] == 2
+        assert ep["em"] == 1.0 and ep["follows"] == 2 and ep["gold_in_answer"] is True
         assert ep["starts_refused"] == 1 and ep["follows_on_own_edges"] == 1
         assert ep["path"][-1]["to"] == "Greenwich Village" and ep["path"][-1]["origin"] == "AGENT_TEXT"
         assert summ["starts_refused"] == 1 and summ["episodes_following_own_write"] == 1
@@ -310,6 +315,37 @@ def check_shared():
         assert len(after["edges"]) == len(g["edges"]) + 1
         assert read_json(tmp / "runs" / "s" / "run.json")["mode"] == "shared"
         print("Đồ thị chung OK")
+
+        # ---- D15: câu hỏi dò cho cạnh agent ghi; chạy trên đồ thị trước/sau ----
+        pq = "In which neighbourhood is Adriana Trigiani based?"
+        probe_llm = FakeLLM({pq: [("search_nodes", {"query": "Adriana Trigiani"}),
+                                  ("start_at", {"node": nodes["Adriana Trigiani"]}),
+                                  ("follow_edge", {"edge_id": e_new}),
+                                  ("answer", {"answer": "Greenwich Village"})]},
+                            probes={"Adriana Trigiani": {"answerable": True, "question": pq, "answer": "Greenwich Village"}})
+        rdir = tmp / "runs" / "s"
+        st = probe_writes.main(["gen", "--run", str(rdir), "--graph", str(sdir / "graph.json")], llm=probe_llm)
+        assert st == {"ok": 1}, st
+        pr = read_json(rdir / "probes.json")["probes"][0]
+        assert pr["edge_id"] == e_new and pr["source_sentences"][0]["title"] == "Adriana Trigiani"
+        sm = probe_writes.main(["run", "--run", str(rdir), "--graph", str(sdir / "graph.json"), "--workers", "2"],
+                               llm=probe_llm)
+        assert sm["n_probes"] == 1 and sm["after_used_probe_edge"] == 1 and sm["correct_after"] == 1
+        pe = read_jsonl(rdir / "probe_run" / "episodes.jsonl")
+        assert [r["condition"] for r in pe] == ["before", "after"]
+        assert pe[0]["used_probe_edge"] is False and pe[0]["follows"] == 0      # đồ thị gốc chưa có cạnh này
+        assert not any(e["phase"] == "memory" for r in pe for e in r["events"])  # không có bước bộ nhớ
+        assert len(read_json(rdir / "graph_after.json")["edges"]) == len(g["edges"]) + 1   # chạy dò không sửa đồ thị
+        # kiểm tra câu hỏi dò
+        txt = "Adriana Trigiani is based in Greenwich Village, New York City."
+        assert probe_writes.check({"answerable": True, "question": pq, "answer": "Greenwich Village"},
+                                  "Adriana Trigiani", txt) is None
+        assert probe_writes.check({"answerable": True, "question": "Where does she live?", "answer": "Greenwich Village"},
+                                  "Adriana Trigiani", txt) == "head_not_in_question"
+        assert probe_writes.check({"answerable": True, "question": pq, "answer": "Manhattan"},
+                                  "Adriana Trigiani", txt) == "answer_not_in_text"
+        assert probe_writes.check({"answerable": False}, "Adriana Trigiani", txt) == "not_answerable"
+        print("Câu hỏi dò OK")
 
 
 def check_header_safe():

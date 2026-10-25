@@ -90,7 +90,7 @@ class KG:
             kg.nodes[n["id"]] = dict(n)
             kg._by_name[norm(n["name"])] = n["id"]
         for e in d["edges"]:
-            kg.edges[e["id"]] = dict(e)
+            kg.edges[e["id"]] = {**e, "provenance": [list(p) for p in e["provenance"]]}  # không dùng chung list với d
             kg._index_edge(kg.edges[e["id"]])
         return kg
 

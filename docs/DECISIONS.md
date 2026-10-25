@@ -143,6 +143,21 @@ Lý do: `shared-v1-try` (5 câu, agent-v4) có 10 `start_at`, **0 `follow_edge`*
 - 79 giây, 37 lần gọi, 3.608 token đầu ra → 200 câu ≈ 55 phút. 0 `follow_edge`, 10 `start_at` → D14.
 - #4 trả lời "Pablo Aimar" thay vì "Claudio Javier López" (lỗi duyệt). Phép ghi (Fyre Festival, P112 founded by, Billy McFarland): câu chỉ nói "organization of the Fyre Festival" → đúng ngoài đời nhưng **bằng chứng chưa đủ** — đúng loại lỗi Construction Critic cần bắt.
 
+## D15. Câu hỏi dò để đo lỗi bền vững (2026-10-24, chốt O7 = phương án B)
+Lý do: `shared-v2` chỉ có 2/200 câu đi qua cạnh do câu trước ghi; HotpotQA dev không còn câu nào khác có đủ đoạn bằng chứng trong kho.
+1. **Mỗi cạnh agent ghi mới → 1 câu hỏi dò**, sinh tự động (`scripts/probe_writes.py gen`, `probe-v1`, cùng model). LLM chỉ thấy tên đầu cạnh H, tên đuôi cạnh T và **câu văn nguồn**; **không thấy quan hệ agent đã ghi** → đáp án chuẩn lấy theo văn bản, không theo cạnh (cạnh sai quan hệ như *sibling* thay *cousin* không lọt vào câu hỏi).
+2. Câu hỏi hợp lệ khi: nhắc tên H (để xuất phát được, D14); đáp án chép nguyên từ văn bản; không chứa đáp án. Sai thì gọi lại 1 lần. Câu văn nguồn = câu bằng chứng agent dẫn + câu nguồn của cạnh bằng chứng; không có thì 3 câu đầu đoạn của H.
+3. Người kiểm tra ~20 câu mẫu (in ra khi sinh) trước khi chạy. Câu hỏi là nhân tạo → ghi vào threats to validity.
+4. **Mỗi câu dò chạy 2 lần:** `before` = đồ thị gốc, `after` = `graph_after.json` của lượt chạy. Mỗi lần trên bản sao đồ thị, không có bước bộ nhớ. So sánh: đúng/sai trước–sau, có đi qua cạnh dò không. "HẠI" = trước đúng, sau sai (cạnh agent ghi làm hỏng); "GIÚP" = ngược lại.
+5. Chấm đúng bằng `contains_gold` (đáp án chuẩn nằm trọn trong câu trả lời, theo từ) vì agent hay trả lời cả câu; `run_agent` cũng báo thêm `gold_in_answer`.
+
+## Quan sát: `shared-v2` (2026-10-24, agent-v5, 200 câu, ~70 phút, 1.664 lời gọi, 4,8 triệu token vào)
+- **Bản ghi cổng thu được:** 321 `start` + 178 `follow` (Traversal); 116 phép ghi qua cổng Construction (85 bước bộ nhớ, 31 lúc đang trả lời). 129/178 cạnh agent chọn đi có nguồn nằm trong supporting_facts, 46 không (đi vòng/lạc).
+- **Duyệt:** bridge trung bình 1,13 `follow_edge` (35/149 câu không đi bước nào); comparison 0,2 (bình thường: 2 thực thể đều có trong câu hỏi). 74 lần nhảy bị chặn: 45 tên lấy từ trí nhớ model, 19 tên vừa đọc trong văn bản (lẽ ra phải ghi cạnh rồi đi), 10 tên đã hiện sẵn ở cạnh kề (lẽ ra `follow_edge`). 21 câu có *ghi rồi đi tiếp* (D14).
+- **Ghi (đọc sơ bộ, chưa phải nhãn):** ~58% có căn cứ rõ; ~25% đáng ngờ; ~17% sai. Các kiểu lỗi: sai quan hệ (*cousin* → sibling; *peer of* → influenced by; câu so sánh → influenced by), sai đầu (2016 Olympics —award received→ silver medal thay vì Kerber), đuôi vô nghĩa (người —point in time→ năm; tính từ "American"/"English"), đảo chiều (Bolívar —head of government→ Colombia), suy diễn từ cạnh không nối nhau (Kerensky), suy diễn sai (album —performer→ ca sĩ khách mời), không có bằng chứng (Gainesville —capital of→ Alachua County), sai thời điểm (Cal Poly "founded as vocational high school" → instance of). → Cổng Construction có việc thật để làm trên dữ liệu tự nhiên.
+- **Lỗi bền vững:** chỉ **2/200 câu** đi qua cạnh do câu trước ghi (Stokely Webster —location→ Gracie Mansion: quan hệ sai nhưng vẫn dẫn tới đáp án đúng; Max Hoffmann —participant of→ Tannenberg: đúng). HotpotQA dev không còn câu nào có đủ đoạn bằng chứng trong kho → **một lượt chạy tự nhiên không đủ để đo lan truyền lỗi**; cần cách khác (xem O7).
+- **Câu trả lời:** 71 câu agent trả lời bằng văn bản dài thay vì gọi `answer`, 12 câu chạm giới hạn 25 lần gọi → EM 0,275 / F1 0,467 **không phản ánh đúng**. Đáp án đúng nằm trong câu trả lời: ~153/200.
+
 ## Quan sát: `shared-v2-try` (2026-10-24, agent-v5, 5 câu)
 - **D14 có tác dụng:** 6 `follow_edge` (trước: 0); 2 lần nhảy bị chặn (Fyre Festival; Mario Kempes — tên lấy từ trí nhớ model). 1 lần *ghi rồi đi tiếp* (#3: ghi McFarland → Fyre Festival từ câu văn, đi theo cạnh đó tới Great Exuma).
 - **Lỗi tự nhiên quan sát được:**
@@ -186,6 +201,7 @@ Lý do: `shared-v1-try` (5 câu, agent-v4) có 10 `start_at`, **0 `follow_edge`*
 | O4 | Agent được ghi những suy diễn nào (vd. cạnh tắt 2 bước) | Cho ghi tự do để quan sát; có bước cập nhật bộ nhớ bắt buộc hỏi (D11.4) |
 | O6 | Có chủ động xoá bớt cạnh để buộc agent đọc văn bản không | Không; dùng độ thiếu tự nhiên của trích xuất, xem lại sau khi đọc trace |
 | O5 | Bảng tên tiếng Anh cho 96 PID (để đưa vào prompt) | Lấy nhãn Wikidata, lưu `data/manual/relations.json` |
+| O7 | Đo lan truyền lỗi (lỗi bền vững) | **Đã chốt** (D15): câu hỏi dò cho từng cạnh agent ghi, chạy trên đồ thị trước/sau |
 
 ## Môi trường và dữ liệu thô
 - Script chạy bằng `.venv` (Python 3.11) trên Windows. Môi trường của Claude không gọi được API LLM và không tải được HotpotQA → chạy LLM do người dùng thực hiện.
@@ -208,5 +224,8 @@ Lý do: `shared-v1-try` (5 câu, agent-v4) có 10 `start_at`, **0 `follow_edge`*
 - [x] `run_agent.py --run-name shared-v1-try --graph data/interim/shared/graph.json --limit 5` (agent-v4) → 0 `follow_edge`, dẫn tới D14
 - [x] Code D14 (agent-v5); kiểm thử offline đạt
 - [x] `run_agent.py --run-name shared-v2-try --graph data/interim/shared/graph.json --limit 5` → 6 `follow_edge`, D14 đạt
-- [ ] `run_agent.py --run-name shared-v2 --graph data/interim/shared/graph.json`
-- [ ] Đọc trace: lỗi tự nhiên trong duyệt/ghi; câu nào đi qua cạnh do câu trước ghi, cạnh đó đúng hay sai
+- [x] `run_agent.py --run-name shared-v2 --graph data/interim/shared/graph.json` (xem Quan sát: shared-v2)
+- [x] Đọc trace `shared-v2` (xem Quan sát: shared-v2)
+- [x] Code D15 (`scripts/probe_writes.py`); kiểm thử offline đạt
+- [ ] `probe_writes.py gen --workers 4` → kiểm tra 20 câu mẫu
+- [ ] `probe_writes.py run --workers 4` → so sánh trước/sau
