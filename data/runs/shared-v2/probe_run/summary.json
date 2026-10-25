@@ -1,0 +1,20 @@
+{
+  "n_probes": 91,
+  "correct_before": 89,
+  "correct_after": 88,
+  "after_used_probe_edge": 14,
+  "after_saw_probe_edge": 89,
+  "after_used_probe_edge_correct": 14,
+  "both_correct": 86,
+  "only_before_correct": 3,
+  "only_after_correct": 2,
+  "both_wrong": 0,
+  "mean_follows_before": 0.32,
+  "mean_follows_after": 0.27,
+  "llm_stats": {
+    "calls": 766,
+    "cache_hits": 56,
+    "prompt_tokens": 1728536,
+    "completion_tokens": 77907
+  }
+}

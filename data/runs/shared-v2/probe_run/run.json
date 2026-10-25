@@ -1,0 +1,14 @@
+{
+  "run_id": "shared-v2-probe",
+  "started": "2026-10-25T14:16:14",
+  "llm": {
+    "model": "deepseek-v4.1-flash",
+    "base_url": "https://opencode.ai/inference/go/openai/v1",
+    "temperature": 0.0
+  },
+  "agent_prompt_version": "agent-v5",
+  "gates": "accept_all",
+  "n_probes": 91,
+  "graph_before": "D:\\Document\\2026.1\\it5024e-gr2\\dual-critic-graph\\data\\interim\\shared\\graph.json",
+  "graph_after": "D:\\Document\\2026.1\\it5024e-gr2\\dual-critic-graph\\data\\runs\\shared-v2\\graph_after.json"
+}

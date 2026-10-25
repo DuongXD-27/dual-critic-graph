@@ -153,6 +153,13 @@ Lý do: `shared-v2` chỉ có 2/200 câu đi qua cạnh do câu trước ghi; Ho
 4. **Mỗi câu dò chạy 2 lần:** `before` = đồ thị gốc, `after` = `graph_after.json` của lượt chạy. Mỗi lần trên bản sao đồ thị, không có bước bộ nhớ. So sánh: đúng/sai trước–sau, có đi qua cạnh dò không. "HẠI" = trước đúng, sau sai (cạnh agent ghi làm hỏng); "GIÚP" = ngược lại.
 5. Chấm đúng bằng `contains_gold` (đáp án chuẩn nằm trọn trong câu trả lời, theo từ) vì agent hay trả lời cả câu; `run_agent` cũng báo thêm `gold_in_answer`.
 
+## Quan sát: câu hỏi dò `probe-v2` trên `shared-v2` (2026-10-25)
+- 105 cạnh agent ghi mới → 91 câu dò hợp lệ (11 không sinh được vì văn bản không nối H–T, đa số là phép ghi thiếu căn cứ: Kerensky, Gainesville, Darkhorse, Cranium...). 182 lượt agent, 766 lời gọi.
+- **Đúng: trước 89/91, sau 88/91.** 5 câu khác nhau (3 "hại", 2 "giúp") nhưng **không câu nào đi qua cạnh dò**; phần lớn do chấm/câu dò ("The series", "Silver medalist" vs "silver medal"). Duy nhất Cranium: cạnh thiếu căn cứ (instance of board game) lọt vào câu trả lời ("a party board game").
+- **Vì sao không thấy hại:** (1) trần — không có cạnh agent ghi, agent vẫn đúng 98% vì đọc đoạn văn của H (câu dò chỉ cách H 1 bước) và model đã biết sẵn nhiều sự kiện; (2) câu dò hỏi **đuôi T theo văn bản**, mà đa số cạnh sai chỉ sai *nhãn quan hệ*, cặp (H, T) vẫn đúng (cousin→sibling vẫn trỏ tới Terrence Jones) → câu trả lời vẫn đúng. Lỗi nhãn quan hệ chỉ gây hại khi có câu hỏi hỏi *đúng quan hệ đó* ("Who is Stoudamire's sibling?").
+- **Điều thấy được — cạnh trong bộ nhớ làm agent bỏ kiểm tra văn bản:** số lượt đọc văn bản 78 → 45; trả lời chỉ từ danh sách cạnh của nút xuất phát (không đi, không đọc) 8 → 32. Agent thấy cạnh dò 89/91 lần, đi theo 14 lần; 14/14 đều đúng. Lượt `before` agent tự ghi lại 24 cạnh, lượt `after` chỉ 1. → Một khi đã ghi, cạnh được **tin và dùng thay cho văn bản**: cổng Construction là lần kiểm tra duy nhất. Đây là bằng chứng định tính cho động cơ của đề tài; chưa đo được tác hại định lượng.
+- Kết luận O7: dừng đo lan truyền ở mức này (báo cáo mô tả + threats to validity). Nếu cần định lượng sau: câu dò hỏi theo *quan hệ agent đã ghi* (đáp án chuẩn có thể là "văn bản không nói").
+
 ## Quan sát: `shared-v2` (2026-10-24, agent-v5, 200 câu, ~70 phút, 1.664 lời gọi, 4,8 triệu token vào)
 - **Bản ghi cổng thu được:** 321 `start` + 178 `follow` (Traversal); 116 phép ghi qua cổng Construction (85 bước bộ nhớ, 31 lúc đang trả lời). 129/178 cạnh agent chọn đi có nguồn nằm trong supporting_facts, 46 không (đi vòng/lạc).
 - **Duyệt:** bridge trung bình 1,13 `follow_edge` (35/149 câu không đi bước nào); comparison 0,2 (bình thường: 2 thực thể đều có trong câu hỏi). 74 lần nhảy bị chặn: 45 tên lấy từ trí nhớ model, 19 tên vừa đọc trong văn bản (lẽ ra phải ghi cạnh rồi đi), 10 tên đã hiện sẵn ở cạnh kề (lẽ ra `follow_edge`). 21 câu có *ghi rồi đi tiếp* (D14).
@@ -229,5 +236,6 @@ Lý do: `shared-v2` chỉ có 2/200 câu đi qua cạnh do câu trước ghi; Ho
 - [x] `run_agent.py --run-name shared-v2 --graph data/interim/shared/graph.json` (xem Quan sát: shared-v2)
 - [x] Đọc trace `shared-v2` (xem Quan sát: shared-v2)
 - [x] Code D15 (`scripts/probe_writes.py`); kiểm thử offline đạt
-- [ ] `probe_writes.py gen --workers 4` → kiểm tra 20 câu mẫu
-- [ ] `probe_writes.py run --workers 4` → so sánh trước/sau
+- [x] `probe_writes.py gen --workers 4` (probe-v2) → kiểm tra 20 câu mẫu
+- [x] `probe_writes.py run --workers 4` → so sánh trước/sau (xem Quan sát: câu hỏi dò)
+- [ ] Dựng benchmark Traversal + Construction từ `shared-v2/gates.jsonl` (RQ0–RQ2)

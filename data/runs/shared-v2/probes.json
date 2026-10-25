@@ -1,15 +1,15 @@
 {
-  "probe_version": "probe-v1",
+  "probe_version": "probe-v2",
   "llm": {
     "model": "deepseek-v4.1-flash",
     "base_url": "https://opencode.ai/inference/go/openai/v1",
     "temperature": 0.0
   },
-  "created": "2026-10-25T13:12:38",
+  "created": "2026-10-25T13:29:34",
   "stats": {
-    "not_answerable": 9,
-    "ok": 94,
-    "answer_in_question": 1,
+    "not_answerable": 11,
+    "ok": 91,
+    "answer_in_question": 2,
     "no_source_text": 1
   },
   "probes": [
@@ -67,9 +67,13 @@
           "text": "William Z. McFarland (born 1991) is an American entrepreneur who was the founder and CEO of three companies: Spling, Magnises, and Fyre Media."
         }
       ],
-      "question": "What festival was Billy McFarland charged with wire fraud in connection with organizing?",
+      "question": "Billy McFarland was charged with wire fraud in Manhattan federal court related to the organization of what event?",
       "answer": "Fyre Festival",
       "status": "ok",
+      "answers": [
+        "Fyre Festival"
+      ],
+      "same_as_T": true,
       "attempts": 1
     },
     {
@@ -97,9 +101,13 @@
           "text": "Their most recent film is an adaptation by Michell of Daphne Du Maurier's \"My Cousin Rachel\"."
         }
       ],
-      "question": "Which London-based production company co-owned by Roger Michell made an adaptation of My Cousin Rachel as its most recent film?",
+      "question": "What London-based production company is co-owned by the makers of the film adaptation of Daphne Du Maurier's My Cousin Rachel?",
       "answer": "Free Range Films",
       "status": "ok",
+      "answers": [
+        "Free Range Films"
+      ],
+      "same_as_T": true,
       "attempts": 1
     },
     {
@@ -122,9 +130,13 @@
           "text": "The 2012 season was the third season under the leadership of team president Mike Holmgren and general manager Tom Heckert and the second season under head coach Pat Shurmur."
         }
       ],
-      "question": "Who was the team president during the 2012 Cleveland Browns season?",
+      "question": "Who served as team president during the 2012 Cleveland Browns season?",
       "answer": "Mike Holmgren",
       "status": "ok",
+      "answers": [
+        "Mike Holmgren"
+      ],
+      "same_as_T": true,
       "attempts": 1
     },
     {
@@ -147,9 +159,13 @@
           "text": "He is the cousin of former Arizona Wildcats standout Salim Stoudamire and current NBA player Terrence Jones."
         }
       ],
-      "question": "Damon Stoudamire is the cousin of which current NBA player?",
+      "question": "Which current NBA player is Damon Stoudamire the cousin of?",
       "answer": "Terrence Jones",
       "status": "ok",
+      "answers": [
+        "Terrence Jones"
+      ],
+      "same_as_T": true,
       "attempts": 1
     },
     {
@@ -172,9 +188,13 @@
           "text": "Colin Rand Kaepernick ( ; born November 3, 1987) is an American football quarterback who is currently a free agent."
         }
       ],
-      "question": "What is Colin Kaepernick?",
+      "question": "What is Colin Kaepernick by profession?",
       "answer": "American football quarterback",
       "status": "ok",
+      "answers": [
+        "American football quarterback"
+      ],
+      "same_as_T": true,
       "attempts": 1
     },
     {
@@ -197,9 +217,13 @@
           "text": "She was also the runner-up at the 2016 Wimbledon Championships and a Silver medalist at the 2016 Rio de Janeiro Olympics."
         }
       ],
-      "question": "What color of medal did she win at the 2016 Rio de Janeiro Olympics?",
-      "answer": "Silver",
+      "question": "What designation did the competitor receive at the 2016 Rio de Janeiro Olympics?",
+      "answer": "Silver medalist",
       "status": "ok",
+      "answers": [
+        "Silver medalist"
+      ],
+      "same_as_T": false,
       "attempts": 1
     },
     {
@@ -225,6 +249,10 @@
       "question": "What did Mauresmo win at the 2004 Summer Olympics?",
       "answer": "Silver Medal",
       "status": "ok",
+      "answers": [
+        "Silver Medal"
+      ],
+      "same_as_T": true,
       "attempts": 1
     },
     {
@@ -250,6 +278,10 @@
       "question": "What taxonomic rank does Marsilea have?",
       "answer": "genus",
       "status": "ok",
+      "answers": [
+        "genus"
+      ],
+      "same_as_T": true,
       "attempts": 1
     },
     {
@@ -273,8 +305,12 @@
         }
       ],
       "question": "What was California Polytechnic State University founded as in 1901?",
-      "answer": "a vocational high school",
+      "answer": "vocational high school",
       "status": "ok",
+      "answers": [
+        "vocational high school"
+      ],
+      "same_as_T": true,
       "attempts": 1
     },
     {
@@ -302,9 +338,14 @@
           "text": "Twin Tin Bots is a 2014 board game designed by Philippe Keyaerts and published by Flatlined Games."
         }
       ],
-      "question": null,
-      "answer": null,
-      "status": "not_answerable"
+      "question": "What is Cranium?",
+      "answer": "party game",
+      "status": "ok",
+      "answers": [
+        "party game"
+      ],
+      "same_as_T": false,
+      "attempts": 1
     },
     {
       "probe_id": "p_e12372",
@@ -331,9 +372,14 @@
           "text": "Twin Tin Bots is a 2014 board game designed by Philippe Keyaerts and published by Flatlined Games."
         }
       ],
-      "question": null,
-      "answer": null,
-      "status": "not_answerable"
+      "question": "What party game was created by Whit Alexander and Richard Tait in 1998?",
+      "answer": "Cranium",
+      "status": "ok",
+      "answers": [
+        "Cranium"
+      ],
+      "same_as_T": false,
+      "attempts": 1
     },
     {
       "probe_id": "p_e12373",
@@ -355,9 +401,13 @@
           "text": "He has acted in a few Off Broadway productions and has made appearances on American television shows such as \"\", \"Person of Interest\" and \"\" and video games such as \"Grand Theft Auto V\", \"Red Dead Redemption\", \"\" and \"Red Dead Revolver\"."
         }
       ],
-      "question": "Tyler Bunch has appeared in video games such as Grand Theft Auto and Red Dead Revolver; what other game title is listed among those appearances?",
+      "question": "In which video game did Tyler Bunch appear alongside Grand Theft Auto V and Red Dead Revolver?",
       "answer": "Red Dead Redemption",
       "status": "ok",
+      "answers": [
+        "Red Dead Redemption"
+      ],
+      "same_as_T": true,
       "attempts": 1
     },
     {
@@ -380,9 +430,13 @@
           "text": "Fred Niblo (January 6, 1874 – November 11, 1948) was an American pioneer film actor, director and producer."
         }
       ],
-      "question": "What was Fred Niblo's nationality?",
+      "question": "What nationality was Fred Niblo?",
       "answer": "American",
       "status": "ok",
+      "answers": [
+        "American"
+      ],
+      "same_as_T": true,
       "attempts": 1
     },
     {
@@ -405,9 +459,14 @@
           "text": "Dr. Reinhold Ewald (born December 18, 1956) is a German physicist and ESA astronaut."
         }
       ],
-      "question": "What nationality is Reinhold Ewald?",
+      "question": "What is the nationality of Reinhold Ewald?",
       "answer": "German",
       "status": "ok",
+      "answers": [
+        "German",
+        "Germany"
+      ],
+      "same_as_T": true,
       "attempts": 1
     },
     {
@@ -433,6 +492,11 @@
       "question": "What nationality is Ernst Messerschmid?",
       "answer": "German",
       "status": "ok",
+      "answers": [
+        "German",
+        "Germany"
+      ],
+      "same_as_T": true,
       "attempts": 1
     },
     {
@@ -455,9 +519,13 @@
           "text": "They also interview various celebrities such as Jennette McCurdy, Jamie Kennedy, Eugenia Cooney, Joey Graceffa, CupcakKe, Aislinn Paul, Chris Crocker, Dita von Teese, and Farrah Abraham."
         }
       ],
-      "question": "Which celebrity does Shane and Friends interview immediately after Eugenia Cooney in its list of interviewees?",
+      "question": "Which celebrity is interviewed on Shane and Friends along with Jennette McCurdy, Jamie Kennedy, Eugenia Cooney, CupcakKe, Aislinn Paul, Chris Crocker, Dita von Teese, and Farrah Abraham?",
       "answer": "Joey Graceffa",
       "status": "ok",
+      "answers": [
+        "Joey Graceffa"
+      ],
+      "same_as_T": true,
       "attempts": 1
     },
     {
@@ -480,9 +548,13 @@
           "text": "Joseph Michael Graceffa ( ; born May 16, 1991) is an American YouTube personality, actor, author, producer, and singer."
         }
       ],
-      "question": "What is Joey Graceffa's occupation?",
+      "question": "What occupation does Joey Graceffa have?",
       "answer": "YouTube personality",
       "status": "ok",
+      "answers": [
+        "YouTube personality"
+      ],
+      "same_as_T": true,
       "attempts": 1
     },
     {
@@ -508,6 +580,11 @@
       "question": "What nationality is Joey Graceffa?",
       "answer": "American",
       "status": "ok",
+      "answers": [
+        "American",
+        "United States"
+      ],
+      "same_as_T": true,
       "attempts": 1
     },
     {
@@ -530,9 +607,13 @@
           "text": "Thomas Boutflower Bennett (1808- 14 September 1894) was an early colonist of South Australia, remembered as a schoolmaster at J. L. Young's Adelaide Educational Institution and at Saint Peter's College."
         }
       ],
-      "question": "What role is Thomas Boutflower Bennett remembered for at J. L. Young's Adelaide Educational Institution and Saint Peter's College?",
+      "question": "What profession was Thomas Boutflower Bennett remembered for?",
       "answer": "schoolmaster",
       "status": "ok",
+      "answers": [
+        "schoolmaster"
+      ],
+      "same_as_T": true,
       "attempts": 1
     },
     {
@@ -555,9 +636,13 @@
           "text": "His paintings can be found in the permanent collections of many museums, including the Metropolitan Museum of Art in New York, the National Museum of American Art, the Smithsonian Institution, the White House, Gracie Mansion in New York, the Senate Office Building, and the Museum of the City of New York."
         }
       ],
-      "question": "In what New York residence are Stokely Webster's paintings included in the permanent collection?",
+      "question": "In which New York building can paintings by Stokely Webster be found in the permanent collection?",
       "answer": "Gracie Mansion",
       "status": "ok",
+      "answers": [
+        "Gracie Mansion"
+      ],
+      "same_as_T": true,
       "attempts": 1
     },
     {
@@ -581,8 +666,12 @@
         }
       ],
       "question": "What is the official residence of the Mayor of New York City?",
-      "answer": "Archibald Gracie Mansion",
+      "answer": "Gracie Mansion",
       "status": "ok",
+      "answers": [
+        "Gracie Mansion"
+      ],
+      "same_as_T": true,
       "attempts": 1
     },
     {
@@ -608,6 +697,10 @@
       "question": "What position does Case Keenum play?",
       "answer": "quarterback",
       "status": "ok",
+      "answers": [
+        "quarterback"
+      ],
+      "same_as_T": true,
       "attempts": 1
     },
     {
@@ -630,9 +723,13 @@
           "text": "British troops under Lord Combermere initially surrounded the state's capital until on 18January 1826 its fortress was stormed and captured."
         }
       ],
-      "question": "Who commanded the British troops during the Siege of Bharatpur?",
+      "question": "Under whose command were British troops during the Siege of Bharatpur?",
       "answer": "Lord Combermere",
       "status": "ok",
+      "answers": [
+        "Lord Combermere"
+      ],
+      "same_as_T": true,
       "attempts": 1
     },
     {
@@ -660,9 +757,13 @@
           "text": "Field Marshal Stapleton Cotton, 1st Viscount Combermere {'1': \", '2': \", '3': \", '4': \"} (14 November 1773 – 21 February 1865), was a British Army officer, diplomat and politician."
         }
       ],
-      "question": "What was abolished in 1852 when Stapleton Cotton, 1st Viscount Combermere accepted office as the Constable of the Tower?",
-      "answer": "The post of Governor",
+      "question": "What office did Stapleton Cotton, 1st Viscount Combermere accept as in 1852?",
+      "answer": "Constable of the Tower",
       "status": "ok",
+      "answers": [
+        "Constable of the Tower"
+      ],
+      "same_as_T": false,
       "attempts": 1
     },
     {
@@ -685,9 +786,13 @@
           "text": "Field Marshal Stapleton Cotton, 1st Viscount Combermere {'1': \", '2': \", '3': \", '4': \"} (14 November 1773 – 21 February 1865), was a British Army officer, diplomat and politician."
         }
       ],
-      "question": "What military position did Stapleton Cotton, 1st Viscount Combermere hold?",
-      "answer": "British Army officer",
+      "question": "Stapleton Cotton, 1st Viscount Combermere was an officer of which military force?",
+      "answer": "British Army",
       "status": "ok",
+      "answers": [
+        "British Army"
+      ],
+      "same_as_T": true,
       "attempts": 1
     },
     {
@@ -711,8 +816,12 @@
         }
       ],
       "question": "What was the Governor of Sheerness?",
-      "answer": "a military officer",
+      "answer": "military officer",
       "status": "ok",
+      "answers": [
+        "military officer"
+      ],
+      "same_as_T": true,
       "attempts": 1
     },
     {
@@ -738,6 +847,11 @@
       "question": "What nationality is Brian G. Hutton?",
       "answer": "American",
       "status": "ok",
+      "answers": [
+        "American",
+        "United States"
+      ],
+      "same_as_T": true,
       "attempts": 1
     },
     {
@@ -760,9 +874,13 @@
           "text": "The following season, he became the first player in NBA history to be elected MVP by a unanimous vote and to lead the league in scoring while shooting above 50–40–90."
         }
       ],
-      "question": "While leading the league in scoring, Stephen Curry shot above what three-category shooting marks?",
+      "question": "What shooting split did Stephen Curry shoot above when Stephen Curry became the first player in NBA history to be elected MVP by a unanimous vote and to lead the league in scoring?",
       "answer": "50–40–90",
       "status": "ok",
+      "answers": [
+        "50–40–90"
+      ],
+      "same_as_T": false,
       "attempts": 1
     },
     {
@@ -785,10 +903,15 @@
           "text": "Vanilla is a flavoring derived from orchids of the genus \"Vanilla\", primarily from the Mexican species, flat-leaved vanilla (\"V. planifolia\")."
         }
       ],
-      "question": "What is primarily obtained from the Mexican species flat-leaved vanilla?",
-      "answer": "a flavoring",
+      "question": "What is derived from orchids of the genus Vanilla, primarily the Mexican species flat-leaved vanilla?",
+      "answer": "flavoring",
       "status": "ok",
-      "attempts": 1
+      "answers": [
+        "flavoring",
+        "commercial vanilla flavoring"
+      ],
+      "same_as_T": true,
+      "attempts": 2
     },
     {
       "probe_id": "p_e12391",
@@ -810,9 +933,13 @@
           "text": "The most well-known species is the Geraldton Wax, \"Chamelaucium uncinatum\", which is cultivated widely for its large attractive flowers."
         }
       ],
-      "question": "What is Chamelaucium uncinatum described as being the most well-known example of?",
-      "answer": "species",
+      "question": "What is the common name for the most well-known species, Chamelaucium uncinatum?",
+      "answer": "Geraldton Wax",
       "status": "ok",
+      "answers": [
+        "Geraldton Wax"
+      ],
+      "same_as_T": false,
       "attempts": 1
     },
     {
@@ -859,9 +986,13 @@
           "text": "He is best remembered for producing \"Casablanca\" (1942) and \"True Grit\" (1969), along with many other major films for Warner Bros. featuring such film stars as Humphrey Bogart, Bette Davis, and Errol Flynn."
         }
       ],
-      "question": "For producing which 1942 film is Hal B. Wallis best remembered?",
+      "question": "What film is Hal B. Wallis best remembered for producing?",
       "answer": "Casablanca",
       "status": "ok",
+      "answers": [
+        "Casablanca"
+      ],
+      "same_as_T": true,
       "attempts": 1
     },
     {
@@ -884,9 +1015,14 @@
           "text": "Wilco Melissant (born December 8, 1968) is a Dutch director who directed various arthouse video productions for Witchhunt Productions, of which he himself is the chairman."
         }
       ],
-      "question": "What title does Wilco Melissant hold in the organization for which he directed various arthouse video productions?",
+      "question": "What position does Wilco Melissant hold at Witchhunt Productions?",
       "answer": "chairman",
       "status": "ok",
+      "answers": [
+        "chairman",
+        "chairman of Witchhunt Productions"
+      ],
+      "same_as_T": true,
       "attempts": 1
     },
     {
@@ -936,6 +1072,10 @@
       "question": "Who was Heinrich Scholz a peer of?",
       "answer": "Alan Turing",
       "status": "ok",
+      "answers": [
+        "Alan Turing"
+      ],
+      "same_as_T": true,
       "attempts": 1
     },
     {
@@ -958,9 +1098,14 @@
           "text": "It was invented by the 18th century Dutch scientist Musschenbroek"
         }
       ],
-      "question": "What nationality is Musschenbroek described as having?",
+      "question": "What nationality was Musschenbroek?",
       "answer": "Dutch",
       "status": "ok",
+      "answers": [
+        "Dutch",
+        "Netherlands"
+      ],
+      "same_as_T": true,
       "attempts": 1
     },
     {
@@ -988,9 +1133,13 @@
           "text": "It was invented by the 18th century Dutch scientist Musschenbroek"
         }
       ],
-      "question": "What is Musschenbroek credited with inventing in 1746?",
-      "answer": "the Leyden jar",
+      "question": "What did Musschenbroek invent?",
+      "answer": "Leyden jar",
       "status": "ok",
+      "answers": [
+        "Leyden jar"
+      ],
+      "same_as_T": true,
       "attempts": 1
     },
     {
@@ -1060,9 +1209,13 @@
           "text": "\"Don't Lose Touch\" is a song by the Gainesville, Florida-based punk rock band Against Me!"
         }
       ],
-      "question": "Against Me! is described as a punk rock band based in which city?",
+      "question": "What city is Against Me! based in?",
       "answer": "Gainesville, Florida",
       "status": "ok",
+      "answers": [
+        "Gainesville, Florida"
+      ],
+      "same_as_T": true,
       "attempts": 1
     },
     {
@@ -1090,9 +1243,14 @@
           "text": "It is located in Faxe Municipality in Region Zealand."
         }
       ],
-      "question": "What does Faxe Bryggeri produce a range of in addition to beer?",
+      "question": "What type of drink does Faxe Bryggeri produce in addition to beer?",
       "answer": "soft drinks",
       "status": "ok",
+      "answers": [
+        "soft drinks",
+        "soft drink"
+      ],
+      "same_as_T": true,
       "attempts": 1
     },
     {
@@ -1120,9 +1278,13 @@
           "text": "Faxe or Fakse is a town on the island of Zealand in eastern Denmark."
         }
       ],
-      "question": "Which town is located in a municipality in Region Zealand?",
+      "question": "What town is located in Region Zealand?",
       "answer": "Faxe",
       "status": "ok",
+      "answers": [
+        "Faxe"
+      ],
+      "same_as_T": true,
       "attempts": 1
     },
     {
@@ -1184,9 +1346,13 @@
           "text": "Bert Newton described her as \"our greatest comedienne - Australia's Lucille Ball\"."
         }
       ],
-      "question": "Bert Newton described Dawn Lake as Australia's version of whom?",
+      "question": "Bert Newton described Dawn Lake as Australia's what?",
       "answer": "Lucille Ball",
       "status": "ok",
+      "answers": [
+        "Lucille Ball"
+      ],
+      "same_as_T": true,
       "attempts": 1
     },
     {
@@ -1212,6 +1378,10 @@
       "question": "Which team drafted Jimmy Butler with the 30th overall pick in the 2011 NBA draft?",
       "answer": "Chicago Bulls",
       "status": "ok",
+      "answers": [
+        "Chicago Bulls"
+      ],
+      "same_as_T": true,
       "attempts": 1
     },
     {
@@ -1234,9 +1404,14 @@
           "text": "His third son Miikka played also basketball before retiring early due to injuries."
         }
       ],
-      "question": "Who is the third son of Pekka Markkanen who played basketball before retiring early due to injuries?",
+      "question": "Who is the third son of Pekka Markkanen?",
       "answer": "Miikka",
       "status": "ok",
+      "answers": [
+        "Miikka",
+        "Miikka Markkanen"
+      ],
+      "same_as_T": true,
       "attempts": 1
     },
     {
@@ -1259,9 +1434,14 @@
           "text": "Markkanen's wife Riikka (née Ellonen) was also a basketball player."
         }
       ],
-      "question": "Who was the wife of Pekka Markkanen?",
-      "answer": "Riikka (née Ellonen)",
+      "question": "Who is the wife of Pekka Markkanen?",
+      "answer": "Riikka",
       "status": "ok",
+      "answers": [
+        "Riikka",
+        "Riikka Markkanen"
+      ],
+      "same_as_T": true,
       "attempts": 1
     },
     {
@@ -1289,9 +1469,14 @@
           "text": "Markkanen is the father of Chicago Bulls basketball player Lauri Markkanen and the AIK football player Eero Markkanen."
         }
       ],
-      "question": "Who is the third son of Eero Markkanen's father?",
+      "question": "Who is the third son of the father of Eero Markkanen?",
       "answer": "Miikka",
       "status": "ok",
+      "answers": [
+        "Miikka",
+        "Miikka Markkanen"
+      ],
+      "same_as_T": true,
       "attempts": 1
     },
     {
@@ -1319,9 +1504,14 @@
           "text": "Markkanen is the father of Chicago Bulls basketball player Lauri Markkanen and the AIK football player Eero Markkanen."
         }
       ],
-      "question": "Who is the third son of the father of Lauri Markkanen?",
+      "question": "Who is the third son of Lauri Markkanen's father?",
       "answer": "Miikka",
       "status": "ok",
+      "answers": [
+        "Miikka",
+        "Miikka Markkanen"
+      ],
+      "same_as_T": true,
       "attempts": 1
     },
     {
@@ -1349,9 +1539,13 @@
           "text": "Only Fools and Horses is a British television sitcom created and written by John Sullivan."
         }
       ],
-      "question": "Who created and wrote Only Fools and Horses, the British television sitcom that The Chance of a Lunchtime is an episode of?",
+      "question": "Who created and wrote the sitcom that The Chance of a Lunchtime is an episode of?",
       "answer": "John Sullivan",
       "status": "ok",
+      "answers": [
+        "John Sullivan"
+      ],
+      "same_as_T": true,
       "attempts": 1
     },
     {
@@ -1379,9 +1573,13 @@
           "text": "Only Fools and Horses is a British television sitcom created and written by John Sullivan."
         }
       ],
-      "question": "Who created and wrote Only Fools and Horses, the British television sitcom that The Chance of a Lunchtime is an episode of?",
+      "question": "Who created and wrote Only Fools and Horses, the sitcom of which The Chance of a Lunchtime is an episode?",
       "answer": "John Sullivan",
       "status": "ok",
+      "answers": [
+        "John Sullivan"
+      ],
+      "same_as_T": true,
       "attempts": 1
     },
     {
@@ -1409,9 +1607,13 @@
           "text": "Canobie Lake is a 375 acre body of water located in Rockingham County in southern New Hampshire, United States, in the towns of Salem and Windham."
         }
       ],
-      "question": "What town is Canobie Lake the water supply for?",
+      "question": "For what town is Canobie Lake the water supply?",
       "answer": "Salem, New Hampshire",
       "status": "ok",
+      "answers": [
+        "Salem, New Hampshire"
+      ],
+      "same_as_T": true,
       "attempts": 1
     },
     {
@@ -1439,10 +1641,9 @@
           "text": "The show ran for nine seasons, from 1988 to 1997."
         }
       ],
-      "question": "Roseanne Barr gained fame for her role in what kind of television program?",
-      "answer": "hit television sitcom",
-      "status": "ok",
-      "attempts": 2
+      "question": null,
+      "answer": null,
+      "status": "answer_in_question"
     },
     {
       "probe_id": "p_e12415",
@@ -1464,9 +1665,14 @@
           "text": "The series received widespread attention due to its creators Roseanne Arnold, then starring in the fifth season of her comedy \"Roseanne\", and her husband and \"Roseanne\" co-producer Tom Arnold."
         }
       ],
-      "question": "Roseanne Barr is identified as one of what for the series that received widespread attention?",
-      "answer": "creators",
+      "question": "What did Roseanne Barr create?",
+      "answer": "The series",
       "status": "ok",
+      "answers": [
+        "The series",
+        "The Jackie Thomas Show"
+      ],
+      "same_as_T": true,
       "attempts": 1
     },
     {
@@ -1494,9 +1700,14 @@
           "text": "She is best known for her roles as Eve Donovan on the NBC Daytime soap opera \"Days of Our Lives\" from 1987 to 1991, and as Det. Connie McDowell on the ABC police procedural drama \"NYPD Blue\" from 2001 to 2004."
         }
       ],
-      "question": null,
-      "answer": null,
-      "status": "not_answerable"
+      "question": "On which NBC Daytime soap opera is Eve Donovan a role?",
+      "answer": "Days of Our Lives",
+      "status": "ok",
+      "answers": [
+        "Days of Our Lives"
+      ],
+      "same_as_T": false,
+      "attempts": 1
     },
     {
       "probe_id": "p_e12417",
@@ -1518,9 +1729,13 @@
           "text": "He played character Todd Manning on the daytime drama \"One Life to Live\" (\"OLTL\"); the character earned Howarth a Daytime Emmy Award in 1994, and is cited as an icon in the soap opera genre."
         }
       ],
-      "question": "In what year did Roger Howarth's portrayal of Todd Manning earn him a Daytime Emmy Award?",
+      "question": "In what year did Roger Howarth earn a Daytime Emmy Award for playing Todd Manning on One Life to Live?",
       "answer": "1994",
       "status": "ok",
+      "answers": [
+        "1994"
+      ],
+      "same_as_T": true,
       "attempts": 1
     },
     {
@@ -1543,10 +1758,9 @@
           "text": "Early in his career he oversaw the construction and operation of several notable Las Vegas and Atlantic City hotels, including the Golden Nugget, the Golden Nugget Atlantic City, The Mirage, Treasure Island, the Bellagio, and Beau Rivage in Mississippi, and he played a pivotal role in the resurgence and expansion of the Las Vegas Strip in the 1990s."
         }
       ],
-      "question": "What did the person associated with the Golden Nugget, The Mirage, and Bellagio do regarding Treasure Island Hotel and Casino?",
-      "answer": "oversaw the construction and operation",
-      "status": "ok",
-      "attempts": 1
+      "question": null,
+      "answer": null,
+      "status": "not_answerable"
     },
     {
       "probe_id": "p_e12419",
@@ -1592,10 +1806,9 @@
           "text": "In late 1986, the centre closed for the construction of the world's first indoor ski slope and reopened in 1987 as Mt Thebarton Snow and Ice, featuring what was reported to be the world's first indoor ski slope on artificial snow."
         }
       ],
-      "question": "What did Ice Arena close for construction of in late 1986?",
-      "answer": "world's first indoor ski slope",
-      "status": "ok",
-      "attempts": 1
+      "question": null,
+      "answer": null,
+      "status": "not_answerable"
     },
     {
       "probe_id": "p_e12421",
@@ -1620,6 +1833,10 @@
       "question": "What is the International Hotel now known as?",
       "answer": "Westgate Las Vegas Resort & Casino",
       "status": "ok",
+      "answers": [
+        "Westgate Las Vegas Resort & Casino"
+      ],
+      "same_as_T": true,
       "attempts": 1
     },
     {
@@ -1642,9 +1859,13 @@
           "text": "Ian Boothby is a multiple Shuster Award, Harvey Award and Eisner Award nominee and an Eisner Award–winning comic book creator best known for his work as the lead writer on \"Simpsons Comics\" and \"Futurama Comics\" for Matt Groening's Bongo Comics."
         }
       ],
-      "question": "Whose comics company is Bongo Comics?",
-      "answer": "Matt Groening's",
+      "question": "Bongo Comics is the comic book company of which creator?",
+      "answer": "Matt Groening",
       "status": "ok",
+      "answers": [
+        "Matt Groening"
+      ],
+      "same_as_T": true,
       "attempts": 1
     },
     {
@@ -1667,9 +1888,13 @@
           "text": "Herbert George Wells (21 September 1866 – 13 August 1946), usually referred to as H. G. Wells, was an English writer."
         }
       ],
-      "question": "What nationality was H. G. Wells?",
+      "question": "What nationality is H. G. Wells?",
       "answer": "English",
       "status": "ok",
+      "answers": [
+        "English"
+      ],
+      "same_as_T": true,
       "attempts": 1
     },
     {
@@ -1692,9 +1917,14 @@
           "text": "James Marcus Schuyler (November 9, 1923 – April 12, 1991) was an American poet."
         }
       ],
-      "question": "What nationality was James Schuyler?",
+      "question": "What nationality is James Schuyler?",
       "answer": "American",
       "status": "ok",
+      "answers": [
+        "American",
+        "United States"
+      ],
+      "same_as_T": true,
       "attempts": 1
     },
     {
@@ -1720,6 +1950,11 @@
       "question": "What nationality was A. E. Housman?",
       "answer": "English",
       "status": "ok",
+      "answers": [
+        "English",
+        "United Kingdom"
+      ],
+      "same_as_T": true,
       "attempts": 1
     },
     {
@@ -1742,9 +1977,13 @@
           "text": "The Invention of Love is a 1997 play by Tom Stoppard portraying the life of poet A. E. Housman, focusing specifically on his personal life and love for a college classmate."
         }
       ],
-      "question": "What 1997 play by Tom Stoppard portrays the life of poet A. E. Housman?",
+      "question": "Which play by Tom Stoppard portrays the life of poet A. E. Housman?",
       "answer": "The Invention of Love",
       "status": "ok",
+      "answers": [
+        "The Invention of Love"
+      ],
+      "same_as_T": true,
       "attempts": 1
     },
     {
@@ -1767,9 +2006,13 @@
           "text": "Chrysalis: A Magazine of Women's Culture was a feminist publication produced from 1977 to 1980."
         }
       ],
-      "question": "What was Chrysalis subtitled?",
+      "question": "What is the publication title attached to Chrysalis?",
       "answer": "A Magazine of Women's Culture",
       "status": "ok",
+      "answers": [
+        "A Magazine of Women's Culture"
+      ],
+      "same_as_T": false,
       "attempts": 1
     },
     {
@@ -1795,6 +2038,11 @@
       "question": "What kind of publication is Look?",
       "answer": "magazine for young women",
       "status": "ok",
+      "answers": [
+        "magazine for young women",
+        "women's magazine"
+      ],
+      "same_as_T": true,
       "attempts": 1
     },
     {
@@ -1841,9 +2089,13 @@
           "text": "Hearst entered the publishing business in 1887 after being given control of \"The San Francisco Examiner\" by his wealthy father."
         }
       ],
-      "question": "What field did William Randolph Hearst enter in 1887?",
-      "answer": "publishing",
+      "question": "What did William Randolph Hearst enter in 1887?",
+      "answer": "publishing business",
       "status": "ok",
+      "answers": [
+        "publishing business"
+      ],
+      "same_as_T": false,
       "attempts": 1
     },
     {
@@ -1869,6 +2121,10 @@
       "question": "In what year did William Randolph Hearst enter the publishing business?",
       "answer": "1887",
       "status": "ok",
+      "answers": [
+        "1887"
+      ],
+      "same_as_T": true,
       "attempts": 1
     },
     {
@@ -1891,9 +2147,13 @@
           "text": "On St. Patrick's Day in 1988, Senator Ted Kennedy helped dedicate a new room at the location to his maternal grandfather, John F. Fitzgerald."
         }
       ],
-      "question": "On what holiday in what year did Ted Kennedy help dedicate a new room to his maternal grandfather, John F. Fitzgerald?",
-      "answer": "St. Patrick's Day in 1988",
+      "question": "In what year did Ted Kennedy help dedicate a new room to John F. Fitzgerald?",
+      "answer": "1988",
       "status": "ok",
+      "answers": [
+        "1988"
+      ],
+      "same_as_T": true,
       "attempts": 1
     },
     {
@@ -1921,9 +2181,13 @@
           "text": "Papa John's Pizza is an American restaurant franchise company."
         }
       ],
-      "question": "What kind of business is Papa John's Pizza?",
-      "answer": "take-out and pizza delivery restaurant chain",
+      "question": "What nationality is Papa John's Pizza?",
+      "answer": "American",
       "status": "ok",
+      "answers": [
+        "American"
+      ],
+      "same_as_T": false,
       "attempts": 2
     },
     {
@@ -1946,9 +2210,13 @@
           "text": "Papa Gino's, Inc. is a restaurant chain based in Dedham, Massachusetts specializing in American-style pizza along with pasta, subs, salads, and a variety of appetizers."
         }
       ],
-      "question": "What kind of food does Papa Gino's specialize in?",
-      "answer": "American-style pizza",
+      "question": "What does Papa Gino's specialize in?",
+      "answer": "pizza",
       "status": "ok",
+      "answers": [
+        "pizza"
+      ],
+      "same_as_T": true,
       "attempts": 1
     },
     {
@@ -1971,9 +2239,14 @@
           "text": "He also played in Ireland for Derry City, was on the books of Barnsley, without playing for them in the League, and played non-league football for clubs including Ushaw Moor, Moor Ends Thorne, Firbeck Colliery, Spennymoor United, Thorne Colliery, Eden Colliery and Walker Celtic."
         }
       ],
-      "question": "For which Irish club did Bob Johnson also play?",
+      "question": "For which club did Bob Johnson play in Ireland?",
       "answer": "Derry City",
       "status": "ok",
+      "answers": [
+        "Derry City",
+        "Derry City F.C."
+      ],
+      "same_as_T": true,
       "attempts": 1
     },
     {
@@ -1996,9 +2269,14 @@
           "text": "The album takes its name from the Marx Brothers film of the same name, which the band watched one night at the studio complex when recording."
         }
       ],
-      "question": "Which film did the album A Night at the Opera take its name from?",
-      "answer": "the Marx Brothers film of the same name",
+      "question": "Which film shares a name with the album A Night at the Opera?",
+      "answer": "Marx Brothers film",
       "status": "ok",
+      "answers": [
+        "Marx Brothers film",
+        "A Night at the Opera by the Marx Brothers"
+      ],
+      "same_as_T": true,
       "attempts": 1
     },
     {
@@ -2024,6 +2302,11 @@
       "question": "What nationality is Ulrich Walter?",
       "answer": "German",
       "status": "ok",
+      "answers": [
+        "German",
+        "Germany"
+      ],
+      "same_as_T": true,
       "attempts": 1
     },
     {
@@ -2049,6 +2332,10 @@
       "question": "In which air force is Léopold Eyharts a Brigadier General?",
       "answer": "French Air Force",
       "status": "ok",
+      "answers": [
+        "French Air Force"
+      ],
+      "same_as_T": false,
       "attempts": 1
     },
     {
@@ -2071,9 +2358,14 @@
           "text": "Léopold Eyharts (born April 28, 1957) is a Brigadier General in the French Air Force, an engineer and ESA astronaut."
         }
       ],
-      "question": "What rank does Léopold Eyharts hold?",
+      "question": "What military rank does Léopold Eyharts hold?",
       "answer": "Brigadier General",
       "status": "ok",
+      "answers": [
+        "Brigadier General",
+        "Brigadier General in the French Air Force"
+      ],
+      "same_as_T": true,
       "attempts": 1
     },
     {
@@ -2096,10 +2388,9 @@
           "text": "She served as the Director of The Frost Place Advanced Seminar from 2007–2010, and serves on the faculty for the Stonecoast MFA Program in Creative Writing."
         }
       ],
-      "question": "From what years did she serve as Director of The Frost Place Advanced Seminar?",
-      "answer": "2007–2010",
-      "status": "ok",
-      "attempts": 1
+      "question": null,
+      "answer": null,
+      "status": "not_answerable"
     },
     {
       "probe_id": "p_e12441",
@@ -2121,9 +2412,14 @@
           "text": "Mal Logan (who provided keyboards the first LP) on keyboards joined after Stockley was hospitalised when shot in the stomach by Melbourne drug-dealer, Dennis Allen, who was attempting to gate crash a party."
         }
       ],
-      "question": "Who shot Chris Stockley in the stomach while attempting to crash a party?",
+      "question": "Which Melbourne drug-dealer shot Chris Stockley in the stomach while attempting to gatecrash a party?",
       "answer": "Dennis Allen",
       "status": "ok",
+      "answers": [
+        "Dennis Allen",
+        "Dennis Allen (criminal)"
+      ],
+      "same_as_T": true,
       "attempts": 1
     },
     {
@@ -2156,9 +2452,13 @@
           "text": "He has gained recognition for producing several hit singles for a plethora of artists in various music genres, such as Dr. Dre (\"I Need a Doctor\"), Nicki Minaj (\"Massive Attack\"), B.o.B (\"Airplanes\" featuring Hayley Williams), Eminem (\"Love the Way You Lie\" featuring Rihanna), Diddy (\"Coming Home\" with Dirty Money featuring Skylar Grey), Imagine Dragons (\"Radioactive\") and Cheryl (\"Under The Sun\")."
         }
       ],
-      "question": "In what year was Eminem's seventh studio album Recovery, which includes the song \"Love the Way You Lie\", released?",
+      "question": "What year appears in parentheses after the album title \"Recovery\" in the statement that \"Love the Way You Lie\" is from Eminem's seventh studio album?",
       "answer": "2010",
       "status": "ok",
+      "answers": [
+        "2010"
+      ],
+      "same_as_T": true,
       "attempts": 1
     },
     {
@@ -2186,9 +2486,13 @@
           "text": "It is the sequel to the 2010 hit single \"Love the Way You Lie\", which appears on Eminem's seventh studio album \"Recovery\"."
         }
       ],
-      "question": "In what year was Eminem's seventh studio album Recovery released?",
+      "question": "What year was Eminem's album Recovery released?",
       "answer": "2010",
       "status": "ok",
+      "answers": [
+        "2010"
+      ],
+      "same_as_T": true,
       "attempts": 1
     },
     {
@@ -2216,9 +2520,13 @@
           "text": "It does not sell slices, only whole pies."
         }
       ],
-      "question": "What type of eating establishment is Grimaldi's Pizzeria?",
-      "answer": "American pizzeria chain",
+      "question": "What is Grimaldi's Pizzeria?",
+      "answer": "pizzeria chain",
       "status": "ok",
+      "answers": [
+        "pizzeria chain"
+      ],
+      "same_as_T": false,
       "attempts": 1
     },
     {
@@ -2241,9 +2549,13 @@
           "text": "The Peak Galleria (Chinese: 山頂廣場) is a leisure and shopping complex and tourist attraction located at Victoria Gap, near the summit of Victoria Peak on Hong Kong Island, Hong Kong."
         }
       ],
-      "question": "Near the summit of what peak is The Peak Galleria located?",
+      "question": "The Peak Galleria is located at Victoria Gap near the summit of what peak on Hong Kong Island?",
       "answer": "Victoria Peak",
       "status": "ok",
+      "answers": [
+        "Victoria Peak"
+      ],
+      "same_as_T": true,
       "attempts": 1
     },
     {
@@ -2266,9 +2578,13 @@
           "text": "Hazel Keech (born 28 February 1987) is a British−Mauritian model who has appeared in Indian television programs and films."
         }
       ],
-      "question": "What is Hazel Keech's occupation?",
+      "question": "What occupation does Hazel Keech have?",
       "answer": "model",
       "status": "ok",
+      "answers": [
+        "model"
+      ],
+      "same_as_T": true,
       "attempts": 1
     },
     {
@@ -2291,9 +2607,13 @@
           "text": "Juan Francisco Antonio Hilarión Zea Díaz (born 23 November 1766 – 28 November 1822) was a Colombian journalist, botanist, diplomat, politician, and statesman who served as the 1st Vice President of Colombia under then President Simón Bolívar."
         }
       ],
-      "question": "Juan Francisco Antonio Hilarión Zea Díaz served as the 1st Vice President of which country under President Simón Bolívar?",
+      "question": "Simón Bolívar was then President of what country?",
       "answer": "Colombia",
       "status": "ok",
+      "answers": [
+        "Colombia"
+      ],
+      "same_as_T": true,
       "attempts": 1
     },
     {
@@ -2316,10 +2636,9 @@
           "text": "The movie was officially remade in Hindi as \"Te3n\" in 2016."
         }
       ],
-      "question": "What was Montage officially remade in Hindi as in 2016?",
-      "answer": "Te3n",
-      "status": "ok",
-      "attempts": 1
+      "question": null,
+      "answer": null,
+      "status": "not_answerable"
     },
     {
       "probe_id": "p_e12449",
@@ -2346,9 +2665,13 @@
           "text": "\"Somewhere in England\" was the first Harrison album to be released after the death of his former Beatles bandmate John Lennon; the lyrics of its first single, \"All Those Years Ago\", pay tribute to Lennon."
         }
       ],
-      "question": "What was the first single from the album that Teardrops was the second single from?",
-      "answer": "All Those Years Ago",
+      "question": "Teardrops was the second single from which album?",
+      "answer": "Somewhere in England",
       "status": "ok",
+      "answers": [
+        "Somewhere in England"
+      ],
+      "same_as_T": false,
       "attempts": 1
     },
     {
@@ -2376,9 +2699,13 @@
           "text": "Accolade Wines is a major global wine business with headquarters in South Australia."
         }
       ],
-      "question": "Where is Accolade Wines headquartered?",
+      "question": "Where are the headquarters of Accolade Wines located?",
       "answer": "South Australia",
       "status": "ok",
+      "answers": [
+        "South Australia"
+      ],
+      "same_as_T": false,
       "attempts": 1
     },
     {
@@ -2401,9 +2728,13 @@
           "text": "George Molnar (1910–1998) was born in Nagyvárad, Austria-Hungary but came to Australia in the late 1930s, where he practiced as a cartoonist."
         }
       ],
-      "question": "In which country was George Molnar born in Nagyvárad?",
+      "question": "What entity was Nagyvárad part of when George Molnar was born?",
       "answer": "Austria-Hungary",
       "status": "ok",
+      "answers": [
+        "Austria-Hungary"
+      ],
+      "same_as_T": true,
       "attempts": 1
     },
     {
@@ -2426,9 +2757,14 @@
           "text": "\"Medicine\" is a standalone song by the English rock band The 1975, released on 31 October 2014 for the 2014 \"Drive\" re-release."
         }
       ],
-      "question": "What 2014 re-release was Medicine released for?",
+      "question": "The song \"Medicine\" was released for the 2014 re-release of which film?",
       "answer": "Drive",
       "status": "ok",
+      "answers": [
+        "Drive",
+        "Drive (2011 film)"
+      ],
+      "same_as_T": true,
       "attempts": 1
     },
     {
@@ -2454,6 +2790,11 @@
       "question": "What nationality is the 2013 biographical sports film 42?",
       "answer": "American",
       "status": "ok",
+      "answers": [
+        "American",
+        "United States"
+      ],
+      "same_as_T": true,
       "attempts": 1
     },
     {
@@ -2476,9 +2817,14 @@
           "text": "André Holland (born December 28, 1979) is an American actor, known for his roles as Dr. Algernon Edwards on the Cinemax drama series \"The Knick\", and as Matt Miller on the FX series \"\"."
         }
       ],
-      "question": "What nationality is André Holland?",
+      "question": "What is the nationality of André Holland?",
       "answer": "American",
       "status": "ok",
+      "answers": [
+        "American",
+        "United States"
+      ],
+      "same_as_T": true,
       "attempts": 1
     },
     {
@@ -2501,9 +2847,14 @@
           "text": "The Austrian Pinscher (Österreichischer Pinscher, FCI No. 64) is a medium-sized breed of pinscher-type dog from Austria, where dogs of the type were originally farm dogs, keeping barns free of rats and acting as home guards, livestock guardians, and drovers."
         }
       ],
-      "question": "What were dogs of the Austrian Pinscher type originally?",
+      "question": "What were dogs of the Austrian Pinscher's type originally?",
       "answer": "farm dogs",
       "status": "ok",
+      "answers": [
+        "farm dogs",
+        "farm dog"
+      ],
+      "same_as_T": true,
       "attempts": 1
     },
     {
@@ -2526,9 +2877,14 @@
           "text": "Hoffmann, along with Hindenburg and Ludendorff, masterminded the devastating defeat of the Russian armies at Tannenberg and the Masurian Lakes."
         }
       ],
-      "question": "What battle did Max Hoffmann, along with Hindenburg and Ludendorff, mastermind as a devastating defeat of the Russian armies?",
+      "question": "At which battle did Max Hoffmann help mastermind the devastating defeat of the Russian armies?",
       "answer": "Tannenberg",
       "status": "ok",
+      "answers": [
+        "Tannenberg",
+        "Battle of Tannenberg"
+      ],
+      "same_as_T": true,
       "attempts": 1
     },
     {
@@ -2551,9 +2907,14 @@
           "text": "Hoffmann, along with Hindenburg and Ludendorff, masterminded the devastating defeat of the Russian armies at Tannenberg and the Masurian Lakes."
         }
       ],
-      "question": "Along with Hindenburg and which other military leader did Max Hoffmann mastermind the devastating defeat of the Russian armies at Tannenberg and the Masurian Lakes?",
+      "question": "Along with Hindenburg and which military commander did Max Hoffmann mastermind the devastating defeat of the Russian armies at Tannenberg and the Masurian Lakes?",
       "answer": "Ludendorff",
       "status": "ok",
+      "answers": [
+        "Ludendorff",
+        "Erich Ludendorff"
+      ],
+      "same_as_T": true,
       "attempts": 1
     },
     {
@@ -2576,9 +2937,14 @@
           "text": "Hoffmann, along with Hindenburg and Ludendorff, masterminded the devastating defeat of the Russian armies at Tannenberg and the Masurian Lakes."
         }
       ],
-      "question": "Along with Ludendorff, who helped Max Hoffmann mastermind the devastating defeat of the Russian armies at Tannenberg and the Masurian Lakes?",
+      "question": "Which person masterminded the devastating defeat of the Russian armies at Tannenberg and the Masurian Lakes alongside Max Hoffmann and Ludendorff?",
       "answer": "Hindenburg",
       "status": "ok",
+      "answers": [
+        "Hindenburg",
+        "Paul von Hindenburg"
+      ],
+      "same_as_T": true,
       "attempts": 1
     },
     {
@@ -2601,9 +2967,13 @@
           "text": "She won her first term in 2008, when she narrowly upset incumbent Republican Joe Heck."
         }
       ],
-      "question": "Whom did Shirley Breeden narrowly upset when she won her first term in 2008?",
+      "question": "Who did Shirley Breeden narrowly upset in 2008 while winning her first term?",
       "answer": "Joe Heck",
       "status": "ok",
+      "answers": [
+        "Joe Heck"
+      ],
+      "same_as_T": true,
       "attempts": 1
     },
     {
@@ -2626,9 +2996,13 @@
           "text": "The school was named after Chicago's first permanent non-native settler, Jean Baptiste Point Du Sable."
         }
       ],
-      "question": "Who was DuSable High School named after?",
+      "question": "What person is DuSable High School named after?",
       "answer": "Jean Baptiste Point Du Sable",
       "status": "ok",
+      "answers": [
+        "Jean Baptiste Point Du Sable"
+      ],
+      "same_as_T": true,
       "attempts": 1
     },
     {
@@ -2651,9 +3025,14 @@
           "text": "Welch decided to name the song \"What the Water Gave Me\" after seeing a Frida Kahlo painting of the same name."
         }
       ],
-      "question": "After seeing what did Welch decide to name the song \"What the Water Gave Me\"?",
-      "answer": "a Frida Kahlo painting of the same name",
+      "question": "Welch decided to name the song \"What the Water Gave Me\" after seeing what?",
+      "answer": "Frida Kahlo painting",
       "status": "ok",
+      "answers": [
+        "Frida Kahlo painting",
+        "What the Water Gave Me (painting)"
+      ],
+      "same_as_T": true,
       "attempts": 1
     },
     {
@@ -2676,9 +3055,13 @@
           "text": "Out Traveler is a gay and lesbian travel magazine from the publishers of \"Out\" and \"The Advocate\", combining photography with coverage of LGBT travel topics."
         }
       ],
-      "question": "What kind of publication is Out Traveler?",
-      "answer": "gay and lesbian travel magazine",
+      "question": "Out Traveler is what?",
+      "answer": "magazine",
       "status": "ok",
+      "answers": [
+        "magazine"
+      ],
+      "same_as_T": true,
       "attempts": 1
     },
     {
@@ -2706,9 +3089,13 @@
           "text": "Umi-a-Liloa was considered a just ruler, religious and the first to unite almost all of the Big Island."
         }
       ],
-      "question": "What did Umi-a-Liloa inherit from his father, High Chief Liloa?",
-      "answer": "religious authority of Hawai'i",
+      "question": "What did Umi-a-Liloa inherit from High Chief Liloa?",
+      "answer": "religious authority",
       "status": "ok",
+      "answers": [
+        "religious authority"
+      ],
+      "same_as_T": false,
       "attempts": 1
     },
     {
@@ -2731,9 +3118,14 @@
           "text": "ʻUmi-a-Līloa (fifteenth century) was a ruling ali'i-ai-moku (district high chief of Hawai'i) who inherited religious authority of Hawai'i from his father, High Chief Liloa, whose line is traced, unbroken to Hawaiian \"creation\"."
         }
       ],
-      "question": "What position did Liloa hold?",
+      "question": "What title does Liloa hold?",
       "answer": "High Chief",
       "status": "ok",
+      "answers": [
+        "High Chief",
+        "Chief"
+      ],
+      "same_as_T": true,
       "attempts": 1
     },
     {
@@ -2756,10 +3148,9 @@
           "text": "The program selects 20 students preparing for careers in the rabbinate, the cantorate, academic Jewish studies, and Jewish communal service."
         }
       ],
-      "question": "How many students does the Wexner Graduate Fellowship select?",
-      "answer": "20 students",
-      "status": "ok",
-      "attempts": 1
+      "question": null,
+      "answer": null,
+      "status": "not_answerable"
     }
   ]
 }
