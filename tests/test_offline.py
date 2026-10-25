@@ -354,6 +354,42 @@ def check_shared():
                                   "Adriana Trigiani", txt) == "answer_too_long"
         print("Câu hỏi dò OK")
 
+        # ---- D16: dựng benchmark từ log + nhập nhãn tay ----
+        import build_benchmarks
+        from openpyxl import load_workbook
+        bdir = tmp / "bench"
+        st = build_benchmarks.main(["build", "--run", str(rdir), "--shared", str(sdir), "--out", str(bdir)])
+        assert st["construction_items"] == 1 and st["traversal_states"] == 4, st
+        items = {(i["qid"], i["id"].split("-")[2], i["action"]["to"]): i for i in read_jsonl(bdir / "traversal.jsonl")}
+        g = lambda q, j, to: items[(q, str(j), to)]  # noqa: E731
+        assert g("q_bsg", 0, "Adriana Trigiani")["gold"] == "ACCEPT" and g("q_bsg", 0, "Adriana Trigiani")["agent_chose"]
+        assert g("q_bsg", 0, "Donna Gigliotti")["rule_detail"]["why"] == "off_path"           # lỗ hổng D8 đã vá
+        assert g("q_bsg", 0, "Big Stone Gap, Virginia")["gold"] == "REJECT"
+        assert g("q_bsg", 1, "Big Stone Gap (film)")["rule_detail"]["why"] == "revisit"
+        assert g("q_at", 0, "Greenwich Village")["gold"] == "ACCEPT"                          # cạnh agent ghi, đi tới đáp án
+        assert g("q_at", 0, "Big Stone Gap (film)")["rule_detail"]["why"] == "not_evidence"
+        assert g("q_at", 1, "Adriana Trigiani")["gold"] == "STOP"                             # đã đủ bằng chứng
+        # người gán nhãn: điền nhãn = quy tắc (κ = 1), phép ghi = SUPPORTED
+        tp, cp = bdir / "label" / "traversal_kappa_sample.xlsx", bdir / "label" / "construction.xlsx"
+        wb = load_workbook(tp)
+        ws = wb["label"]
+        gold = {i["id"]: i["gold"] for i in items.values()}
+        for row in ws.iter_rows(min_row=2):
+            row[8].value = gold[row[0].value]
+        wb.save(tp)
+        wb = load_workbook(cp)
+        wb["label"]["I2"] = "supported"
+        wb.save(cp)
+        rep = build_benchmarks.main(["import", "--out", str(bdir)])
+        assert rep["traversal_kappa"]["kappa"] == 1.0 and rep["traversal_kappa"]["labeled"] == len(items)
+        assert rep["construction"]["labels"] == {"SUPPORTED": 1}
+        c = read_jsonl(bdir / "construction.jsonl")[0]
+        assert c["gold"] == "ACCEPT" and c["gold_source"] == "human" and c["write"]["relation"] == "P551"
+        st2 = build_benchmarks.main(["build", "--run", str(rdir), "--shared", str(sdir), "--out", str(bdir)])
+        assert read_jsonl(bdir / "construction.jsonl")[0]["gold"] == "ACCEPT"                # dựng lại không xoá nhãn
+        assert build_benchmarks.cohen_kappa(["A", "A", "R", "R"], ["A", "R", "R", "R"])[0] == 0.5
+        print("Benchmark OK")
+
 
 def check_header_safe():
     """Mã phiên gửi trong header phải là ASCII (tiêu đề Wikipedia có thể chứa '–', 'é'...)."""

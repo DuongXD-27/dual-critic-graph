@@ -153,6 +153,22 @@ Lý do: `shared-v2` chỉ có 2/200 câu đi qua cạnh do câu trước ghi; Ho
 4. **Mỗi câu dò chạy 2 lần:** `before` = đồ thị gốc, `after` = `graph_after.json` của lượt chạy. Mỗi lần trên bản sao đồ thị, không có bước bộ nhớ. So sánh: đúng/sai trước–sau, có đi qua cạnh dò không. "HẠI" = trước đúng, sau sai (cạnh agent ghi làm hỏng); "GIÚP" = ngược lại.
 5. Chấm đúng bằng `contains_gold` (đáp án chuẩn nằm trọn trong câu trả lời, theo từ) vì agent hay trả lời cả câu; `run_agent` cũng báo thêm `gold_in_answer`.
 
+## D16. Benchmark v1 từ `shared-v2` (2026-10-25, `scripts/build_benchmarks.py`)
+**Traversal** (`data/benchmarks/traversal.jsonl`, 3.560 tình huống từ 498 trạng thái):
+1. Tình huống = (câu hỏi, đường đi tới lúc đó, **một cạnh ứng viên** tại nút hiện tại). Ứng viên = đúng các cạnh agent nhìn thấy lúc đứng ở nút đó (≤ 40) → có cả cạnh agent chọn (`agent_chose`) lẫn cạnh không chọn. Chưa đưa bước `start` vào (D14 đã giới hạn xuất phát).
+2. Nhãn tự động `trav-rule-v1` (sửa lỗ hổng D8):
+   - **STOP** nếu đường đi + đoạn đã đọc đã phủ hết supporting_facts; **REJECT** nếu đi lại cạnh cũ;
+   - bridge: **ACCEPT** ⇔ câu nguồn của cạnh thuộc một *đoạn* bằng chứng **và** đầu kia "nằm trên đường" (là đoạn bằng chứng theo tên — "Derry City" ~ "Derry City F.C." —, là đáp án, hoặc có trong câu hỏi). Chặn được *film → Donna Gigliotti*.
+   - comparison: ACCEPT ⇔ câu nguồn đúng là một *câu* bằng chứng, hoặc như bridge.
+   - Xét theo *đoạn* chứ không theo *câu* vì HotpotQA hay đánh dấu câu 0 trong khi sự kiện nằm ở câu 1 (*For Adults Only → Westgate*).
+3. Kết quả: 641 ACCEPT / 2.820 REJECT / 99 STOP. Cạnh agent thật sự chọn: 107 ACCEPT, 49 REJECT, 4 STOP → ~31% bước đi của agent là bước quy tắc cho là sai.
+4. **RQ0a:** 100 tình huống lấy phân tầng (40 ACCEPT / 40 REJECT / 20 STOP theo quy tắc, seed 0) → người gán độc lập trong `label/traversal_kappa_sample.xlsx` (không hiện nhãn quy tắc; có đáp án, câu nguồn, đoạn đã đọc) → `import` tính κ 3 lớp và κ 2 lớp (đi / không đi).
+
+**Construction** (`data/benchmarks/construction.jsonl`, 116 phép ghi = mọi bản ghi cổng Construction của `shared-v2`):
+5. Không có quy tắc tự động → **gán tay** trong `label/construction.xlsx`: SUPPORTED (bằng chứng nói rõ đúng sự kiện: đúng đầu, đuôi, quan hệ, chiều) / UNSUPPORTED (có thể đúng nhưng bằng chứng không đủ) / WRONG (trái bằng chứng hoặc hỏng). Nhãn cổng: SUPPORTED → ACCEPT, còn lại → REJECT. Chỉ dựa vào bằng chứng trong dòng, không dùng hiểu biết riêng.
+6. 116 mẫu là nhỏ; nếu cần thêm: lấy phép ghi từ các lượt chạy sau, hoặc dùng bộ ba lúc trích xuất (EXTRACTED) làm nguồn phụ.
+7. `build` không ghi đè file Excel / `construction.jsonl` đã có (tránh mất nhãn) trừ khi `--force-labels`.
+
 ## Quan sát: câu hỏi dò `probe-v2` trên `shared-v2` (2026-10-25)
 - 105 cạnh agent ghi mới → 91 câu dò hợp lệ (11 không sinh được vì văn bản không nối H–T, đa số là phép ghi thiếu căn cứ: Kerensky, Gainesville, Darkhorse, Cranium...). 182 lượt agent, 766 lời gọi.
 - **Đúng: trước 89/91, sau 88/91.** 5 câu khác nhau (3 "hại", 2 "giúp") nhưng **không câu nào đi qua cạnh dò**; phần lớn do chấm/câu dò ("The series", "Silver medalist" vs "silver medal"). Duy nhất Cranium: cạnh thiếu căn cứ (instance of board game) lọt vào câu trả lời ("a party board game").
@@ -238,4 +254,6 @@ Lý do: `shared-v2` chỉ có 2/200 câu đi qua cạnh do câu trước ghi; Ho
 - [x] Code D15 (`scripts/probe_writes.py`); kiểm thử offline đạt
 - [x] `probe_writes.py gen --workers 4` (probe-v2) → kiểm tra 20 câu mẫu
 - [x] `probe_writes.py run --workers 4` → so sánh trước/sau (xem Quan sát: câu hỏi dò)
-- [ ] Dựng benchmark Traversal + Construction từ `shared-v2/gates.jsonl` (RQ0–RQ2)
+- [x] Dựng benchmark v1 (D16): `build_benchmarks.py build`; kiểm thử offline đạt
+- [ ] Gán tay `data/benchmarks/label/construction.xlsx` (116) và `traversal_kappa_sample.xlsx` (100) → `build_benchmarks.py import` → κ (RQ0a)
+- [ ] Critic: cài lớp cổng thật (LLM) theo giao diện D7, chạy offline trên benchmark (RQ0b, RQ1, RQ2)

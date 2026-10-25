@@ -166,7 +166,10 @@ class Episode:
 
     def _gate_traversal(self, action: dict, extra: dict) -> dict:
         path_view = self._path_view()
-        verdict = self.gates.traversal_gate(self.question, path_view, action)
+        from .gates import make_context
+        context = make_context(self.paragraphs, [s.get("provenance", []) for s in self.path if s["type"] == "follow"],
+                               (extra.get("action_edge") or {}).get("provenance"), self.paragraphs_read)
+        verdict = self.gates.traversal_gate(self.question, path_view, action, context=context)
         self.gate_records.append({
             "kind": "traversal", "run_id": self.run_id, "episode_id": self.episode_id, "qid": self.kg.qid,
             "step": len(path_view), "question": self.question, "path": path_view, "action": action, **extra,
