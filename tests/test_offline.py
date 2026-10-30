@@ -58,6 +58,7 @@ class FakeLLM:
     def __init__(self, agent_scripts, drop_in_batch=(), broken=(), probes=None):
         self.agent_scripts = agent_scripts  # {câu hỏi: [bước...]}
         self.probes = probes or {}          # {tên đầu cạnh: JSON câu hỏi dò}
+        self.critic_prompts = []
         self.drop_in_batch = set(drop_in_batch)  # giả lập model bỏ sót đoạn khi gộp
         self.broken = set(broken)                # giả lập JSON hỏng ở lần gọi đầu
         self.stats = {"calls": 0, "prompt_tokens": 0, "completion_tokens": 0}
@@ -67,6 +68,14 @@ class FakeLLM:
 
     def chat(self, messages, tools=None, json_mode=False, session_id=None):
         self.stats["calls"] += 1
+        if json_mode and messages[1]["content"].startswith("TRAVERSAL CHECK"):
+            self.critic_prompts.append(messages[1]["content"])
+            return {"content": json.dumps({"verdict": "REJECT", "reason": "fake"}), "tool_calls": []}
+        if json_mode and messages[1]["content"].startswith("WRITE CHECK"):
+            self.critic_prompts.append(messages[1]["content"])
+            if len(messages) == 2:  # lần đầu trả JSON sai → critic phải hỏi lại
+                return {"content": json.dumps({"reason_code": "MAYBE"}), "tool_calls": []}
+            return {"content": json.dumps({"reason_code": "NOT_STATED", "reason": "fake"}), "tool_calls": []}
         if json_mode and "PROBE QUESTION WRITING" in messages[1]["content"]:
             head = re.search(r"^Entity H: (.*)$", messages[1]["content"], flags=re.M).group(1)
             return {"content": json.dumps(self.probes[head]), "tool_calls": []}
@@ -389,6 +398,33 @@ def check_shared():
         assert read_jsonl(bdir / "construction.jsonl")[0]["gold"] == "ACCEPT"                # dựng lại không xoá nhãn
         assert build_benchmarks.cohen_kappa(["A", "A", "R", "R"], ["A", "R", "R", "R"])[0] == 0.5
         print("Benchmark OK")
+
+        # ---- D17: critic luật + critic LLM, đánh giá offline ----
+        import eval_critics
+        from dcg.gates import LLMGates, RuleGates
+        common = ["--bench", str(bdir), "--corpus", str(sdir / "corpus.json"), "--runs-root", str(tmp / "runs")]
+        m = eval_critics.main(["--gates", "rule", *common])
+        assert m["traversal"]["all_vs_rule"]["n"] == len(items)
+        assert m["construction"]["n_labeled"] == 1
+        fake = FakeLLM({})
+        m = eval_critics.main(["--gates", "llm", "--workers", "2", "--name", "llm-fake", *common], llm=fake)
+        assert m["construction"]["vs_human"]["per_label"]["REJECT"]["support"] == 0     # người gán SUPPORTED
+        assert m["construction"]["reject_rate_by_human_label"]["SUPPORTED"] == "1/1"    # critic giả chặn nhầm
+        assert m["construction"]["parse_errors"] == 0 and m["traversal"]["parse_errors"] == 0
+        assert m["traversal"]["all_vs_rule"]["per_label"]["REJECT"]["recall"] == 1.0
+        tp = [p for p in fake.critic_prompts if p.startswith("TRAVERSAL CHECK")]
+        assert any("Adriana Trigiani is an Italian American" in p for p in tp)   # critic thấy đoạn agent đã đọc
+        wp = [p for p in fake.critic_prompts if p.startswith("WRITE CHECK")][0]
+        assert 'head = "Adriana Trigiani", relation = P551' in wp and "[S1]" in wp
+        m2 = eval_critics.main(["--gates", "llm", "--score-only", "--name", "llm-fake", *common])
+        assert m2["construction"] == m["construction"]
+        rg = RuleGates()
+        ev = [{"type": "sentence", "text": "Adriana Trigiani is based in Greenwich Village."}]
+        assert rg.construction_gate({"head": "Adriana Trigiani", "tail": "Greenwich Village"}, ev, {})["verdict"] == "ACCEPT"
+        assert rg.construction_gate({"head": "Adriana Trigiani", "tail": "Italy"}, ev, {})["reason_code"] == "NOT_STATED"
+        assert rg.construction_gate({"head": "A", "tail": "B"}, [], {})["reason_code"] == "NO_EVIDENCE"
+        assert LLMGates(llm=fake).traversal_gate("q?", [], {"type": "start", "to": "X"})["verdict"] == "REJECT"
+        print("Critic OK")
 
 
 def check_header_safe():

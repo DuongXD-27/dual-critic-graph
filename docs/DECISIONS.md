@@ -169,6 +169,14 @@ Lý do: `shared-v2` chỉ có 2/200 câu đi qua cạnh do câu trước ghi; Ho
 6. 116 mẫu là nhỏ; nếu cần thêm: lấy phép ghi từ các lượt chạy sau, hoặc dùng bộ ba lúc trích xuất (EXTRACTED) làm nguồn phụ.
 7. `build` không ghi đè file Excel / `construction.jsonl` đã có (tránh mất nhãn) trừ khi `--force-labels`.
 
+## D17. Critic v1: luật + LLM, đánh giá offline (2026-10-25, `dcg/gates.py`, `scripts/eval_critics.py`)
+1. Giao diện D7 giữ nguyên, thêm tham số tuỳ chọn `context` cho `traversal_gate` = những gì agent đã thấy: câu nguồn của cạnh ứng viên, câu nguồn các cạnh đã đi, toàn văn các đoạn đã đọc. Critic có **cùng thông tin với agent**, không biết đáp án, không thấy lời giải thích của agent. Agent (lúc chạy) và đánh giá offline dựng `context` bằng cùng một hàm (`make_context`).
+2. **Critic luật `rule`** (mốc so sánh, không gọi LLM): Traversal — REJECT nếu quay lại nút đã qua; ACCEPT nếu đầu kia/tên quan hệ có từ chung với câu hỏi; không bao giờ STOP. Construction — ACCEPT ⇔ có câu bằng chứng nhắc cả đầu lẫn đuôi.
+3. **Critic LLM `llm`**: 1 lời gọi JSON mode / quyết định; phản hồi hỏng → hỏi lại 1 lần, vẫn hỏng → mặc định (Traversal ACCEPT, Construction REJECT) + `parse_error`. Construction trả `reason_code` ∈ {SUPPORTED, NOT_STATED, NO_EVIDENCE, WRONG_RELATION, WRONG_DIRECTION, WRONG_ENTITY, NOT_ENTITY}; ACCEPT ⇔ SUPPORTED (khớp 3 nhãn tay: UNSUPPORTED ~ NOT_STATED/NO_EVIDENCE, WRONG ~ còn lại). Model: `DCG_CRITIC_MODEL`, mặc định = model agent (deepseek-v4.1-flash) → **cùng model tự chấm**, ghi vào threats to validity; nếu gói có model khác thì chạy thêm để so.
+4. **Tập đánh giá Traversal** (cố định, seed 0): mọi STOP + 250 ACCEPT + 250 REJECT + mọi cạnh agent thật sự chọn + 100 mẫu κ = 772 tình huống (phân tầng → báo theo từng nhãn, macro-F1; `--full` cho cả 3.560). Báo thêm: trên 160 bước agent thật sự đi, critic chặn được bao nhiêu bước sai / chặn nhầm bao nhiêu bước đúng; trên mẫu κ, so với nhãn **người**.
+5. Construction: chạy cả 116; chỉ số chỉ tính trên dòng đã gán tay; `--score-only` tính lại khi gán thêm nhãn.
+6. Critic luật (2026-10-25): Traversal accuracy 0,52, macro-F1 0,35 (ACCEPT F1 0,42, REJECT F1 0,64, STOP 0); trên 160 bước agent đi: chặn 42/53 bước sai nhưng chặn nhầm 77/107 bước đúng. Construction: REJECT 75/116 (so khớp tên quá cứng: "Billy McFarland (entrepreneur)" ≠ "McFarland").
+
 ## Quan sát: câu hỏi dò `probe-v2` trên `shared-v2` (2026-10-25)
 - 105 cạnh agent ghi mới → 91 câu dò hợp lệ (11 không sinh được vì văn bản không nối H–T, đa số là phép ghi thiếu căn cứ: Kerensky, Gainesville, Darkhorse, Cranium...). 182 lượt agent, 766 lời gọi.
 - **Đúng: trước 89/91, sau 88/91.** 5 câu khác nhau (3 "hại", 2 "giúp") nhưng **không câu nào đi qua cạnh dò**; phần lớn do chấm/câu dò ("The series", "Silver medalist" vs "silver medal"). Duy nhất Cranium: cạnh thiếu căn cứ (instance of board game) lọt vào câu trả lời ("a party board game").
@@ -256,4 +264,7 @@ Lý do: `shared-v2` chỉ có 2/200 câu đi qua cạnh do câu trước ghi; Ho
 - [x] `probe_writes.py run --workers 4` → so sánh trước/sau (xem Quan sát: câu hỏi dò)
 - [x] Dựng benchmark v1 (D16): `build_benchmarks.py build`; kiểm thử offline đạt
 - [ ] Gán tay `data/benchmarks/label/construction.xlsx` (116) và `traversal_kappa_sample.xlsx` (100) → `build_benchmarks.py import` → κ (RQ0a)
-- [ ] Critic: cài lớp cổng thật (LLM) theo giao diện D7, chạy offline trên benchmark (RQ0b, RQ1, RQ2)
+- [x] Critic luật + LLM (D17), `eval_critics.py`; kiểm thử offline đạt; chạy `--gates rule`
+- [ ] `eval_critics.py --gates llm --workers 6` → so với critic luật
+- [ ] Sau khi gán tay: `build_benchmarks.py import` → `eval_critics.py --gates llm --score-only` (và `--gates rule`)
+- [ ] Bật critic trong agent (`run_agent.py --gates llm`) → đo tác động lên hỏi đáp và phép ghi

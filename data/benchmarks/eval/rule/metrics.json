@@ -1,0 +1,85 @@
+{
+  "gates": "rule",
+  "name": "rule",
+  "traversal": {
+    "all_vs_rule": {
+      "n": 772,
+      "accuracy": 0.518,
+      "macro_f1": 0.353,
+      "per_label": {
+        "ACCEPT": {
+          "precision": 0.541,
+          "recall": 0.346,
+          "f1": 0.422,
+          "support": 341
+        },
+        "REJECT": {
+          "precision": 0.509,
+          "recall": 0.849,
+          "f1": 0.637,
+          "support": 332
+        },
+        "STOP": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 99
+        }
+      },
+      "confusion": {
+        "gold=ACCEPT / pred=ACCEPT": 118,
+        "gold=ACCEPT / pred=REJECT": 223,
+        "gold=REJECT / pred=ACCEPT": 50,
+        "gold=REJECT / pred=REJECT": 282,
+        "gold=STOP / pred=ACCEPT": 50,
+        "gold=STOP / pred=REJECT": 49
+      }
+    },
+    "all_go_vs_no": {
+      "n": 772,
+      "accuracy": 0.582,
+      "macro_f1": 0.547,
+      "per_label": {
+        "GO": {
+          "precision": 0.541,
+          "recall": 0.346,
+          "f1": 0.422,
+          "support": 341
+        },
+        "NO": {
+          "precision": 0.597,
+          "recall": 0.768,
+          "f1": 0.672,
+          "support": 431
+        }
+      },
+      "confusion": {
+        "gold=GO / pred=GO": 118,
+        "gold=GO / pred=NO": 223,
+        "gold=NO / pred=GO": 100,
+        "gold=NO / pred=NO": 331
+      }
+    },
+    "agent_chosen_steps": {
+      "n": 160,
+      "rule_bad": 53,
+      "blocked_bad": 42,
+      "blocked_good": 77
+    },
+    "parse_errors": 0
+  },
+  "construction": {
+    "n_items": 116,
+    "n_labeled": 0,
+    "pred": {
+      "REJECT": 75,
+      "ACCEPT": 41
+    },
+    "reason_codes": {
+      "NOT_STATED": 74,
+      "SUPPORTED": 41,
+      "NO_EVIDENCE": 1
+    },
+    "parse_errors": 0
+  }
+}

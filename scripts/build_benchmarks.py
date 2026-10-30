@@ -328,6 +328,7 @@ def cmd_import(args):
         human = read_sheet(tpath, "nhan")
         gold = {it["id"]: it["gold"] for it in read_jsonl(out / "traversal.jsonl")}
         done = [(gold[i], h["label"]) for i, h in human.items() if h["label"] in TRAV_LABELS and i in gold]
+        write_json(lab / "traversal_human.json", {i: h["label"] for i, h in human.items() if h["label"] in TRAV_LABELS})
         bad = [i for i, h in human.items() if h["label"] and h["label"] not in TRAV_LABELS]
         if done:
             k, po = cohen_kappa([g for g, _ in done], [h for _, h in done])
