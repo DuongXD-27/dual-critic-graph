@@ -159,6 +159,12 @@ def path_text(path):
     return "".join(parts)
 
 
+def read_text(titles, corpus):
+    """Toàn văn các đoạn agent đã đọc (để người gán biết đã đủ bằng chứng chưa)."""
+    parts = [f"■ {t}\n" + "\n".join(f"[{i}] {x.strip()}" for i, x in enumerate(corpus.get(t, []))) for t in titles]
+    return "\n\n".join(parts) or "(chưa đọc đoạn nào)"
+
+
 def evidence_text(ev, rels=None):
     rels = rels or {}
     out = []
@@ -206,7 +212,7 @@ TRAV_GUIDE = [
     "Bạn biết đáp án đúng. Chọn nhãn ở cột 'nhan' cho QUYẾT ĐỊNH đi theo cạnh ứng viên:",
     "  ACCEPT — cạnh này là một bước cần thiết trên đường tới đáp án (câu nguồn của cạnh nói đúng điều câu hỏi cần).",
     "  REJECT — cạnh không giúp trả lời (lạc đề, quay lại chỗ cũ, hoặc câu nguồn không nói điều cần).",
-    "  STOP   — đường đi + các đoạn đã đọc (cột 'doan_da_doc', agent đã đọc toàn văn) ĐÃ đủ bằng chứng để trả lời; không cần đi thêm.",
+    "  STOP   — đường đi + các đoạn đã đọc (toàn văn ở cột 'noi_dung_doan_da_doc') ĐÃ đủ bằng chứng để trả lời; không cần đi thêm.",
     "Chỉ dựa vào câu hỏi, đáp án, đường đi, cạnh và câu nguồn. Không đoán theo hành vi agent. Không chắc thì ghi chú ở cột 'ghi_chu'.",
 ]
 CONS_GUIDE = [
@@ -280,10 +286,11 @@ def cmd_build(args):
                  if it["action"]["direction"] == "forward" else
                  f"{it['action']['to']} —{it['action']['relation_name']}→ {it['action']['from']}",
                  "\n".join(it["action_evidence"]) or "(không có câu nguồn)",
-                 "\n".join(it["paragraphs_read_before"]) or "(chưa đọc đoạn nào)", None, None] for it in sample]
+                 "\n".join(it["paragraphs_read_before"]) or "(chưa đọc đoạn nào)",
+                 read_text(it["paragraphs_read_before"], corpus), None, None] for it in sample]
         write_sheet(tpath, ["id", "cau_hoi", "dap_an", "duong_di", "nut_hien_tai", "canh_ung_vien", "cau_nguon",
-                            "doan_da_doc", "nhan", "ghi_chu"], rows, "I", TRAV_LABELS, TRAV_GUIDE,
-                    {"A": 14, "B": 45, "C": 18, "D": 45, "E": 22, "F": 40, "G": 60, "H": 22, "I": 10, "J": 25})
+                            "doan_da_doc", "noi_dung_doan_da_doc", "nhan", "ghi_chu"], rows, "J", TRAV_LABELS, TRAV_GUIDE,
+                    {"A": 14, "B": 40, "C": 16, "D": 40, "E": 20, "F": 36, "G": 50, "H": 20, "I": 70, "J": 10, "K": 25})
         print(f"→ {tpath} ({len(rows)} dòng)")
     if cpath.exists() and not args.force_labels:
         print(f"{cpath} đã có → không ghi đè")
@@ -319,11 +326,39 @@ def cohen_kappa(a, b):
     return round((po - pe) / (1 - pe), 3) if pe < 1 else 1.0, round(po, 3)
 
 
+def sync_vi(en_path, vi_path):
+    """Chép nhãn + ghi chú từ bản tiếng Việt (scripts/kappa_sheet_vi.py) sang bản tiếng Anh, theo id.
+    Chỉ chép ô đã có nhãn ở bản tiếng Việt; trả về số dòng đã chép."""
+    from openpyxl import load_workbook
+
+    vi = load_workbook(vi_path, read_only=True)["label"]
+    vrows = list(vi.iter_rows(values_only=True))
+    vh = list(vrows[0])
+    src = {r[vh.index("id")]: (r[vh.index("nhan")], r[vh.index("ghi_chu")]) for r in vrows[1:]
+           if r[vh.index("id")] and r[vh.index("nhan")]}
+    wb = load_workbook(en_path)
+    ws = wb["label"]
+    eh = [c.value for c in ws[1]]
+    i_id, i_lab, i_note = eh.index("id") + 1, eh.index("nhan") + 1, eh.index("ghi_chu") + 1
+    n = 0
+    for r in range(2, ws.max_row + 1):
+        rid = ws.cell(r, i_id).value
+        if rid in src:
+            ws.cell(r, i_lab).value, ws.cell(r, i_note).value = src[rid]
+            n += 1
+    wb.save(en_path)
+    return n
+
+
 def cmd_import(args):
     out = Path(args.out)
     lab = out / "label"
     report = {}
     tpath = lab / "traversal_kappa_sample.xlsx"
+    vpath = lab / "traversal_kappa_sample_vi.xlsx"
+    if tpath.exists() and vpath.exists():
+        report["copied_from_vi"] = sync_vi(tpath, vpath)
+        print(f"Đã chép {report['copied_from_vi']} nhãn từ {vpath.name} sang {tpath.name}")
     if tpath.exists():
         human = read_sheet(tpath, "nhan")
         gold = {it["id"]: it["gold"] for it in read_jsonl(out / "traversal.jsonl")}

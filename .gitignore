@@ -7,3 +7,6 @@ __pycache__/
 .venv/
 
 .env
+# file tạm
+data/benchmarks/label/_tmp/
+~$*

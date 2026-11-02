@@ -164,6 +164,12 @@ Lý do: `shared-v2` chỉ có 2/200 câu đi qua cạnh do câu trước ghi; Ho
 3. Kết quả: 641 ACCEPT / 2.820 REJECT / 99 STOP. Cạnh agent thật sự chọn: 107 ACCEPT, 49 REJECT, 4 STOP → ~31% bước đi của agent là bước quy tắc cho là sai.
 4. **RQ0a:** 100 tình huống lấy phân tầng (40 ACCEPT / 40 REJECT / 20 STOP theo quy tắc, seed 0) → người gán độc lập trong `label/traversal_kappa_sample.xlsx` (không hiện nhãn quy tắc; có đáp án, câu nguồn, đoạn đã đọc) → `import` tính κ 3 lớp và κ 2 lớp (đi / không đi).
 
+5b. **Quy ước gán tay Traversal (chốt 01/11/2026, khi gán mẫu κ):** nhãn xét **sự kiện của chính cạnh + nút đích**, KHÔNG xét mọi thứ trong câu nguồn. Một câu văn thường sinh nhiều cạnh (vd. câu về Philippe Perrin sinh cả *ngày sinh → 1963* lẫn *nơi làm việc → ESA*); đi theo một cạnh chỉ cho agent sự kiện của cạnh đó. Lý do: (1) agent đi theo cạnh không đọc được cả câu (chỉ thấy tên đoạn nguồn); (2) nếu xét theo câu, mọi cạnh sinh từ cùng một câu nhận cùng nhãn → critic không còn gì để phân biệt. Câu nguồn chỉ dùng để kiểm tra cạnh có thật. Đây cũng là chỗ dự kiến người và `trav-rule-v1` lệch nhau (quy tắc dựa vào câu/đoạn nguồn).
+
+5c. **Trạng thái đã lạc (chốt 02/11/2026):** 53/178 trạng thái agent tới bằng một bước mà quy tắc cho là sai (245 tình huống; 8 trong mẫu κ) — vd. Kerensky → *Russian Revolution of 1917*, McFarland → *Fyre Media*, Valencia CF → *Pablo Aimar* (một phần là lỗi của quy tắc, vd. Ocnus → Tiberinus). Quy ước gán: **không chấm lại bước trước**; chỉ hỏi "đứng ở đây, cạnh này có đưa agent tới thông tin cần (hoặc về lại chuỗi suy luận) không?". Đi ngược lại đúng cạnh vừa đi = không có thông tin mới → REJECT (agent có thể xuất phát lại ở thực thể trong câu hỏi). Giới hạn: tập hành động của benchmark chỉ gồm các cạnh; hành động đúng ở trạng thái lạc thường là *xuất phát lại* hoặc *đọc đoạn*, benchmark chưa biểu diễn (cùng vấn đề với O8: đọc đoạn chưa qua cổng).
+
+5d. **STOP khi gán tay (chốt 02/11/2026):** STOP ⇔ **mọi điều kiện của câu hỏi đã có bằng chứng** trong đường đi hoặc nội dung các đoạn đã đọc. Đứng ở nút đáp án mà còn điều kiện chưa kiểm chứng (vd. Robocalypse: đã có "SpongeBob lấy bối cảnh ở Bikini Bottom" nhưng chưa có "người tạo ra Robocalypse viết cho SpongeBob") → chưa STOP. Khớp nguyên lý "đúng nhưng chưa đủ bằng chứng" và cách HotpotQA đánh dấu bằng chứng cho mọi vế.
+
 **Construction** (`data/benchmarks/construction.jsonl`, 116 phép ghi = mọi bản ghi cổng Construction của `shared-v2`):
 5. Không có quy tắc tự động → **gán tay** trong `label/construction.xlsx`: SUPPORTED (bằng chứng nói rõ đúng sự kiện: đúng đầu, đuôi, quan hệ, chiều) / UNSUPPORTED (có thể đúng nhưng bằng chứng không đủ) / WRONG (trái bằng chứng hoặc hỏng). Nhãn cổng: SUPPORTED → ACCEPT, còn lại → REJECT. Chỉ dựa vào bằng chứng trong dòng, không dùng hiểu biết riêng.
 6. 116 mẫu là nhỏ; nếu cần thêm: lấy phép ghi từ các lượt chạy sau, hoặc dùng bộ ba lúc trích xuất (EXTRACTED) làm nguồn phụ.
@@ -176,6 +182,13 @@ Lý do: `shared-v2` chỉ có 2/200 câu đi qua cạnh do câu trước ghi; Ho
 4. **Tập đánh giá Traversal** (cố định, seed 0): mọi STOP + 250 ACCEPT + 250 REJECT + mọi cạnh agent thật sự chọn + 100 mẫu κ = 772 tình huống (phân tầng → báo theo từng nhãn, macro-F1; `--full` cho cả 3.560). Báo thêm: trên 160 bước agent thật sự đi, critic chặn được bao nhiêu bước sai / chặn nhầm bao nhiêu bước đúng; trên mẫu κ, so với nhãn **người**.
 5. Construction: chạy cả 116; chỉ số chỉ tính trên dòng đã gán tay; `--score-only` tính lại khi gán thêm nhãn.
 6. Critic luật (2026-10-25): Traversal accuracy 0,52, macro-F1 0,35 (ACCEPT F1 0,42, REJECT F1 0,64, STOP 0); trên 160 bước agent đi: chặn 42/53 bước sai nhưng chặn nhầm 77/107 bước đúng. Construction: REJECT 75/116 (so khớp tên quá cứng: "Billy McFarland (entrepreneur)" ≠ "McFarland").
+
+## Quan sát: critic LLM v1 (2026-11-01, `deepseek-v4.1-flash`, cùng model với agent)
+- 888 lời gọi, 0 lỗi đọc JSON. Traversal (772 tình huống, so với nhãn quy tắc): **accuracy 0,668, macro-F1 0,646** (critic luật: 0,518 / 0,353). F1: ACCEPT 0,69, REJECT 0,67, **STOP 0,58** (luật: 0).
+- **160 bước agent thật sự đi:** critic chặn **17/53** bước quy tắc cho là sai, chặn nhầm **4/107** bước đúng (luật: 42/53 và 77/107). Critic gần như luôn đồng ý với bước agent đã chọn (accuracy 0,75 trên bước đã chọn, 0,65 trên bước không chọn). Hai cách giải thích, chưa phân biệt được: (a) thiên vị tự chấm (cùng model); (b) **quy tắc sai**: đọc 6 ca "quy tắc REJECT, critic ACCEPT" thì ≥3 ca bước thật sự cần (*Ocnus —father→ Tiberinus*, *Tiberinus —position held→ king of Alba Longa*, *Robocalypse —creator→ Jay Lender*): quy tắc chấm off_path vì thực thể trung gian không phải tiêu đề đoạn bằng chứng. → Nhãn người (RQ0a) sẽ phân xử; nếu (b) đúng thì sửa quy tắc (`trav-rule-v2`: coi thực thể được nhắc trong câu bằng chứng là "trên đường").
+- Construction (chưa có nhãn tay): REJECT 85/116 (luật: 75). Mã lý do: NOT_STATED 55, WRONG_RELATION 23, NOT_ENTITY 3, WRONG_ENTITY 2, WRONG_DIRECTION 1, NO_EVIDENCE 1. **Bắt được mọi lỗi đã biết** với lý do đúng (cousin→sibling: WRONG_RELATION; Kerensky: NOT_STATED; "American": NOT_ENTITY; Gainesville: NO_EVIDENCE; Scholz peer: WRONG_RELATION…). Tỉ lệ chặn 73% cao hơn ước lượng sơ bộ ~42% phép ghi có vấn đề → có thể quá khắt khe; cần nhãn tay để biết.
+- 01/11: bản **tiếng Việt** của file κ (`scripts/kappa_sheet_vi.py` → `traversal_kappa_sample_vi.xlsx`, bản dịch trong `kappa_vi_translations.json`, giữ tên riêng, tên quan hệ kèm tiếng Anh, 3 cột cuối giữ nguyên văn). Người gán dùng bản tiếng Việt; `build_benchmarks.py import` tự chép nhãn sang bản tiếng Anh theo id. Bản dịch do Claude làm — chỉ chuyển ngữ, không gợi ý nhãn; nghi ngờ nghĩa thì xem nguyên văn.
+- 01/11: thêm cột `noi_dung_doan_da_doc` (toàn văn đoạn đã đọc) vào `traversal_kappa_sample.xlsx`, giữ nguyên 2 nhãn đã gán (bản sao lưu `…backup-20261101.xlsx`).
 
 ## Quan sát: câu hỏi dò `probe-v2` trên `shared-v2` (2026-10-25)
 - 105 cạnh agent ghi mới → 91 câu dò hợp lệ (11 không sinh được vì văn bản không nối H–T, đa số là phép ghi thiếu căn cứ: Kerensky, Gainesville, Darkhorse, Cranium...). 182 lượt agent, 766 lời gọi.
@@ -265,6 +278,6 @@ Lý do: `shared-v2` chỉ có 2/200 câu đi qua cạnh do câu trước ghi; Ho
 - [x] Dựng benchmark v1 (D16): `build_benchmarks.py build`; kiểm thử offline đạt
 - [ ] Gán tay `data/benchmarks/label/construction.xlsx` (116) và `traversal_kappa_sample.xlsx` (100) → `build_benchmarks.py import` → κ (RQ0a)
 - [x] Critic luật + LLM (D17), `eval_critics.py`; kiểm thử offline đạt; chạy `--gates rule`
-- [ ] `eval_critics.py --gates llm --workers 6` → so với critic luật
+- [x] `eval_critics.py --gates llm --workers 6` → so với critic luật (xem Quan sát: critic LLM v1)
 - [ ] Sau khi gán tay: `build_benchmarks.py import` → `eval_critics.py --gates llm --score-only` (và `--gates rule`)
 - [ ] Bật critic trong agent (`run_agent.py --gates llm`) → đo tác động lên hỏi đáp và phép ghi
