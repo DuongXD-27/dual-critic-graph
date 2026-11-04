@@ -386,9 +386,6 @@ def check_shared():
         for row in ws.iter_rows(min_row=2):
             row[9].value = gold[row[0].value]
         wb.save(tp)
-        wb = load_workbook(cp)
-        wb["label"]["I2"] = "supported"
-        wb.save(cp)
         # bản tiếng Việt: nhãn gán ở đây được chép sang bản tiếng Anh theo id khi import
         from openpyxl import Workbook
         ids = [r[0].value for r in load_workbook(tp)["label"].iter_rows(min_row=2)]
@@ -398,8 +395,15 @@ def check_shared():
         vws.append(["id", "cau_hoi", "nhan", "ghi_chu"])
         vws.append([ids[0], "câu hỏi tiếng Việt", gold[ids[0]], "gán ở bản tiếng Việt"])
         vwb.save(bdir / "label" / "traversal_kappa_sample_vi.xlsx")
+        cid = load_workbook(cp)["label"]["A2"].value                 # phép ghi gán ở bản tiếng Việt (construction_vi.xlsx)
+        cwb = Workbook()
+        cws = cwb.active
+        cws.title = "label"
+        cws.append(["id", "cau_hoi", "nhan", "ghi_chu"])
+        cws.append([cid, "câu hỏi tiếng Việt", "supported", None])
+        cwb.save(bdir / "label" / "construction_vi.xlsx")
         rep = build_benchmarks.main(["import", "--out", str(bdir)])
-        assert rep["copied_from_vi"] == 1
+        assert rep["copied_from_vi"] == 1 and rep["construction_copied_from_vi"] == 1
         assert rep["traversal_kappa"]["kappa"] == 1.0 and rep["traversal_kappa"]["labeled"] == len(items)
         assert rep["construction"]["labels"] == {"SUPPORTED": 1}
         c = read_jsonl(bdir / "construction.jsonl")[0]

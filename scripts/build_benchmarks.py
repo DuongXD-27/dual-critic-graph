@@ -309,8 +309,9 @@ def cmd_build(args):
 def read_sheet(path, label_col_name):
     from openpyxl import load_workbook
 
-    ws = load_workbook(path, read_only=True)["label"]
-    rows = list(ws.iter_rows(values_only=True))
+    wb = load_workbook(path, read_only=True)
+    rows = list(wb["label"].iter_rows(values_only=True))
+    wb.close()
     h = list(rows[0])
     i_id, i_lab, i_note = h.index("id"), h.index(label_col_name), h.index("ghi_chu")
     return {r[i_id]: {"label": (str(r[i_lab]).strip().upper() if r[i_lab] else None), "note": r[i_note]}
@@ -327,12 +328,14 @@ def cohen_kappa(a, b):
 
 
 def sync_vi(en_path, vi_path):
-    """Chép nhãn + ghi chú từ bản tiếng Việt (scripts/kappa_sheet_vi.py) sang bản tiếng Anh, theo id.
+    """Chép nhãn + ghi chú từ bản tiếng Việt (scripts/kappa_sheet_vi.py, scripts/construction_sheet_vi.py)
+    sang bản tiếng Anh, theo id.
     Chỉ chép ô đã có nhãn ở bản tiếng Việt; trả về số dòng đã chép."""
     from openpyxl import load_workbook
 
-    vi = load_workbook(vi_path, read_only=True)["label"]
-    vrows = list(vi.iter_rows(values_only=True))
+    vi_wb = load_workbook(vi_path, read_only=True)
+    vrows = list(vi_wb["label"].iter_rows(values_only=True))
+    vi_wb.close()
     vh = list(vrows[0])
     src = {r[vh.index("id")]: (r[vh.index("nhan")], r[vh.index("ghi_chu")]) for r in vrows[1:]
            if r[vh.index("id")] and r[vh.index("nhan")]}
@@ -347,6 +350,7 @@ def sync_vi(en_path, vi_path):
             ws.cell(r, i_lab).value, ws.cell(r, i_note).value = src[rid]
             n += 1
     wb.save(en_path)
+    wb.close()
     return n
 
 
@@ -375,6 +379,10 @@ def cmd_import(args):
             report["traversal_kappa"]["kappa_go_vs_no"] = cohen_kappa([bin_(g) for g, _ in done],
                                                                       [bin_(h) for _, h in done])[0]
     cpath = lab / "construction.xlsx"
+    cvpath = lab / "construction_vi.xlsx"
+    if cpath.exists() and cvpath.exists():
+        report["construction_copied_from_vi"] = sync_vi(cpath, cvpath)
+        print(f"Đã chép {report['construction_copied_from_vi']} nhãn từ {cvpath.name} sang {cpath.name}")
     if cpath.exists():
         human = read_sheet(cpath, "nhan")
         items = read_jsonl(out / "construction.jsonl")
