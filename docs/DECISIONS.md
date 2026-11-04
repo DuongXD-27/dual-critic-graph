@@ -170,10 +170,21 @@ Lý do: `shared-v2` chỉ có 2/200 câu đi qua cạnh do câu trước ghi; Ho
 
 5d. **STOP khi gán tay (chốt 02/11/2026):** STOP ⇔ **mọi điều kiện của câu hỏi đã có bằng chứng** trong đường đi hoặc nội dung các đoạn đã đọc. Đứng ở nút đáp án mà còn điều kiện chưa kiểm chứng (vd. Robocalypse: đã có "SpongeBob lấy bối cảnh ở Bikini Bottom" nhưng chưa có "người tạo ra Robocalypse viết cho SpongeBob") → chưa STOP. Khớp nguyên lý "đúng nhưng chưa đủ bằng chứng" và cách HotpotQA đánh dấu bằng chứng cho mọi vế.
 
+5e. **Cạnh lặp lại thông tin đã có (chốt 02/11/2026):** nếu sự kiện của cạnh đã có sẵn trong đường đi hoặc trong đoạn đã đọc, đi theo cạnh không thêm bằng chứng → không tính là bước tiến, kể cả khi nút đích là đáp án; nhãn xét theo việc cạnh có lấp được **điều kiện còn thiếu** không. Ví dụ Gopalpur Tussar Fabrics: đã đọc câu "nhận nhãn GI" → cạnh *→ award received → GI tag* không thêm gì; điều còn thiếu (theo cách hiểu chặt) là câu định nghĩa khăn choàng, nằm ở đoạn *Shawl* — hành động "đọc đoạn" chưa có trong tập ứng viên (giới hạn 5c / O8).
+
+5f. **Nhãn là "đáp án của giám khảo" (chốt 02/11/2026):** người gán ĐƯỢC dùng đáp án để biết bước nào thật sự đúng (giống supporting_facts của HotpotQA); critic thì KHÔNG biết đáp án — benchmark đo critic (không biết đáp án) có ra cùng quyết định với người biết đáp án không. Phần lớn bước đúng nhận ra được chỉ từ câu hỏi + ý nghĩa cạnh (vd. "ai là Phó TT thứ nhất?" ↔ cạnh "Zea giữ chức Phó TT thứ nhất"). Dòng nào **chỉ biết đúng/sai nhờ đáp án** (vd. câu mơ hồ Durant/Iguodala) → ghi `ghi_chu` "cần đáp án" để phân tích riêng: critic không thể bị trách ở các dòng này (trần của bài toán).
+
+5g. **Nút đích chứa thứ còn thiếu hay là ngõ cụt (chốt 03/11/2026):** ACCEPT khi nút đích là **nơi chứa thứ còn thiếu**, kể cả khi sự kiện của cạnh đã biết (Hoffmann → *Ludendorff*: cần ngày sinh của người giúp → đi tới người đó). REJECT khi nút đích là **ngõ cụt** hoặc thứ còn thiếu nằm ở chỗ khác (Viglen → *servers*: "loại sản phẩm" nằm ở đoạn Viglen; *series 7*; *Russian Revolution of 1917* chỉ có 1 cạnh; *Moor Ends Thorne*). 5e chỉ áp dụng khi đi theo cạnh không đưa agent tới gần thứ còn thiếu.
+
+5h. **Có cạnh thẳng ngay bên cạnh (chốt 03/11/2026):** nếu cùng trạng thái có cạnh khác nói thẳng điều cần, cạnh đi vòng là REJECT (Adelaide Adrenaline → *Adelaide* khi có → *Ice Arena (Adelaide)*; → *series 7* khi có → *Only Fools and Horses*; Dahlia ← *Dahlia pinnata* khi có → *genus*; → *MMLP2* khi có → *The Monster*; → *Ferdinand Marcos* khi có → *Felix Avenue*). Đáp án là một **mô tả** mà cạnh chỉ cho một phần (servers ⊂ "IT products and services"; hip hop ⊂ "midtempo hip hop ballad") → REJECT, hành động đúng là đọc đoạn (O8). Giới hạn: file gán chỉ hiện **một** cạnh, không hiện cạnh anh em; ở các dòng phân vân Claude tra đồ thị và ghi kết quả vào `ghi_chu`.
+
+5i. **Minh bạch về vai trò của Claude khi gán (03/11/2026):** người gán quyết định mọi nhãn trên bản tiếng Việt; Claude giải thích quy ước, tra đồ thị/episode ở các dòng phân vân, và ở nhiều dòng đã nêu nhãn **suy ra từ quy ước đã chốt**. Vì vậy mẫu κ không hoàn toàn độc lập với LLM (Claude ≠ model của agent/critic, nhưng vẫn là LLM) → ghi vào threats to validity; nếu cần κ "sạch": một người thứ hai gán độc lập 30–50 dòng chỉ với hướng dẫn 5b–5h.
+
 **Construction** (`data/benchmarks/construction.jsonl`, 116 phép ghi = mọi bản ghi cổng Construction của `shared-v2`):
 5. Không có quy tắc tự động → **gán tay** trong `label/construction.xlsx`: SUPPORTED (bằng chứng nói rõ đúng sự kiện: đúng đầu, đuôi, quan hệ, chiều) / UNSUPPORTED (có thể đúng nhưng bằng chứng không đủ) / WRONG (trái bằng chứng hoặc hỏng). Nhãn cổng: SUPPORTED → ACCEPT, còn lại → REJECT. Chỉ dựa vào bằng chứng trong dòng, không dùng hiểu biết riêng.
 6. 116 mẫu là nhỏ; nếu cần thêm: lấy phép ghi từ các lượt chạy sau, hoặc dùng bộ ba lúc trích xuất (EXTRACTED) làm nguồn phụ.
 7. `build` không ghi đè file Excel / `construction.jsonl` đã có (tránh mất nhãn) trừ khi `--force-labels`.
+8. 03/11/2026: bản **tiếng Việt** `label/construction_vi.xlsx` (`scripts/construction_sheet_vi.py`; bản dịch do Claude làm, `construction_vi_translations.json` bổ sung cho `kappa_vi_translations.json`). Sheet `huong_dan` dùng ví dụ **bịa** (không lấy từ dữ liệu); sheet `quan_he` giải nghĩa 47 quan hệ có trong 116 phép ghi. `import` tự chép nhãn sang `construction.xlsx` theo id. Khi gán phép ghi, Claude **không** gợi ý nhãn (rút kinh nghiệm 5i), chỉ giải thích quy ước / nghĩa quan hệ khi được hỏi.
 
 ## D17. Critic v1: luật + LLM, đánh giá offline (2026-10-25, `dcg/gates.py`, `scripts/eval_critics.py`)
 1. Giao diện D7 giữ nguyên, thêm tham số tuỳ chọn `context` cho `traversal_gate` = những gì agent đã thấy: câu nguồn của cạnh ứng viên, câu nguồn các cạnh đã đi, toàn văn các đoạn đã đọc. Critic có **cùng thông tin với agent**, không biết đáp án, không thấy lời giải thích của agent. Agent (lúc chạy) và đánh giá offline dựng `context` bằng cùng một hàm (`make_context`).
@@ -189,6 +200,24 @@ Lý do: `shared-v2` chỉ có 2/200 câu đi qua cạnh do câu trước ghi; Ho
 - Construction (chưa có nhãn tay): REJECT 85/116 (luật: 75). Mã lý do: NOT_STATED 55, WRONG_RELATION 23, NOT_ENTITY 3, WRONG_ENTITY 2, WRONG_DIRECTION 1, NO_EVIDENCE 1. **Bắt được mọi lỗi đã biết** với lý do đúng (cousin→sibling: WRONG_RELATION; Kerensky: NOT_STATED; "American": NOT_ENTITY; Gainesville: NO_EVIDENCE; Scholz peer: WRONG_RELATION…). Tỉ lệ chặn 73% cao hơn ước lượng sơ bộ ~42% phép ghi có vấn đề → có thể quá khắt khe; cần nhãn tay để biết.
 - 01/11: bản **tiếng Việt** của file κ (`scripts/kappa_sheet_vi.py` → `traversal_kappa_sample_vi.xlsx`, bản dịch trong `kappa_vi_translations.json`, giữ tên riêng, tên quan hệ kèm tiếng Anh, 3 cột cuối giữ nguyên văn). Người gán dùng bản tiếng Việt; `build_benchmarks.py import` tự chép nhãn sang bản tiếng Anh theo id. Bản dịch do Claude làm — chỉ chuyển ngữ, không gợi ý nhãn; nghi ngờ nghĩa thì xem nguyên văn.
 - 01/11: thêm cột `noi_dung_doan_da_doc` (toàn văn đoạn đã đọc) vào `traversal_kappa_sample.xlsx`, giữ nguyên 2 nhãn đã gán (bản sao lưu `…backup-20261101.xlsx`).
+
+## Quan sát: κ Traversal — người vs quy tắc vs critic (2026-11-03, 100 dòng, `scripts/kappa_report.py`)
+- Người gán xong 100/100 (bản tiếng Việt → `build_benchmarks.py import` chép sang bản tiếng Anh): **67 REJECT / 20 ACCEPT / 13 STOP**, 12 dòng có ghi chú, 2 dòng "cần đáp án". Mẫu rút 40/40/20 theo quy tắc → người **chặt hơn** quy tắc rõ rệt.
+- | So với nhãn người | κ 3 lớp | đồng ý | κ đi/không đi |
+  |---|---|---|---|
+  | `trav-rule-v1` (nhãn tự động) | **0,569** | 0,73 | 0,545 |
+  | critic LLM v1 (`deepseek-v4.1-flash`) | 0,392 | 0,67 | 0,471 |
+  | critic luật | 0,167 | 0,60 | 0,133 |
+  Bỏ 2 dòng "cần đáp án" gần như không đổi (0,561 / 0,392 / 0,189).
+- **Quy tắc vs người: 27 dòng lệch, tất cả cùng một chiều** (người REJECT): 20 dòng quy tắc ACCEPT (`evidence_on_path`; 12 là câu so sánh mà câu nguồn đúng là câu bằng chứng nhưng *cạnh* mang sự kiện khác — Perrin *employer*, Mauresmo *Grand Slam*, Housman *notable work*, Parmitano *citizenship*…) và 7 dòng quy tắc STOP (5 dòng Robocalypse: câu bằng chứng "created by Jay Lender and Micah Wright, **former writers for SpongeBob**" là nguồn của cạnh *Robocalypse → creator → Jay Lender* nên quy tắc coi là đã phủ; Aston Villa; Cranium). **26/27 cùng một nguyên nhân: quy tắc tính cả câu nguồn, người chỉ tính sự kiện của cạnh (5b).** Dòng Cranium (*Cranium → instance of → party game*, người REJECT) cần xem lại: theo 5d hai cạnh "là một" đã đủ để STOP.
+- **Critic LLM vs người: 33 dòng lệch.** ~12 dòng ACCEPT vì "câu nguồn nói X" (Saint Louis 1818, Berkeley "public", One Magic Christmas 1985, Marray "British", Papa Gino's "pizza", Housman "English", Drive "Refn", Viglen "IT products"…) — `make_context` đưa câu nguồn của cạnh và của đường đi cho critic, nên critic chấm theo cách nhìn "cả câu" giống quy tắc. 7 dòng REJECT khi người STOP (6 dòng André Holland/42, Definition): critic chấm cạnh có liên quan không, không nói STOP khi bằng chứng đã đủ. 4 dòng STOP khi người REJECT (3 dòng Robocalypse — critic thấy câu "former writers for SpongeBob" trong ngữ cảnh; Gracie Mansion).
+- **Kết luận:** chỗ lệch lớn nhất không phải "model kém" mà là **hai định nghĩa bằng chứng khác nhau**: agent đi theo cạnh chỉ thấy bộ ba + tên đoạn nguồn (`_edge_view`), còn quy tắc và critic thấy cả câu nguồn → O10.
+- **Ghi nhận phụ khi gán (dùng cho báo cáo):**
+  - *Lỗi phân giải thực thể của bước trích xuất (EXTRACTED, cổng Construction hiện tại không chặn):* gộp nhầm — "Alexander Grant (Upper Canada politician)" nhận các cạnh *producer* của nhà sản xuất Alex da Kid; "Macbeth" gộp phim/vở kịch/nhân vật *Gargoyles*; "Jimmy Butler" gộp cầu thủ với diễn viên (*When a Man's a Man*); tên chung "series 7". Tách nhầm — "Jimmy Butler" / "Jimmy Butler (basketball)" (vị trí *swingman* rơi vào nút không ngoặc); "Derry City" / "Derry City F.C."; "Russian Revolution of 1917" / "Russian Revolution**s** of 1917". Đồ thị không biết Alex da Kid = Alexander Grant (bí danh chỉ có trong văn bản).
+  - *Phép ghi có ích:* agent ghi *Bob Johnson → member of sports team → Derry City F.C.* (AGENT_TEXT), nối hai mảnh bị tách → cổng Construction phải **cho qua** những phép ghi như vậy, không chỉ chặn.
+  - *Rò rỉ trí nhớ của model:* "Jane Ryan" — agent tìm 8 tên Philippines lấy từ trí nhớ (Aurora, Quezon, Ramos, Macapagal…), `start_at` Imelda Marcos bị D14 chặn, bỏ qua cạnh *Felix Avenue* (đúng bằng chứng) và **bịa** "Aurora Quezon" (sai). Harrison: trong 21 cạnh, đi thẳng *Somewhere in England* (album mâu thuẫn với Warner — đồ thị không có thông tin này) → chọn đúng nhờ trí nhớ. Markkanen: đoán gia đình Ball/Holiday trước; tìm ra nhờ nút Chicago Bulls chỉ có 5 cạnh (đồ thị nhỏ) — độ khó của việc đi phụ thuộc kích thước đồ thị. Thewlis: dừng ở King Duncan, "Thewlis đóng vai Duncan" lấy từ trí nhớ (cạnh *cast member* không mang vai diễn).
+  - *Đáp án là mô tả, không phải thực thể:* đếm thô ~12/200 câu (≈6%: "IT products and services", "flowers", "little hairs", "to guard", "110 miles"…) — đồ thị (96 quan hệ, không có P452 *industry*) không biểu diễn được, bắt buộc đọc văn bản.
+  - *HotpotQA:* đáp án hỏng ("The club" — bằng chứng chuẩn là Derry City F.C.); câu nhiều đáp án đúng (Eero Markkanen: AIK / Dynamo Dresden / ĐTQG Phần Lan, chỉ ĐTQG được tính).
 
 ## Quan sát: câu hỏi dò `probe-v2` trên `shared-v2` (2026-10-25)
 - 105 cạnh agent ghi mới → 91 câu dò hợp lệ (11 không sinh được vì văn bản không nối H–T, đa số là phép ghi thiếu căn cứ: Kerensky, Gainesville, Darkhorse, Cranium...). 182 lượt agent, 766 lời gọi.
@@ -248,6 +277,9 @@ Lý do: `shared-v2` chỉ có 2/200 câu đi qua cạnh do câu trước ghi; Ho
 | O6 | Có chủ động xoá bớt cạnh để buộc agent đọc văn bản không | Không; dùng độ thiếu tự nhiên của trích xuất, xem lại sau khi đọc trace |
 | O5 | Bảng tên tiếng Anh cho 96 PID (để đưa vào prompt) | Lấy nhãn Wikidata, lưu `data/manual/relations.json` |
 | O7 | Đo lan truyền lỗi (lỗi bền vững) | **Đã chốt** (D15): câu hỏi dò cho từng cạnh agent ghi, chạy trên đồ thị trước/sau |
+| O8 | `read_paragraph` (đọc đoạn) và "xuất phát lại" chưa đi qua cổng Traversal và không có trong tập ứng viên của benchmark | Ghi nhận là giới hạn (D16 5c, 5e, 5h); ở nhiều trạng thái hành động đúng là đọc đoạn (Viglen, Gopalpur) hoặc xuất phát lại (Kerensky) |
+| O9 | Cạnh agent **đã nhìn thấy** trong danh sách cạnh nhưng chưa đi có tính là bằng chứng để STOP không (Aruncus → *genus*; King Duncan → *child*) | Không (5d: chỉ đường đi + đoạn đã đọc); bàn với GVHD |
+| O10 | Định nghĩa bằng chứng khi đi theo cạnh: **(A)** chỉ sự kiện của cạnh — khớp agent hiện tại, cần bỏ câu nguồn khỏi ngữ cảnh critic (`make_context`) và sửa quy tắc; hay **(B)** agent nhận luôn câu nguồn khi `follow_edge` — khớp quy tắc/critic hiện tại, phải gán lại theo quy ước mới và chạy lại agent | Chưa chốt (03/11/2026). Đây là nguyên nhân của 26/27 dòng lệch quy tắc–người và phần lớn lệch critic–người |
 
 ## Môi trường và dữ liệu thô
 - Script chạy bằng `.venv` (Python 3.11) trên Windows. Môi trường của Claude không gọi được API LLM và không tải được HotpotQA → chạy LLM do người dùng thực hiện.
@@ -276,8 +308,11 @@ Lý do: `shared-v2` chỉ có 2/200 câu đi qua cạnh do câu trước ghi; Ho
 - [x] `probe_writes.py gen --workers 4` (probe-v2) → kiểm tra 20 câu mẫu
 - [x] `probe_writes.py run --workers 4` → so sánh trước/sau (xem Quan sát: câu hỏi dò)
 - [x] Dựng benchmark v1 (D16): `build_benchmarks.py build`; kiểm thử offline đạt
-- [ ] Gán tay `data/benchmarks/label/construction.xlsx` (116) và `traversal_kappa_sample.xlsx` (100) → `build_benchmarks.py import` → κ (RQ0a)
+- [x] Gán tay `traversal_kappa_sample.xlsx` (100, qua bản tiếng Việt) → `build_benchmarks.py import` → κ = 0,569 (xem Quan sát: κ Traversal)
+- [ ] Gán tay `data/benchmarks/label/construction.xlsx` (116) → `build_benchmarks.py import`
 - [x] Critic luật + LLM (D17), `eval_critics.py`; kiểm thử offline đạt; chạy `--gates rule`
 - [x] `eval_critics.py --gates llm --workers 6` → so với critic luật (xem Quan sát: critic LLM v1)
-- [ ] Sau khi gán tay: `build_benchmarks.py import` → `eval_critics.py --gates llm --score-only` (và `--gates rule`)
+- [x] `eval_critics.py --score-only` (llm, rule) + `scripts/kappa_report.py` → `data/benchmarks/eval/kappa_report.md`
+- [ ] Chốt O10 (cùng GVHD) → `trav-rule-v2` + critic-v2 theo định nghĩa đã chốt (không tinh chỉnh trên chính 100 dòng κ — dùng chúng làm tập kiểm tra)
+- [ ] Baseline đóng sách (hỏi 200 câu không cho đồ thị/văn bản) + đếm số lần tìm tên không có trong câu hỏi → tách kết quả theo câu model đã thuộc / chưa thuộc
 - [ ] Bật critic trong agent (`run_agent.py --gates llm`) → đo tác động lên hỏi đáp và phép ghi
