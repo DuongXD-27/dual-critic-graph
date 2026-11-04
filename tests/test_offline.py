@@ -5,6 +5,7 @@
 from __future__ import annotations
 
 import json
+import re
 import sys
 import tempfile
 from pathlib import Path
@@ -14,6 +15,8 @@ sys.path.insert(0, str(ROOT))
 sys.path.insert(0, str(ROOT / "scripts"))
 
 import build_graphs  # noqa: E402
+import build_shared_kg  # noqa: E402
+import probe_writes  # noqa: E402
 import run_agent  # noqa: E402
 from dcg.common import read_json, read_jsonl, write_json  # noqa: E402
 
@@ -52,18 +55,39 @@ EXTRACTION = {
 
 
 class FakeLLM:
-    def __init__(self, agent_scripts):
+    def __init__(self, agent_scripts, drop_in_batch=(), broken=(), probes=None):
         self.agent_scripts = agent_scripts  # {câu hỏi: [bước...]}
-        self.stats = {"calls": 0}
+        self.probes = probes or {}          # {tên đầu cạnh: JSON câu hỏi dò}
+        self.critic_prompts = []
+        self.drop_in_batch = set(drop_in_batch)  # giả lập model bỏ sót đoạn khi gộp
+        self.broken = set(broken)                # giả lập JSON hỏng ở lần gọi đầu
+        self.stats = {"calls": 0, "prompt_tokens": 0, "completion_tokens": 0}
 
     def info(self):
         return {"model": "fake"}
 
-    def chat(self, messages, tools=None, json_mode=False):
+    def chat(self, messages, tools=None, json_mode=False, session_id=None):
         self.stats["calls"] += 1
+        if json_mode and messages[1]["content"].startswith("TRAVERSAL CHECK"):
+            self.critic_prompts.append(messages[1]["content"])
+            return {"content": json.dumps({"verdict": "REJECT", "reason": "fake"}), "tool_calls": []}
+        if json_mode and messages[1]["content"].startswith("WRITE CHECK"):
+            self.critic_prompts.append(messages[1]["content"])
+            if len(messages) == 2:  # lần đầu trả JSON sai → critic phải hỏi lại
+                return {"content": json.dumps({"reason_code": "MAYBE"}), "tool_calls": []}
+            return {"content": json.dumps({"reason_code": "NOT_STATED", "reason": "fake"}), "tool_calls": []}
+        if json_mode and "PROBE QUESTION WRITING" in messages[1]["content"]:
+            head = re.search(r"^Entity H: (.*)$", messages[1]["content"], flags=re.M).group(1)
+            return {"content": json.dumps(self.probes[head]), "tool_calls": []}
         if json_mode:  # trích xuất
-            user = messages[-1]["content"]
+            user = messages[1]["content"]
+            batch = re.findall(r"^PARAGRAPH \d+ — TITLE: (.*)$", user, flags=re.M)
+            if batch:
+                paras = [{"title": t, "triples": EXTRACTION[t]} for t in batch if t not in self.drop_in_batch]
+                return {"content": json.dumps({"paragraphs": paras}), "tool_calls": []}
             title = user.split("PARAGRAPH TITLE: ", 1)[1].split("\n", 1)[0]
+            if title in self.broken and len(messages) == 2:
+                return {"content": "{not json", "tool_calls": []}
             return {"content": "```json\n" + json.dumps({"triples": EXTRACTION[title]}) + "\n```", "tool_calls": []}
         question = messages[1]["content"].split("Question: ", 1)[1].split("\n", 1)[0]
         turn = sum(m["role"] == "assistant" for m in messages)
@@ -102,13 +126,16 @@ def main():
 
         # ---- bước 2: agent ----
         nodes = {n["name"]: n["id"] for n in g["nodes"]}
+        e_own = f"e{len(g['edges'])}"                                    # cạnh agent sắp ghi ở ngõ cụt
         script = [
             ("search_nodes", {"query": "Big Stone Gap"}),
+            ("start_at", {"node": nodes["Big Stone Gap, Virginia"]}),    # không có trong câu hỏi → bị từ chối (D14)
             ("start_at", {"node": nodes["Big Stone Gap (film)"]}),
             ("follow_edge", {"edge_id": e_dir}),
-            ("read_paragraph", {"paragraph": "Adriana Trigiani"}),
+            ("read_paragraph", {"paragraph": "Adriana Trigiani"}),       # ngõ cụt: thiếu cạnh nơi sống
             ("add_edge", {"head": "Adriana Trigiani", "relation": "P551", "tail": "Greenwich Village",
                           "evidence_sentences": [{"paragraph": "Adriana Trigiani", "sentence": 0}]}),
+            ("follow_edge", {"edge_id": e_own}),                         # ghi rồi đi tiếp theo cạnh vừa ghi
             ("add_edge", {"head": "Big Stone Gap (film)", "relation": "P999", "tail": "Greenwich Village"}),
             ("answer", {"answer": "Greenwich Village, New York City"}),
             # bước cập nhật bộ nhớ
@@ -124,24 +151,29 @@ def main():
         gates = read_jsonl(run / "gates.jsonl")
         after = read_json(run / "graphs_after" / "q_bsg.json")
         ep = eps[0]
-        assert ep["em"] == 1.0 and ep["follows"] == 1
+        assert ep["em"] == 1.0 and ep["follows"] == 2 and ep["gold_in_answer"] is True
+        assert ep["starts_refused"] == 1 and ep["follows_on_own_edges"] == 1
+        assert ep["path"][-1]["to"] == "Greenwich Village" and ep["path"][-1]["origin"] == "AGENT_TEXT"
+        assert summ["starts_refused"] == 1 and summ["episodes_following_own_write"] == 1
+        assert summ["episodes_using_earlier_agent_edges"] == 0        # cạnh tự ghi trong cùng lượt không tính là "dùng lại"
         assert ep["answer_grounded"] is True and summ["correct_but_ungrounded"] == 0
         assert ep["paragraphs_read"] == ["Adriana Trigiani"]
         assert [w["status"] for w in ep["writes"]] == ["added", "invalid_relation", "added"]
         assert [w["phase"] for w in ep["writes"]] == ["answer", "answer", "memory"]
         assert ep["writes"][0]["origin"] == "AGENT_TEXT" and ep["writes"][0]["new_tail_node"] is True
         assert ep["writes"][2]["origin"] == "AGENT_DERIVED"
-        assert [r["kind"] for r in gates] == ["traversal", "traversal", "construction", "construction"]
+        assert [r["kind"] for r in gates] == ["traversal", "traversal", "construction", "traversal", "construction"]
         assert gates[0]["action"]["type"] == "start" and gates[0]["action"]["start_in_question"] is True
         assert gates[1]["action"]["to"] == "Adriana Trigiani" and [p["type"] for p in gates[1]["path"]] == ["start"]
         assert gates[2]["evidence"][0]["text"].startswith("Adriana Trigiani is")
-        assert gates[3]["phase"] == "memory" and gates[3]["evidence"][0]["type"] == "edge"
+        assert gates[3]["action_edge"]["origin"] == "AGENT_TEXT"
+        assert gates[4]["phase"] == "memory" and gates[4]["evidence"][0]["type"] == "edge"
         assert ep["starts"] == 1 and ep["starts_not_in_question"] == 0
         new = [e for e in after["edges"] if e["origin"] == "AGENT_TEXT"]
         assert len(new) == 1 and new[0]["provenance"] == [["Adriana Trigiani", 0]]
         assert summ["writes_by_origin"] == {"AGENT_TEXT": 1, "AGENT_DERIVED": 1}
         assert summ["writes_by_phase"] == {"answer": 2, "memory": 1}
-        assert ep["path_sf_coverage"] == 0.5
+        assert ep["path_sf_coverage"] == 1.0
         print("Bước 2 OK:", summ)
 
         # ---- câu hỏi tiếp theo dùng cạnh agent vừa ghi ----
@@ -163,12 +195,16 @@ def main():
         assert eps2[1]["agent_edges_used"] == [e_new], eps2[1]["agent_edges_used"]
         print("Câu hỏi tiếp theo OK: dùng cạnh do agent ghi", eps2[1]["agent_edges_used"])
     check_tools()
+    check_shared()
+    check_batch()
+    check_header_safe()
     print("TẤT CẢ OK")
 
 
 def check_tools():
-    """Quy tắc công cụ (D10, D11): get_edges chỉ nút hiện tại; chỉ đọc đoạn đã tới được; giới hạn 2 đoạn; ghi nhận nhảy."""
-    from dcg.agent import MAX_READS, Episode
+    """Quy tắc công cụ (D10, D11, D14): chỉ xuất phát ở thực thể trong câu hỏi; get_edges chỉ nút hiện tại;
+    chỉ đọc đoạn đã tới được; giới hạn 2 đoạn; nối tên khi ghi; chặn cạnh tự nối."""
+    from dcg.agent import MAX_READS, Episode, in_question
     from dcg.common import load_relations
     from dcg.gates import AcceptAllGates
     from dcg.graph import KG
@@ -182,21 +218,274 @@ def check_tools():
     assert MAX_READS == 2
     assert "error" in ep.t_get_edges()                                   # chưa xuất phát
     assert "not reached" in ep.t_read_paragraph(titles[0])["error"]      # chưa tới được
+    assert "only accepts entities named in the question" in ep.t_start_at(a)["error"]   # D14: không nhảy cóc
+    assert "only accepts" in ep.t_start_at(v)["error"] and ep.current is None
     r = ep.t_start_at(f)
     assert r["edges"][0]["source_paragraphs"] == ["Big Stone Gap (film)"]
-    assert ep.path[0]["start_in_question"] is True
+    assert ep.path[0]["start_in_question"] is True and ep.path[0]["start_grounded_by"] == "question"
     assert "only list edges of the current node" in ep.t_get_edges(a)  # không nhìn nút khác
     assert "not reached" in ep.t_read_paragraph(titles[1])["error"]      # đoạn Trigiani chưa tới
     assert "sentences" in ep.t_read_paragraph(titles[0])
     ep.t_follow_edge(e)                                                   # tới Trigiani → đọc được đoạn đó
     assert "sentences" in ep.t_read_paragraph(titles[1])
     assert "sentences" in ep.t_read_paragraph(titles[0])                 # đọc lại: không tính
-    ep.t_start_at(v)                                                      # nhảy tới nút không có trong câu hỏi
-    assert ep.path[-1]["start_in_question"] is False
+    assert ep._jump_grounding("Big Stone Gap, Virginia") == "text_read"   # đoạn phim đã đọc nhắc tên này
+    assert ep._jump_grounding("Kyle Schickner") is None
+    ep.reachable.add(titles[2])
     assert "limit" in ep.t_read_paragraph(titles[2])["error"]            # đoạn thứ 3: quá giới hạn
     assert ep.paragraphs_read == titles[:2] and ep.reads_refused == 3
-    assert ep.summary()["starts_not_in_question"] == 1
+    sm = ep.summary()
+    assert sm["starts"] == 1 and sm["starts_refused"] == 2 and sm["starts_not_in_question"] == 0
+
+    # ghi ở ngõ cụt: tên được nối với nút có sẵn; cạnh tự nối bị chặn; kết quả gợi ý follow_edge
+    r = ep.t_add_edge("adriana trigiani", "P551", "Greenwich Village",
+                      evidence_sentences=[{"paragraph": "Adriana Trigiani", "sentence": 0}])
+    assert r["head"] == "Adriana Trigiani" and r["next"] == f"you can now follow_edge {r['edge_id']}"
+    assert "same entity" in ep.t_add_edge("Adriana Trigiani", "P57", "adriana trigiani")
+    assert ep.writes[-1]["status"] == "self_loop"
+    ep2 = Episode(KG("x"), EXAMPLE, "Which club did Claudio López join in 1998?", None, AcceptAllGates(),
+                  load_relations(), "t", "x", paragraphs={"Claudio López (footballer)": ["."], "Valencia CF": ["."],
+                                                          "Mercury (planet)": ["."], "Mercury (element)": ["."]})
+    assert ep2._resolve("Claudio López") == "Claudio López (footballer)"
+    assert ep2._resolve("Mercury") == "Mercury"                           # mơ hồ → giữ nút riêng
+    assert ep2._resolve("Valencia CF") == "Valencia CF"
+
+    # so khớp tên với câu hỏi
+    assert in_question("Thomas Boutflower Bennett (cricketer)", "Which team did Thomas Boutflower Bennet play for?")
+    assert not in_question("Pablo Aimar", "Which player joined Valencia in 1998?")
+    assert not in_question("Big Stone Gap, Virginia", EXAMPLE["question"])
+    assert in_question("Big Stone Gap (film)", EXAMPLE["question"])
+    assert not in_question("US", "Which famous musician was born first?")   # tên ngắn: chỉ khớp nguyên từ
     print("Quy tắc công cụ OK")
+
+
+Q2 = {
+    "_id": "q_at", "question": "Where is Adriana Trigiani based?", "answer": "Greenwich Village",
+    "type": "bridge", "level": "easy", "supporting_facts": [["Adriana Trigiani", 0]],
+    "context": [
+        EXAMPLE["context"][1],  # cùng đoạn "Adriana Trigiani" với câu 1 → dùng chung trong đồ thị chung
+        ["Strange Fruit (film)", ["Strange Fruit is a 2004 film directed by Kyle Schickner."]],
+        ["Strange Fruit (song)", ["\"Strange Fruit\" is a song recorded by Billie Holiday in 1939."]],
+        ["Billie Holiday", ["Billie Holiday was an American jazz singer known for Strange Fruit."]],
+    ],
+}
+EXTRACTION.update({
+    "Strange Fruit (film)": [{"head": "Strange Fruit (film)", "relation": "P57", "tail": "Kyle Schickner", "sentences": [0]}],
+    "Strange Fruit (song)": [{"head": "Strange Fruit", "relation": "P175", "tail": "Billie Holiday", "sentences": [0]}],
+    # "Strange Fruit" từ đoạn khác khớp 2 tiêu đề (film, song) → mơ hồ, giữ nút riêng
+    "Billie Holiday": [{"head": "Billie Holiday", "relation": "P800", "tail": "Strange Fruit", "sentences": [0]}],
+})
+
+
+def check_shared():
+    """Đồ thị chung (D12): gộp kho theo tiêu đề, liên kết tên→tiêu đề, câu sau đi qua cạnh câu trước ghi."""
+    with tempfile.TemporaryDirectory() as tmp:
+        tmp = Path(tmp)
+        sdir = tmp / "shared"
+        write_json(sdir / "questions.json", [EXAMPLE, Q2])          # thứ tự trả lời cố định
+        summ = build_shared_kg.main(["--out", str(sdir)], llm=FakeLLM({}))
+        c = summ["corpus"]
+        assert c["paragraphs_total"] == 7 and c["paragraphs_unique"] == 6, c
+        assert c["questions_whose_evidence_paragraph_is_in_another_question"] == 2
+        assert summ["linking"]["ambiguous"] == 1, summ["linking"]
+        assert summ["linking"]["current_title"] >= 1      # "Strange Fruit" trong đoạn của chính nó → (song)
+        g = read_json(sdir / "graph.json")
+        names = {n["name"] for n in g["nodes"]}
+        assert {"Strange Fruit", "Strange Fruit (song)", "Strange Fruit (film)"} <= names
+        assert edge_id(g, "Strange Fruit (song)", "P175", "Billie Holiday")
+        assert edge_id(g, "Billie Holiday", "P800", "Strange Fruit")    # nút mơ hồ, không gán bừa
+        nodes = {n["name"]: n["id"] for n in g["nodes"]}
+        e_dir = edge_id(g, "Big Stone Gap (film)", "P57", "Adriana Trigiani")
+        e_new = f"e{len(g['edges'])}"                                   # id của cạnh đầu tiên agent sẽ ghi
+        s1 = [
+            ("search_nodes", {"query": "Big Stone Gap"}),
+            ("start_at", {"node": nodes["Big Stone Gap (film)"]}),
+            ("follow_edge", {"edge_id": e_dir}),
+            ("read_paragraph", {"paragraph": "Adriana Trigiani"}),
+            ("answer", {"answer": "Greenwich Village, New York City"}),
+            ("add_edge", {"head": "Adriana Trigiani", "relation": "P551", "tail": "Greenwich Village",
+                          "evidence_sentences": [{"paragraph": "Adriana Trigiani", "sentence": 0}]}),
+            None,
+        ]
+        s2 = [
+            ("search_nodes", {"query": "Adriana Trigiani"}),
+            ("start_at", {"node": nodes["Adriana Trigiani"]}),
+            ("follow_edge", {"edge_id": e_new}),
+            ("answer", {"answer": "Greenwich Village"}),
+            None,
+        ]
+        summ2 = run_agent.main(["--run-name", "s", "--graph", str(sdir / "graph.json"), "--out-root", str(tmp / "runs")],
+                               llm=FakeLLM({EXAMPLE["question"]: s1, Q2["question"]: s2}))
+        eps = read_jsonl(tmp / "runs" / "s" / "episodes.jsonl")
+        assert eps[0]["writes"][0]["phase"] == "memory" and eps[0]["writes"][0]["edge_id"] == e_new
+        assert eps[1]["agent_edges_used_detail"] == [{"edge_id": e_new, "origin": "AGENT_TEXT", "created_by": "q_bsg:main"}]
+        assert summ2["episodes_using_earlier_agent_edges"] == 1 and summ2["earlier_agent_edges_reused"] == 1
+        after = read_json(tmp / "runs" / "s" / "graph_after.json")
+        assert len(after["edges"]) == len(g["edges"]) + 1
+        assert read_json(tmp / "runs" / "s" / "run.json")["mode"] == "shared"
+        print("Đồ thị chung OK")
+
+        # ---- D15: câu hỏi dò cho cạnh agent ghi; chạy trên đồ thị trước/sau ----
+        pq = "In which neighbourhood is Adriana Trigiani based?"
+        probe_llm = FakeLLM({pq: [("search_nodes", {"query": "Adriana Trigiani"}),
+                                  ("start_at", {"node": nodes["Adriana Trigiani"]}),
+                                  ("follow_edge", {"edge_id": e_new}),
+                                  ("answer", {"answer": "Greenwich Village"})]},
+                            probes={"Adriana Trigiani": {"answerable": True, "question": pq, "answer": "Greenwich Village",
+                                                 "same_as_T": True}})
+        rdir = tmp / "runs" / "s"
+        st = probe_writes.main(["gen", "--run", str(rdir), "--graph", str(sdir / "graph.json")], llm=probe_llm)
+        assert st == {"ok": 1}, st
+        pr = read_json(rdir / "probes.json")["probes"][0]
+        assert pr["edge_id"] == e_new and pr["source_sentences"][0]["title"] == "Adriana Trigiani"
+        assert pr["answers"] == ["Greenwich Village"]
+        sm = probe_writes.main(["run", "--run", str(rdir), "--graph", str(sdir / "graph.json"), "--workers", "2"],
+                               llm=probe_llm)
+        assert sm["n_probes"] == 1 and sm["after_used_probe_edge"] == 1 and sm["correct_after"] == 1
+        pe = read_jsonl(rdir / "probe_run" / "episodes.jsonl")
+        assert [r["condition"] for r in pe] == ["before", "after"]
+        assert pe[0]["used_probe_edge"] is False and pe[0]["follows"] == 0      # đồ thị gốc chưa có cạnh này
+        assert not any(e["phase"] == "memory" for r in pe for e in r["events"])  # không có bước bộ nhớ
+        assert len(read_json(rdir / "graph_after.json")["edges"]) == len(g["edges"]) + 1   # chạy dò không sửa đồ thị
+        # kiểm tra câu hỏi dò
+        txt = "Adriana Trigiani is based in Greenwich Village, New York City."
+        assert probe_writes.check({"answerable": True, "question": pq, "answer": "Greenwich Village"},
+                                  "Adriana Trigiani", txt) is None
+        assert probe_writes.check({"answerable": True, "question": "Where does she live?", "answer": "Greenwich Village"},
+                                  "Adriana Trigiani", txt) == "head_not_in_question"
+        assert probe_writes.check({"answerable": True, "question": pq, "answer": "Manhattan"},
+                                  "Adriana Trigiani", txt) == "answer_not_in_text"
+        assert probe_writes.check({"answerable": False}, "Adriana Trigiani", txt) == "not_answerable"
+        assert probe_writes.check({"answerable": True, "question": "What city is she based in, Adriana Trigiani?",
+                                   "answer": "New York City"}, "Adriana Trigiani", txt) == "pronoun_before_head"
+        assert probe_writes.check({"answerable": True, "question": "Where does Adriana Trigiani live?",
+                                   "answer": "is based in Greenwich Village, New York City"},
+                                  "Adriana Trigiani", txt) == "answer_too_long"
+        print("Câu hỏi dò OK")
+
+        # ---- D16: dựng benchmark từ log + nhập nhãn tay ----
+        import build_benchmarks
+        from openpyxl import load_workbook
+        bdir = tmp / "bench"
+        st = build_benchmarks.main(["build", "--run", str(rdir), "--shared", str(sdir), "--out", str(bdir)])
+        assert st["construction_items"] == 1 and st["traversal_states"] == 4, st
+        items = {(i["qid"], i["id"].split("-")[2], i["action"]["to"]): i for i in read_jsonl(bdir / "traversal.jsonl")}
+        g = lambda q, j, to: items[(q, str(j), to)]  # noqa: E731
+        assert g("q_bsg", 0, "Adriana Trigiani")["gold"] == "ACCEPT" and g("q_bsg", 0, "Adriana Trigiani")["agent_chose"]
+        assert g("q_bsg", 0, "Donna Gigliotti")["rule_detail"]["why"] == "off_path"           # lỗ hổng D8 đã vá
+        assert g("q_bsg", 0, "Big Stone Gap, Virginia")["gold"] == "REJECT"
+        assert g("q_bsg", 1, "Big Stone Gap (film)")["rule_detail"]["why"] == "revisit"
+        assert g("q_at", 0, "Greenwich Village")["gold"] == "ACCEPT"                          # cạnh agent ghi, đi tới đáp án
+        assert g("q_at", 0, "Big Stone Gap (film)")["rule_detail"]["why"] == "not_evidence"
+        assert g("q_at", 1, "Adriana Trigiani")["gold"] == "STOP"                             # đã đủ bằng chứng
+        # người gán nhãn: điền nhãn = quy tắc (κ = 1), phép ghi = SUPPORTED
+        tp, cp = bdir / "label" / "traversal_kappa_sample.xlsx", bdir / "label" / "construction.xlsx"
+        wb = load_workbook(tp)
+        ws = wb["label"]
+        gold = {i["id"]: i["gold"] for i in items.values()}
+        for row in ws.iter_rows(min_row=2):
+            row[9].value = gold[row[0].value]
+        wb.save(tp)
+        # bản tiếng Việt: nhãn gán ở đây được chép sang bản tiếng Anh theo id khi import
+        from openpyxl import Workbook
+        ids = [r[0].value for r in load_workbook(tp)["label"].iter_rows(min_row=2)]
+        vwb = Workbook()
+        vws = vwb.active
+        vws.title = "label"
+        vws.append(["id", "cau_hoi", "nhan", "ghi_chu"])
+        vws.append([ids[0], "câu hỏi tiếng Việt", gold[ids[0]], "gán ở bản tiếng Việt"])
+        vwb.save(bdir / "label" / "traversal_kappa_sample_vi.xlsx")
+        cid = load_workbook(cp)["label"]["A2"].value                 # phép ghi gán ở bản tiếng Việt (construction_vi.xlsx)
+        cwb = Workbook()
+        cws = cwb.active
+        cws.title = "label"
+        cws.append(["id", "cau_hoi", "nhan", "ghi_chu"])
+        cws.append([cid, "câu hỏi tiếng Việt", "supported", None])
+        cwb.save(bdir / "label" / "construction_vi.xlsx")
+        rep = build_benchmarks.main(["import", "--out", str(bdir)])
+        assert rep["copied_from_vi"] == 1 and rep["construction_copied_from_vi"] == 1
+        assert rep["traversal_kappa"]["kappa"] == 1.0 and rep["traversal_kappa"]["labeled"] == len(items)
+        assert rep["construction"]["labels"] == {"SUPPORTED": 1}
+        c = read_jsonl(bdir / "construction.jsonl")[0]
+        assert c["gold"] == "ACCEPT" and c["gold_source"] == "human" and c["write"]["relation"] == "P551"
+        st2 = build_benchmarks.main(["build", "--run", str(rdir), "--shared", str(sdir), "--out", str(bdir)])
+        assert read_jsonl(bdir / "construction.jsonl")[0]["gold"] == "ACCEPT"                # dựng lại không xoá nhãn
+        assert build_benchmarks.cohen_kappa(["A", "A", "R", "R"], ["A", "R", "R", "R"])[0] == 0.5
+        print("Benchmark OK")
+
+        # ---- D17: critic luật + critic LLM, đánh giá offline ----
+        import eval_critics
+        from dcg.gates import LLMGates, RuleGates
+        common = ["--bench", str(bdir), "--corpus", str(sdir / "corpus.json"), "--runs-root", str(tmp / "runs")]
+        m = eval_critics.main(["--gates", "rule", *common])
+        assert m["traversal"]["all_vs_rule"]["n"] == len(items)
+        assert m["construction"]["n_labeled"] == 1
+        fake = FakeLLM({})
+        m = eval_critics.main(["--gates", "llm", "--workers", "2", "--name", "llm-fake", *common], llm=fake)
+        assert m["construction"]["vs_human"]["per_label"]["REJECT"]["support"] == 0     # người gán SUPPORTED
+        assert m["construction"]["reject_rate_by_human_label"]["SUPPORTED"] == "1/1"    # critic giả chặn nhầm
+        assert m["construction"]["parse_errors"] == 0 and m["traversal"]["parse_errors"] == 0
+        assert m["traversal"]["all_vs_rule"]["per_label"]["REJECT"]["recall"] == 1.0
+        tp = [p for p in fake.critic_prompts if p.startswith("TRAVERSAL CHECK")]
+        assert any("Adriana Trigiani is an Italian American" in p for p in tp)   # critic thấy đoạn agent đã đọc
+        wp = [p for p in fake.critic_prompts if p.startswith("WRITE CHECK")][0]
+        assert 'head = "Adriana Trigiani", relation = P551' in wp and "[S1]" in wp
+        m2 = eval_critics.main(["--gates", "llm", "--score-only", "--name", "llm-fake", *common])
+        assert m2["construction"] == m["construction"]
+        rg = RuleGates()
+        ev = [{"type": "sentence", "text": "Adriana Trigiani is based in Greenwich Village."}]
+        assert rg.construction_gate({"head": "Adriana Trigiani", "tail": "Greenwich Village"}, ev, {})["verdict"] == "ACCEPT"
+        assert rg.construction_gate({"head": "Adriana Trigiani", "tail": "Italy"}, ev, {})["reason_code"] == "NOT_STATED"
+        assert rg.construction_gate({"head": "A", "tail": "B"}, [], {})["reason_code"] == "NO_EVIDENCE"
+        assert LLMGates(llm=fake).traversal_gate("q?", [], {"type": "start", "to": "X"})["verdict"] == "REJECT"
+        print("Critic OK")
+
+
+def check_header_safe():
+    """Mã phiên gửi trong header phải là ASCII (tiêu đề Wikipedia có thể chứa '–', 'é'...)."""
+    from dcg.llm import header_safe
+    assert header_safe("extract:Big Stone Gap (film)") == "extract:Big Stone Gap (film)"
+    h = header_safe("extract:Rolling Papers – Wiz Khalifa")
+    assert h.isascii() and h.startswith("s-") and h == header_safe("extract:Rolling Papers – Wiz Khalifa")
+    assert header_safe("extract:Beyoncé") != h
+    print("Mã phiên ASCII OK")
+
+
+def check_batch():
+    """D13: gộp đoạn + song song cho ra đúng đồ thị như từng đoạn; đoạn bị bỏ sót được gọi lại; thử nghiệm chạy được."""
+    from dcg.common import load_relations
+    from dcg.extract import build_shared_graph, make_batches
+
+    corpus = {}
+    for q in (EXAMPLE, Q2):
+        for t, sents in q["context"]:
+            corpus.setdefault(t, sents)
+    rels = load_relations()
+
+    def triples(kg):
+        return sorted((kg.name(e["head"]), e["relation"], kg.name(e["tail"]), str(e["provenance"])) for e in kg.edges.values())
+
+    batches = make_batches(corpus, 3, 1200, seed=0)
+    assert sorted(t for b in batches for t in b) == sorted(corpus) and all(len(b) <= 3 for b in batches)
+    kg1, log1 = build_shared_graph(corpus, FakeLLM({}), rels)
+    kg2, log2 = build_shared_graph(corpus, FakeLLM({}, drop_in_batch={"Billie Holiday"}), rels,
+                                   workers=3, per_call=3)
+    assert triples(kg1) == triples(kg2)
+    assert [n["name"] for n in kg1.nodes.values()] == [n["name"] for n in kg2.nodes.values()]  # cùng id
+    assert log1["requests"] == 6 and log2["requests"] == len(batches) + 1
+    assert log2["paragraph_skipped"] == ["Billie Holiday"] and log2["prompt_version"] == "extract-v3-batch"
+    kg3, log3 = build_shared_graph(corpus, FakeLLM({}, broken={"Billie Holiday"}), rels, workers=2)
+    assert triples(kg3) == triples(kg1) and log3["parse_retries"] == 1 and log3["requests"] == 7
+    assert log3["parse_errors"] == []
+
+    with tempfile.TemporaryDirectory() as tmp:
+        sdir = Path(tmp) / "shared"
+        write_json(sdir / "questions.json", [EXAMPLE, Q2])
+        rep = build_shared_kg.main(["--out", str(sdir), "--pilot", "5", "--per-call", "3", "--workers", "2"],
+                                   llm=FakeLLM({}))
+        assert rep["paragraphs"] == 5 and rep["edge_jaccard"] == 1.0 and rep["decision"] == "per_call=3"
+        assert (sdir / "pilot.json").exists() and not (sdir / "graph.json").exists()
+    print("Gộp đoạn + song song + thử nghiệm OK")
 
 
 if __name__ == "__main__":

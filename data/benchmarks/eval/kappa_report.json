@@ -1,0 +1,1095 @@
+{
+  "n_labeled": 100,
+  "n_needs_answer": 2,
+  "human_labels": {
+    "STOP": 13,
+    "REJECT": 67,
+    "ACCEPT": 20
+  },
+  "vs_human": {
+    "trav-rule-v1 (nhãn tự động)": {
+      "all": {
+        "n": 100,
+        "kappa": 0.569,
+        "accuracy": 0.73,
+        "kappa_go_vs_no": 0.545,
+        "confusion": {
+          "nguoi=ACCEPT / ACCEPT": 20,
+          "nguoi=REJECT / ACCEPT": 20,
+          "nguoi=REJECT / REJECT": 40,
+          "nguoi=REJECT / STOP": 7,
+          "nguoi=STOP / STOP": 13
+        }
+      },
+      "without_needs_answer": {
+        "n": 98,
+        "kappa": 0.561,
+        "accuracy": 0.724,
+        "kappa_go_vs_no": 0.534,
+        "confusion": {
+          "nguoi=ACCEPT / ACCEPT": 19,
+          "nguoi=REJECT / ACCEPT": 20,
+          "nguoi=REJECT / REJECT": 39,
+          "nguoi=REJECT / STOP": 7,
+          "nguoi=STOP / STOP": 13
+        }
+      }
+    },
+    "critic llm-deepseek-v4.1-flash": {
+      "all": {
+        "n": 100,
+        "kappa": 0.392,
+        "accuracy": 0.67,
+        "kappa_go_vs_no": 0.471,
+        "confusion": {
+          "nguoi=ACCEPT / ACCEPT": 17,
+          "nguoi=ACCEPT / REJECT": 3,
+          "nguoi=REJECT / ACCEPT": 17,
+          "nguoi=REJECT / REJECT": 46,
+          "nguoi=REJECT / STOP": 4,
+          "nguoi=STOP / ACCEPT": 2,
+          "nguoi=STOP / REJECT": 7,
+          "nguoi=STOP / STOP": 4
+        }
+      },
+      "without_needs_answer": {
+        "n": 98,
+        "kappa": 0.392,
+        "accuracy": 0.673,
+        "kappa_go_vs_no": 0.473,
+        "confusion": {
+          "nguoi=ACCEPT / ACCEPT": 16,
+          "nguoi=ACCEPT / REJECT": 3,
+          "nguoi=REJECT / ACCEPT": 16,
+          "nguoi=REJECT / REJECT": 46,
+          "nguoi=REJECT / STOP": 4,
+          "nguoi=STOP / ACCEPT": 2,
+          "nguoi=STOP / REJECT": 7,
+          "nguoi=STOP / STOP": 4
+        }
+      }
+    },
+    "critic rule": {
+      "all": {
+        "n": 100,
+        "kappa": 0.167,
+        "accuracy": 0.6,
+        "kappa_go_vs_no": 0.133,
+        "confusion": {
+          "nguoi=ACCEPT / ACCEPT": 9,
+          "nguoi=ACCEPT / REJECT": 11,
+          "nguoi=REJECT / ACCEPT": 16,
+          "nguoi=REJECT / REJECT": 51,
+          "nguoi=STOP / ACCEPT": 7,
+          "nguoi=STOP / REJECT": 6
+        }
+      },
+      "without_needs_answer": {
+        "n": 98,
+        "kappa": 0.189,
+        "accuracy": 0.612,
+        "kappa_go_vs_no": 0.157,
+        "confusion": {
+          "nguoi=ACCEPT / ACCEPT": 9,
+          "nguoi=ACCEPT / REJECT": 10,
+          "nguoi=REJECT / ACCEPT": 15,
+          "nguoi=REJECT / REJECT": 51,
+          "nguoi=STOP / ACCEPT": 7,
+          "nguoi=STOP / REJECT": 6
+        }
+      }
+    }
+  },
+  "disagreements": [
+    {
+      "id": "t-5a8b120755-2-e40",
+      "question": "What country of origin does André Holland and 42 have in common?",
+      "edge": "Battle of Romanovka —participant→ United States",
+      "human": "STOP",
+      "trav-rule-v1 (nhãn tự động)": "STOP",
+      "critic llm-deepseek-v4.1-flash": "REJECT",
+      "critic rule": "REJECT",
+      "rule_why": "evidence_complete",
+      "note": "",
+      "critic_reasons": {
+        "llm-deepseek-v4.1-flash": "Battle of Romanovka is unrelated to André Holland or 42; doesn't help find common country of origin.",
+        "rule": "no_overlap"
+      }
+    },
+    {
+      "id": "t-5a84cb2555-1-e5305",
+      "question": "Which singer of the Bee Gees sung a middle part of a song in which the majority was sung by Barry Gibb?",
+      "edge": "Robin Gibb —sibling→ Barry Gibb",
+      "human": "REJECT",
+      "trav-rule-v1 (nhãn tự động)": "ACCEPT",
+      "critic llm-deepseek-v4.1-flash": "REJECT",
+      "critic rule": "ACCEPT",
+      "rule_why": "evidence_on_path",
+      "note": "",
+      "critic_reasons": {
+        "llm-deepseek-v4.1-flash": "Being Barry's sibling does not show Robin sang a middle part of a Barry-majority song.",
+        "rule": "overlap"
+      }
+    },
+    {
+      "id": "t-5a89007355-3-e3941",
+      "question": "What Brooklyn-based rapper has worked with both Rafeal Casal and Mos Def?",
+      "edge": "Black Star (rap duo) —has part→ Talib Kweli",
+      "human": "STOP",
+      "trav-rule-v1 (nhãn tự động)": "STOP",
+      "critic llm-deepseek-v4.1-flash": "STOP",
+      "critic rule": "REJECT",
+      "rule_why": "evidence_complete",
+      "note": "",
+      "critic_reasons": {
+        "llm-deepseek-v4.1-flash": "Paragraphs already identify Talib Kweli as Brooklyn-based rapper who worked with Mos Def and shared stage with Rafael Casal.",
+        "rule": "no_overlap"
+      }
+    },
+    {
+      "id": "t-5a78d16455-1-e1628",
+      "question": "Between two scientists Ernst Messerschmid and Philippe Perrin, who is older?",
+      "edge": "Philippe Perrin —employer→ European Space Agency",
+      "human": "REJECT",
+      "trav-rule-v1 (nhãn tự động)": "ACCEPT",
+      "critic llm-deepseek-v4.1-flash": "REJECT",
+      "critic rule": "REJECT",
+      "rule_why": "evidence_on_path",
+      "note": "",
+      "critic_reasons": {
+        "llm-deepseek-v4.1-flash": "Employer edge to ESA is unrelated; needed fact is Philippe Perrin's birth date, not employer.",
+        "rule": "no_overlap"
+      }
+    },
+    {
+      "id": "t-5a75620455-1-e11932",
+      "question": "Which university was founded first, University of California, Berkeley or Saint Louis University?",
+      "edge": "Saint Louis University —founded by→ Most Reverend Louis Guillaume Valentin Dubourg",
+      "human": "REJECT",
+      "trav-rule-v1 (nhãn tự động)": "ACCEPT",
+      "critic llm-deepseek-v4.1-flash": "ACCEPT",
+      "critic rule": "ACCEPT",
+      "rule_why": "evidence_on_path",
+      "note": "",
+      "critic_reasons": {
+        "llm-deepseek-v4.1-flash": "Source sentence gives Saint Louis University's founding year 1818, needed for comparison.",
+        "rule": "overlap"
+      }
+    },
+    {
+      "id": "t-5a77300155-3-e2426",
+      "question": "Which TV series, written by the creators of Robocalypse, is set in Bikini Bottom?",
+      "edge": "SpongeBob SquarePants —creator→ Stephen Hillenburg",
+      "human": "REJECT",
+      "trav-rule-v1 (nhãn tự động)": "STOP",
+      "critic llm-deepseek-v4.1-flash": "STOP",
+      "critic rule": "REJECT",
+      "rule_why": "evidence_complete",
+      "note": "",
+      "critic_reasons": {
+        "llm-deepseek-v4.1-flash": "Path already links Robocalypse creators as writers of SpongeBob, which is set in Bikini Bottom; Hillenburg edge unnecessary.",
+        "rule": "no_overlap"
+      }
+    },
+    {
+      "id": "t-5a7b48b155-4-e8210",
+      "question": "These three apps that have similar functionality to Google for Education are compatible with what Microsoft file format?",
+      "edge": "Google for Education —has part→ Sheets",
+      "human": "ACCEPT",
+      "trav-rule-v1 (nhãn tự động)": "ACCEPT",
+      "critic llm-deepseek-v4.1-flash": "ACCEPT",
+      "critic rule": "REJECT",
+      "rule_why": "evidence_on_path",
+      "note": "",
+      "critic_reasons": {
+        "llm-deepseek-v4.1-flash": "Sheets is one of the three apps in the source sentence needed to identify compatibility format.",
+        "rule": "no_overlap"
+      }
+    },
+    {
+      "id": "t-5a8ce15d55-0-e3046",
+      "question": "did Robert Wise have more award nominations than Zoltan Korda?",
+      "edge": "Robert Wise —director→ West Side Story",
+      "human": "REJECT",
+      "trav-rule-v1 (nhãn tự động)": "ACCEPT",
+      "critic llm-deepseek-v4.1-flash": "REJECT",
+      "critic rule": "REJECT",
+      "rule_why": "evidence_on_path",
+      "note": "",
+      "critic_reasons": {
+        "llm-deepseek-v4.1-flash": "Source states award wins, not nomination counts, and does not help compare Robert Wise to Zoltan Korda.",
+        "rule": "no_overlap"
+      }
+    },
+    {
+      "id": "t-5a77300155-3-e2432",
+      "question": "Which TV series, written by the creators of Robocalypse, is set in Bikini Bottom?",
+      "edge": "SpongeBob SquarePants —narrative location→ Bikini Bottom",
+      "human": "REJECT",
+      "trav-rule-v1 (nhãn tự động)": "STOP",
+      "critic llm-deepseek-v4.1-flash": "STOP",
+      "critic rule": "REJECT",
+      "rule_why": "evidence_complete",
+      "note": "",
+      "critic_reasons": {
+        "llm-deepseek-v4.1-flash": "All needed facts already present: creators wrote SpongeBob and SpongeBob is set in Bikini Bottom.",
+        "rule": "revisit"
+      }
+    },
+    {
+      "id": "t-5a8b120755-2-e3887",
+      "question": "What country of origin does André Holland and 42 have in common?",
+      "edge": "The Sidehackers —country of origin→ United States",
+      "human": "STOP",
+      "trav-rule-v1 (nhãn tự động)": "STOP",
+      "critic llm-deepseek-v4.1-flash": "REJECT",
+      "critic rule": "ACCEPT",
+      "rule_why": "evidence_complete",
+      "note": "",
+      "critic_reasons": {
+        "llm-deepseek-v4.1-flash": "The Sidehackers is unrelated to André Holland and 42; it does not help find their common country.",
+        "rule": "overlap"
+      }
+    },
+    {
+      "id": "t-5a78ce5d55-1-e4375",
+      "question": "The southernmost administrative region of Denmark is well-known for creating what products?",
+      "edge": "Region Zealand —instance of→ administrative region",
+      "human": "ACCEPT",
+      "trav-rule-v1 (nhãn tự động)": "ACCEPT",
+      "critic llm-deepseek-v4.1-flash": "REJECT",
+      "critic rule": "ACCEPT",
+      "rule_why": "evidence_on_path",
+      "note": "",
+      "critic_reasons": {
+        "llm-deepseek-v4.1-flash": "Instance-of administrative region is redundant and does not lead to products.",
+        "rule": "overlap"
+      }
+    },
+    {
+      "id": "t-5ae1b53b55-5-e5627",
+      "question": "What Indian government tag was given to the handicraft known for making simple loose clothing worn over the shoulders?",
+      "edge": "Gopalpur Tussar Fabrics —award received→ Geographical Indication tag",
+      "human": "REJECT",
+      "trav-rule-v1 (nhãn tự động)": "ACCEPT",
+      "critic llm-deepseek-v4.1-flash": "ACCEPT",
+      "critic rule": "ACCEPT",
+      "rule_why": "evidence_on_path",
+      "note": "Hiểu chặt: chưa có câu định nghĩa shawl (đoạn Shawl). Cạnh GI lặp lại câu [2] đã đọc.",
+      "critic_reasons": {
+        "llm-deepseek-v4.1-flash": "Source sentence explicitly states this handicraft received the Geographical Indication tag from Government of India.",
+        "rule": "overlap"
+      }
+    },
+    {
+      "id": "t-5ac1756355-2-e6886",
+      "question": "Who replaced the manager of the Aston Villa that began at Leeds United?",
+      "edge": "Martin O'Neill —replaces→ David O'Leary",
+      "human": "REJECT",
+      "trav-rule-v1 (nhãn tự động)": "STOP",
+      "critic llm-deepseek-v4.1-flash": "REJECT",
+      "critic rule": "REJECT",
+      "rule_why": "evidence_complete",
+      "note": "",
+      "critic_reasons": {
+        "llm-deepseek-v4.1-flash": "Backward edge; path already reaches Martin O'Neill, the answer.",
+        "rule": "revisit"
+      }
+    },
+    {
+      "id": "t-5a77300155-3-e2467",
+      "question": "Which TV series, written by the creators of Robocalypse, is set in Bikini Bottom?",
+      "edge": "SpongeBob SquarePants (season 3) —series→ SpongeBob SquarePants",
+      "human": "REJECT",
+      "trav-rule-v1 (nhãn tự động)": "STOP",
+      "critic llm-deepseek-v4.1-flash": "REJECT",
+      "critic rule": "ACCEPT",
+      "rule_why": "evidence_complete",
+      "note": "",
+      "critic_reasons": {
+        "llm-deepseek-v4.1-flash": "Moving to season 3 is unnecessary; the series SpongeBob SquarePants already satisfies the question.",
+        "rule": "overlap"
+      }
+    },
+    {
+      "id": "t-5a7e618155-0-e6775",
+      "question": "New York State Route 9R rejoins its parent in a hamlet located  in what New York County?",
+      "edge": "New York State Route 9R —located in the administrative territorial entity→ Albany County",
+      "human": "ACCEPT",
+      "trav-rule-v1 (nhãn tự động)": "ACCEPT",
+      "critic llm-deepseek-v4.1-flash": "REJECT",
+      "critic rule": "ACCEPT",
+      "rule_why": "evidence_on_path",
+      "note": "cạnh dẫn tới đáp án (quận của cả tuyến); chưa nói thẳng ấp nằm ở quận nào",
+      "critic_reasons": {
+        "llm-deepseek-v4.1-flash": "Sentence only says the route is in Albany County; it does not identify the hamlet where NY 9R rejoins its parent.",
+        "rule": "overlap"
+      }
+    },
+    {
+      "id": "t-5a8b120755-2-e2238",
+      "question": "What country of origin does André Holland and 42 have in common?",
+      "edge": "Lake Road (Western New York) —country→ United States",
+      "human": "STOP",
+      "trav-rule-v1 (nhãn tự động)": "STOP",
+      "critic llm-deepseek-v4.1-flash": "STOP",
+      "critic rule": "ACCEPT",
+      "rule_why": "evidence_complete",
+      "note": "",
+      "critic_reasons": {
+        "llm-deepseek-v4.1-flash": "André Holland is American and 42's country of origin is United States; answer already found.",
+        "rule": "overlap"
+      }
+    },
+    {
+      "id": "t-5a89007355-3-e3901",
+      "question": "What Brooklyn-based rapper has worked with both Rafeal Casal and Mos Def?",
+      "edge": "Black Star (rap duo) —founded by→ Talib Kweli",
+      "human": "STOP",
+      "trav-rule-v1 (nhãn tự động)": "STOP",
+      "critic llm-deepseek-v4.1-flash": "ACCEPT",
+      "critic rule": "REJECT",
+      "rule_why": "evidence_complete",
+      "note": "",
+      "critic_reasons": {
+        "llm-deepseek-v4.1-flash": "Sentence identifies Talib Kweli as Brooklyn-based rapper who formed Black Star with Mos Def, linking to answer.",
+        "rule": "no_overlap"
+      }
+    },
+    {
+      "id": "t-5a72ba1a55-2-e9188",
+      "question": "Which song did Eminem and Rihanna collaborate on after their other collaboration song in studio album \"Unapologetic?\"",
+      "edge": "The Monster (song) —author→ Eminem",
+      "human": "ACCEPT",
+      "trav-rule-v1 (nhãn tự động)": "ACCEPT",
+      "critic llm-deepseek-v4.1-flash": "ACCEPT",
+      "critic rule": "REJECT",
+      "rule_why": "evidence_on_path",
+      "note": "cạnh chỉ nói Eminem viết bài, chưa thấy Rihanna; nhận ra nhờ đáp án",
+      "critic_reasons": {
+        "llm-deepseek-v4.1-flash": "Connects Eminem to The Monster, a likely later Rihanna collaboration; relevant to finding the answer.",
+        "rule": "no_overlap"
+      }
+    },
+    {
+      "id": "t-5a8e8af555-1-e11884",
+      "question": "Which university is a private research university, University of California, Berkeley or Brown University?",
+      "edge": "University of California, Berkeley —part of→ University of California system",
+      "human": "REJECT",
+      "trav-rule-v1 (nhãn tự động)": "ACCEPT",
+      "critic llm-deepseek-v4.1-flash": "ACCEPT",
+      "critic rule": "ACCEPT",
+      "rule_why": "evidence_on_path",
+      "note": "",
+      "critic_reasons": {
+        "llm-deepseek-v4.1-flash": "Source sentence states Berkeley is top public university, relevant to ruling out private status.",
+        "rule": "overlap"
+      }
+    },
+    {
+      "id": "t-5a8c496555-1-e12114",
+      "question": "Which college was founded first, Williams College or University of Southern California?",
+      "edge": "University of Southern California —inception→ 1880",
+      "human": "ACCEPT",
+      "trav-rule-v1 (nhãn tự động)": "ACCEPT",
+      "critic llm-deepseek-v4.1-flash": "ACCEPT",
+      "critic rule": "REJECT",
+      "rule_why": "evidence_on_path",
+      "note": "",
+      "critic_reasons": {
+        "llm-deepseek-v4.1-flash": "States USC's founding year, needed to compare which college was founded first.",
+        "rule": "no_overlap"
+      }
+    },
+    {
+      "id": "t-5a8fd9ac55-0-e7904",
+      "question": "Which feature film was released earlier, One Magic Christmas or Muppet Treasure Island?",
+      "edge": "One Magic Christmas —instance of→ film",
+      "human": "REJECT",
+      "trav-rule-v1 (nhãn tự động)": "ACCEPT",
+      "critic llm-deepseek-v4.1-flash": "ACCEPT",
+      "critic rule": "ACCEPT",
+      "rule_why": "evidence_on_path",
+      "note": "",
+      "critic_reasons": {
+        "llm-deepseek-v4.1-flash": "Source sentence gives One Magic Christmas's 1985 release year, needed to compare with Muppet Treasure Island.",
+        "rule": "overlap"
+      }
+    },
+    {
+      "id": "t-5a8b120755-2-e4825",
+      "question": "What country of origin does André Holland and 42 have in common?",
+      "edge": "Belle Ayr Mine —country→ United States",
+      "human": "STOP",
+      "trav-rule-v1 (nhãn tự động)": "STOP",
+      "critic llm-deepseek-v4.1-flash": "REJECT",
+      "critic rule": "ACCEPT",
+      "rule_why": "evidence_complete",
+      "note": "",
+      "critic_reasons": {
+        "llm-deepseek-v4.1-flash": "Belle Ayr Mine is unrelated to André Holland or the common country of origin already established.",
+        "rule": "overlap"
+      }
+    },
+    {
+      "id": "t-5ab7484c55-0-e7389",
+      "question": "Do James Schuyler and A. E. Housman have the same nationality?",
+      "edge": "James Schuyler —date of death→ April 12, 1991",
+      "human": "REJECT",
+      "trav-rule-v1 (nhãn tự động)": "ACCEPT",
+      "critic llm-deepseek-v4.1-flash": "REJECT",
+      "critic rule": "REJECT",
+      "rule_why": "evidence_on_path",
+      "note": "",
+      "critic_reasons": {
+        "llm-deepseek-v4.1-flash": "Date of death does not help determine nationality, though sentence mentions American.",
+        "rule": "no_overlap"
+      }
+    },
+    {
+      "id": "t-5ae1b53b55-4-e5626",
+      "question": "What Indian government tag was given to the handicraft known for making simple loose clothing worn over the shoulders?",
+      "edge": "Gopalpur Tussar Fabrics —instance of→ Handicraft",
+      "human": "REJECT",
+      "trav-rule-v1 (nhãn tự động)": "ACCEPT",
+      "critic llm-deepseek-v4.1-flash": "REJECT",
+      "critic rule": "REJECT",
+      "rule_why": "evidence_on_path",
+      "note": "",
+      "critic_reasons": {
+        "llm-deepseek-v4.1-flash": "Gopalpur Tussar Fabrics is a different handicraft; its GI tag does not answer the Pashmina shawl question.",
+        "rule": "no_overlap"
+      }
+    },
+    {
+      "id": "t-5a8ce15d55-0-e3045",
+      "question": "did Robert Wise have more award nominations than Zoltan Korda?",
+      "edge": "Robert Wise —award received→ Academy Award for Best Picture",
+      "human": "ACCEPT",
+      "trav-rule-v1 (nhãn tự động)": "ACCEPT",
+      "critic llm-deepseek-v4.1-flash": "REJECT",
+      "critic rule": "ACCEPT",
+      "rule_why": "evidence_on_path",
+      "note": "",
+      "critic_reasons": {
+        "llm-deepseek-v4.1-flash": "Award received does not establish nomination count needed to compare.",
+        "rule": "overlap"
+      }
+    },
+    {
+      "id": "t-5a77300155-3-e2413",
+      "question": "Which TV series, written by the creators of Robocalypse, is set in Bikini Bottom?",
+      "edge": "SpongeBob, You're Fired —series→ SpongeBob SquarePants",
+      "human": "REJECT",
+      "trav-rule-v1 (nhãn tự động)": "STOP",
+      "critic llm-deepseek-v4.1-flash": "REJECT",
+      "critic rule": "ACCEPT",
+      "rule_why": "evidence_complete",
+      "note": "",
+      "critic_reasons": {
+        "llm-deepseek-v4.1-flash": "Moving to a SpongeBob special is unrelated and does not help identify the series.",
+        "rule": "overlap"
+      }
+    },
+    {
+      "id": "t-5ae7604155-2-e12457",
+      "question": "Which of the people that helped Max Hoffmann do defeat the Russia army was born on 9 April 1865?",
+      "edge": "Max Hoffmann —participant→ Erich Ludendorff",
+      "human": "ACCEPT",
+      "trav-rule-v1 (nhãn tự động)": "ACCEPT",
+      "critic llm-deepseek-v4.1-flash": "ACCEPT",
+      "critic rule": "REJECT",
+      "rule_why": "evidence_on_path",
+      "note": "",
+      "critic_reasons": {
+        "llm-deepseek-v4.1-flash": "Source sentence names Ludendorff as co-mastermind of Russian defeat; candidate needed to check birth date.",
+        "rule": "no_overlap"
+      }
+    },
+    {
+      "id": "t-5a875b7555-1-e10935",
+      "question": "The song \"Medicine\" by The 1975 appears in a film directed by what Danish filmmaker?",
+      "edge": "Drive (2011 film) —genre→ neo-noir crime film",
+      "human": "REJECT",
+      "trav-rule-v1 (nhãn tự động)": "REJECT",
+      "critic llm-deepseek-v4.1-flash": "ACCEPT",
+      "critic rule": "ACCEPT",
+      "rule_why": "not_evidence",
+      "note": "",
+      "critic_reasons": {
+        "llm-deepseek-v4.1-flash": "Source sentence states Drive was directed by Danish filmmaker Nicolas Winding Refn, directly answering.",
+        "rule": "overlap"
+      }
+    },
+    {
+      "id": "t-5ac41b9e55-2-e3012",
+      "question": "what species of plants are Chamelaucium and Vanilla derived from?",
+      "edge": "Chamelaucium —has part→ Chamelaucium uncinatum",
+      "human": "STOP",
+      "trav-rule-v1 (nhãn tự động)": "STOP",
+      "critic llm-deepseek-v4.1-flash": "ACCEPT",
+      "critic rule": "ACCEPT",
+      "rule_why": "evidence_complete",
+      "note": "",
+      "critic_reasons": {
+        "llm-deepseek-v4.1-flash": "Sentence identifies Chamelaucium uncinatum as a Chamelaucium species, relevant to requested plant species.",
+        "rule": "overlap"
+      }
+    },
+    {
+      "id": "t-5a8e0a0055-1-e1049",
+      "question": "Bordan Tkachuk was the CEO of a company that provides what sort of products?",
+      "edge": "Viglen —product or material produced→ servers",
+      "human": "REJECT",
+      "trav-rule-v1 (nhãn tự động)": "REJECT",
+      "critic llm-deepseek-v4.1-flash": "ACCEPT",
+      "critic rule": "REJECT",
+      "rule_why": "off_path",
+      "note": "servers là ngõ cụt, chỉ là một sản phẩm cụ thể. Loại sản phẩm (CNTT) nằm ở đoạn văn Viglen, cần đọc đoạn (O8). Cách hiểu lỏng: khái quát từ các cạnh sản phẩm thì có thể ACCEPT.",
+      "critic_reasons": {
+        "llm-deepseek-v4.1-flash": "Source says Viglen provides IT products including servers, directly answering the question.",
+        "rule": "no_overlap"
+      }
+    },
+    {
+      "id": "t-5abbd58d55-2-e1686",
+      "question": "Are Cardinal Health and Kansas City Southern located in the same state?",
+      "edge": "Kansas City Southern (company) —instance of→ transportation holding company",
+      "human": "REJECT",
+      "trav-rule-v1 (nhãn tự động)": "ACCEPT",
+      "critic llm-deepseek-v4.1-flash": "REJECT",
+      "critic rule": "REJECT",
+      "rule_why": "evidence_on_path",
+      "note": "",
+      "critic_reasons": {
+        "llm-deepseek-v4.1-flash": "Instance-of transportation holding company does not address KCS's state location.",
+        "rule": "no_overlap"
+      }
+    },
+    {
+      "id": "t-5aba549f55-1-e9519",
+      "question": "What kind of song did Alexander Grant produce for Eminem?",
+      "edge": "Love the Way You Lie —instance of→ song",
+      "human": "REJECT",
+      "trav-rule-v1 (nhãn tự động)": "ACCEPT",
+      "critic llm-deepseek-v4.1-flash": "ACCEPT",
+      "critic rule": "ACCEPT",
+      "rule_why": "evidence_on_path",
+      "note": "",
+      "critic_reasons": {
+        "llm-deepseek-v4.1-flash": "Source states Love the Way You Lie is a song, directly supporting the requested kind of song.",
+        "rule": "overlap"
+      }
+    },
+    {
+      "id": "t-5a7f275d55-0-e7220",
+      "question": "Are both Jonathan Marray and Wayne Black British?",
+      "edge": "Jonathan Marray —award received→ Wimbledon Men's Doubles champion",
+      "human": "REJECT",
+      "trav-rule-v1 (nhãn tự động)": "ACCEPT",
+      "critic llm-deepseek-v4.1-flash": "ACCEPT",
+      "critic rule": "REJECT",
+      "rule_why": "evidence_on_path",
+      "note": "",
+      "critic_reasons": {
+        "llm-deepseek-v4.1-flash": "Source sentence states Jonathan Marray is British, a fact needed for the question.",
+        "rule": "no_overlap"
+      }
+    },
+    {
+      "id": "t-5a843cf355-1-e2903",
+      "question": "What industry did both William Todd Field and Zoltan Korda work in?",
+      "edge": "Zoltan Korda —sibling→ Alexander Korda",
+      "human": "REJECT",
+      "trav-rule-v1 (nhãn tự động)": "REJECT",
+      "critic llm-deepseek-v4.1-flash": "ACCEPT",
+      "critic rule": "ACCEPT",
+      "rule_why": "off_path",
+      "note": "",
+      "critic_reasons": {
+        "llm-deepseek-v4.1-flash": "Source sentence states Zoltan worked on film-making, the industry needed.",
+        "rule": "overlap"
+      }
+    },
+    {
+      "id": "t-5a89007355-3-e3938",
+      "question": "What Brooklyn-based rapper has worked with both Rafeal Casal and Mos Def?",
+      "edge": "Black Star (rap duo) —inception→ 1997",
+      "human": "STOP",
+      "trav-rule-v1 (nhãn tự động)": "STOP",
+      "critic llm-deepseek-v4.1-flash": "STOP",
+      "critic rule": "REJECT",
+      "rule_why": "evidence_complete",
+      "note": "",
+      "critic_reasons": {
+        "llm-deepseek-v4.1-flash": "Paragraphs already identify Talib Kweli as Brooklyn rapper linked to both; 1997 inception is irrelevant.",
+        "rule": "no_overlap"
+      }
+    },
+    {
+      "id": "t-5a84973e55-1-e2112",
+      "question": "Stockely Webster has paintings hanging in what home (that serves as the residence for the Mayor of New York)?",
+      "edge": "Gracie Mansion —located in or next to body of water→ Hell Gate",
+      "human": "REJECT",
+      "trav-rule-v1 (nhãn tự động)": "REJECT",
+      "critic llm-deepseek-v4.1-flash": "STOP",
+      "critic rule": "REJECT",
+      "rule_why": "off_path",
+      "note": "",
+      "critic_reasons": {
+        "llm-deepseek-v4.1-flash": "Path already identifies Gracie Mansion as the home; Hell Gate is irrelevant.",
+        "rule": "no_overlap"
+      }
+    },
+    {
+      "id": "t-5a8e4e7855-1-e8391",
+      "question": "Are both Papa John's Pizza and Papa Gino's specialized in Pizza?",
+      "edge": "Papa Gino's —headquarters location→ Dedham, Massachusetts",
+      "human": "REJECT",
+      "trav-rule-v1 (nhãn tự động)": "ACCEPT",
+      "critic llm-deepseek-v4.1-flash": "ACCEPT",
+      "critic rule": "REJECT",
+      "rule_why": "evidence_on_path",
+      "note": "",
+      "critic_reasons": {
+        "llm-deepseek-v4.1-flash": "Source sentence states Papa Gino's specializes in pizza, directly needed for the question.",
+        "rule": "no_overlap"
+      }
+    },
+    {
+      "id": "t-5a89382655-0-e10440",
+      "question": "Who served as the 1st Vice President of Colombia under El Libertador?",
+      "edge": "Francisco Antonio Zea —position held→ 1st Vice President of Colombia",
+      "human": "ACCEPT",
+      "trav-rule-v1 (nhãn tự động)": "ACCEPT",
+      "critic llm-deepseek-v4.1-flash": "ACCEPT",
+      "critic rule": "REJECT",
+      "rule_why": "evidence_on_path",
+      "note": "",
+      "critic_reasons": {
+        "llm-deepseek-v4.1-flash": "Sentence states Zea served as 1st Vice President under Simón Bolívar, directly answering the question.",
+        "rule": "no_overlap"
+      }
+    },
+    {
+      "id": "t-5a8e0a0055-0-e1065",
+      "question": "Bordan Tkachuk was the CEO of a company that provides what sort of products?",
+      "edge": "Bordan Tkachuk —employer→ Viglen",
+      "human": "ACCEPT",
+      "trav-rule-v1 (nhãn tự động)": "ACCEPT",
+      "critic llm-deepseek-v4.1-flash": "ACCEPT",
+      "critic rule": "REJECT",
+      "rule_why": "evidence_on_path",
+      "note": "",
+      "critic_reasons": {
+        "llm-deepseek-v4.1-flash": "Source states Tkachuk was CEO of Viglen, the company needed to find its products.",
+        "rule": "no_overlap"
+      }
+    },
+    {
+      "id": "t-5a72ba1a55-2-e9810",
+      "question": "Which song did Eminem and Rihanna collaborate on after their other collaboration song in studio album \"Unapologetic?\"",
+      "edge": "The Marshall Mathers LP 2 —producer→ Eminem",
+      "human": "REJECT",
+      "trav-rule-v1 (nhãn tự động)": "REJECT",
+      "critic llm-deepseek-v4.1-flash": "ACCEPT",
+      "critic rule": "REJECT",
+      "rule_why": "not_evidence",
+      "note": "",
+      "critic_reasons": {
+        "llm-deepseek-v4.1-flash": "Links Eminem to The Marshall Mathers LP 2, the album containing the later Rihanna collaboration.",
+        "rule": "no_overlap"
+      }
+    },
+    {
+      "id": "t-5adcf20f55-4-e10489",
+      "question": "Who directed the Hindi remake of the Korean film that starred Uhm Jung-hwa, Kim Sang-kyung, and Song Young-Chang?",
+      "edge": "Te3n —director→ Ribhu Dasgupta",
+      "human": "ACCEPT",
+      "trav-rule-v1 (nhãn tự động)": "ACCEPT",
+      "critic llm-deepseek-v4.1-flash": "ACCEPT",
+      "critic rule": "REJECT",
+      "rule_why": "evidence_on_path",
+      "note": "",
+      "critic_reasons": {
+        "llm-deepseek-v4.1-flash": "Source states Te3n was directed by Ribhu Dasgupta, directly answering the question.",
+        "rule": "no_overlap"
+      }
+    },
+    {
+      "id": "t-5a8f453855-1-e4010",
+      "question": "Dahlia and Aruncus are both examples of what type of plant catagorization?",
+      "edge": "Dahlia pinnata —parent taxon→ Dahlia",
+      "human": "REJECT",
+      "trav-rule-v1 (nhãn tự động)": "REJECT",
+      "critic llm-deepseek-v4.1-flash": "REJECT",
+      "critic rule": "ACCEPT",
+      "rule_why": "not_evidence",
+      "note": "",
+      "critic_reasons": {
+        "llm-deepseek-v4.1-flash": "Going to a Dahlia species does not establish the shared plant categorization for Dahlia and Aruncus.",
+        "rule": "overlap"
+      }
+    },
+    {
+      "id": "t-5a7b591155-3-e5635",
+      "question": " What team does the oldest son play for, from the family whose middle son plays for the Chicago Bulls and the mother and father and third son all played basketball.",
+      "edge": "Eero Markkanen —member of sports team→ AIK",
+      "human": "REJECT",
+      "trav-rule-v1 (nhãn tự động)": "REJECT",
+      "critic llm-deepseek-v4.1-flash": "ACCEPT",
+      "critic rule": "ACCEPT",
+      "rule_why": "off_path",
+      "note": "cần đáp án: câu hỏi có nhiều đội đúng (AIK, Dynamo Dresden, ĐTQG Phần Lan); đáp án chuẩn là ĐTQG (e5636 nằm ngay bên cạnh)",
+      "critic_reasons": {
+        "llm-deepseek-v4.1-flash": "Source states Eero Markkanen is an AIK football player, identifying the oldest son's team.",
+        "rule": "overlap"
+      }
+    },
+    {
+      "id": "t-5ab7484c55-1-e7482",
+      "question": "Do James Schuyler and A. E. Housman have the same nationality?",
+      "edge": "A. E. Housman —notable work→ A Shropshire Lad",
+      "human": "REJECT",
+      "trav-rule-v1 (nhãn tự động)": "ACCEPT",
+      "critic llm-deepseek-v4.1-flash": "ACCEPT",
+      "critic rule": "REJECT",
+      "rule_why": "evidence_on_path",
+      "note": "",
+      "critic_reasons": {
+        "llm-deepseek-v4.1-flash": "Source sentence states Housman was English, the nationality fact needed to compare with Schuyler.",
+        "rule": "no_overlap"
+      }
+    },
+    {
+      "id": "t-5a77300155-3-e2492",
+      "question": "Which TV series, written by the creators of Robocalypse, is set in Bikini Bottom?",
+      "edge": "SpongeBob SquarePants —owned by→ MTV Networks",
+      "human": "REJECT",
+      "trav-rule-v1 (nhãn tự động)": "STOP",
+      "critic llm-deepseek-v4.1-flash": "STOP",
+      "critic rule": "REJECT",
+      "rule_why": "evidence_complete",
+      "note": "",
+      "critic_reasons": {
+        "llm-deepseek-v4.1-flash": "Path already links Robocalypse creators to SpongeBob, which is set in Bikini Bottom; MTV ownership irrelevant.",
+        "rule": "no_overlap"
+      }
+    },
+    {
+      "id": "t-5ab2b6fb55-0-e6616",
+      "question": "The arena in which the Adelaide Adrenaline play is also home to the world's first what?",
+      "edge": "Adelaide Adrenaline —location→ Adelaide",
+      "human": "REJECT",
+      "trav-rule-v1 (nhãn tự động)": "ACCEPT",
+      "critic llm-deepseek-v4.1-flash": "REJECT",
+      "critic rule": "ACCEPT",
+      "rule_why": "evidence_on_path",
+      "note": "có cạnh thẳng → Ice Arena (e6618); đi qua thành phố là đường vòng",
+      "critic_reasons": {
+        "llm-deepseek-v4.1-flash": "Sentence says based in Adelaide, not the arena where they play.",
+        "rule": "overlap"
+      }
+    },
+    {
+      "id": "t-5ae4843455-0-e8497",
+      "question": "Which club, founded in 1928, did Bob Johnson played for ",
+      "edge": "Bob Johnson (footballer, born 1905) —member of sports team→ Moor Ends Thorne",
+      "human": "REJECT",
+      "trav-rule-v1 (nhãn tự động)": "REJECT",
+      "critic llm-deepseek-v4.1-flash": "ACCEPT",
+      "critic rule": "REJECT",
+      "rule_why": "off_path",
+      "note": "",
+      "critic_reasons": {
+        "llm-deepseek-v4.1-flash": "Source sentence confirms Bob Johnson played for Moor Ends Thorne, a needed club candidate.",
+        "rule": "no_overlap"
+      }
+    },
+    {
+      "id": "t-5abd920e55-0-e1693",
+      "question": "Were both Peter Duffell and Fred Niblo actors?",
+      "edge": "Peter Duffell —place of birth→ Canterbury",
+      "human": "REJECT",
+      "trav-rule-v1 (nhãn tự động)": "ACCEPT",
+      "critic llm-deepseek-v4.1-flash": "REJECT",
+      "critic rule": "REJECT",
+      "rule_why": "evidence_on_path",
+      "note": "",
+      "critic_reasons": {
+        "llm-deepseek-v4.1-flash": "Place of birth is unrelated to whether Peter Duffell was an actor.",
+        "rule": "no_overlap"
+      }
+    },
+    {
+      "id": "t-5abe765a55-1-e893",
+      "question": "Who has won more olympic medals: Angelique Kerber or Amélie Mauresmo?",
+      "edge": "Amélie Mauresmo —award received→ Grand Slam singles titles",
+      "human": "REJECT",
+      "trav-rule-v1 (nhãn tự động)": "ACCEPT",
+      "critic llm-deepseek-v4.1-flash": "REJECT",
+      "critic rule": "REJECT",
+      "rule_why": "evidence_on_path",
+      "note": "",
+      "critic_reasons": {
+        "llm-deepseek-v4.1-flash": "Grand Slam singles titles are unrelated to comparing Olympic medals.",
+        "rule": "no_overlap"
+      }
+    },
+    {
+      "id": "t-5ac1756355-0-e6829",
+      "question": "Who replaced the manager of the Aston Villa that began at Leeds United?",
+      "edge": "David O'Leary —employer→ Aston Villa",
+      "human": "ACCEPT",
+      "trav-rule-v1 (nhãn tự động)": "ACCEPT",
+      "critic llm-deepseek-v4.1-flash": "ACCEPT",
+      "critic rule": "REJECT",
+      "rule_why": "evidence_on_path",
+      "note": "",
+      "critic_reasons": {
+        "llm-deepseek-v4.1-flash": "Identifies David O'Leary as the Aston Villa manager whose career began at Leeds United.",
+        "rule": "no_overlap"
+      }
+    },
+    {
+      "id": "t-5a8dfae555-0-e1415",
+      "question": "Cranium and Twin Tin Bots are both what?",
+      "edge": "Cranium (board game) —inception→ 1998",
+      "human": "REJECT",
+      "trav-rule-v1 (nhãn tự động)": "ACCEPT",
+      "critic llm-deepseek-v4.1-flash": "REJECT",
+      "critic rule": "REJECT",
+      "rule_why": "evidence_on_path",
+      "note": "",
+      "critic_reasons": {
+        "llm-deepseek-v4.1-flash": "Inception year of Cranium does not identify what Cranium and Twin Tin Bots both are.",
+        "rule": "no_overlap"
+      }
+    },
+    {
+      "id": "t-5a8b120755-2-e3651",
+      "question": "What country of origin does André Holland and 42 have in common?",
+      "edge": "Ellicott City, Maryland —country→ United States",
+      "human": "STOP",
+      "trav-rule-v1 (nhãn tự động)": "STOP",
+      "critic llm-deepseek-v4.1-flash": "REJECT",
+      "critic rule": "ACCEPT",
+      "rule_why": "evidence_complete",
+      "note": "",
+      "critic_reasons": {
+        "llm-deepseek-v4.1-flash": "Ellicott City is unrelated to André Holland or 42; moving from United States to it goes backward.",
+        "rule": "overlap"
+      }
+    },
+    {
+      "id": "t-5a82ebb855-0-e6158",
+      "question": "whats the famous bavagheet by arun date?",
+      "edge": "Arun Date —notable work→ Shukratara",
+      "human": "ACCEPT",
+      "trav-rule-v1 (nhãn tự động)": "ACCEPT",
+      "critic llm-deepseek-v4.1-flash": "ACCEPT",
+      "critic rule": "REJECT",
+      "rule_why": "evidence_on_path",
+      "note": "",
+      "critic_reasons": {
+        "llm-deepseek-v4.1-flash": "Source sentence identifies Shukratara as a popular song by Arun Date, directly relevant to the question.",
+        "rule": "no_overlap"
+      }
+    },
+    {
+      "id": "t-5abbd58d55-2-e1689",
+      "question": "Are Cardinal Health and Kansas City Southern located in the same state?",
+      "edge": "Kansas City Southern (company) —subsidiary→ The Kansas City Southern Railway",
+      "human": "REJECT",
+      "trav-rule-v1 (nhãn tự động)": "REJECT",
+      "critic llm-deepseek-v4.1-flash": "REJECT",
+      "critic rule": "ACCEPT",
+      "rule_why": "not_evidence",
+      "note": "",
+      "critic_reasons": {
+        "llm-deepseek-v4.1-flash": "Subsidiary fact doesn't establish Kansas City Southern's state location.",
+        "rule": "overlap"
+      }
+    },
+    {
+      "id": "t-5abd920e55-1-e1723",
+      "question": "Were both Peter Duffell and Fred Niblo actors?",
+      "edge": "Fred Niblo Jr. —father→ Fred Niblo",
+      "human": "REJECT",
+      "trav-rule-v1 (nhãn tự động)": "REJECT",
+      "critic llm-deepseek-v4.1-flash": "REJECT",
+      "critic rule": "ACCEPT",
+      "rule_why": "not_evidence",
+      "note": "",
+      "critic_reasons": {
+        "llm-deepseek-v4.1-flash": "Edge moves to Fred Niblo Jr.; son relationship does not establish whether Fred Niblo was an actor.",
+        "rule": "overlap"
+      }
+    },
+    {
+      "id": "t-5a77919d55-1-e11825",
+      "question": "Who was born first, Marino Girolami or Daniel Myrick?",
+      "edge": "Daniel Myrick —date of birth→ September 3, 1963",
+      "human": "ACCEPT",
+      "trav-rule-v1 (nhãn tự động)": "ACCEPT",
+      "critic llm-deepseek-v4.1-flash": "ACCEPT",
+      "critic rule": "REJECT",
+      "rule_why": "evidence_on_path",
+      "note": "",
+      "critic_reasons": {
+        "llm-deepseek-v4.1-flash": "States Daniel Myrick's birth date, needed to compare who was born first.",
+        "rule": "no_overlap"
+      }
+    },
+    {
+      "id": "t-5a8b120755-2-e1873",
+      "question": "What country of origin does André Holland and 42 have in common?",
+      "edge": "Boogie2988 —country of citizenship→ United States",
+      "human": "STOP",
+      "trav-rule-v1 (nhãn tự động)": "STOP",
+      "critic llm-deepseek-v4.1-flash": "REJECT",
+      "critic rule": "ACCEPT",
+      "rule_why": "evidence_complete",
+      "note": "",
+      "critic_reasons": {
+        "llm-deepseek-v4.1-flash": "Boogie2988 is unrelated to André Holland and 42; does not help determine their shared country of origin.",
+        "rule": "overlap"
+      }
+    },
+    {
+      "id": "t-5a8b120755-2-e3681",
+      "question": "What country of origin does André Holland and 42 have in common?",
+      "edge": "Cooperative Living Organization —country→ United States",
+      "human": "STOP",
+      "trav-rule-v1 (nhãn tự động)": "STOP",
+      "critic llm-deepseek-v4.1-flash": "REJECT",
+      "critic rule": "ACCEPT",
+      "rule_why": "evidence_complete",
+      "note": "",
+      "critic_reasons": {
+        "llm-deepseek-v4.1-flash": "Unrelated edge about Cooperative Living Organization; does not connect André Holland or answer country of origin.",
+        "rule": "overlap"
+      }
+    },
+    {
+      "id": "t-5aba549f55-0-e9188",
+      "question": "What kind of song did Alexander Grant produce for Eminem?",
+      "edge": "The Monster (song) —author→ Eminem",
+      "human": "REJECT",
+      "trav-rule-v1 (nhãn tự động)": "REJECT",
+      "critic llm-deepseek-v4.1-flash": "ACCEPT",
+      "critic rule": "REJECT",
+      "rule_why": "not_evidence",
+      "note": "",
+      "critic_reasons": {
+        "llm-deepseek-v4.1-flash": "Source sentence links Eminem to The Monster and says production handled by Frequency, relevant to Alexander Grant.",
+        "rule": "no_overlap"
+      }
+    },
+    {
+      "id": "t-5ac41b9e55-3-e3012",
+      "question": "what species of plants are Chamelaucium and Vanilla derived from?",
+      "edge": "Chamelaucium —has part→ Chamelaucium uncinatum",
+      "human": "STOP",
+      "trav-rule-v1 (nhãn tự động)": "STOP",
+      "critic llm-deepseek-v4.1-flash": "STOP",
+      "critic rule": "REJECT",
+      "rule_why": "evidence_complete",
+      "note": "",
+      "critic_reasons": {
+        "llm-deepseek-v4.1-flash": "Both needed species are already stated in the read paragraphs; no further traversal needed.",
+        "rule": "revisit"
+      }
+    },
+    {
+      "id": "t-5a7bb52355-0-e11245",
+      "question": "The song by English indie rock band Florence and the Machine written by Florence Welch and Francis \"Eg\" White and released in 2011 is named after the painting which was completed in which year?",
+      "edge": "What the Water Gave Me (song) —performer→ Florence and the Machine",
+      "human": "ACCEPT",
+      "trav-rule-v1 (nhãn tự động)": "ACCEPT",
+      "critic llm-deepseek-v4.1-flash": "ACCEPT",
+      "critic rule": "REJECT",
+      "rule_why": "evidence_on_path",
+      "note": "",
+      "critic_reasons": {
+        "llm-deepseek-v4.1-flash": "Identifies the song by Florence and the Machine, needed to find the painting and its completion year.",
+        "rule": "no_overlap"
+      }
+    },
+    {
+      "id": "t-5a7642f755-1-e8868",
+      "question": "who is younger Ulrich Walter or  Luca Parmitano?",
+      "edge": "Luca Parmitano —country of citizenship→ Italy",
+      "human": "REJECT",
+      "trav-rule-v1 (nhãn tự động)": "ACCEPT",
+      "critic llm-deepseek-v4.1-flash": "REJECT",
+      "critic rule": "REJECT",
+      "rule_why": "evidence_on_path",
+      "note": "",
+      "critic_reasons": {
+        "llm-deepseek-v4.1-flash": "Citizenship edge is unrelated to comparing birth dates for age.",
+        "rule": "no_overlap"
+      }
+    },
+    {
+      "id": "t-5aba549f55-1-e9528",
+      "question": "What kind of song did Alexander Grant produce for Eminem?",
+      "edge": "Love the Way You Lie —genre→ hip hop",
+      "human": "REJECT",
+      "trav-rule-v1 (nhãn tự động)": "REJECT",
+      "critic llm-deepseek-v4.1-flash": "ACCEPT",
+      "critic rule": "REJECT",
+      "rule_why": "off_path",
+      "note": "hip hop chỉ là một phần đáp án (như dòng 41); chưa xác nhận nhà sản xuất, cạnh → Alex da Kid nằm ngay bên cạnh",
+      "critic_reasons": {
+        "llm-deepseek-v4.1-flash": "Source sentence identifies the track as a hip hop ballad, answering the kind-of-song part.",
+        "rule": "no_overlap"
+      }
+    },
+    {
+      "id": "t-5ae2e61455-0-e9027",
+      "question": "What is the inspirational source behind the name of this studio album by the British rock band Queen released by EMI Records that was included in the The Crown Jewels? ",
+      "edge": "The Crown Jewels —has part→ Queen (Queen album)",
+      "human": "REJECT",
+      "trav-rule-v1 (nhãn tự động)": "ACCEPT",
+      "critic llm-deepseek-v4.1-flash": "ACCEPT",
+      "critic rule": "ACCEPT",
+      "rule_why": "evidence_on_path",
+      "note": "",
+      "critic_reasons": {
+        "llm-deepseek-v4.1-flash": "Source confirms Queen album is part of The Crown Jewels, identifying the album in question.",
+        "rule": "overlap"
+      }
+    },
+    {
+      "id": "t-5a89007355-3-e3916",
+      "question": "What Brooklyn-based rapper has worked with both Rafeal Casal and Mos Def?",
+      "edge": "Definition —performer→ Black Star (rap duo)",
+      "human": "STOP",
+      "trav-rule-v1 (nhãn tự động)": "STOP",
+      "critic llm-deepseek-v4.1-flash": "REJECT",
+      "critic rule": "REJECT",
+      "rule_why": "evidence_complete",
+      "note": "",
+      "critic_reasons": {
+        "llm-deepseek-v4.1-flash": "Definition is a song, not the Brooklyn-based rapper; this edge is unrelated.",
+        "rule": "no_overlap"
+      }
+    },
+    {
+      "id": "t-5a8dfae555-4-e1412",
+      "question": "Cranium and Twin Tin Bots are both what?",
+      "edge": "Cranium (board game) —instance of→ party game",
+      "human": "REJECT",
+      "trav-rule-v1 (nhãn tự động)": "STOP",
+      "critic llm-deepseek-v4.1-flash": "REJECT",
+      "critic rule": "REJECT",
+      "rule_why": "evidence_complete",
+      "note": "",
+      "critic_reasons": {
+        "llm-deepseek-v4.1-flash": "Redundant reverse of an already-followed edge; does not advance toward what both are.",
+        "rule": "revisit"
+      }
+    }
+  ]
+}

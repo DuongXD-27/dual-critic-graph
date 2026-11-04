@@ -19,14 +19,14 @@ def read_json(path):
 def write_json(path, obj):
     path = Path(path)
     path.parent.mkdir(parents=True, exist_ok=True)
-    with open(path, "w", encoding="utf-8") as f:
+    with open(path, "w", encoding="utf-8", newline="\n") as f:  # LF cả trên Windows: tránh git báo thay đổi giả
         json.dump(obj, f, ensure_ascii=False, indent=2)
 
 
 def append_jsonl(path, obj):
     path = Path(path)
     path.parent.mkdir(parents=True, exist_ok=True)
-    with open(path, "a", encoding="utf-8") as f:
+    with open(path, "a", encoding="utf-8", newline="\n") as f:
         f.write(json.dumps(obj, ensure_ascii=False) + "\n")
 
 
@@ -41,6 +41,11 @@ def norm(name: str) -> str:
     s = re.sub(r"\s+([,.;:!?)])", r"\1", s)
     s = re.sub(r"\(\s+", "(", s)
     return s
+
+
+def strip_paren(name: str) -> str:
+    """'Strange Fruit (film)' → 'Strange Fruit' (phần trong ngoặc của tiêu đề Wikipedia chỉ để phân biệt)."""
+    return re.sub(r"\s*\([^)]*\)\s*$", "", str(name)).strip()
 
 
 def load_relations(path=None) -> dict:

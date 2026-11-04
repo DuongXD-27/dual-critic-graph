@@ -1,0 +1,127 @@
+{
+  "gates": "llm",
+  "name": "llm-deepseek-v4.1-flash",
+  "traversal": {
+    "all_vs_rule": {
+      "n": 772,
+      "accuracy": 0.668,
+      "macro_f1": 0.646,
+      "per_label": {
+        "ACCEPT": {
+          "precision": 0.745,
+          "recall": 0.642,
+          "f1": 0.69,
+          "support": 341
+        },
+        "REJECT": {
+          "precision": 0.619,
+          "recall": 0.738,
+          "f1": 0.673,
+          "support": 332
+        },
+        "STOP": {
+          "precision": 0.634,
+          "recall": 0.525,
+          "f1": 0.575,
+          "support": 99
+        }
+      },
+      "confusion": {
+        "gold=ACCEPT / pred=ACCEPT": 219,
+        "gold=ACCEPT / pred=REJECT": 112,
+        "gold=ACCEPT / pred=STOP": 10,
+        "gold=REJECT / pred=ACCEPT": 67,
+        "gold=REJECT / pred=REJECT": 245,
+        "gold=REJECT / pred=STOP": 20,
+        "gold=STOP / pred=ACCEPT": 8,
+        "gold=STOP / pred=REJECT": 39,
+        "gold=STOP / pred=STOP": 52
+      }
+    },
+    "all_go_vs_no": {
+      "n": 772,
+      "accuracy": 0.745,
+      "macro_f1": 0.736,
+      "per_label": {
+        "GO": {
+          "precision": 0.745,
+          "recall": 0.642,
+          "f1": 0.69,
+          "support": 341
+        },
+        "NO": {
+          "precision": 0.745,
+          "recall": 0.826,
+          "f1": 0.783,
+          "support": 431
+        }
+      },
+      "confusion": {
+        "gold=GO / pred=GO": 219,
+        "gold=GO / pred=NO": 122,
+        "gold=NO / pred=GO": 75,
+        "gold=NO / pred=NO": 356
+      }
+    },
+    "agent_chosen_steps": {
+      "n": 160,
+      "rule_bad": 53,
+      "blocked_bad": 17,
+      "blocked_good": 4
+    },
+    "kappa_sample_vs_human": {
+      "n": 100,
+      "accuracy": 0.67,
+      "macro_f1": 0.579,
+      "per_label": {
+        "ACCEPT": {
+          "precision": 0.472,
+          "recall": 0.85,
+          "f1": 0.607,
+          "support": 20
+        },
+        "REJECT": {
+          "precision": 0.821,
+          "recall": 0.687,
+          "f1": 0.748,
+          "support": 67
+        },
+        "STOP": {
+          "precision": 0.5,
+          "recall": 0.308,
+          "f1": 0.381,
+          "support": 13
+        }
+      },
+      "confusion": {
+        "gold=ACCEPT / pred=ACCEPT": 17,
+        "gold=ACCEPT / pred=REJECT": 3,
+        "gold=REJECT / pred=ACCEPT": 17,
+        "gold=REJECT / pred=REJECT": 46,
+        "gold=REJECT / pred=STOP": 4,
+        "gold=STOP / pred=ACCEPT": 2,
+        "gold=STOP / pred=REJECT": 7,
+        "gold=STOP / pred=STOP": 4
+      }
+    },
+    "parse_errors": 0
+  },
+  "construction": {
+    "n_items": 116,
+    "n_labeled": 0,
+    "pred": {
+      "REJECT": 85,
+      "ACCEPT": 31
+    },
+    "reason_codes": {
+      "NOT_STATED": 55,
+      "WRONG_RELATION": 23,
+      "SUPPORTED": 31,
+      "WRONG_ENTITY": 2,
+      "NOT_ENTITY": 3,
+      "WRONG_DIRECTION": 1,
+      "NO_EVIDENCE": 1
+    },
+    "parse_errors": 0
+  }
+}

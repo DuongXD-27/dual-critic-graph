@@ -1,15 +1,14 @@
-"""Client LLM qua giao diện OpenAI (mặc định trỏ tới Gemini).
+"""Client LLM: DeepSeek V4.1 Flash qua OpenCode Go (endpoint chat/completions tương thích OpenAI) — DECISIONS D2.
 
-Đổi nhà cung cấp chỉ bằng biến môi trường:
-  DCG_API_KEY_ENV  tên biến chứa key      (mặc định GEMINI_API_KEY)
-  DCG_BASE_URL     endpoint tương thích OpenAI (mặc định Gemini)
-  DCG_MODEL        tên model               (mặc định gemini-3.8-flash)
-  DCG_TEMPERATURE  nhiệt độ                (mặc định 0)
-  DCG_MIN_INTERVAL số giây tối thiểu giữa 2 lần gọi (mặc định 4, hợp gói miễn phí)
+.env ở gốc repo:
+  OPENCODE_API_KEY   key OpenCode Go (bắt buộc)
+  DCG_MODEL          model trên OpenCode Go (mặc định deepseek-v4.1-flash; critic sau này có thể chọn model khác họ)
+  DCG_TEMPERATURE    mặc định 0
+  DCG_MIN_INTERVAL   số giây tối thiểu giữa hai lần BẮT ĐẦU request (mặc định 1)
+Biến môi trường thật được ưu tiên hơn .env.
 
-Biến có thể đặt trong file .env ở gốc repo (KEY=VALUE mỗi dòng); biến môi trường thật được ưu tiên hơn.
-
-Mọi phản hồi được cache theo hash(model, temperature, messages, tools) trong data/cache/llm/
+Theo yêu cầu của OpenCode Go, client gửi User-Agent riêng và header x-opencode-session cho mỗi cuộc hội thoại.
+Mọi phản hồi được cache theo hash(base_url, model, temperature, messages, tools) trong data/cache/llm/
 → chạy lại không tốn request và cho kết quả y hệt.
 """
 from __future__ import annotations
@@ -17,12 +16,27 @@ from __future__ import annotations
 import hashlib
 import json
 import os
+import threading
 import time
+import uuid
 
 from .common import DATA, ROOT
 
-DEFAULT_BASE_URL = "https://generativelanguage.googleapis.com/v1beta/openai/"
-DEFAULT_MODEL = "gemini-3.8-flash"  # 2026-10-16: gemini-2.5-flash không còn cấp cho người dùng mới
+BASE_URL = "https://opencode.ai/inference/go/openai/v1"
+MODELS_URL = "https://opencode.ai/inference/go/v1"   # danh sách model (GET /models) nằm ở đây, không ở BASE_URL
+API_KEY_ENV = "OPENCODE_API_KEY"
+DEFAULT_MODEL = "deepseek-v4.1-flash"
+USER_AGENT = "dual-critic-graph/0.1"
+SESSION_HEADER = "x-opencode-session"
+
+
+def header_safe(value: str) -> str:
+    """Header HTTP chỉ nhận ASCII. Mã phiên chứa ký tự khác (vd. tiêu đề có dấu '–', 'é') hoặc quá dài
+    → thay bằng băm ASCII ổn định (cùng đầu vào luôn ra cùng mã)."""
+    value = str(value)
+    if value.isascii() and value.isprintable() and len(value) <= 200:
+        return value
+    return "s-" + hashlib.sha256(value.encode("utf-8")).hexdigest()[:32]
 
 
 def load_dotenv(path=None):
@@ -46,19 +60,24 @@ class LLM:
         from openai import OpenAI  # import muộn để test offline không cần key
 
         load_dotenv()
-        key_env = os.environ.get("DCG_API_KEY_ENV", "GEMINI_API_KEY")
-        key = os.environ.get(key_env)
+        key = os.environ.get(API_KEY_ENV)
         if not key:
-            raise SystemExit(f"Thiếu {key_env}: thêm dòng {key_env}=... vào file .env ở gốc repo.")
-        self.base_url = os.environ.get("DCG_BASE_URL", DEFAULT_BASE_URL)
+            raise SystemExit(f"Thiếu {API_KEY_ENV}: thêm dòng {API_KEY_ENV}=... vào file .env ở gốc repo.")
+        self.base_url = BASE_URL
         self.model = model or os.environ.get("DCG_MODEL", DEFAULT_MODEL)
         self.temperature = float(os.environ.get("DCG_TEMPERATURE", "0")) if temperature is None else temperature
-        self.min_interval = float(os.environ.get("DCG_MIN_INTERVAL", "4"))
+        self.min_interval = float(os.environ.get("DCG_MIN_INTERVAL", "1"))
         self.use_cache = use_cache
         self.cache_dir = cache_dir or DATA / "cache" / "llm"
-        self.client = OpenAI(api_key=key, base_url=self.base_url)
+        self.client = OpenAI(api_key=key, base_url=self.base_url, default_headers={"User-Agent": USER_AGENT})
+        # OpenCode Go từ chối request thiếu x-opencode-session → lời gọi không có session_id dùng mã của lần chạy này
+        self.default_session = f"dcg-{uuid.uuid4().hex[:12]}"
         self._last_call = 0.0
+        self._lock = threading.Lock()  # an toàn khi gọi song song (--workers): giãn cách + thống kê
         self.stats = {"calls": 0, "cache_hits": 0, "prompt_tokens": 0, "completion_tokens": 0}
+
+    def list_models(self) -> list:
+        return sorted(m.id for m in self.client.with_options(base_url=MODELS_URL).models.list())
 
     def info(self) -> dict:
         return {"model": self.model, "base_url": self.base_url, "temperature": self.temperature}
@@ -67,17 +86,21 @@ class LLM:
         raw = json.dumps(payload, ensure_ascii=False, sort_keys=True)
         return hashlib.sha256(raw.encode("utf-8")).hexdigest()
 
-    def chat(self, messages, tools=None, json_mode=False) -> dict:
-        """Trả về {"content": str|None, "tool_calls": [{"id","name","arguments"}]}."""
+    def chat(self, messages, tools=None, json_mode=False, session_id=None) -> dict:
+        """Trả về {"content": str|None, "tool_calls": [{"id","name","arguments"}]}.
+        session_id: mã ổn định cho một cuộc hội thoại (một lượt agent, một lô trích xuất).
+        Chỉ gửi trong header, không ảnh hưởng cache. An toàn khi gọi từ nhiều luồng."""
         payload = {"base_url": self.base_url, "model": self.model, "temperature": self.temperature, "messages": messages,
                    "tools": tools, "json_mode": json_mode}
         path = self.cache_dir / f"{self._key(payload)}.json"
         if self.use_cache and path.exists():
-            self.stats["cache_hits"] += 1
+            with self._lock:
+                self.stats["cache_hits"] += 1
             with open(path, encoding="utf-8") as f:
                 return json.load(f)
 
         kwargs = {"model": self.model, "messages": messages, "temperature": self.temperature}
+        kwargs["extra_headers"] = {SESSION_HEADER: header_safe(session_id or self.default_session)}
         if tools:
             kwargs["tools"] = tools
         if json_mode:
@@ -92,10 +115,11 @@ class LLM:
                 for tc in (msg.tool_calls or [])
             ],
         }
-        if resp.usage:
-            self.stats["prompt_tokens"] += resp.usage.prompt_tokens or 0
-            self.stats["completion_tokens"] += resp.usage.completion_tokens or 0
-        self.stats["calls"] += 1
+        with self._lock:
+            if resp.usage:
+                self.stats["prompt_tokens"] += resp.usage.prompt_tokens or 0
+                self.stats["completion_tokens"] += resp.usage.completion_tokens or 0
+            self.stats["calls"] += 1
         if self.use_cache:
             path.parent.mkdir(parents=True, exist_ok=True)
             with open(path, "w", encoding="utf-8") as f:
@@ -107,10 +131,11 @@ class LLM:
 
         delay = 10.0
         for attempt in range(max_tries):
-            wait = self.min_interval - (time.time() - self._last_call)
-            if wait > 0:
-                time.sleep(wait)
-            self._last_call = time.time()
+            with self._lock:  # giãn cách thời điểm BẮT ĐẦU các request, kể cả khi nhiều luồng
+                wait = self.min_interval - (time.time() - self._last_call)
+                if wait > 0:
+                    time.sleep(wait)
+                self._last_call = time.time()
             try:
                 return self.client.chat.completions.create(**kwargs)
             except (openai.RateLimitError, openai.APIConnectionError, openai.InternalServerError) as e:
@@ -120,7 +145,7 @@ class LLM:
                         f"\n[llm] Dừng: {type(e).__name__} sau {max_tries} lần thử ({self.model}).\n"
                         f"      {detail}\n"
                         "      Các lần gọi đã xong nằm trong cache: chạy lại đúng lệnh này để tiếp tục.\n"
-                        "      Nếu lỗi quá tải (503) kéo dài: thử lại sau, hoặc đổi DCG_MODEL / nhà cung cấp trong .env.") from None
+                        "      Nếu OpenCode báo quá tải kéo dài: thử lại sau hoặc giảm --workers.") from None
                 print(f"  [llm] {type(e).__name__}, thử lại sau {delay:.0f}s")
                 time.sleep(delay)
                 delay *= 2

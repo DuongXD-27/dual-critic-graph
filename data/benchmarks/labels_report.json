@@ -1,0 +1,24 @@
+{
+  "copied_from_vi": 100,
+  "traversal_kappa": {
+    "labeled": 100,
+    "of": 100,
+    "kappa": 0.569,
+    "agreement": 0.73,
+    "confusion": {
+      "quy_tac=ACCEPT / nguoi=ACCEPT": 20,
+      "quy_tac=ACCEPT / nguoi=REJECT": 20,
+      "quy_tac=REJECT / nguoi=REJECT": 40,
+      "quy_tac=STOP / nguoi=REJECT": 7,
+      "quy_tac=STOP / nguoi=STOP": 13
+    },
+    "invalid_labels": [],
+    "kappa_go_vs_no": 0.545
+  },
+  "construction": {
+    "labeled": 0,
+    "of": 116,
+    "labels": {},
+    "invalid_labels": []
+  }
+}

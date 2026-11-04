@@ -1,0 +1,50 @@
+{
+  "run_id": "shared-v1-try",
+  "started": "2026-10-24T17:12:49",
+  "llm": {
+    "model": "deepseek-v4.1-flash",
+    "base_url": "https://opencode.ai/inference/go/openai/v1",
+    "temperature": 0.0
+  },
+  "agent_prompt_version": "agent-v4",
+  "max_follows": 6,
+  "max_tool_calls": 20,
+  "max_reads": 2,
+  "gates": "accept_all",
+  "n_questions": 5,
+  "followups_file": null,
+  "mode": "shared",
+  "graph": "data\\interim\\shared\\graph.json",
+  "finished": "2026-10-24T17:14:08",
+  "summary": {
+    "n": 5,
+    "em": 0.4,
+    "f1": 0.68,
+    "mean_follows": 0.0,
+    "correct_but_ungrounded": 1,
+    "starts_total": 10,
+    "starts_not_in_question": 3,
+    "starts_ungrounded": 1,
+    "episodes_reading_text": 5,
+    "mean_paragraphs_read": 1.6,
+    "episodes_hit_read_limit": 1,
+    "writes_total": 4,
+    "writes_by_origin": {
+      "AGENT_TEXT": 4,
+      "AGENT_DERIVED": 0
+    },
+    "writes_by_phase": {
+      "answer": 0,
+      "memory": 4
+    },
+    "writes_invalid_relation": 0,
+    "episodes_using_earlier_agent_edges": 0,
+    "earlier_agent_edges_reused": 0,
+    "llm_stats": {
+      "calls": 37,
+      "cache_hits": 0,
+      "prompt_tokens": 96670,
+      "completion_tokens": 3608
+    }
+  }
+}

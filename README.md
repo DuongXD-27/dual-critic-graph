@@ -16,9 +16,14 @@ data/       manual/ (relations.json), interim/ (câu hỏi + đồ thị), runs/
 ## Chạy
 ```
 pip install -r requirements.txt
-# .env ở gốc repo: GEMINI_API_KEY=... (hoặc DCG_API_KEY_ENV / DCG_BASE_URL / DCG_MODEL, xem dcg/llm.py)
+# sao chép .env.example thành .env rồi điền OPENCODE_API_KEY (DeepSeek V4.1 Flash qua OpenCode Go)
 python tests/test_offline.py
 python scripts/smoke_llm.py
 python scripts/build_graphs.py                    # cần data/raw/hotpotqa/hotpot_dev_distractor_v1.json
-python scripts/run_agent.py --run-name <tên>
+python scripts/run_agent.py --run-name <tên>    # bản thử: mỗi câu một đồ thị
+
+# đồ thị chung (D12): một đồ thị cho 200 câu, agent chạy lần lượt, phép ghi được giữ
+python scripts/build_shared_kg.py --select-only    # chọn câu + gộp kho, chưa gọi LLM
+python scripts/build_shared_kg.py
+python scripts/run_agent.py --run-name shared-v2 --graph data/interim/shared/graph.json
 ```

@@ -1,0 +1,44 @@
+{
+  "run": "shared-v2",
+  "rule": "trav-rule-v1",
+  "traversal_items": 3560,
+  "traversal_states": 498,
+  "traversal_gold": {
+    "REJECT": 2820,
+    "ACCEPT": 641,
+    "STOP": 99
+  },
+  "traversal_why": {
+    "off_path": 1310,
+    "not_evidence": 1333,
+    "revisit": 177,
+    "evidence_on_path": 641,
+    "evidence_complete": 99
+  },
+  "traversal_gold_by_qtype": {
+    "bridge": {
+      "REJECT": 2357,
+      "ACCEPT": 353,
+      "STOP": 87
+    },
+    "comparison": {
+      "ACCEPT": 288,
+      "REJECT": 463,
+      "STOP": 12
+    }
+  },
+  "agent_chosen_edges_vs_rule": {
+    "REJECT": 49,
+    "ACCEPT": 107,
+    "STOP": 4
+  },
+  "construction_items": 116,
+  "construction_by_phase": {
+    "memory": 85,
+    "answer": 31
+  },
+  "construction_by_origin": {
+    "AGENT_DERIVED": 15,
+    "AGENT_TEXT": 101
+  }
+}

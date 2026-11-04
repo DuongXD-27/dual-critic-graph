@@ -1,13 +1,14 @@
-"""Agent GraphRAG thử nghiệm (DECISIONS D1, D4, D7, D10, D11).
+"""Agent GraphRAG thử nghiệm (DECISIONS D1, D4, D7, D10, D11, D14).
 
 Agent chỉ nhận câu hỏi; đồ thị và văn bản chỉ truy cập qua công cụ:
   search_nodes(query)      tìm nút theo tên                                   (không phải bước duyệt)
-  start_at(node)           xuất phát / nhảy tới một nút                       → traversal_gate (type=start)
+  start_at(node)           xuất phát, CHỈ tại thực thể có tên trong câu hỏi   → traversal_gate (type=start)
   get_edges()              xem cạnh của NÚT HIỆN TẠI                          (không phải bước duyệt)
-  follow_edge(edge_id)     đi theo 1 cạnh của nút hiện tại                    → traversal_gate (type=follow)
+  follow_edge(edge_id)     đi theo 1 cạnh của nút hiện tại = cách DUY NHẤT để di chuyển → traversal_gate (type=follow)
   read_paragraph(...)      đọc đoạn văn ĐÃ GẶP trên đường đi, tối đa MAX_READS đoạn
   add_edge(...)            ghi cạnh mới                                       → construction_gate
   answer(answer)           trả lời
+Ngõ cụt (D14): cạnh cần đi bị thiếu nhưng câu văn đã đọc có nói → add_edge rồi follow_edge theo cạnh vừa ghi.
 Sau khi trả lời có bước cập nhật bộ nhớ riêng: agent chỉ được gọi add_edge.
 
 Mọi lần gọi cổng được ghi thành một bản ghi theo định dạng mẫu benchmark (gate records).
@@ -16,28 +17,33 @@ from __future__ import annotations
 
 import json
 import re
+from difflib import SequenceMatcher
 
-from .common import norm, relation_list_text
+from .common import norm, relation_list_text, strip_paren
 from .graph import KG
 
-PROMPT_VERSION = "agent-v4"
-MAX_FOLLOWS = 6
-MAX_TOOL_CALLS = 20
+PROMPT_VERSION = "agent-v5"
+MAX_FOLLOWS = 8
+MAX_TOOL_CALLS = 25
 MAX_READS = 2           # số đoạn văn khác nhau được đọc mỗi lượt; đọc lại không tính (D10)
 MAX_MEMORY_CALLS = 8    # số lần gọi add_edge tối đa ở bước cập nhật bộ nhớ (D11)
 
-SYSTEM = """You answer a multi-hop question using a knowledge graph and the source paragraphs it was extracted from.
+SYSTEM = """You answer a multi-hop question by walking a knowledge graph hop by hop, like following links.
 
 How to work:
-1. Use search_nodes to find a node for an entity mentioned in the question, then start_at that node.
-2. get_edges lists the edges of the node you are currently at. Use follow_edge to move one hop at a time.
-   To see the edges of another node you must move there (follow_edge) or start_at it.
+1. Start: use search_nodes to find the node of an entity NAMED IN THE QUESTION, then start_at it.
+   start_at only accepts entities named in the question. For a comparison question, start at each of them in turn.
+2. Walk: get_edges lists the edges of the node you are at. Move only with follow_edge, one hop at a time,
+   toward the answer. You cannot jump to a node that is not named in the question; reach it by following edges.
    Each edge lists source_paragraphs: the paragraph(s) it was extracted from.
-3. The graph was built automatically: it may be missing facts or contain mistakes. When the graph is not enough,
-   use read_paragraph. You can only read paragraphs you have reached: the paragraph of a node you visited,
-   or a paragraph listed in source_paragraphs of an edge you have seen. At most {max_reads} different paragraphs.
-4. Finish by calling answer with a short answer (an entity name, a date, "yes" or "no").
-   After you answer, you will be asked to update the graph memory.
+3. Missing edge: the graph was built automatically and may miss facts. If the edge you need is not there,
+   read_paragraph a paragraph you have reached (the paragraph of a node you visited, or one listed in
+   source_paragraphs of an edge you have seen; at most {max_reads} different paragraphs). If a sentence states the
+   missing fact, write it with add_edge (head, relation id, tail, evidence_sentences), then follow_edge along the
+   new edge and continue.
+4. Stop: when you reach the node that answers the question, or at a dead end (no useful edge and no sentence that
+   states the missing fact), call answer with a short answer (an entity name, a date, "yes" or "no").
+   At a dead end give your best answer. After you answer, you will be asked to update the graph memory.
 
 Limits: at most {max_follows} follow_edge calls, {max_reads} different paragraphs, and {max_calls} tool calls in total.
 
@@ -88,19 +94,39 @@ TOOLS = [
 ]
 
 
-def strip_paren(name: str) -> str:
-    """'Strange Fruit (film)' → 'Strange Fruit' (phần trong ngoặc của tiêu đề Wikipedia chỉ để phân biệt)."""
-    return re.sub(r"\s*\([^)]*\)\s*$", "", name).strip()
+def _tokens(text: str) -> list[str]:
+    return re.findall(r"\w+", norm(text))
+
+
+def in_question(name: str, question: str, threshold: float = 0.85) -> bool:
+    """Tên nút có được nhắc trong câu hỏi không (D14). Bỏ phần ngoặc của tiêu đề, so theo từ;
+    chấp nhận sai chính tả nhẹ (vd. "Bennett"/"Bennet") bằng tỉ lệ giống nhau trên cửa sổ từ cùng độ dài."""
+    nt, qt = _tokens(strip_paren(name)), _tokens(question)
+    if not nt or not qt:
+        return False
+    n, q = " ".join(nt), " ".join(qt)
+    if f" {n} " in f" {q} ":
+        return True
+    if len(n) < 5:
+        return False
+    for w in {len(nt) - 1, len(nt), len(nt) + 1} - {0}:
+        for i in range(max(len(qt) - w + 1, 0)):
+            if SequenceMatcher(None, n, " ".join(qt[i:i + w])).ratio() >= threshold:
+                return True
+    return False
 
 
 class Episode:
     """Một lần agent trả lời một câu hỏi trên một đồ thị (đồ thị bị thay đổi tại chỗ nếu agent ghi)."""
 
-    def __init__(self, kg: KG, example: dict, question: str, llm, gates, rels: dict, run_id: str, episode_id: str):
+    def __init__(self, kg: KG, example: dict, question: str, llm, gates, rels: dict, run_id: str, episode_id: str,
+                 paragraphs: dict | None = None):
+        """paragraphs: kho đoạn văn agent có thể tới được. Mặc định = 10 đoạn của câu hỏi;
+        với đồ thị chung (D12) là toàn bộ kho."""
         self.kg, self.example, self.question = kg, example, question
         self.llm, self.gates, self.rels = llm, gates, rels
         self.run_id, self.episode_id = run_id, episode_id
-        self.paragraphs = {t: s for t, s in example["context"]}
+        self.paragraphs = paragraphs if paragraphs is not None else {t: s for t, s in example["context"]}
         self.current = None
         self.path: list[dict] = []          # các hành động duyệt đã được chấp nhận (start + follow)
         self.events: list[dict] = []        # mọi lần gọi công cụ
@@ -108,15 +134,20 @@ class Episode:
         self.writes: list[dict] = []
         self.paragraphs_read: list[str] = []
         self.reachable: set[str] = set()    # đoạn văn agent đã "tới được" (D10)
+        self.seen_names: set[str] = set()   # tên hai đầu các cạnh đã hiện cho agent (để phân loại cú nhảy)
+        self.seen_text: list[str] = []      # câu văn agent đã đọc
         self.follows = 0
         self.reads_refused = 0
+        self.starts_refused = 0             # start_at tại nút không có tên trong câu hỏi (D14)
         self.phase = "answer"
         self.final_answer = None
+        self.memory = True                  # False: bỏ bước cập nhật bộ nhớ (chạy câu hỏi dò, D15)
 
     # ---------- mô tả cho agent ----------
     def _edge_view(self, e: dict) -> dict:
         sources = sorted({t for t, _ in e["provenance"]})
         self.reachable.update(s for s in sources if s in self.paragraphs)
+        self.seen_names.update((norm(self.kg.name(e["head"])), norm(self.kg.name(e["tail"]))))
         return {"edge_id": e["id"], "head": self.kg.name(e["head"]), "relation": e["relation"],
                 "relation_name": self.rels.get(e["relation"], "?"), "tail": self.kg.name(e["tail"]),
                 "source_paragraphs": sources}
@@ -129,12 +160,16 @@ class Episode:
                 "edges": [self._edge_view(e) for e in self.kg.incident(nid)][:40]}
 
     def _path_view(self) -> list:
-        keys = ("type", "from", "edge_id", "relation", "relation_name", "to", "direction", "start_in_question")
+        keys = ("type", "from", "edge_id", "relation", "relation_name", "to", "direction", "start_in_question",
+                "start_grounded_by")
         return [{k: s[k] for k in keys if k in s} for s in self.path]
 
     def _gate_traversal(self, action: dict, extra: dict) -> dict:
         path_view = self._path_view()
-        verdict = self.gates.traversal_gate(self.question, path_view, action)
+        from .gates import make_context
+        context = make_context(self.paragraphs, [s.get("provenance", []) for s in self.path if s["type"] == "follow"],
+                               (extra.get("action_edge") or {}).get("provenance"), self.paragraphs_read)
+        verdict = self.gates.traversal_gate(self.question, path_view, action, context=context)
         self.gate_records.append({
             "kind": "traversal", "run_id": self.run_id, "episode_id": self.episode_id, "qid": self.kg.qid,
             "step": len(path_view), "question": self.question, "path": path_view, "action": action, **extra,
@@ -144,15 +179,35 @@ class Episode:
     # ---------- công cụ ----------
     def t_search_nodes(self, query):
         q = norm(query)
-        hits = [n for n in self.kg.nodes.values() if q in norm(n["name"]) or norm(n["name"]) in q]
-        return [{"node": n["id"], "name": n["name"]} for n in hits[:10]] or "no match"
+        if not q:
+            return "no match"
+        hits = []
+        for n in self.kg.nodes.values():
+            name = norm(n["name"])
+            if name == q or norm(strip_paren(n["name"])) == q:
+                rank = 0
+            elif name.startswith(q):
+                rank = 1
+            elif q in name:
+                rank = 2
+            elif len(name) >= 4 and name in q:
+                rank = 3
+            else:
+                continue
+            hits.append((rank, len(name), n))
+        hits.sort(key=lambda x: (x[0], x[1]))
+        return [{"node": n["id"], "name": n["name"]} for _, _, n in hits[:10]] or "no match"
 
     def t_start_at(self, node):
         if node not in self.kg.nodes:
             return f"error: unknown node {node}"
         name = self.kg.name(node)
+        if not in_question(name, self.question):
+            self.starts_refused += 1
+            return {"error": f"start_at only accepts entities named in the question; '{name}' is not. "
+                             "Start at an entity of the question, then move with follow_edge."}
         action = {"type": "start", "from": self.kg.name(self.current) if self.current else None, "to": name,
-                  "start_in_question": norm(strip_paren(name)) in norm(self.question)}
+                  "start_in_question": True, "start_grounded_by": "question"}
         verdict = self._gate_traversal(action, {})
         if verdict["verdict"] == "REJECT":
             return {"rejected": verdict.get("reason")}
@@ -189,9 +244,30 @@ class Episode:
         self.path.append({**action, "origin": e["origin"], "provenance": e["provenance"]})
         return self._arrive(nxt)
 
-    def t_read_paragraph(self, paragraph=None, **kw):
-        # chấp nhận tên tham số biến thể (proxy/Gemini từng làm rơi tham số "title")
-        title = paragraph or kw.get("title") or kw.get("name")
+    def _resolve(self, name: str) -> str:
+        """Nối tên agent viết với nút có sẵn (D14): trùng tên nút, hoặc khớp DUY NHẤT một tiêu đề đoạn sau khi
+        bỏ phần ngoặc ("Claudio López" → "Claudio López (footballer)"). Không khớp thì giữ nguyên (nút mới)."""
+        nid = self.kg.find(name)
+        if nid:
+            return self.kg.name(nid)
+        base = norm(strip_paren(name))
+        cands = [t for t in self.paragraphs if norm(strip_paren(t)) == base]
+        return cands[0] if len(cands) == 1 else name
+
+    def _jump_grounding(self, name: str):
+        """Tên nút có căn cứ từ đâu (D11.3, nay chỉ dùng để phân tích): 'question' | 'edges_seen' | 'text_read' | None.
+        None = tên chưa từng xuất hiện trong những gì agent đã thấy → nhảy nhờ trí nhớ của model."""
+        n = norm(strip_paren(name))
+        if n in norm(self.question):
+            return "question"
+        if norm(name) in self.seen_names or n in self.seen_names:
+            return "edges_seen"
+        if any(n in norm(s) for s in self.seen_text):
+            return "text_read"
+        return None
+
+    def t_read_paragraph(self, paragraph):
+        title = paragraph
         if not title:
             return {"error": "missing argument 'paragraph'", "reachable": sorted(self.reachable)}
         if title not in self.paragraphs:
@@ -207,22 +283,27 @@ class Episode:
                 self.reads_refused += 1
                 return {"error": f"read limit reached ({MAX_READS} paragraphs)", "already_read": self.paragraphs_read}
             self.paragraphs_read.append(title)
+            self.seen_text.extend(self.paragraphs[title])
         return {"paragraph": title, "sentences": [f"[{i}] {s.strip()}" for i, s in enumerate(self.paragraphs[title])]}
 
     def t_add_edge(self, head, relation, tail, evidence_sentences=None, evidence_edges=None):
         evidence_sentences = evidence_sentences or []
         evidence_edges = evidence_edges or []
+        raw = {"head_as_written": head, "tail_as_written": tail}
+        head, tail = self._resolve(head), self._resolve(tail)
         attempt = {"head": head, "relation": relation, "tail": tail, "phase": self.phase,
-                   "evidence_sentences": evidence_sentences, "evidence_edges": evidence_edges}
+                   "evidence_sentences": evidence_sentences, "evidence_edges": evidence_edges, **raw}
         if relation not in self.rels:
             self.writes.append({**attempt, "status": "invalid_relation"})
             return f"error: relation {relation} is not in the schema"
+        if norm(head) == norm(tail):
+            self.writes.append({**attempt, "status": "self_loop"})
+            return "error: head and tail are the same entity"
 
         evidence, prov_sents = [], []
         for item in evidence_sentences:
             try:
-                t, i = ((item.get("paragraph") or item["title"]), int(item["sentence"])) if isinstance(item, dict) \
-                    else (item[0], int(item[1]))
+                t, i = (item["paragraph"], int(item["sentence"])) if isinstance(item, dict) else (item[0], int(item[1]))
                 text = self.paragraphs[t][i].strip()
             except (KeyError, IndexError, TypeError, ValueError):
                 evidence.append({"type": "sentence", "ref": item, "text": None, "invalid": True})
@@ -258,7 +339,10 @@ class Episode:
                                     evidence_edges=used_edges, created_by=self.episode_id)
         self.writes.append({**attempt, "origin": origin, "status": "added" if new else "duplicate",
                             "edge_id": eid, "new_head_node": h_existing is None, "new_tail_node": t_existing is None})
-        return {"edge_id": eid, "status": "added" if new else "already in graph"}
+        res = {"edge_id": eid, "status": "added" if new else "already in graph", "head": head, "tail": tail}
+        if self.phase == "answer" and self.current in (h, tl):
+            res["next"] = f"you can now follow_edge {eid}"
+        return res
 
     def t_answer(self, answer):
         self.final_answer = str(answer)
@@ -295,7 +379,7 @@ class Episode:
             forced = calls >= MAX_TOOL_CALLS
             if forced:
                 messages.append({"role": "user", "content": "Tool limit reached. Reply with the final answer only."})
-            resp = self.llm.chat(messages, tools=None if forced else TOOLS)
+            resp = self.llm.chat(messages, tools=None if forced else TOOLS, session_id=f"{self.run_id}:{self.episode_id}")
             if not forced and not resp["tool_calls"] and not (resp["content"] or "").strip() and nudges < 2:
                 nudges += 1
                 self.events.append({"phase": "answer", "tool": None, "content": resp["content"], "nudge": nudges})
@@ -309,7 +393,8 @@ class Episode:
                 break
             calls += len(resp["tool_calls"])
             self._call_tools(messages, resp)
-        self.memory_update(messages)
+        if self.memory:
+            self.memory_update(messages)
         return self.summary()
 
     def memory_update(self, messages):
@@ -318,7 +403,7 @@ class Episode:
         messages.append({"role": "user", "content": MEMORY_PROMPT})
         calls = 0
         while calls < MAX_MEMORY_CALLS:
-            resp = self.llm.chat(messages, tools=[ADD_EDGE_TOOL])
+            resp = self.llm.chat(messages, tools=[ADD_EDGE_TOOL], session_id=f"{self.run_id}:{self.episode_id}")
             if not resp["tool_calls"]:
                 self.events.append({"phase": "memory", "tool": None, "content": resp["content"]})
                 return
@@ -344,10 +429,18 @@ class Episode:
         return {
             "run_id": self.run_id, "episode_id": self.episode_id, "qid": self.kg.qid, "question": self.question,
             "answer": self.final_answer, "follows": self.follows, "starts": len(starts),
+            "starts_refused": self.starts_refused,
+            "follows_on_own_edges": sum(self.kg.edges[s["edge_id"]].get("created_by") == self.episode_id
+                                        for s in steps),
             "starts_not_in_question": sum(not s["start_in_question"] for s in starts),
+            "starts_ungrounded": sum(s["start_grounded_by"] is None for s in starts),
             "path": self.path, "paragraphs_read": self.paragraphs_read, "reads_refused": self.reads_refused,
             "writes": self.writes,
             "agent_edges_used": [s["edge_id"] for s in steps if s.get("origin", "").startswith("AGENT")],
+            "agent_edges_used_detail": [
+                {"edge_id": s["edge_id"], "origin": s["origin"],
+                 "created_by": self.kg.edges[s["edge_id"]].get("created_by")}
+                for s in steps if s.get("origin", "").startswith("AGENT")],
             "path_provenance": sorted({tuple(p) for s in steps for p in s.get("provenance", [])}),
             "events": self.events,
         }

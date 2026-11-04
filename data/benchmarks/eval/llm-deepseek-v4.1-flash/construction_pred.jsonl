@@ -1,0 +1,116 @@
+{"id": "c-000", "pred": "REJECT", "reason_code": "NOT_STATED", "reason": "Evidence links Kerensky to the 1917 Revolution and the Civil War to Bolsheviks, not Kerensky to the Civil War.", "parse_error": false}
+{"id": "c-001", "pred": "REJECT", "reason_code": "NOT_STATED", "reason": "Evidence mentions Fyre Festival only in arrest/charge context; it never states it is McFarland's notable work.", "parse_error": false}
+{"id": "c-002", "pred": "REJECT", "reason_code": "NOT_STATED", "reason": "No explicit statement that My Cousin Rachel's production company is Free Range Films; requires inference.", "parse_error": false}
+{"id": "c-003", "pred": "REJECT", "reason_code": "WRONG_RELATION", "reason": "Evidence names Holmgren as team president, not chairperson of the 2012 Browns season.", "parse_error": false}
+{"id": "c-004", "pred": "REJECT", "reason_code": "WRONG_RELATION", "reason": "Evidence says Damon is cousin of Terrence Jones, not sibling.", "parse_error": false}
+{"id": "c-005", "pred": "ACCEPT", "reason_code": "SUPPORTED", "reason": "Evidence explicitly says Alba Longa was an ancient city of Latium.", "parse_error": false}
+{"id": "c-006", "pred": "ACCEPT", "reason_code": "SUPPORTED", "reason": "Evidence explicitly calls \"You Can Be a Star\" a talent competition.", "parse_error": false}
+{"id": "c-007", "pred": "ACCEPT", "reason_code": "SUPPORTED", "reason": "Evidence states Kaepernick is an American football quarterback, matching head, relation and tail.", "parse_error": false}
+{"id": "c-008", "pred": "REJECT", "reason_code": "NOT_STATED", "reason": "Evidence says Kerber won silver at the Olympics, not that the Olympics received a silver medal.", "parse_error": false}
+{"id": "c-009", "pred": "REJECT", "reason_code": "WRONG_ENTITY", "reason": "Silver medal was received by Mauresmo, not by the 2004 Summer Olympics.", "parse_error": false}
+{"id": "c-010", "pred": "ACCEPT", "reason_code": "SUPPORTED", "reason": "Evidence explicitly states Marsilea is a genus.", "parse_error": false}
+{"id": "c-011", "pred": "REJECT", "reason_code": "NOT_STATED", "reason": "Evidence says it was founded as a vocational high school, not that it currently is one.", "parse_error": false}
+{"id": "c-012", "pred": "REJECT", "reason_code": "NOT_STATED", "reason": "Evidence says Cranium is a party game; it never states Cranium is a board game.", "parse_error": false}
+{"id": "c-013", "pred": "REJECT", "reason_code": "NOT_STATED", "reason": "Evidence only links Cranium to party game and Twin Tin Bots to board game; no subclass relation stated.", "parse_error": false}
+{"id": "c-014", "pred": "ACCEPT", "reason_code": "SUPPORTED", "reason": "Evidence states Tyler Bunch acted in the video game Red Dead Redemption.", "parse_error": false}
+{"id": "c-015", "pred": "REJECT", "reason_code": "NOT_ENTITY", "reason": "Evidence says 'American' adjective, not a proper country entity for P27 citizenship.", "parse_error": false}
+{"id": "c-016", "pred": "REJECT", "reason_code": "NOT_STATED", "reason": "Evidence says 'German physicist' but does not explicitly state Germany as country of citizenship.", "parse_error": false}
+{"id": "c-017", "pred": "REJECT", "reason_code": "NOT_STATED", "reason": "Evidence calls him German but does not explicitly state country of citizenship Germany.", "parse_error": false}
+{"id": "c-018", "pred": "REJECT", "reason_code": "WRONG_RELATION", "reason": "Evidence says Joey Graceffa was interviewed, not a cast member.", "parse_error": false}
+{"id": "c-019", "pred": "ACCEPT", "reason_code": "SUPPORTED", "reason": "Evidence says Joey Graceffa (Joseph Michael Graceffa) is an American YouTube personality.", "parse_error": false}
+{"id": "c-020", "pred": "REJECT", "reason_code": "NOT_STATED", "reason": "Evidence only calls him American; citizenship of United States is inferred, not explicitly stated.", "parse_error": false}
+{"id": "c-021", "pred": "REJECT", "reason_code": "WRONG_RELATION", "reason": "Evidence calls him a schoolmaster, an occupation, not a position held.", "parse_error": false}
+{"id": "c-022", "pred": "REJECT", "reason_code": "NOT_STATED", "reason": "Evidence says his paintings are at Gracie Mansion, not that Webster is located there.", "parse_error": false}
+{"id": "c-023", "pred": "ACCEPT", "reason_code": "SUPPORTED", "reason": "Evidence states Gracie Mansion is the official residence of the Mayor of New York City.", "parse_error": false}
+{"id": "c-024", "pred": "REJECT", "reason_code": "WRONG_RELATION", "reason": "Evidence says he is a quarterback (occupation/role), not that he held a position; P39 is wrong relation.", "parse_error": false}
+{"id": "c-025", "pred": "REJECT", "reason_code": "WRONG_RELATION", "reason": "Evidence says troops under Combermere, indicating command, not explicit participation.", "parse_error": false}
+{"id": "c-026", "pred": "REJECT", "reason_code": "NOT_STATED", "reason": "Evidence names Lord Combermere as governor, but not Stapleton Cotton; identity requires inference.", "parse_error": false}
+{"id": "c-027", "pred": "REJECT", "reason_code": "NOT_STATED", "reason": "Evidence says British Army officer, not military branch P241.", "parse_error": false}
+{"id": "c-028", "pred": "ACCEPT", "reason_code": "SUPPORTED", "reason": "Evidence explicitly says the Governor of Sheerness Fort was a military officer.", "parse_error": false}
+{"id": "c-029", "pred": "REJECT", "reason_code": "NOT_STATED", "reason": "Evidence says Hutton was American, not explicitly United States citizenship.", "parse_error": false}
+{"id": "c-030", "pred": "REJECT", "reason_code": "NOT_STATED", "reason": "Evidence says he shot above 50–40–90, not that he is a member of the club.", "parse_error": false}
+{"id": "c-031", "pred": "REJECT", "reason_code": "NOT_STATED", "reason": "Evidence says flavoring is derived from flat-leaved vanilla, not that it produces commercial vanilla flavoring.", "parse_error": false}
+{"id": "c-032", "pred": "REJECT", "reason_code": "NOT_STATED", "reason": "Evidence names it a species but does not explicitly state parent taxon.", "parse_error": false}
+{"id": "c-033", "pred": "REJECT", "reason_code": "WRONG_RELATION", "reason": "Evidence says vanilla flavoring is derived from genus Vanilla, not that it has Vanilla as parent taxon.", "parse_error": false}
+{"id": "c-034", "pred": "ACCEPT", "reason_code": "SUPPORTED", "reason": "Evidence says he is best remembered for producing Casablanca, indicating it is a notable work.", "parse_error": false}
+{"id": "c-035", "pred": "ACCEPT", "reason_code": "SUPPORTED", "reason": "Evidence explicitly says he is chairman of Witchhunt Productions.", "parse_error": false}
+{"id": "c-036", "pred": "ACCEPT", "reason_code": "SUPPORTED", "reason": "Evidence explicitly says Shohola Falls was written by Michael Pearson.", "parse_error": false}
+{"id": "c-037", "pred": "ACCEPT", "reason_code": "SUPPORTED", "reason": "Paragraph identifies Shohola Falls as the novel; it imagines Thomas Blankenship's true story, so he appears in it.", "parse_error": false}
+{"id": "c-038", "pred": "REJECT", "reason_code": "WRONG_RELATION", "reason": "Evidence describes Scholz as Turing's peer and a reader of his essay, not as influenced by him.", "parse_error": false}
+{"id": "c-039", "pred": "ACCEPT", "reason_code": "SUPPORTED", "reason": "Evidence states the novel is by Eva Ibbotson, supporting the author relation.", "parse_error": false}
+{"id": "c-040", "pred": "ACCEPT", "reason_code": "SUPPORTED", "reason": "Evidence explicitly says the novel was published in 1985.", "parse_error": false}
+{"id": "c-041", "pred": "REJECT", "reason_code": "NOT_STATED", "reason": "Evidence says 'Dutch scientist' but does not explicitly state country of citizenship Netherlands.", "parse_error": false}
+{"id": "c-042", "pred": "REJECT", "reason_code": "NOT_STATED", "reason": "Evidence names Pieter van Musschenbroek; bare Musschenbroek lacks an explicit link to that creator edge.", "parse_error": false}
+{"id": "c-043", "pred": "REJECT", "reason_code": "WRONG_DIRECTION", "reason": "Evidence edge has Tribometer as creator of Musschenbroek, the reverse of the proposed fact.", "parse_error": false}
+{"id": "c-044", "pred": "REJECT", "reason_code": "NO_EVIDENCE", "reason": "No evidence was submitted to verify the fact.", "parse_error": false}
+{"id": "c-045", "pred": "REJECT", "reason_code": "WRONG_RELATION", "reason": "Evidence says the band is Gainesville-based, not that it formed there.", "parse_error": false}
+{"id": "c-046", "pred": "ACCEPT", "reason_code": "SUPPORTED", "reason": "Evidence states Faxe Bryggeri produces beer.", "parse_error": false}
+{"id": "c-047", "pred": "ACCEPT", "reason_code": "SUPPORTED", "reason": "Evidence states Faxe Bryggeri is a brewery producing beer and soft drinks.", "parse_error": false}
+{"id": "c-048", "pred": "REJECT", "reason_code": "WRONG_RELATION", "reason": "Evidence states Faxe is located in Region Zealand, not that Region Zealand contains Faxe.", "parse_error": false}
+{"id": "c-049", "pred": "REJECT", "reason_code": "NOT_STATED", "reason": "Evidence links Darkhorse to Crazy Town and Shifty to Crazy Town, not Shifty as performer on Darkhorse.", "parse_error": false}
+{"id": "c-050", "pred": "REJECT", "reason_code": "WRONG_RELATION", "reason": "Evidence only calls her Australia's Lucille Ball; it does not state influence.", "parse_error": false}
+{"id": "c-051", "pred": "REJECT", "reason_code": "NOT_STATED", "reason": "Evidence says he was drafted by the Bulls, not that he was a member of the team.", "parse_error": false}
+{"id": "c-052", "pred": "ACCEPT", "reason_code": "SUPPORTED", "reason": "Evidence states Pekka's third son is Miikka, matching child relation direction.", "parse_error": false}
+{"id": "c-053", "pred": "REJECT", "reason_code": "NOT_STATED", "reason": "Evidence names wife Riikka née Ellonen, not Riikka Markkanen.", "parse_error": false}
+{"id": "c-054", "pred": "REJECT", "reason_code": "NOT_STATED", "reason": "Evidence only shows both are children of Pekka; sibling relationship requires inference.", "parse_error": false}
+{"id": "c-055", "pred": "REJECT", "reason_code": "NOT_STATED", "reason": "Evidence shows both are Pekka's children, but does not explicitly state they are siblings.", "parse_error": false}
+{"id": "c-056", "pred": "REJECT", "reason_code": "NOT_STATED", "reason": "Evidence links episode to series and series to writer, but never states the episode's screenwriter.", "parse_error": false}
+{"id": "c-057", "pred": "REJECT", "reason_code": "NOT_STATED", "reason": "Evidence links episode to series and series to Sullivan, but never states Sullivan created the episode.", "parse_error": false}
+{"id": "c-058", "pred": "ACCEPT", "reason_code": "SUPPORTED", "reason": "Evidence states Canobie Lake is in the towns of Salem and Windham, New Hampshire.", "parse_error": false}
+{"id": "c-059", "pred": "REJECT", "reason_code": "WRONG_RELATION", "reason": "Evidence links Barr to Roseanne as a role/cast member, not as notable work.", "parse_error": false}
+{"id": "c-060", "pred": "REJECT", "reason_code": "WRONG_ENTITY", "reason": "Evidence names Roseanne Arnold as creator; Roseanne Barr is not stated.", "parse_error": false}
+{"id": "c-061", "pred": "ACCEPT", "reason_code": "SUPPORTED", "reason": "Evidence states Kassie DePaiva's current role is Eve Donovan, supporting performer relation.", "parse_error": false}
+{"id": "c-062", "pred": "REJECT", "reason_code": "WRONG_RELATION", "reason": "Evidence links Howarth to 1994 via award received, not point in time for Howarth.", "parse_error": false}
+{"id": "c-063", "pred": "REJECT", "reason_code": "WRONG_RELATION", "reason": "Evidence says Wynn oversaw construction/operation of Treasure Island, not that he founded it.", "parse_error": false}
+{"id": "c-064", "pred": "REJECT", "reason_code": "NOT_STATED", "reason": "Evidence says Wynn oversaw construction and operation, not explicitly that he was developer.", "parse_error": false}
+{"id": "c-065", "pred": "ACCEPT", "reason_code": "SUPPORTED", "reason": "Evidence states the centre was closed to construct an indoor ski slope and reopened featuring it.", "parse_error": false}
+{"id": "c-066", "pred": "ACCEPT", "reason_code": "SUPPORTED", "reason": "Evidence explicitly says Boght Corners is located in the town of Colonie.", "parse_error": false}
+{"id": "c-067", "pred": "REJECT", "reason_code": "WRONG_RELATION", "reason": "Evidence says Westgate was then known as International Hotel, not that one followed the other.", "parse_error": false}
+{"id": "c-068", "pred": "REJECT", "reason_code": "NOT_STATED", "reason": "Evidence calls it Matt Groening's Bongo Comics but does not explicitly state he founded it.", "parse_error": false}
+{"id": "c-069", "pred": "REJECT", "reason_code": "NOT_ENTITY", "reason": "\"English\" is an adjective/demonym, not a proper country entity for P27.", "parse_error": false}
+{"id": "c-070", "pred": "REJECT", "reason_code": "NOT_STATED", "reason": "Evidence calls him American poet but does not explicitly state country of citizenship.", "parse_error": false}
+{"id": "c-071", "pred": "REJECT", "reason_code": "NOT_STATED", "reason": "Evidence calls him English but does not explicitly state United Kingdom citizenship.", "parse_error": false}
+{"id": "c-072", "pred": "ACCEPT", "reason_code": "SUPPORTED", "reason": "The play portrays Housman's life, so he is present in the work.", "parse_error": false}
+{"id": "c-073", "pred": "REJECT", "reason_code": "NOT_STATED", "reason": "Evidence calls it a feminist publication of women's culture, not explicitly genre women's magazine.", "parse_error": false}
+{"id": "c-074", "pred": "REJECT", "reason_code": "NOT_STATED", "reason": "Evidence says magazine for young women, not explicitly genre women's magazine.", "parse_error": false}
+{"id": "c-075", "pred": "REJECT", "reason_code": "NOT_STATED", "reason": "Evidence mentions the story's award but does not say it is part of The Wind's Twelve Quarters.", "parse_error": false}
+{"id": "c-076", "pred": "REJECT", "reason_code": "NOT_STATED", "reason": "Evidence says he entered publishing business, not that he held the position of publisher.", "parse_error": false}
+{"id": "c-077", "pred": "REJECT", "reason_code": "WRONG_RELATION", "reason": "Evidence links Hearst to 1887 via entering publishing business, not a point in time for him.", "parse_error": false}
+{"id": "c-078", "pred": "REJECT", "reason_code": "NOT_STATED", "reason": "Evidence mentions a 1988 event involving Ted Kennedy, not 1988 as his point in time.", "parse_error": false}
+{"id": "c-079", "pred": "REJECT", "reason_code": "NOT_STATED", "reason": "Evidence mentions pizza delivery but does not state Papa John's produces pizza.", "parse_error": false}
+{"id": "c-080", "pred": "REJECT", "reason_code": "WRONG_RELATION", "reason": "Evidence says Papa Gino's specializes in pizza, not that pizza is a product/material produced.", "parse_error": false}
+{"id": "c-081", "pred": "REJECT", "reason_code": "NOT_STATED", "reason": "Evidence says Derry City, not Derry City F.C.; linking them requires extra inference.", "parse_error": false}
+{"id": "c-082", "pred": "ACCEPT", "reason_code": "SUPPORTED", "reason": "Evidence explicitly states Papa Aldo's Pizza was founded in 1981.", "parse_error": false}
+{"id": "c-083", "pred": "ACCEPT", "reason_code": "SUPPORTED", "reason": "Evidence explicitly states Murphy's Pizza was founded in 1981, matching inception.", "parse_error": false}
+{"id": "c-084", "pred": "REJECT", "reason_code": "WRONG_RELATION", "reason": "Evidence says the album was named after the film, not influenced by it.", "parse_error": false}
+{"id": "c-085", "pred": "REJECT", "reason_code": "NOT_STATED", "reason": "Evidence calls him German but does not explicitly state country of citizenship Germany.", "parse_error": false}
+{"id": "c-086", "pred": "REJECT", "reason_code": "NOT_STATED", "reason": "Evidence says French Air Force, not explicitly that Eyharts has French citizenship.", "parse_error": false}
+{"id": "c-087", "pred": "REJECT", "reason_code": "NOT_STATED", "reason": "Evidence says Rihanna performs the song, not the album; no direct album-performer link stated.", "parse_error": false}
+{"id": "c-088", "pred": "REJECT", "reason_code": "WRONG_RELATION", "reason": "Evidence states he is a Brigadier General (military rank), not that he held a P39 position.", "parse_error": false}
+{"id": "c-089", "pred": "REJECT", "reason_code": "NOT_ENTITY", "reason": "The head is a job title, not an entity suitable for a location relation.", "parse_error": false}
+{"id": "c-090", "pred": "REJECT", "reason_code": "WRONG_RELATION", "reason": "Evidence says Dennis Allen shot Stockley, not that Stockley was a participant of Allen.", "parse_error": false}
+{"id": "c-091", "pred": "REJECT", "reason_code": "NOT_STATED", "reason": "Evidence says the album Recovery is from 2010, not the song's publication date.", "parse_error": false}
+{"id": "c-092", "pred": "ACCEPT", "reason_code": "SUPPORTED", "reason": "Evidence states album Recovery (2010), indicating publication year.", "parse_error": false}
+{"id": "c-093", "pred": "ACCEPT", "reason_code": "SUPPORTED", "reason": "Evidence says Hudgens portrayed Gabriella Montez in the High School Musical film series.", "parse_error": false}
+{"id": "c-094", "pred": "REJECT", "reason_code": "NOT_STATED", "reason": "Evidence says pizzeria chain selling whole pies, but does not explicitly state it produces pizza.", "parse_error": false}
+{"id": "c-095", "pred": "REJECT", "reason_code": "NOT_STATED", "reason": "Evidence says located at Victoria Gap, near Victoria Peak's summit, not location Victoria Peak.", "parse_error": false}
+{"id": "c-096", "pred": "ACCEPT", "reason_code": "SUPPORTED", "reason": "Evidence explicitly says Hazel Keech is a model.", "parse_error": false}
+{"id": "c-097", "pred": "REJECT", "reason_code": "NOT_STATED", "reason": "Evidence only says Bolívar was president under whom Zea served; it does not state he was Colombia's head of government.", "parse_error": false}
+{"id": "c-098", "pred": "REJECT", "reason_code": "WRONG_RELATION", "reason": "Evidence states a remake, not that Montage was replaced by Te3n.", "parse_error": false}
+{"id": "c-099", "pred": "REJECT", "reason_code": "NOT_STATED", "reason": "Evidence says Teardrops was second single and All Those Years Ago first, but never explicitly states a follows relation.", "parse_error": false}
+{"id": "c-100", "pred": "REJECT", "reason_code": "NOT_STATED", "reason": "Evidence gives headquarters in South Australia, not explicitly that Accolade Wines country is Australia.", "parse_error": false}
+{"id": "c-101", "pred": "ACCEPT", "reason_code": "SUPPORTED", "reason": "Evidence explicitly places Nagyvárad in Austria-Hungary.", "parse_error": false}
+{"id": "c-102", "pred": "REJECT", "reason_code": "NOT_STATED", "reason": "Evidence says released for a Drive re-release, not that the song is present in the film.", "parse_error": false}
+{"id": "c-103", "pred": "REJECT", "reason_code": "NOT_STATED", "reason": "Evidence calls it an American film but does not explicitly state country of origin United States.", "parse_error": false}
+{"id": "c-104", "pred": "REJECT", "reason_code": "NOT_STATED", "reason": "Evidence says 'American actor' but does not explicitly state United States citizenship.", "parse_error": false}
+{"id": "c-105", "pred": "REJECT", "reason_code": "NOT_STATED", "reason": "Evidence says dogs of the type were originally farm dogs, not that the breed is an instance of farm dog.", "parse_error": false}
+{"id": "c-106", "pred": "ACCEPT", "reason_code": "SUPPORTED", "reason": "Evidence states Hoffmann masterminded the defeat at Tannenberg, showing his participation.", "parse_error": false}
+{"id": "c-107", "pred": "REJECT", "reason_code": "WRONG_RELATION", "reason": "Evidence links Hoffmann and Ludendorff as co-masterminds, not as participant relation.", "parse_error": false}
+{"id": "c-108", "pred": "REJECT", "reason_code": "NOT_STATED", "reason": "Evidence says they jointly masterminded Tannenberg, not that Hoffmann participated in Hindenburg.", "parse_error": false}
+{"id": "c-109", "pred": "ACCEPT", "reason_code": "SUPPORTED", "reason": "She won in 2008 by defeating incumbent Joe Heck, so she succeeded him.", "parse_error": false}
+{"id": "c-110", "pred": "REJECT", "reason_code": "WRONG_RELATION", "reason": "Evidence says the school was named after du Sable, not present in a work.", "parse_error": false}
+{"id": "c-111", "pred": "REJECT", "reason_code": "NOT_STATED", "reason": "Evidence says song was named after seeing the painting, not explicitly that it was influenced by it.", "parse_error": false}
+{"id": "c-112", "pred": "ACCEPT", "reason_code": "SUPPORTED", "reason": "Evidence explicitly states Out Traveler is a travel magazine.", "parse_error": false}
+{"id": "c-113", "pred": "REJECT", "reason_code": "NOT_STATED", "reason": "Evidence mentions religious authority and being religious, not that his religion was Hawaiian religion.", "parse_error": false}
+{"id": "c-114", "pred": "REJECT", "reason_code": "NOT_STATED", "reason": "Evidence calls Liloa 'High Chief' but does not explicitly state P39 position held 'Chief'.", "parse_error": false}
+{"id": "c-115", "pred": "REJECT", "reason_code": "NOT_STATED", "reason": "Evidence describes the program's selection purpose but never states it is a fellowship.", "parse_error": false}

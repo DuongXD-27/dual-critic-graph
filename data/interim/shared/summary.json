@@ -1,0 +1,70 @@
+{
+  "corpus": {
+    "questions": 200,
+    "types": {
+      "bridge": 149,
+      "comparison": 51
+    },
+    "paragraphs_total": 1994,
+    "paragraphs_unique": 1839,
+    "titles_shared_by_2plus_questions": 137,
+    "questions_whose_evidence_paragraph_is_in_another_question": 98,
+    "selection": "cluster",
+    "seed": 0,
+    "title_conflicts": []
+  },
+  "prompt_version": "extract-v2",
+  "llm": {
+    "model": "deepseek-v4.1-flash",
+    "base_url": "https://opencode.ai/inference/go/openai/v1",
+    "temperature": 0.0
+  },
+  "per_call": 1,
+  "workers": 8,
+  "requests": 1841,
+  "paragraph_skipped_then_retried": 0,
+  "llm_stats": {
+    "calls": 1741,
+    "cache_hits": 100,
+    "prompt_tokens": 1767286,
+    "completion_tokens": 5508379
+  },
+  "nodes": 10530,
+  "edges": 12361,
+  "raw_triples": 12676,
+  "dropped": 14,
+  "suspect": 798,
+  "parse_errors": 2,
+  "linking": {
+    "exact_title": 10682,
+    "not_a_title": 14387,
+    "unique_stripped_title": 212,
+    "ambiguous": 31,
+    "current_title": 34
+  },
+  "mean_sf_coverage": 0.874,
+  "top10_node_degree": [
+    121,
+    107,
+    38,
+    35,
+    33,
+    32,
+    32,
+    32,
+    31,
+    30
+  ],
+  "top10_hubs": [
+    "film",
+    "United States",
+    "studio album",
+    "India",
+    "song",
+    "Bobby Mehta",
+    "Queen (Queen album)",
+    "Jim Lentz",
+    "Canada",
+    "No Mercy (T.I. album)"
+  ]
+}
